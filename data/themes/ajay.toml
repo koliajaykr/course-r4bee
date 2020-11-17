@@ -1,0 +1,19 @@
+# Theme metadata
+name = "alison"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#FFA500"
+
+# Menu
+menu_primary = "#FFFFFF"
+menu_text = "#000000"
+menu_text_active = "#FFA500"
+menu_title = "#FFA500"
+
+# Backgrounds
+background = "#FFFFFF"
+home_section_odd = "FFFFFF"
+home_section_even = "#F5F4F2"

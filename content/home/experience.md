@@ -3,9 +3,9 @@
 widget = "experience"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 40  # Order that this section will appear.
+weight = 70  # Order that this section will appear.
 
-title = "Experience"
+title = "Journey"
 subtitle = ""
 
 # Date format for experience
@@ -18,27 +18,49 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "CEO"
-  company = "GenCoin"
+  title = "Batch - 1 (Data Visualisation: Using R package ggplot2)"
+  company = "Free | 7 Students | 24 hours"
   company_url = ""
-  location = "California"
-  date_start = "2017-01-01"
-  date_end = ""
-  description = """
-  Responsibilities include:
+  location = "Online"
+  date_start = "2020-07-02"
+  date_end = "2020-07-30"
+  description = """This was my first batch to teach R language. Many thanks to the participants for believing a stranger.
   
-  * Analysing
-  * Modelling
-  * Deploying
   """
 
 [[experience]]
-  title = "Professor"
-  company = "University X"
+  title = "Batch - 2 (Data Visualisation for Beginners using R)"
+  company = "Free | 3 students | 20 hours"
   company_url = ""
-  location = "California"
-  date_start = "2016-01-01"
-  date_end = "2016-12-31"
-  description = """Taught electronic engineering and researched semiconductor physics."""
+  location = "Online"
+  date_start = "2020-08-10"
+  date_end = "2020-08-31"
+  description = """On 11 August 2020, I resigned from the faculty job.Two generous students donated money to this course. Thank you so much."""
 
+[[experience]]
+  title = "Batch - 3 (R for Beginners)"
+  company = "499 INR | 3 students | 20 hours"
+  company_url = ""
+  location = "Online"
+  date_start = "2020-09-05"
+  date_end = "2020-09-29"
+  description = """And I got my two students who believe in me who paid fee to learn from me."""
+  
+[[experience]]
+  title = "Batch - 4 (R for Beginners)"
+  company = "499 INR | 6 students | 20 hours"
+  company_url = ""
+  location = "Online"
+  date_start = "2020-10-10"
+  date_end = "2020-11-04"
+  description = """all students with fee, started this website, received 4k INR donations.""" 
+  
+[[experience]]
+  title = "Batch - 5 (R for Beginners)"
+  company = "999 INR | 3 students | 20 hours"
+  company_url = ""
+  location = "Online"
+  date_start = "2020-11-11"
+  date_end = ""
+  description = """geographically diverse group"""   
 +++

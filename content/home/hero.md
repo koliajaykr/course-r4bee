@@ -2,13 +2,13 @@
 # Hero widget.
 widget = "hero"  # See https://wowchemy.com/docs/page-builder/
 headless = true  # This file represents a page section.
-active = false  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+active = true  # Activate this widget? true/false
+weight = 1  # Order that this section will appear.
 
-title = "Academic Template"
+title = "R for Beeginners"
 
 # Hero image (optional). Enter filename of an image in the `static/media/` folder.
-hero_media = "hero-academic.png"
+hero_media = "img/poster-b5.png"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -16,12 +16,12 @@ hero_media = "hero-academic.png"
   #   Choose a light or dark text color by setting `text_color_light`.
   #   Any HTML color name or Hex value is valid.
 
-  # Background color.
-  # color = "navy"
+  #Background color.
+  color = "black"
   
   # Background gradient.
-  gradient_start = "#4bb4e3"
-  gradient_end = "#2b94c3"
+  gradient_start = "#F5F4F2"
+  gradient_end = "#F5F4F2"
   
   # Background image.
   # image = ""  # Name of image in `static/media/`.
@@ -31,28 +31,26 @@ hero_media = "hero-academic.png"
   # image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
   
   # Text color (true=light or false=dark).
-  text_color_light = true
+  text_color_light = false
 
 # Call to action links (optional).
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.
 #   Remove a link/note by deleting a cta/note block.
 [cta]
-  url = "https://wowchemy.com/docs/install/"
-  label = "Get Started"
+  url = "https://forms.gle/GuGJPdnKdMEAQgmP8"
+  label = "Register"
   icon_pack = "fas"
-  icon = "download"
+  icon = "feather"
   
 [cta_alt]
-  url = "https://wowchemy.com"
-  label = "View Documentation"
+  #url = "https://wowchemy.com"
+  #label = "View Documentation"
 
-# Note. An optional note to show underneath the links.
-[cta_note]
-  label = '<a class="js-github-release" href="https://wowchemy.com/updates" data-repo="wowchemy/wowchemy-hugo-modules">Latest release<!-- V --></a>'
 +++
 
-**The Best Way to Create the Website You Want from Markdown (or Jupyter/RStudio)**
+## An online course to start learning data science using {{< icon name="r-project" pack="fab" >}}
 
-Build **Anything** with Widgets
+## Command a happy career !
 
-<span style="text-shadow: none;"><a class="github-button" href="https://github.com/wowchemy/wowchemy-hugo-modules" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span>
+<span style="text-shadow: none;"><a class="github-button" href="https://github.com/koliajaykr/course-r-for-beginners" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span>
+
