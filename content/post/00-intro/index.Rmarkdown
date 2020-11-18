@@ -28,6 +28,10 @@ links:
   icon_pack: fas
   name: lab
   url: /labs/00-install_name_plot.html
+- icon: magic
+  icon_pack: fas
+  name: slides
+  url: /slides/01-slides.html
 ---
 
 Welcome! We'll see you in our first class on Monday, and please do the lab linked above before Wednesday.

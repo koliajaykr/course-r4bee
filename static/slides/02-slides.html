@@ -1,342 +1,546 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lab 02: CS631</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Alison Hill" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/ohsu.css" type="text/css" />
+    <link rel="stylesheet" href="css/ohsu-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Lab 02: CS631
+## Working in the Tidyverse
+### Alison Hill
+
 ---
-title: "Lab 02: CS631"
-subtitle: "Working in the Tidyverse"
-author: "Alison Hill"
-output:
-  xaringan::moon_reader:
-    css: ["default", "css/ohsu.css", "css/ohsu-fonts.css"]
-    lib_dir: libs
-    nature:
-      highlightStyle: atelier-lakeside-light
-      highlightLines: true
-      countIncrementalSlides: false
+
+
+
+
+
+
+# Tidyverse basics
+
+In David Robinson's DataCamp course you learned:
+
+- `&lt;-` (variable assignment)
+- `%&gt;%` (then...)
+- `dplyr`, `ggplot2` (packages)
+  - `install.packages("dplyr")` (1x per machine)
+  - `library(dplyr)` (1x per work session)
+
+---
+class: center, middle, inverse
+
+# 📇
+
+## Let's review
+
+---
+# Data for today
+
+We'll use data from the Museum of Modern Art (MoMA)
+
+- Publicly available on [GitHub](https://github.com/MuseumofModernArt/collection)
+- As analyzed by [fivethirtyeight.com](https://fivethirtyeight.com/features/a-nerds-guide-to-the-2229-paintings-at-moma/)
+- And by [others](https://medium.com/@foe/here-s-a-roundup-of-how-people-have-used-our-data-so-far-80862e4ce220)
+
+---
+# Get the data
+
+Use this code chunk to import my cleaned CSV file:
+
+
+```r
+library(readr)
+moma &lt;- read_csv("http://bit.ly/cs631-moma")
+```
+
+
 ---
 
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
-<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+# Data wrangling so far
+
+All functions from `dplyr` package
+
+.pull-left[
+From DataCamp Chapter 1
+
+- print a tibble
+
+- `filter`
+
+- `arrange`
+
+- `mutate`
+]
+
+--
+
+.pull-right[
+From Lab 01
 
 
-<div id="tidyverse-basics" class="section level1">
-<h1>Tidyverse basics</h1>
-<p>In David Robinson’s DataCamp course you learned:</p>
-<ul>
-<li><code>&lt;-</code> (variable assignment)</li>
-<li><code>%&gt;%</code> (then…)</li>
-<li><code>dplyr</code>, <code>ggplot2</code> (packages)
-<ul>
-<li><code>install.packages("dplyr")</code> (1x per machine)</li>
-<li><code>library(dplyr)</code> (1x per work session)</li>
-</ul></li>
-</ul>
-</div>
-<div id="data-for-today" class="section level1">
-<h1>Data for today</h1>
-<p>We’ll use data from the Museum of Modern Art (MoMA)</p>
-<ul>
-<li>Publicly available on <a href="https://github.com/MuseumofModernArt/collection">GitHub</a></li>
-<li>As analyzed by <a href="https://fivethirtyeight.com/features/a-nerds-guide-to-the-2229-paintings-at-moma/">fivethirtyeight.com</a></li>
-<li>And by <a href="https://medium.com/@foe/here-s-a-roundup-of-how-people-have-used-our-data-so-far-80862e4ce220">others</a></li>
-</ul>
-</div>
-<div id="data-wrangling-so-far" class="section level1">
-<h1>Data wrangling so far</h1>
-<p>All functions from <code>dplyr</code> package</p>
-<p>.pull-left[
-From DataCamp Chapter 1</p>
-<ul>
-<li><p>print a tibble</p></li>
-<li><p><code>filter</code></p></li>
-<li><p><code>arrange</code></p></li>
-<li><p><code>mutate</code>
-]</p></li>
-</ul>
-<p>–</p>
-<p>.pull-right[
-From Lab 01</p>
-<ul>
-<li><p><code>glimpse</code></p></li>
-<li><p><code>distinct</code></p></li>
-<li><p><code>count</code>
-]</p></li>
-</ul>
-<p>class: middle, center, inverse</p>
-</div>
-<div id="section" class="section level1">
-<h1>⌛️</h1>
-<div id="lets-review-some-helpful-functions-for-filter" class="section level2">
-<h2>Let’s review some helpful functions for <code>filter</code></h2>
-<p>class: middle, center, inverse</p>
-<p>#💡</p>
-</div>
-<div id="first" class="section level2">
-<h2>First:</h2>
-</div>
-<div id="logical-operators" class="section level2">
-<h2>Logical Operators</h2>
-<hr />
-<pre class="r"><code>?base::Logic</code></pre>
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-Operator
-</th>
-<th style="text-align:left;">
-Description
-</th>
-<th style="text-align:left;">
-Usage
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-&amp;
-</td>
-<td style="text-align:left;">
-and
-</td>
-<td style="text-align:left;">
-x &amp; y
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-|
-</td>
-<td style="text-align:left;">
-or
-</td>
-<td style="text-align:left;">
-x | y
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-xor
-</td>
-<td style="text-align:left;">
-exactly x or y
-</td>
-<td style="text-align:left;">
-xor(x, y)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-!
-</td>
-<td style="text-align:left;">
-not
-</td>
-<td style="text-align:left;">
-!x
-</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p>Logical or (<code>|</code>) is inclusive, so <code>x | y</code> really means:</p>
-<ul>
-<li>x or</li>
-<li>y or</li>
-<li>both x &amp; y</li>
-</ul>
-<p>Exclusive or (<code>xor</code>) is exclusive, so <code>xor(x, y)</code> really means:</p>
-<ul>
-<li>x or</li>
-<li>y…</li>
-<li>but not both x &amp; y</li>
-</ul>
-<pre class="r"><code>x &lt;- c(0, 1, 0, 1)
+- `glimpse`
+
+- `distinct`
+
+- `count`
+]
+
+---
+class: middle, center, inverse
+
+![](../images/rladylego-pipe.jpg)
+
+## Plus: `%&gt;%`
+
+*image courtesy [@LegoRLady](https://twitter.com/LEGO_RLady/status/986661916855754752)*
+
+---
+class: middle, center, inverse
+
+# ⌛️
+
+## Let's review some helpful functions for `filter`
+
+---
+class: inverse, bottom, center
+background-image: url("../images/peapod.png")
+background-size: 25%
+
+
+## Base R + Tidyverse
+
+---
+class: middle, center, inverse
+
+#💡
+
+## First: 
+
+## Logical Operators
+
+
+
+---
+
+
+
+```r
+?base::Logic
+```
+
+
+
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Operator &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Description &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Usage &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; &amp;amp; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; and &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x &amp;amp; y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; | &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; or &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x | y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; xor &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; exactly x or y &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; xor(x, y) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ! &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; not &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; !x &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+Logical or (`|`) is inclusive, so `x | y` really means: 
+
+* x or 
+* y or 
+* both x &amp; y
+
+Exclusive or (`xor`) is exclusive, so `xor(x, y)` really means: 
+
+* x or
+* y...
+* but not both x &amp; y
+
+
+```r
+x &lt;- c(0, 1, 0, 1)
 y &lt;- c(0, 0, 1, 1)
 boolean_or &lt;- x | y
 exclusive_or &lt;- xor(x, y)
-cbind(x, y, boolean_or, exclusive_or)</code></pre>
-<pre><code>     x y boolean_or exclusive_or
+cbind(x, y, boolean_or, exclusive_or)
+```
+
+```
+     x y boolean_or exclusive_or
 [1,] 0 0          0            0
 [2,] 1 0          1            1
 [3,] 0 1          1            1
-[4,] 1 1          1            0</code></pre>
-<pre class="r"><code>?Comparison</code></pre>
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-Operator
-</th>
-<th style="text-align:left;">
-Description
-</th>
-<th style="text-align:left;">
-Usage
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-&lt;
-</td>
-<td style="text-align:left;">
-less than
-</td>
-<td style="text-align:left;">
-x &lt; y
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-&lt;=
-</td>
-<td style="text-align:left;">
-less than or equal to
-</td>
-<td style="text-align:left;">
-x &lt;= y
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-&gt;
-</td>
-<td style="text-align:left;">
-greater than
-</td>
-<td style="text-align:left;">
-x &gt; y
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-&gt;=
-</td>
-<td style="text-align:left;">
-greater than or equal to
-</td>
-<td style="text-align:left;">
-x &gt;= y
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-==
-</td>
-<td style="text-align:left;">
-exactly equal to
-</td>
-<td style="text-align:left;">
-x == y
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-!=
-</td>
-<td style="text-align:left;">
-not equal to
-</td>
-<td style="text-align:left;">
-x != y
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-%in%
-</td>
-<td style="text-align:left;">
-group membership*
-</td>
-<td style="text-align:left;">
-x %in% y
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-is.na
-</td>
-<td style="text-align:left;">
-is missing
-</td>
-<td style="text-align:left;">
-is.na(x)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-!is.na
-</td>
-<td style="text-align:left;">
-is not missing
-</td>
-<td style="text-align:left;">
-!is.na(x)
-</td>
-</tr>
-</tbody>
-</table>
-<p>*(shortcut to using <code>|</code> repeatedly with <code>==</code>)</p>
-</div>
-</div>
-<div id="from-datacamp-chapter-2" class="section level1">
-<h1>From DataCamp Chapter 2</h1>
-<p>all <code>ggplot2</code></p>
-<ul>
-<li><code>aes(x = , y = )</code> (aesthetics)</li>
-<li><code>aes(x = , y = , color = )</code> (add color)</li>
-<li><code>aes(x = , y = , size = )</code> (add size)</li>
-<li>`+ facet_wrap(~ )` (facetting)</li>
-</ul>
-</div>
-<div id="a-scatterplot" class="section level1">
-<h1>1. A scatterplot</h1>
-<pre class="r"><code>library(ggplot2)
+[4,] 1 1          1            0
+```
+
+---
+class: middle, center, inverse
+
+#💡
+
+## Second: 
+
+## Comparisons
+
+---
+
+```r
+?Comparison
+```
+
+
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Operator &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Description &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Usage &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; &amp;lt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; less than &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x &amp;lt; y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; &amp;lt;= &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; less than or equal to &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x &amp;lt;= y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; &amp;gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; greater than &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x &amp;gt; y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; &amp;gt;= &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; greater than or equal to &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x &amp;gt;= y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; == &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; exactly equal to &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x == y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; != &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; not equal to &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x != y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; %in% &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; group membership* &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x %in% y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; is.na &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; is missing &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; is.na(x) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; !is.na &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; is not missing &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; !is.na(x) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+*(shortcut to using `|` repeatedly with `==`)
+
+---
+## Lab 02: Challenge 1 (`dplyr`)
+
+1. How many paintings (rows) are in `moma`? How many variables (columns) are in `moma`?
+1. What is the first painting acquired by MoMA? Which year? Which artist? What title?
+    - *Hint: you may want to look into `select` + `arrange`*
+1. What is the oldest painting in the collection? Which year? Which artist? What title? *(see above hint)*
+1. How many distinct artists are there?
+1. Which artist has the most paintings in the collection? How many paintings are by this artist?
+1. How many paintings are by male vs female artists?
+
+If you want more:
+1. How many artists of each gender are there?
+1. In what year were the most paintings acquired? Created?
+1. In what year was the first painting by a (solo) female artist acquired? When was that painting created? Which artist? What title? 
+
+
+
+---
+
+# From DataCamp Chapter 2
+
+all `ggplot2`
+
+- `aes(x = , y = )` (aesthetics)
+- `aes(x = , y = , color = )` (add color)
+- `aes(x = , y = , size = )` (add size)
+- `+ facet_wrap(~ )` (facetting)
+
+---
+# Old School (Challenge 2)&lt;sup&gt;1&lt;/sup&gt;
+
+- Sketch the graphics below on paper, where the `x`-axis is variable `year_created` and the `y`-axis is variable `year_acquired`
+
+
+```
+# A tibble: 4 x 4
+  painted acquired  area gender
+    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; 
+1    1980     1985     3 male  
+2    1990     1995     2 male  
+3    2000     2005     1 female
+4    2010     2015     2 female
+```
+
+&lt;!-- Copy to chalkboard/whiteboard --&gt;
+
+1. A scatter plot
+1. A scatter plot where the `color` of the points corresponds to `gender`
+1. A scatter plot where the `size` of the points corresponds to `area`
+
+.footnote[
+[1] Shamelessly borrowed with much appreciation to [Chester Ismay](https://ismayc.github.io/talks/ness-infer/slide_deck.html)
+]
+
+---
+
+# 1. A scatterplot
+
+
+```r
+library(ggplot2)
 ggplot(moma_ex, aes(painted, acquired)) + 
-  geom_point()</code></pre>
-<p>–</p>
-<p><img src="static/slides/02-slides_files/figure-html/unnamed-chunk-11-1.png" width="80%" style="display: block; margin: auto;" /></p>
-<hr />
-</div>
-<div id="color-points-by-gender" class="section level1">
-<h1>2. <code>color</code> points by <code>gender</code></h1>
-<pre class="r"><code>library(ggplot2)
+  geom_point()
+```
+--
+
+&lt;img src="02-slides_files/figure-html/unnamed-chunk-11-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+
+# 2. `color` points by `gender`
+
+
+```r
+library(ggplot2)
 ggplot(moma_ex, aes(painted, acquired, color = gender)) + 
-  geom_point()</code></pre>
-<p>–</p>
-<p><img src="static/slides/02-slides_files/figure-html/unnamed-chunk-13-1.png" width="80%" style="display: block; margin: auto;" /></p>
-<hr />
-</div>
-<div id="size-points-by-area" class="section level1">
-<h1>3. <code>size</code> points by <code>area</code></h1>
-<pre class="r"><code>library(ggplot2)
+  geom_point()
+```
+--
+
+&lt;img src="02-slides_files/figure-html/unnamed-chunk-13-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# 3. `size` points by `area`
+
+
+```r
+library(ggplot2)
 ggplot(moma_ex, aes(painted, acquired, size = area)) + 
-  geom_point()</code></pre>
-<p>–</p>
-<p><img src="static/slides/02-slides_files/figure-html/unnamed-chunk-15-1.png" width="80%" style="display: block; margin: auto;" /></p>
-<hr />
-</div>
-<div id="the-five-named-graphs" class="section level1">
-<h1><a href="http://moderndive.com/3-viz.html#FiveNG">The Five-Named Graphs</a></h1>
-<ul>
-<li>Scatterplot: <code>geom_point()</code></li>
-<li>Line graph: <code>geom_line()</code></li>
-<li>Histogram: <code>geom_histogram()</code></li>
-<li>Boxplot: <code>geom_boxplot()</code></li>
-<li>Bar graph: <code>geom_bar()</code> or <code>geom_col</code> (see <a href="../01-eda_hot_dogs.html">Lab 01</a>)</li>
-</ul>
-<p>class: inverse, middle, center</p>
-</div>
-<div id="section-1" class="section level1">
-<h1>📊</h1>
-<div id="basics-of-ggplot2-and-dplyr" class="section level2">
-<h2>Basics of <code>ggplot2</code> and <code>dplyr</code>:</h2>
-<p><a href="http://r4ds.had.co.nz/data-visualisation.html">R4DS <code>ggplot2</code> chapter</a></p>
-<p><a href="http://moderndive.com/3-viz.html">ModernDive <code>ggplot2</code> chapter</a></p>
-<p><a href="https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf">RStudio <code>ggplot2</code> Cheatsheet</a></p>
-<p><a href="http://r4ds.had.co.nz/transform.html">R4DS <code>dplyr</code> chapter</a></p>
-<p><a href="http://moderndive.com/5-wrangling.html">ModernDive <code>dplyr</code> chapter</a></p>
-<p><a href="https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf">RStudio <code>dplyr</code> Cheatsheet</a></p>
-</div>
-</div>
+  geom_point()
+```
+--
+
+&lt;img src="02-slides_files/figure-html/unnamed-chunk-15-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# [The Five-Named Graphs](http://moderndive.com/3-viz.html#FiveNG)
+
+
+- Scatterplot: `geom_point()`
+- Line graph: `geom_line()`
+- Histogram: `geom_histogram()`
+- Boxplot: `geom_boxplot()`
+- Bar graph: `geom_bar()` or `geom_col` (see [Lab 01](../01-eda_hot_dogs.html))
+
+
+
+---
+# Lab 02: Plotting Challenges
+
+Challenges 3-5 are in the [Lab 02 code-through](../02-moma.html)!
+
+https://apreshill.github.io/data-vis-labs-2018/02-moma.html
+
+---
+class: inverse, middle, center
+
+
+# 📊
+
+## Basics of `ggplot2` and `dplyr`:
+
+[R4DS `ggplot2` chapter](http://r4ds.had.co.nz/data-visualisation.html)
+
+[ModernDive `ggplot2` chapter](http://moderndive.com/3-viz.html)
+
+[RStudio `ggplot2` Cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf)
+
+[R4DS `dplyr` chapter](http://r4ds.had.co.nz/transform.html)
+
+[ModernDive `dplyr` chapter](http://moderndive.com/5-wrangling.html)
+
+[RStudio `dplyr` Cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf)
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "atelier-lakeside-light",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
