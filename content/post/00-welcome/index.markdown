@@ -2,7 +2,7 @@
 title: 'Welcome'
 subtitle: 'Introduce Yourself to R, RStudio, and Us!'
 summary: Introduce Yourself to R, RStudio, and Us!
-date: "2020-01-24"
+date: "2020-01-25"
 featured: false
 draft: false
 
@@ -14,7 +14,7 @@ image:
   placement: 2
   caption: 'Image credit: [**Allison Horst**](https://www.allisonhorst.com/)'
   focal_point: ""
-  preview_only: true
+  preview_only: yes
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.

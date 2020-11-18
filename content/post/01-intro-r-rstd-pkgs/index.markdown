@@ -14,7 +14,7 @@ image:
   placement: 2
   caption: 'Image credit: [**Robert Bye on Unsplash**](https://unsplash.com/photos/a3Mv2jJTI0s)'
   focal_point: ""
-  preview_only: true
+  preview_only: yes
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
