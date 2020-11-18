@@ -15,13 +15,13 @@
 
 [[main]]
   name = "Schedule"
-  url = "#posts"
+  url = "#schedule"
   weight = 40
 
 [[main]]
   name = "Journey"
   url = "#journey"
-  weight = 50
+  weight = 110
 
 [[main]]
   name = "About"
