@@ -31,7 +31,7 @@ links:
 - icon: magic
   icon_pack: fas
   name: slides
-  url: /slides/01-slides.html
+  url: /slides/00-slides.html
 ---
 
 Welcome! We'll see you in our first class on Monday, and please do the lab linked above before Wednesday.
