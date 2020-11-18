@@ -19,18 +19,18 @@
   weight = 40
 
 [[main]]
-  name = "Journey"
-  url = "#journey"
-  weight = 110
-
-[[main]]
   name = "About"
   url = "#about"
-  weight = 120
+  weight = 110
 
 [[main]]
   name = "Contact"
   url = "#contact"
+  weight = 120
+
+[[main]]
+  name = "Journey"
+  url = "#journey"
   weight = 130
 
 # Link to a PDF of your resume/CV from the menu.
