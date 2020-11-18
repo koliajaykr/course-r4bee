@@ -2,7 +2,7 @@
 title: 'Welcome'
 subtitle: 'Introduce Yourself to R, RStudio, and Us!'
 summary: Introduce Yourself to R, RStudio, and Us!
-date: "2018-04-02T00:00:00Z"
+date: "2020-01-24"
 featured: false
 draft: false
 
@@ -12,7 +12,7 @@ draft: false
 # Focal point options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
 image:
   placement: 2
-  caption: 'Image credit: [**Shitota Yuri on Unsplash**](https://unsplash.com/photos/p0hDztR46cw)'
+  caption: 'Image credit: [**Allison Horst**](https://www.allisonhorst.com/)'
   focal_point: ""
   preview_only: true
 
@@ -27,11 +27,11 @@ links:
 - icon: flask
   icon_pack: fas
   name: lab
-  url: /labs/00-install_name_plot.html
+#  url: /labs/00-install_name_plot.html
 - icon: magic
   icon_pack: fas
   name: slides
-  url: /slides/00-slides.html
+#  url: /slides/00-slides.html
 ---
 
-Welcome! We'll see you in our first class on Monday, and please do the lab linked above before Wednesday.
+Welcome! 

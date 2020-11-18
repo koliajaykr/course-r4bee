@@ -1,8 +1,8 @@
 ---
-title: 'Lab 02'
-subtitle: 'MoMA Museum Tour'
-summary: MoMA Museum Tour
-date: "2018-04-16T00:00:00Z"
+title: "Topic - 1"
+subtitle: "Introduction to R, RStudio & Packages"
+summary: Introduction to R, RStudio & Packages
+date: "2020-01-24"
 featured: false
 draft: false
 
@@ -27,11 +27,11 @@ links:
 - icon: flask
   icon_pack: fas
   name: lab
-  url: /labs/02-moma.html
+#  url: /labs/02-moma.html
 - icon: magic
   icon_pack: fas
   name: slides
-  url: /slides/02-slides.html
+#  url: /slides/02-slides.html
 ---
 
 ## Readings
