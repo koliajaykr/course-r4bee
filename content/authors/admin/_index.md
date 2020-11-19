@@ -40,7 +40,7 @@ bio: I teach data science using R. My research is about who, why and how people 
 social:
 - icon: envelope
   icon_pack: fas
-  link: '/#contact'  # For a direct email link, use "koliajaykumar@gmail.com".
+  link: 'koliajaykumar@gmail.com'  # For a direct email link, use "koliajaykumar@gmail.com".
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/koliajaykr
@@ -79,8 +79,10 @@ Right now lectures and practice sessions are combined. In one batch maximum thir
 
 English will be used as the medium of instruction. I can teach in Hindi as well if required.
 
-Why bee? Bee rhymes with the word beginner. The shape of R packages is like a hexagonal honeycomb. Moreover, to support the cause “save the bees”. 
-
 If you’ve any course related query or a teaching opportunity for me then I’ll be very happy 🙂 to read your email.
 
 -- [Ajay](https://ajaykoli.netlify.app/)
+
+----
+
+P.S. *Why bee? Bee rhymes with the word beginner. The shape of R packages is like a hexagonal honeycomb. Moreover, to support the cause “save the bees”.*
