@@ -12,7 +12,7 @@ draft: false
 # Focal point options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
 image:
   placement: 2
-  caption: 'Image credit: [**Danielle Navarro**](https://art.djnavarro.net/) on Unsplash'
+  caption: 'Image credit: [**Alice Dietrich**](https://unsplash.com/@alicegrace) on Unsplash'
   focal_point: ""
   preview_only: yes
 

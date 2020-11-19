@@ -6,7 +6,7 @@ date: "2020-01-24"
 
 image:
   placement: 2
-  caption: 'Image credit: [**Philip Estrada**](https://unsplash.com/@philipestrada) on Unsplash'
+  caption: 'Image credit: [**Gorilla Freak**](https://unsplash.com/@gorillafreak) on Unsplash'
   focal_point: ""
   preview_only: yes
 ---
