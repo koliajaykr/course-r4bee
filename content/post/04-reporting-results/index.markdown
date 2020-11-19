@@ -1,7 +1,7 @@
 ---
 title: "Topic - 4"
-subtitle: "Reporting Results: Using R Markdown"
-summary: "Reporting Results: Using R Markdown"
+subtitle: "Reporting Results in R"
+summary: Reporting Results in R
 date: "2020-01-24"
 
 image:
