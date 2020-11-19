@@ -14,7 +14,7 @@ role: Instructor
 #  url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: I teach data science using R. My research is about who, why and how people work with waste in India.
+bio: I teach data science using R. My research is about who, why and how people work with waste in India. `r icon::fa("envelope")` koliajaykumar@gmail.com 
 
 #interests:
 #- Artificial Intelligence
@@ -40,7 +40,7 @@ bio: I teach data science using R. My research is about who, why and how people 
 social:
 - icon: envelope
   icon_pack: fas
-  link: 'koliajaykumar@gmail.com'  # For a direct email link, use "koliajaykumar@gmail.com".
+  link: 'mailto:koliajaykumar@gmail.com\'  # For a direct email link, use
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/koliajaykr
