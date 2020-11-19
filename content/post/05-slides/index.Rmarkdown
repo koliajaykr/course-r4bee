@@ -1,7 +1,7 @@
 ---
 title: "Topic - 5"
-subtitle: "Slidecrafting using {Xaringan}"
-summary: "Slidecrafting using {Xaringan}"
+subtitle: "Slidecrafting"
+summary: Slidecrafting
 date: "2020-01-24"
 
 image:

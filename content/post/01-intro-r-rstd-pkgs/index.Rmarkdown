@@ -1,7 +1,7 @@
 ---
 title: "Topic - 1"
-subtitle: "Introduction to R, RStudio & Packages"
-summary: Introduction to R, RStudio & Packages
+subtitle: "Getting started: The basics of R"
+summary: 'Getting started: The basics of R'
 date: "2020-01-24"
 featured: false
 draft: false

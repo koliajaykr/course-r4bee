@@ -1,7 +1,7 @@
 ---
 title: 'Topic - 2'
-subtitle: 'Data Visualisation using ggplot2'
-summary: Data Visualisation using ggplot2
+subtitle: 'Data Visualisation'
+summary: Data Visualisation
 date: "2020-01-24"
 featured: false
 draft: false
