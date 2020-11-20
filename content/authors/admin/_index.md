@@ -14,7 +14,7 @@ role: Instructor
 #  url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: I teach data science using R. My research is about who, why and how people work with waste in India. `r icon::fa("envelope")` koliajaykumar@gmail.com 
+bio: I teach data science using R. My research is about who, why and how people work with waste in India. 
 
 #interests:
 #- Artificial Intelligence
