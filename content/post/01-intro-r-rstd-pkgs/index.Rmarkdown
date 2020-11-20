@@ -12,7 +12,7 @@ draft: false
 # Focal point options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
 image:
   placement: 2
-  caption: 'Image credit: [**Jan Tinneberg**](https://unsplash.com/@craft_ear) on Unsplash'
+  caption: 'Image credit: [**Alex Jones**](https://unsplash.com/@alexjones) on Unsplash'
   focal_point: ""
   preview_only: yes
 

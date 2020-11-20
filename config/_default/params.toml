@@ -48,7 +48,7 @@ local_business_type = ""
 org_name = "R4Bee"
 
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
-description = ""
+description = "A data science course using R by Ajay Koli"
 
 ############################
 ## Site Features
