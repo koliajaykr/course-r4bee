@@ -8,7 +8,7 @@ weight = 1  # Order that this section will appear.
 title = "R for Beeginners"
 
 # Hero image (optional). Enter filename of an image in the `static/media/` folder.
-hero_media = "img/poster-b5.png"
+#hero_media = "img/poster-b5.png"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -17,11 +17,11 @@ hero_media = "img/poster-b5.png"
   #   Any HTML color name or Hex value is valid.
 
   #Background color.
-  color = "black"
-  
+  color = "#FFFFFF"
+
   # Background gradient.
-  gradient_start = "#F5F4F2"
-  gradient_end = "#F5F4F2"
+  gradient_start = "#FFFFFF"
+  gradient_end = "#FFFFFF"
   
   # Background image.
   # image = ""  # Name of image in `static/media/`.
@@ -48,7 +48,7 @@ hero_media = "img/poster-b5.png"
 
 +++
 
-## An online course to start learning data science using {{< icon name="r-project" pack="fab" >}}
+## An online course to start learning <br> data science using {{< icon name="r-project" pack="fab" >}}
 
 ## Command a happy career !
 
