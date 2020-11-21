@@ -12,7 +12,7 @@ draft: false
 # Focal point options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
 image:
   placement: 2
-  caption: 'Image credit: [**Fallon Michael**](https://unsplash.com/@fallonmichaeltx) on Unsplash'
+  caption: 'Image credit: [**Andreas Fickl**](https://unsplash.com/@afafa) on Unsplash'
   focal_point: ""
   preview_only: yes
 

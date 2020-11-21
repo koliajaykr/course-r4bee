@@ -1,0 +1,82 @@
+---
+title: "Introduce Yourself <br>to R, RStudio and <br>Me!"
+subtitle: "Welcome"
+author: Ajay Koli
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["default", "assets/css/my-theme.css", "assets/css/my-fonts.css"]
+    seal: false
+    lib_dir: libs
+    nature:
+      # autoplay: 5000
+      highlightStyle: solarized-light
+      highlightLanguage: ["r", "css", "yaml"]
+      slideNumberFormat: "" 
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(collapse = TRUE,
+                      fig.retina = 3)
+library(ymlthis)
+library(tidyverse)
+library(magick)
+library(icon)
+library(xaringanExtra)
+xaringanExtra::use_tachyons()
+```
+
+layout: true
+
+<a class="footer-link" href="https://r4b.netlify.app/">r4b/share</a>
+
+```{css echo=FALSE}
+# codes to hide specific slide number
+.hide-count .remark-slide-number {
+  display: none;
+}
+```
+---
+
+class: title-slide, left, middle
+background-image: url(images/00-welcome/featured.jpg)
+background-size: cover
+
+# .white[`r rmarkdown::metadata$title`]
+
+## .orange[`r rmarkdown::metadata$subtitle`]
+
+### .white[`r rmarkdown::metadata$author`]
+
+---
+
+class: center
+
+.pull-left[
+
+# Faculty: Ajay
+
+```{r echo=FALSE, out.width="50%"}
+magick::image_read("images/00-welcome/ajay.png") 
+```
+
+### `r icon::fa("twitter")`[@koliajaykr](https://twitter.com/koliajaykr)
+### `r icon::fa("envelope")`   [koliajaykumar@gmail.com](koliajaykumar@gmail.com)
+
+]
+
+--
+
+.pull-right[
+
+# Why R? #rstats
+
+```{r echo=FALSE}
+magick::image_read("images/00-welcome/why-r.png") 
+```
+
+]
