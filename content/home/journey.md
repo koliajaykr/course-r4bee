@@ -61,6 +61,6 @@ date_format = "Jan 2006"
   company_url = ""
   location = "Online"
   date_start = "2020-11-11"
-  date_end = ""
-  description = """geographically diverse group"""   
+  date_end = "2020-11-21"
+  description = """my mentor taught me more"""   
 +++

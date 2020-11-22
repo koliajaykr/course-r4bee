@@ -1,0 +1,217 @@
+---
+title: "The <br>Basics <br>of R"
+subtitle: "Getting started"
+author: Ajay Koli
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["default", "assets/css/my-theme.css", "assets/css/my-fonts.css"]
+    seal: false
+    lib_dir: libs
+    nature:
+      # autoplay: 5000
+      highlightStyle: solarized-light
+      highlightLanguage: ["r", "css", "yaml"]
+      slideNumberFormat: "" 
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(collapse = TRUE,
+                      fig.retina = 3,
+                      echo = FALSE)
+library(ymlthis)
+library(tidyverse)
+library(magick)
+library(icon)
+library(xaringanExtra)
+xaringanExtra::use_tachyons()
+```
+
+layout: true
+
+<a class="footer-link" href="https://r4b.netlify.app/">r4b/share</a>
+
+```{css echo=FALSE}
+# codes to hide specific slide number
+.hide-count .remark-slide-number {
+  display: none;
+}
+```
+
+---
+
+class: title-slide, left, middle
+background-image: url(images/01-basics/featured.jpg)
+background-size: cover
+
+# .black[`r rmarkdown::metadata$title`]
+
+## .hot-pink[`r rmarkdown::metadata$subtitle`]
+
+# .black[`r rmarkdown::metadata$author`]
+
+---
+
+.pull-left[
+
+## .center[R as a big calculator]
+
+```{r calci1, eval=FALSE, echo=TRUE}
+1
+```
+
+]
+
+.pull-right[
+
+## .center[Outcome]
+
+```{r ref.label="calci1", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+## .center[R as a big calculator]
+
+```{r calci2, eval=FALSE, echo=TRUE}
+1
+
+1 + 1
+```
+
+]
+
+.pull-right[
+
+## .center[Outcome]
+
+```{r ref.label="calci2", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+## .center[R as a big calculator]
+
+```{r calci3, eval=FALSE, echo=TRUE}
+1
+
+1 + 1
+
+34 - 40
+```
+
+]
+
+.pull-right[
+
+## .center[Outcome]
+
+```{r ref.label="calci3", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+## .center[R as a big calculator]
+
+```{r calci4, eval=FALSE, echo=TRUE}
+1
+
+1 + 1
+
+34 - 40
+
+5 * 4
+```
+
+]
+
+.pull-right[
+
+## .center[Outcome]
+
+```{r ref.label="calci4", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+## .center[R as a big calculator]
+
+```{r calci5, eval=FALSE, echo=TRUE}
+1
+
+1 + 1
+
+34 - 40
+
+5 * 4
+
+16 / 2
+```
+
+]
+
+.pull-right[
+
+## .center[Outcome]
+
+```{r ref.label="calci5", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+## .center[R as a big calculator]
+
+```{r calci6, eval=FALSE, echo=TRUE}
+1
+
+1 + 1
+
+34 - 40
+
+5 * 4
+
+16 / 2
+
+0.2 + 0.8
+```
+
+]
+
+.pull-right[
+
+## .center[Outcome]
+
+```{r ref.label="calci6", echo=FALSE}
+
+```
+
+]

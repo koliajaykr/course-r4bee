@@ -1,8 +1,8 @@
 ---
 title: "Introduce Yourself <br>to R, RStudio and <br>Me!"
 subtitle: "Welcome"
-author: Ajay Koli
-date: "`r Sys.Date()`"
+author: Ajay Koli | India
+date: "`r format(Sys.Date(), '%B %e, %Y')`"
 output:
   xaringan::moon_reader:
     css: ["default", "assets/css/my-theme.css", "assets/css/my-fonts.css"]
@@ -12,7 +12,7 @@ output:
       # autoplay: 5000
       highlightStyle: solarized-light
       highlightLanguage: ["r", "css", "yaml"]
-      slideNumberFormat: "" 
+      slideNumberFormat: "%current%/%total%" 
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
@@ -21,7 +21,8 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(collapse = TRUE,
-                      fig.retina = 3)
+                      fig.retina = 3,
+                      echo = FALSE)
 library(ymlthis)
 library(tidyverse)
 library(magick)
@@ -42,7 +43,7 @@ layout: true
 ```
 ---
 
-class: title-slide, left, middle
+class: title-slide, left, middle, hide-count
 background-image: url(images/00-welcome/featured.jpg)
 background-size: cover
 
@@ -56,27 +57,298 @@ background-size: cover
 
 class: center
 
-.pull-left[
+# Hello! Ajay here.
 
-# Faculty: Ajay
-
-```{r echo=FALSE, out.width="50%"}
+```{r echo=FALSE, out.width="35%"}
 magick::image_read("images/00-welcome/ajay.png") 
 ```
 
-### `r icon::fa("twitter")`[@koliajaykr](https://twitter.com/koliajaykr)
-### `r icon::fa("envelope")`   [koliajaykumar@gmail.com](koliajaykumar@gmail.com)
+`r icon::fa("twitter")`[@koliajaykr](https://twitter.com/koliajaykr) <br> `r icon::fa("envelope")`   [koliajaykumar@gmail.com](koliajaykumar@gmail.com)
 
-]
+---
 
---
-
-.pull-right[
+class: center
 
 # Why R? #rstats
 
-```{r echo=FALSE}
+```{r  out.width="50%"}
 magick::image_read("images/00-welcome/why-r.png") 
 ```
 
+.footnote[
+🙈 me ["Why R"](https://youtu.be/VBxnFdJFD7Y) on YouTube.
 ]
+
+---
+
+background-image: url("images/00-welcome/grow.png")
+background-size: contain
+background-color: #F5F4F2
+
+# .center[You are not alone !]
+
+.footnote[
+Source: https://education.rstudio.com
+]
+
+---
+class: center
+background-image: url("images/00-welcome/data-science.png")
+background-size: 70%
+background-position: center, middle
+
+# Program/Framework/Model in R
+
+.footnote[
+Source: [from Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+class: center
+background-image: url("images/00-welcome/data-science-wrangle.png")
+background-size: 70%
+background-position: center, middle
+
+# Program in R: Data Wrangling
+
+.footnote[
+Source: [from Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+class: center
+background-image: url("images/00-welcome/data-science-communicate.png")
+background-size: 70%
+background-position: center, middle
+
+# Program in R: Data Visualisation
+
+.footnote[
+Source: [from Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+class: center
+background-image: url("images/00-welcome/data-science-model.png")
+background-size: 70%
+background-position: center, middle
+
+# Program in R: Modeling
+
+.footnote[
+Source: [from Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+class: center
+background-image: url("images/00-welcome/data-science-explore.png")
+background-size: 70%
+background-position: center, middle
+
+# Program in R: Data Exploration
+
+.footnote[
+Source: [from Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+class: center
+background-image: url("images/00-welcome/data-science-program.png")
+background-size: 70%
+background-position: center, middle
+
+# Program in R
+
+.footnote[
+Source: [from Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+
+class: left, middle, inverse
+background-image: url("images/00-welcome/r-logo.png")
+background-size: 25% 
+background-position: 95% 50%
+
+# Download and Install
+ `r icon::fa("link")` https://www.r-project.org/
+
+---
+
+class: center
+
+# R Console "`>`"
+
+```{r echo=FALSE, out.width="42%"}
+magick::image_read("images/00-welcome/r-console.png") 
+```
+
+---
+
+class: center
+
+# Quit R Console
+
+```{r echo=FALSE, out.width="42%"}
+magick::image_read("images/00-welcome/r-quit.png") 
+```
+
+---
+
+background-image: url("images/00-welcome/r-logo.png")
+background-size: 10%
+background-position: 92% 5%
+
+# About R:
+
+- "R is a language and environment for statistical computing and graphics."
+
+--
+
+- "S language & Bell Laboratries"
+
+--
+
+- "R, like S, is designed around a true computer language, and it allows users to add additional functionality by defining new functions." 
+
+.footnote[
+Source: https://www.r-project.org/about.html
+]
+
+
+
+---
+class: left, middle, inverse
+background-image: url("images/00-welcome/rstd-logo.png")
+background-size: 35% 
+background-position: 90% 50%
+
+# Download and Install
+`r icon::fa("link")` https://rstudio.com/
+
+---
+background-image: url("images/00-welcome/rstd-logo.png")
+background-size: 20%
+background-position: 95% 5%
+
+# About RStudio:
+
+- "RStudio provides **free and open source** tools for R and enterprise-ready professional software for data science teams to develop and share their work at scale."
+
+--
+
+- **Mission:** "RStudio’s mission is to create free and open-source software for data science, scientific research, and technical communication."
+
+.footnote[
+Source: https://rstudio.com/about/ 
+]
+
+---
+
+background-image: url("images/00-welcome/rstd-ide.png")
+background-size: 60%
+background-position: 50% 70%
+class: center
+
+# RStudio IDE "`>`"
+
+---
+
+class: center
+
+.pull-left[
+
+## imagine **RStudio** as a stylish car
+
+```{r echo=FALSE, out.width=""}
+image_read("images/00-welcome/car.jpg")
+```
+
+]
+
+.pull-right[
+
+## and **R** as its powerful engine
+
+```{r echo=FALSE, out.width="50%"}
+image_read("images/00-welcome/engine.jpg")
+```
+]
+
+.footnote[
+Source: [Photo Boards](https://unsplash.com/@aplaceforcreation) & [Erik Mclean](https://unsplash.com/@introspectivedsgn)
+]
+
+---
+
+# 🧠 Challenges:
+
+--
+
+##- Practice Sessions 👨🏽‍💻👩‍💻
+
+--
+
+##- Assignments 📑
+
+---
+
+class: inverse, center, middle
+
+# .big-text[Find Help ! 🐶]
+
+---
+
+background-image: url("images/00-welcome/rstd-help.png")
+background-size: 70%
+background-position: 50% 70%
+class: center
+
+# Find Help: [RStudio Community](https://community.rstudio.com/)
+
+---
+
+background-image: url("images/00-welcome/github-issue.png")
+background-size: 70%
+background-position: 50% 70%
+class: center
+
+# Find Help: [GitHub Issues](https://github.com/)
+
+---
+
+background-image: url("images/00-welcome/stackoverflow.png")
+background-size: 70%
+background-position: 50% 70%
+class: center
+
+# Find Help: [stackoverflow](https://stackoverflow.com/)
+
+---
+
+background-image: url("images/00-welcome/twt-help.png")
+background-size: 35%
+background-position: 50% 70%
+class: center
+
+# Find Help: [Twitter](https://twitter.com/home)
+
+---
+
+class: hide-count
+
+# Feedback about this course
+
+- Suggestions, query, doubts can be shared during the sessions.
+
+- At the end of the course, a formal feedback about the course will be taken using the Google Form link.
+
+---
+
+class: center, middle, inverse
+
+### Next Session
+
+### .orange[Topic - 1]
+
+# The Basics of R

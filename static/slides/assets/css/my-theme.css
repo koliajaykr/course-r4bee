@@ -1,3 +1,5 @@
+/* these CSS codes are work Allison Hill https://github.com/rstudio-education/sharing-short-notice */
+
 .remark-slide-content p, ul, ol, li {
   font-size: 1.6rem;
 }
@@ -34,8 +36,8 @@ pre {
   border-radius: 0px; /*undo rounded corners*/
 }
 
-pre code { 
-  background: none; 
+pre code {
+  background: none;
   font-size: 0.8rem;
 }
 
@@ -76,19 +78,19 @@ a:hover, a:active, a:focus {
   font-size: 1.25em;
 }
 
-.remark-inline-code { 
+.remark-inline-code {
   color: #E7553C;
   font-size: 1em;
 }
 
-.remark-code-line-highlighted { 
-  background-color:  #bed3eca1; 
+.remark-code-line-highlighted {
+  background-color:  #bed3eca1;
 }
 
 /* darken up code and results */
 
 .hljs-solarized-light .hljs {
-  color: #2B3D43; 
+  color: #2B3D43;
 }
 
 .inverse {
@@ -349,8 +351,8 @@ h1#pop-quiz:after {
   background-color: #6272a4!important;
 }
 
-.codedrop .remark-code-line-highlighted { 
-  background-color:  #8be9fdbf; 
+.codedrop .remark-code-line-highlighted {
+  background-color:  #8be9fdbf;
 }
 
 /* darken dracula comments */
@@ -393,8 +395,8 @@ h1#pop-quiz:after {
   padding-bottom: 1em;
   text-transform: uppercase;
   text-align: center;
-  text-shadow: 1px 1px #fff, 
-               2px 2px #f1fa8c, 
+  text-shadow: 1px 1px #fff,
+               2px 2px #f1fa8c,
                3px 3px #8be9fd;
 }
 
@@ -427,8 +429,8 @@ h1#pop-quiz:after {
   padding-bottom: 1em;
   text-transform: lowercase;
   text-align: center;
-  text-shadow: 1px 1px #fff, 
-               2px 2px #FECC98, 
+  text-shadow: 1px 1px #fff,
+               2px 2px #FECC98,
                3px 3px #FD9BB4;
 }
 
@@ -507,7 +509,7 @@ h4 {
 }
 
 .freight-slide {
-  background-image: 
+  background-image:
     linear-gradient(
       rgba(59, 66, 69, .8),
       rgba(59, 66, 69, .8)
