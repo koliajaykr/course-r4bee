@@ -24,14 +24,14 @@ image:
 projects: []
 
 links:
-- icon: flask
-  icon_pack: fas
-  name: lab
+# - icon: flask
+#   icon_pack: fas
+#   name: lab
 #  url: /labs/02-moma.html
 - icon: magic
   icon_pack: fas
   name: slides
-#  url: /slides/02-slides.html
+  url: /slides/01-r-basics.html
 ---
 
 ## Readings

@@ -62,5 +62,5 @@ date_format = "Jan 2006"
   location = "Online"
   date_start = "2020-11-11"
   date_end = "2020-11-21"
-  description = """my mentor taught me more"""   
+  description = """recevied important critical feedback for improvement"""   
 +++

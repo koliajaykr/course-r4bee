@@ -90,20 +90,28 @@ background-position: center bottom
 ---
 
 background-image: url("images/01-basics/project-logo.png")
-background-size: 35%
+background-size: 30%
 background-position: right center
 
 # Using RStudio Projects
 
+- "to divide your work into multiple contexts, each with their own:         
+
 --
 
-- "to divide your work into multiple contexts, <br>each with their own:            
   - working directory, 
+  
+--
+  
   - workspace, 
+  
+--
+  
   - history, and 
+  
+--
+  
   - source documents."
-
-
 
 .footnote[
 
@@ -113,56 +121,82 @@ Source: [RStudio Support](https://support.rstudio.com/hc/en-us/articles/20052620
 
 ---
 
-.pull-left[
-```{r echo=FALSE, out.width="73%"}
-image_read("images/01-basics/rstd-proj-1.png") %>% 
-  image_border("skyblue", "15x15")
-```
-]
+class: center
+background-image: url("images/01-basics/r-projects.jpg")
+background-size: 70%
+background-position: 50% 80%
 
---
+# Create R Projects in 4 Steps:
 
-.pull-left[
-
-```{r echo=FALSE, out.width="73%"}
-image_read("images/01-basics/rstd-proj-2.png") %>% 
-  image_border("skyblue", "15x15")
-```
-
-]
-
-
---
-
-.pull-left[
-
-```{r echo=FALSE, out.width="73%"}
-image_read("images/01-basics/rstd-proj-3.png") %>% 
-  image_border("skyblue", "15x15")
-```
-
-]
-
---
-
-.pull-left[
-
-```{r echo=FALSE, out.width="73%"}
-image_read("images/01-basics/rstd-proj-4.png") %>% 
-  image_border("skyblue", "15x15")
-```
-
+.footnote[
+Img: [Allison Horst](https://www.allisonhorst.com/)
 ]
 
 ---
 
 class: center
+background-image: url("images/01-basics/rstd-proj-1.png")
+background-size: 50%
+background-position: 50% 80%
 
-background-image: url("images/01-basics/rstd-proj-name.png")
+# Create R Projects in 4 Steps:
+
+---
+
+class: center
+background-image: url("images/01-basics/rstd-proj-2.png")
+background-size: 50%
+background-position: 50% 80%
+
+# Create R Projects in 4 Steps:
+
+---
+
+class: center
+background-image: url("images/01-basics/rstd-proj-3.png")
+background-size: 50%
+background-position: 50% 80%
+
+# Create R Projects in 4 Steps:
+
+---
+
+class: center
+background-image: url("images/01-basics/rstd-proj-4.png")
+background-size: 50%
+background-position: 50% 80%
+
+# Create R Projects in 4 Steps:
+
+---
+
+class: center
+
+background-image: url("images/01-basics/rstd-project-open.png")
 background-size: 70%
 background-position: center bottom
 
-# RStudio Project
+# Open RStudio Project
+
+---
+
+class: center
+
+background-image: url("images/01-basics/rstd-project-open1.png")
+background-size: 70%
+background-position: center bottom
+
+# Open RStudio Project
+
+---
+
+class: center
+
+background-image: url("images/01-basics/rstd-project-open2.png")
+background-size: 70%
+background-position: center bottom
+
+# Open RStudio Project
 
 ---
 
@@ -172,13 +206,13 @@ background-image: url("images/01-basics/script-new.png")
 background-size: 70%
 background-position: center bottom
 
-# New R Script
+# File $\rightarrow$ New File $\rightarrow$ R Script
 
 ---
 
 class: center
 
-background-image: url("images/01-basics/script-new-saved.png")
+background-image: url("images/01-basics/script-saved.png")
 background-size: 70%
 background-position: center bottom
 
@@ -188,18 +222,66 @@ background-position: center bottom
 
 class: center
 
-background-image: url("images/01-basics/script-run.png")
+background-image: url("images/01-basics/script-to-console1.png")
 background-size: 70%
 background-position: center bottom
 
-## R Script $\xrightarrow{\text{ctrl + enter}}$ Processed in Console 
+# **Script** file for writing the R codes 
 
+
+---
+
+class: center
+
+background-image: url("images/01-basics/script-to-console2.png")
+background-size: 70%
+background-position: center bottom
+
+# Console to process the codes 
+
+---
+
+class: center
+
+background-image: url("images/01-basics/script-to-console3.png")
+background-size: 70%
+background-position: center bottom
+
+# R **Script** is processed in **Console**
+
+---
+
+class: center
+
+background-image: url("images/01-basics/script-to-console4.png")
+background-size: 70%
+background-position: center bottom
+
+# R **Script** is processed in **Console**
+
+---
+
+# How to run R script codes? 🤔
+
+--
+
+##- To run the current line or selection: `ctrl + enter`
+
+--
+
+##- To run the active document script: `ctrl + shift + enter`  
+
+---
+
+class: inverse, center, middle
+
+# .big-text[R Script 📝 📜]
 
 ---
 
 .pull-left[
 
-## .center[R as a big calculator]
+# .center[R as calculator]
 
 ```{r calci1, eval=FALSE, echo=TRUE}
 1
@@ -209,7 +291,7 @@ background-position: center bottom
 
 .pull-right[
 
-## .center[Console output]
+# .center[Console output]
 
 ```{r ref.label="calci1", echo=FALSE}
 
@@ -221,7 +303,7 @@ background-position: center bottom
 
 .pull-left[
 
-## .center[R as a big calculator]
+# .center[R as calculator]
 
 ```{r calci2, eval=FALSE, echo=TRUE}
 1
@@ -233,7 +315,7 @@ background-position: center bottom
 
 .pull-right[
 
-## .center[Console output]
+# .center[Console output]
 
 ```{r ref.label="calci2", echo=FALSE}
 
@@ -245,7 +327,7 @@ background-position: center bottom
 
 .pull-left[
 
-## .center[R as a big calculator]
+# .center[R as calculator]
 
 ```{r calci3, eval=FALSE, echo=TRUE}
 1
@@ -259,7 +341,7 @@ background-position: center bottom
 
 .pull-right[
 
-## .center[Console output]
+# .center[Console output]
 
 ```{r ref.label="calci3", echo=FALSE}
 
@@ -271,7 +353,7 @@ background-position: center bottom
 
 .pull-left[
 
-## .center[R as a big calculator]
+# .center[R as calculator]
 
 ```{r calci4, eval=FALSE, echo=TRUE}
 1
@@ -287,7 +369,7 @@ background-position: center bottom
 
 .pull-right[
 
-## .center[Console output]
+# .center[Console output]
 
 ```{r ref.label="calci4", echo=FALSE}
 
@@ -299,7 +381,7 @@ background-position: center bottom
 
 .pull-left[
 
-## .center[R as a big calculator]
+# .center[R as calculator]
 
 ```{r calci5, eval=FALSE, echo=TRUE}
 1
@@ -317,7 +399,7 @@ background-position: center bottom
 
 .pull-right[
 
-## .center[Console output]
+# .center[Console output]
 
 ```{r ref.label="calci5", echo=FALSE}
 
@@ -329,7 +411,7 @@ background-position: center bottom
 
 .pull-left[
 
-## .center[R as a big calculator]
+# .center[R as calculator]
 
 ```{r calci6, eval=FALSE, echo=TRUE}
 1
@@ -349,7 +431,7 @@ background-position: center bottom
 
 .pull-right[
 
-## .center[Console output]
+# .center[Console output]
 
 ```{r ref.label="calci6", echo=FALSE}
 
@@ -361,7 +443,7 @@ background-position: center bottom
 
 .pull-left[
 
-## .center[R as a big calculator]
+# .center[R as calculator]
 
 ```{r calci7, eval=FALSE, echo=TRUE}
 1
@@ -376,14 +458,18 @@ background-position: center bottom
 
 0.2 + 0.8
 
-# we did some maths
+3 > 7
+
+3 == 3
+
+3 < 5
 ```
 
 ]
 
 .pull-right[
 
-## .center[Console output]
+# .center[Console output]
 
 ```{r ref.label="calci7", echo=FALSE}
 
@@ -401,24 +487,27 @@ class: inverse
 
 ---
 
-# R Functions
+class: inverse, class, middle
 
-- "A function, in a programming environment, is a set of instructions. A programmer builds a function to .red[avoid repeating the same task], or reduce complexity."
+# .big-text[R Function 🪅]
+
+
+---
+
+# R Function
+
+- "A function, in a programming environment, is **a set of instructions**. A programmer builds a function to .b[avoid repeating the same task], or reduce complexity."
 
 --
 
 .pull-left[
 
-## .center[R code]
+## .center[R function]
 
 ```{r func1, eval=FALSE, echo=TRUE}
-# writing comments is optional
-# but
-# it is considered as a 
-# good habit to remember what
-# our code does 
-
 sqrt(9)
+
+round(9.1565, 2)
 ```
 
 ]
@@ -436,9 +525,11 @@ sqrt(9)
 ---
 
 class: center
+background-image: url("images/01-basics/function.png")
+background-size: 80%
+background-position: 60% 70%
 
-background-image: url("images/01-basics/fun-anatomy.png")
-background-size: cover
+# Structure of R function
 
 ---
 
