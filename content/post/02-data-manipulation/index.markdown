@@ -1,7 +1,7 @@
 ---
 title: "Topic - 2"
-subtitle: "Data Manipulation"
-summary: Data Manipulation
+subtitle: "Data Wrangling"
+summary: Data Wrangling
 date: "2020-01-24"
 
 image:

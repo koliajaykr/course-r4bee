@@ -1,7 +1,7 @@
 ---
 title: "Topic - 1"
-subtitle: "Getting started: The basics of R"
-summary: 'Getting started: The basics of R'
+subtitle: "Getting Started: The Basics of R"
+summary: 'Getting Started: The Basics of R'
 date: "2020-01-24"
 featured: false
 draft: false

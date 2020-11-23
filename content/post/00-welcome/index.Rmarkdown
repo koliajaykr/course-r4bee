@@ -1,7 +1,7 @@
 ---
 title: 'Welcome'
-subtitle: 'Introduce Yourself to R, RStudio, and Me!'
-summary: Introduce Yourself to R, RStudio, and Me!
+subtitle: 'Introduce Yourself to R, RStudio, Packages and Me!'
+summary: Introduce Yourself to R, RStudio, Packages and Me!
 date: "2020-01-25"
 featured: false
 draft: false

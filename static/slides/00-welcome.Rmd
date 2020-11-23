@@ -1,5 +1,5 @@
 ---
-title: "Introduce Yourself <br>to R, RStudio and <br>Me!"
+title: "Introduce Yourself <br>to R, RStudio, Packages <br>and Me!"
 subtitle: "Welcome"
 author: Ajay Koli | India
 date: "`r format(Sys.Date(), '%B %e, %Y')`"
@@ -12,7 +12,7 @@ output:
       # autoplay: 5000
       highlightStyle: solarized-light
       highlightLanguage: ["r", "css", "yaml"]
-      slideNumberFormat: "%current%/%total%" 
+      slideNumberFormat: " " 
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
@@ -69,7 +69,7 @@ magick::image_read("images/00-welcome/ajay.png")
 
 class: center
 
-# Why R? #rstats
+# Why R?
 
 ```{r  out.width="50%"}
 magick::image_read("images/00-welcome/why-r.png") 
@@ -88,7 +88,7 @@ background-color: #F5F4F2
 # .center[You are not alone !]
 
 .footnote[
-Source: https://education.rstudio.com
+Source: [RStudio Education](https://education.rstudio.com)
 ]
 
 ---
@@ -97,10 +97,10 @@ background-image: url("images/00-welcome/data-science.png")
 background-size: 70%
 background-position: center, middle
 
-# Program/Framework/Model in R
+# Program in R
 
 .footnote[
-Source: [from Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
 ]
 
 ---
@@ -112,7 +112,7 @@ background-position: center, middle
 # Program in R: Data Wrangling
 
 .footnote[
-Source: [from Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
 ]
 
 ---
@@ -124,7 +124,7 @@ background-position: center, middle
 # Program in R: Data Visualisation
 
 .footnote[
-Source: [from Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
 ]
 
 ---
@@ -136,7 +136,7 @@ background-position: center, middle
 # Program in R: Modeling
 
 .footnote[
-Source: [from Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
 ]
 
 ---
@@ -145,10 +145,10 @@ background-image: url("images/00-welcome/data-science-explore.png")
 background-size: 70%
 background-position: center, middle
 
-# Program in R: Data Exploration
+# Program in R: Exploratory Analysis
 
 .footnote[
-Source: [from Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
 ]
 
 ---
@@ -160,7 +160,7 @@ background-position: center, middle
 # Program in R
 
 .footnote[
-Source: [from Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
 ]
 
 ---
@@ -171,7 +171,26 @@ background-size: 25%
 background-position: 95% 50%
 
 # Download and Install
- `r icon::fa("link")` https://www.r-project.org/
+
+.orange[ `r icon::fa("link")` https://www.r-project.org/]
+
+---
+
+# About `r icon::fa("r-project")`:
+
+- "R is a language and environment for statistical computing and graphics."
+
+--
+
+- "S language & Bell Laboratries"
+
+--
+
+- "R, like S, is designed around a true computer language, and it allows users to add additional functionality by defining new functions." 
+
+.footnote[
+Source: [R Project](https://www.r-project.org/about.html)
+]
 
 ---
 
@@ -193,43 +212,19 @@ class: center
 magick::image_read("images/00-welcome/r-quit.png") 
 ```
 
----
-
-background-image: url("images/00-welcome/r-logo.png")
-background-size: 10%
-background-position: 92% 5%
-
-# About R:
-
-- "R is a language and environment for statistical computing and graphics."
-
---
-
-- "S language & Bell Laboratries"
-
---
-
-- "R, like S, is designed around a true computer language, and it allows users to add additional functionality by defining new functions." 
-
-.footnote[
-Source: https://www.r-project.org/about.html
-]
-
 
 
 ---
 class: left, middle, inverse
-background-image: url("images/00-welcome/rstd-logo.png")
+background-image: url("images/00-welcome/RStudio-Logo-White.png")
 background-size: 35% 
 background-position: 90% 50%
 
 # Download and Install
-`r icon::fa("link")` https://rstudio.com/
+
+.orange[`r icon::fa("link")` https://rstudio.com/]
 
 ---
-background-image: url("images/00-welcome/rstd-logo.png")
-background-size: 20%
-background-position: 95% 5%
 
 # About RStudio:
 
@@ -237,10 +232,10 @@ background-position: 95% 5%
 
 --
 
-- **Mission:** "RStudio’s mission is to create free and open-source software for data science, scientific research, and technical communication."
+- "RStudio’s **mission** is to create free and open-source software for data science, scientific research, and technical communication."
 
 .footnote[
-Source: https://rstudio.com/about/ 
+Source: [RStudio](https://rstudio.com/about/)
 ]
 
 ---
@@ -258,7 +253,7 @@ class: center
 
 .pull-left[
 
-## imagine **RStudio** as a stylish car
+## Imagine ***RStudio*** as a stylish car ...
 
 ```{r echo=FALSE, out.width=""}
 image_read("images/00-welcome/car.jpg")
@@ -266,9 +261,11 @@ image_read("images/00-welcome/car.jpg")
 
 ]
 
+--
+
 .pull-right[
 
-## and **R** as its powerful engine
+## and ***R*** as its powerful engine.
 
 ```{r echo=FALSE, out.width="50%"}
 image_read("images/00-welcome/engine.jpg")
@@ -276,20 +273,111 @@ image_read("images/00-welcome/engine.jpg")
 ]
 
 .footnote[
-Source: [Photo Boards](https://unsplash.com/@aplaceforcreation) & [Erik Mclean](https://unsplash.com/@introspectivedsgn)
+Image source: [Photo Boards](https://unsplash.com/@aplaceforcreation) & [Erik Mclean](https://unsplash.com/@introspectivedsgn)
 ]
 
 ---
 
-# 🧠 Challenges:
+class: inverse, middle, center
+
+# .big-text[Packages 📦]
+
+---
+
+# R Packages:
+
+- "An R package is a **collection** of functions, data, and documentation that extends the capabilities of base R. Using packages is **key** to the successful use of R."
 
 --
 
-##- Practice Sessions 👨🏽‍💻👩‍💻
+- [Quick list of useful R packages](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages) by Garrett Grolemund on Aug 21, 2020
+
+.footnote[
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+
+class: center
+
+.pull-left[
+
+## Install package once
+
+```{r echo=FALSE, out.width="55%"}
+image_read("images/00-welcome/library.jpg")
+```
+
+]
 
 --
 
-##- Assignments 📑
+.pull-right[
+
+## use it for forever.
+
+```{r echo=FALSE, out.width="65%"}
+image_read("images/00-welcome/book.jpg")
+```
+
+]
+
+.footnote[
+
+Image credit: [Jon Tyson](https://unsplash.com/photos/kGUmNEYaSMY) & [Clay Banks](https://unsplash.com/photos/GX8KBbVmC6c)
+
+]
+
+---
+
+class: center
+
+.pull-left[
+
+## Install package once
+
+```{r echo=FALSE, out.width="60%"}
+image_read("images/00-welcome/bulb.jpg")
+```
+
+]
+
+--
+
+.pull-right[
+
+## use it for forever.
+
+```{r echo=FALSE, out.width="65%"}
+image_read("images/00-welcome/switch.jpg")
+```
+
+]
+
+.footnote[
+
+Image credit: [rawkkim](https://images.unsplash.com/photo-1536238187740-bfc4ba690aeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1004&q=80) & [Heeren Darji](https://images.unsplash.com/photo-1590327813360-fdbca9ec1cc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80)
+
+]
+
+
+---
+
+class: inverse, center, middle
+
+# .big-text[Challenges! 🤯]
+
+---
+
+# Challenges:
+
+--
+
+##-  👨🏽‍💻👩‍💻 Practice exercies during each session
+
+--
+
+##- 📚 Homework assignments 
 
 ---
 
@@ -331,17 +419,31 @@ background-size: 35%
 background-position: 50% 70%
 class: center
 
-# Find Help: [Twitter](https://twitter.com/home)
+# Find Help: [Twitter](https://twitter.com/home) #rstats
+
+---
+
+class: inverse, center, middle
+
+# .big-text[Feedback ! 🤩]
 
 ---
 
 class: hide-count
 
-# Feedback about this course
+# Your feedback
 
-- Suggestions, query, doubts can be shared during the sessions.
+- ⭐️ on [GitHub](https://github.com/koliajaykr/course-r4bee)
 
-- At the end of the course, a formal feedback about the course will be taken using the Google Form link.
+- 📝 on Google Form at the end of the course
+
+- 👨🏼‍🏫 Any time during the sessions.
+
+---
+
+class: center, middle
+
+# .big-text[Q n A 🙋🏼‍♂️🙋🏽‍♀️]
 
 ---
 
@@ -351,4 +453,4 @@ class: center, middle, inverse
 
 ### .orange[Topic - 1]
 
-# The Basics of R
+# Getting Started: The Basics of R

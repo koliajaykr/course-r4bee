@@ -1,6 +1,6 @@
 ---
-title: "The <br>Basics <br>of R"
-subtitle: "Getting started"
+title: "Getting started: The Basics of R"
+subtitle: "Topic - 1"
 author: Ajay Koli
 date: "`r Sys.Date()`"
 output:
@@ -12,7 +12,7 @@ output:
       # autoplay: 5000
       highlightStyle: solarized-light
       highlightLanguage: ["r", "css", "yaml"]
-      slideNumberFormat: "" 
+      #slideNumberFormat: "" 
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
@@ -22,7 +22,7 @@ output:
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(collapse = TRUE,
                       fig.retina = 3,
-                      echo = FALSE)
+                      comment = "")
 library(ymlthis)
 library(tidyverse)
 library(magick)
@@ -35,7 +35,7 @@ layout: true
 
 <a class="footer-link" href="https://r4b.netlify.app/">r4b/share</a>
 
-```{css echo=FALSE}
+```{css side-hie, echo=FALSE}
 # codes to hide specific slide number
 .hide-count .remark-slide-number {
   display: none;
@@ -44,15 +44,156 @@ layout: true
 
 ---
 
-class: title-slide, left, middle
+class: title-slide, center, bottom
 background-image: url(images/01-basics/featured.jpg)
-background-size: cover
+background-size: 50%
+background-position: 50% 25%
+background-color: #FFFFFF
 
-# .black[`r rmarkdown::metadata$title`]
+# `r rmarkdown::metadata$title`
 
-## .hot-pink[`r rmarkdown::metadata$subtitle`]
+## .orange[`r rmarkdown::metadata$subtitle`]
 
-# .black[`r rmarkdown::metadata$author`]
+### `r rmarkdown::metadata$author`
+
+---
+
+class: center
+
+background-image: url("images/01-basics/rstd-proj.png")
+background-size: 70%
+background-position: center bottom
+
+# Open RStudio
+
+---
+
+class: center
+
+background-image: url("images/01-basics/rstd-proj-none.png")
+background-size: 70%
+background-position: center bottom
+
+# Open RStudio
+
+
+---
+
+class: center
+
+background-image: url("images/01-basics/rstd-proj-folders.png")
+background-size: 70%
+background-position: center bottom
+
+# Open RStudio
+
+---
+
+background-image: url("images/01-basics/project-logo.png")
+background-size: 35%
+background-position: right center
+
+# Using RStudio Projects
+
+--
+
+- "to divide your work into multiple contexts, <br>each with their own:            
+  - working directory, 
+  - workspace, 
+  - history, and 
+  - source documents."
+
+
+
+.footnote[
+
+Source: [RStudio Support](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) 
+
+]
+
+---
+
+.pull-left[
+```{r echo=FALSE, out.width="73%"}
+image_read("images/01-basics/rstd-proj-1.png") %>% 
+  image_border("skyblue", "15x15")
+```
+]
+
+--
+
+.pull-left[
+
+```{r echo=FALSE, out.width="73%"}
+image_read("images/01-basics/rstd-proj-2.png") %>% 
+  image_border("skyblue", "15x15")
+```
+
+]
+
+
+--
+
+.pull-left[
+
+```{r echo=FALSE, out.width="73%"}
+image_read("images/01-basics/rstd-proj-3.png") %>% 
+  image_border("skyblue", "15x15")
+```
+
+]
+
+--
+
+.pull-left[
+
+```{r echo=FALSE, out.width="73%"}
+image_read("images/01-basics/rstd-proj-4.png") %>% 
+  image_border("skyblue", "15x15")
+```
+
+]
+
+---
+
+class: center
+
+background-image: url("images/01-basics/rstd-proj-name.png")
+background-size: 70%
+background-position: center bottom
+
+# RStudio Project
+
+---
+
+class: center
+
+background-image: url("images/01-basics/script-new.png")
+background-size: 70%
+background-position: center bottom
+
+# New R Script
+
+---
+
+class: center
+
+background-image: url("images/01-basics/script-new-saved.png")
+background-size: 70%
+background-position: center bottom
+
+# Saved R Script
+
+---
+
+class: center
+
+background-image: url("images/01-basics/script-run.png")
+background-size: 70%
+background-position: center bottom
+
+## R Script $\xrightarrow{\text{ctrl + enter}}$ Processed in Console 
+
 
 ---
 
@@ -68,7 +209,7 @@ background-size: cover
 
 .pull-right[
 
-## .center[Outcome]
+## .center[Console output]
 
 ```{r ref.label="calci1", echo=FALSE}
 
@@ -85,14 +226,14 @@ background-size: cover
 ```{r calci2, eval=FALSE, echo=TRUE}
 1
 
-1 + 1
+1 + 1 
 ```
 
 ]
 
 .pull-right[
 
-## .center[Outcome]
+## .center[Console output]
 
 ```{r ref.label="calci2", echo=FALSE}
 
@@ -118,7 +259,7 @@ background-size: cover
 
 .pull-right[
 
-## .center[Outcome]
+## .center[Console output]
 
 ```{r ref.label="calci3", echo=FALSE}
 
@@ -146,7 +287,7 @@ background-size: cover
 
 .pull-right[
 
-## .center[Outcome]
+## .center[Console output]
 
 ```{r ref.label="calci4", echo=FALSE}
 
@@ -176,7 +317,7 @@ background-size: cover
 
 .pull-right[
 
-## .center[Outcome]
+## .center[Console output]
 
 ```{r ref.label="calci5", echo=FALSE}
 
@@ -208,10 +349,118 @@ background-size: cover
 
 .pull-right[
 
-## .center[Outcome]
+## .center[Console output]
 
 ```{r ref.label="calci6", echo=FALSE}
 
 ```
 
 ]
+
+---
+
+.pull-left[
+
+## .center[R as a big calculator]
+
+```{r calci7, eval=FALSE, echo=TRUE}
+1
+
+1 + 1
+
+34 - 40
+
+5 * 4
+
+16 / 2
+
+0.2 + 0.8
+
+# we did some maths
+```
+
+]
+
+.pull-right[
+
+## .center[Console output]
+
+```{r ref.label="calci7", echo=FALSE}
+
+```
+
+]
+
+---
+
+class: inverse
+
+# 🤯 Challenge
+
+1. 
+
+---
+
+# R Functions
+
+- "A function, in a programming environment, is a set of instructions. A programmer builds a function to .red[avoid repeating the same task], or reduce complexity."
+
+--
+
+.pull-left[
+
+## .center[R code]
+
+```{r func1, eval=FALSE, echo=TRUE}
+# writing comments is optional
+# but
+# it is considered as a 
+# good habit to remember what
+# our code does 
+
+sqrt(9)
+```
+
+]
+
+.pull-right[
+
+## .center[Console output]
+
+```{r ref.label="func1", echo=FALSE}
+
+```
+
+]
+
+---
+
+class: center
+
+background-image: url("images/01-basics/fun-anatomy.png")
+background-size: cover
+
+---
+
+.pull-left[
+
+# .center[R code]
+
+```{r func2, eval=FALSE, echo=TRUE}
+round(34.456, 1)
+```
+
+]
+
+.pull-right[
+
+# .center[Console output]
+
+```{r ref.label="func2", echo=FALSE}
+
+```
+
+]
+
+
+
