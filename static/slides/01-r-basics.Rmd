@@ -73,26 +73,6 @@ background-position: center bottom
 
 class: center
 
-background-image: url("images/01-basics/rstd-options.png")
-background-size: 40%
-background-position: center bottom
-
-# RStudio $\rightarrow$ Tools $\rightarrow$ Global Options
-
----
-
-class: center
-
-background-image: url("images/01-basics/rstd-options2.png")
-background-size: 40%
-background-position: center bottom
-
-# RStudio $\rightarrow$ Tools $\rightarrow$ Global Options
-
----
-
-class: center
-
 background-image: url("images/01-basics/rstd-proj-none.png")
 background-size: 70%
 background-position: center bottom

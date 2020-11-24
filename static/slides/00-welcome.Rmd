@@ -29,6 +29,10 @@ library(magick)
 library(icon)
 library(xaringanExtra)
 xaringanExtra::use_tachyons()
+xaringanExtra::use_tile_view()
+xaringanExtra::use_webcam()
+xaringanExtra::use_fit_screen()
+xaringanExtra::use_share_again()
 ```
 
 layout: true
@@ -52,6 +56,26 @@ background-size: cover
 ## .orange[`r rmarkdown::metadata$subtitle`]
 
 ### .white[`r rmarkdown::metadata$author`]
+
+
+```{r meta, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "Welcome",
+    generator = "xaringan and remark.js"
+  ) %>% 
+  meta_name("github-repo" = "koliajaykr/course-r4bee") %>% 
+  meta_social(
+    title = "Introduce Yourself to R, Rstudio & Packages",
+    url = "https://r4b.netlify.app/slides/00-welcome.html#1",
+    image = "https://r4b.netlify.app/slides/00-welcome.html#1",
+    image_alt = "The first slide features a flying machine",
+    og_type = "website",
+    twitter_card_type = "summary_large_image"
+  )
+```
+
 
 ---
 
@@ -251,6 +275,27 @@ class: center
 
 class: center
 
+background-image: url("images/00-welcome/rstd-options.png")
+background-size: 40%
+background-position: center bottom
+
+# RStudio $\rightarrow$ Tools $\rightarrow$ Global Options
+
+---
+
+class: center
+
+background-image: url("images/00-welcome/rstd-options2.png")
+background-size: 40%
+background-position: center bottom
+
+# RStudio $\rightarrow$ Tools $\rightarrow$ Global Options
+
+
+---
+
+class: center
+
 .pull-left[
 
 ## Imagine ***RStudio*** as a stylish car ...
@@ -304,7 +349,7 @@ class: center
 
 ## Install package once
 
-```{r echo=FALSE, out.width="55%"}
+```{r echo=FALSE, out.width="60%"}
 image_read("images/00-welcome/library.jpg")
 ```
 
@@ -316,7 +361,7 @@ image_read("images/00-welcome/library.jpg")
 
 ## use it for forever.
 
-```{r echo=FALSE, out.width="65%"}
+```{r echo=FALSE, out.width="55%"}
 image_read("images/00-welcome/book.jpg")
 ```
 
@@ -336,7 +381,7 @@ class: center
 
 ## Install package once
 
-```{r echo=FALSE, out.width="60%"}
+```{r echo=FALSE, out.width="65%"}
 image_read("images/00-welcome/bulb.jpg")
 ```
 
@@ -348,7 +393,7 @@ image_read("images/00-welcome/bulb.jpg")
 
 ## use it for forever.
 
-```{r echo=FALSE, out.width="65%"}
+```{r echo=FALSE, out.width="60%"}
 image_read("images/00-welcome/switch.jpg")
 ```
 
@@ -373,7 +418,7 @@ class: inverse, center, middle
 
 --
 
-##-  👨🏽‍💻👩‍💻 Practice exercies during each session
+##-  👨🏽‍💻👩‍💻 "Your Turn" practice exercies during each session
 
 --
 
@@ -443,7 +488,7 @@ class: hide-count
 
 class: center, middle
 
-# .big-text[Q n A 🙋🏼‍♂️🙋🏽‍♀️]
+# .big-text[Q n A <br>🙋🏼‍♂️🙋🏽‍♀️]
 
 ---
 

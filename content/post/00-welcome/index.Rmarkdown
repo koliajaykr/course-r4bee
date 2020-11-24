@@ -23,15 +23,21 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 
-links:
+#links:
 # - icon: flask
 #   icon_pack: fas
 #   name: lab
 #  url: /labs/00-install_name_plot.html
-- icon: magic
-  icon_pack: fas
-  name: slides
-  url: /slides/00-welcome.html
+#- icon: magic
+#  icon_pack: fas
+#  name: slides
+#  url: /slides/00-welcome.html
 ---
 
 Welcome! 
+
+```{r echo=FALSE}
+library(xaringanExtra)
+xaringanExtra::embed_xaringan(url = "/slides/00-welcome.html", ratio = "4:3")
+```
+
