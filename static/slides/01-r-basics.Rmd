@@ -26,6 +26,7 @@ knitr::opts_chunk$set(
   comment = ""
 )
 library(ymlthis)
+library(countdown)
 library(tidyverse)
 library(magick)
 library(icon)
@@ -48,15 +49,15 @@ layout: true
 
 class: title-slide, center, bottom
 background-image: url(images/01-basics/featured.jpg)
-background-size: 50%
-background-position: 50% 25%
-background-color: #24292E
+background-size: 58%
+background-position: 50% 0%
 
-# .white[`r rmarkdown::metadata$title`]
+
+# `r rmarkdown::metadata$title`
 
 ## .orange[`r rmarkdown::metadata$subtitle`]
 
-### .white[`r rmarkdown::metadata$author`]
+### `r rmarkdown::metadata$author`
 
 ---
 
@@ -67,6 +68,26 @@ background-size: 70%
 background-position: center bottom
 
 # Open RStudio
+
+---
+
+class: center
+
+background-image: url("images/01-basics/rstd-options.png")
+background-size: 40%
+background-position: center bottom
+
+# RStudio $\rightarrow$ Tools $\rightarrow$ Global Options
+
+---
+
+class: center
+
+background-image: url("images/01-basics/rstd-options2.png")
+background-size: 40%
+background-position: center bottom
+
+# RStudio $\rightarrow$ Tools $\rightarrow$ Global Options
 
 ---
 
@@ -207,6 +228,12 @@ background-position: center bottom
 
 ---
 
+class: inverse, center, middle
+
+# .big-text[R Script 📜]
+
+---
+
 class: center
 
 background-image: url("images/01-basics/script-new.png")
@@ -233,7 +260,7 @@ background-image: url("images/01-basics/script-to-console1.png")
 background-size: 70%
 background-position: center bottom
 
-# **Script** file for writing the codes 
+# Script file for writing the codes 
 
 ---
 
@@ -243,7 +270,7 @@ background-image: url("images/01-basics/script-to-console2.png")
 background-size: 70%
 background-position: center bottom
 
-# **Console** to process the codes 
+# Console to process the codes 
 
 ---
 
@@ -279,25 +306,21 @@ background-position: center bottom
 
 ---
 
-class: inverse, center, middle
-
-# .big-text[R Script 📜]
-
----
+class: live-code
 
 .pull-left[
 
 # .center[R Script]
 
 ```{r calci1, eval=FALSE, echo=TRUE}
-1
+1 #<<
 ```
 
 ]
 
 .pull-right[
 
-# .center[Console output]
+# .center[Console ]
 
 ```{r ref.label="calci1", echo=FALSE}
 
@@ -307,6 +330,8 @@ class: inverse, center, middle
 
 ---
 
+class: live-code
+
 .pull-left[
 
 # .center[R Script]
@@ -314,14 +339,14 @@ class: inverse, center, middle
 ```{r calci2, eval=FALSE, echo=TRUE}
 1
 
-1 + 1
+1 + 1 #<<
 ```
 
 ]
 
 .pull-right[
 
-# .center[Console output]
+# .center[Console ]
 
 ```{r ref.label="calci2", echo=FALSE}
 
@@ -330,6 +355,8 @@ class: inverse, center, middle
 ]
 
 ---
+
+class: live-code
 
 .pull-left[
 
@@ -340,14 +367,14 @@ class: inverse, center, middle
 
 1 + 1
 
-34 - 40
+34 - 40 #<<
 ```
 
 ]
 
 .pull-right[
 
-# .center[Console output]
+# .center[Console ]
 
 ```{r ref.label="calci3", echo=FALSE}
 
@@ -356,6 +383,8 @@ class: inverse, center, middle
 ]
 
 ---
+
+class: live-code
 
 .pull-left[
 
@@ -368,14 +397,14 @@ class: inverse, center, middle
 
 34 - 40
 
-5 * 4
+5 * 4 #<<
 ```
 
 ]
 
 .pull-right[
 
-# .center[Console output]
+# .center[Console ]
 
 ```{r ref.label="calci4", echo=FALSE}
 
@@ -384,6 +413,8 @@ class: inverse, center, middle
 ]
 
 ---
+
+class: live-code
 
 .pull-left[
 
@@ -398,14 +429,14 @@ class: inverse, center, middle
 
 5 * 4
 
-16 / 2
+16 / 2 #<<
 ```
 
 ]
 
 .pull-right[
 
-# .center[Console output]
+# .center[Console ]
 
 ```{r ref.label="calci5", echo=FALSE}
 
@@ -414,6 +445,8 @@ class: inverse, center, middle
 ]
 
 ---
+
+class: live-code
 
 .pull-left[
 
@@ -430,14 +463,14 @@ class: inverse, center, middle
 
 16 / 2
 
-0.2 + 0.8
+0.2 + 0.8 #<<
 ```
 
 ]
 
 .pull-right[
 
-# .center[Console output]
+# .center[Console ]
 
 ```{r ref.label="calci6", echo=FALSE}
 
@@ -446,6 +479,8 @@ class: inverse, center, middle
 ]
 
 ---
+
+class: live-code
 
 .pull-left[
 
@@ -464,18 +499,18 @@ class: inverse, center, middle
 
 0.2 + 0.8
 
-3 > 7
+3 > 7 #<<
 
-3 == 3
+3 == 3 #<<
 
-3 < 5
+3 < 5 #<<
 ```
 
 ]
 
 .pull-right[
 
-# .center[Console output]
+# .center[Console ]
 
 ```{r ref.label="calci7", echo=FALSE}
 
@@ -485,17 +520,17 @@ class: inverse, center, middle
 
 ---
 
-background-color: #FDF4A7
+class: your-turn, inverse
 
-# 🤯 Challenge
+# 🤯 Your Turn
 
-## 1. 
+## 1. *ab ye kar ke dikhao* 🕺🏽💃🏼
 
 ---
 
-class: inverse, class, middle
+class: inverse, center, middle
 
-# .big-text[R Function 🪅]
+# .big-text[R Function🪅]
 
 
 ---
@@ -516,9 +551,11 @@ round(9.1565, 2)
 
 ]
 
+--
+
 .pull-right[
 
-## .center[Console output]
+## .center[Console ]
 
 ```{r ref.label="func1", echo=FALSE}
 
@@ -530,13 +567,13 @@ round(9.1565, 2)
 
 class: center
 background-image: url("images/01-basics/function.png")
-background-size: 80%
+background-size: 90%
 background-position: 60% 70%
 
 # Structure of R function
 
 ---
-
+class: live-code
 .pull-left[
 
 # .center[R Script]
@@ -552,7 +589,7 @@ round(
 
 .pull-right[
 
-# .center[Console output]
+# .center[Console]
 
 ```{r ref.label="func2", echo=FALSE}
 
@@ -565,7 +602,7 @@ round(
 use tab key inside empty function bracket
 
 ---
-
+class: live-code
 .pull-left[
 
 # .center[R Script]
@@ -580,7 +617,7 @@ sqrt(
 
 .pull-right[
 
-# .center[Console output]
+# .center[Console]
 
 ```{r ref.label="sqrt", echo=FALSE}
 
@@ -589,7 +626,7 @@ sqrt(
 ]
 
 ---
-
+class: live-code
 .pull-left[
 
 # .center[R Script]
@@ -606,7 +643,7 @@ seq.int(
 
 .pull-right[
 
-# .center[Console output]
+# .center[Console]
 
 ```{r ref.label="seq", echo=FALSE}
 
@@ -633,7 +670,7 @@ seq.int(
 ]
 
 ---
-
+class: live-code
 .pull-left[
 
 # .center[R Script]
@@ -650,7 +687,7 @@ seq.int(
 
 .pull-right[
 
-# .center[Console output]
+# .center[Console]
 
 ```{r ref.label="comment", echo=FALSE}
 
@@ -692,9 +729,34 @@ library(tidyverse)
 
 ---
 
+class: live-code
+
+.pull-left[
+
+# .center[R Script]
+
+```{r lib1, eval=FALSE, echo=TRUE}
+library(tidyverse)
+```
+
+]
+
+.pull-right[
+
+# .center[Console ]
+
+```{r ref.label="lib1", echo=FALSE}
+
+```
+
+]
+
+
+---
+
 class: inverse, center, middle
 
-# .big-text[R Objects]
+# .big-text[R Objects 🎈]
 
 ---
 
@@ -733,6 +795,8 @@ Source: https://rstudio-education.github.io/hopr/basics.html
 
 ---
 
+class: live-code
+
 .pull-left[
 
 # .center[R Script]
@@ -748,7 +812,7 @@ salary
 
 .pull-right[
 
-# .center[Console Output]
+# .center[Console ]
 
 ```{r ref.label="obj1", echo=FALSE}
 
@@ -758,17 +822,21 @@ salary
 
 ---
 
+class: live-code
+
 .pull-left[
 
 # .center[R Script]
 
 ```{r obj2, eval=FALSE, echo=TRUE}
 
-name <- c("Ram",
-          "John",
-          "Ali",
-          "Preeti",
-          "Rani")
+name <- c(
+  "Ram",
+  "John",
+  "Ali",
+  "Preeti",
+  "Rani"
+)
 
 name
 ```
@@ -777,7 +845,7 @@ name
 
 .pull-right[
 
-# .center[Console Output]
+# .center[Console ]
 
 ```{r ref.label="obj2", echo=FALSE}
 
@@ -787,20 +855,22 @@ name
 
 ---
 
+class: live-code
+
 .pull-left[
 
 # .center[R Script]
 
 ```{r obj3, eval=FALSE, echo=TRUE}
 # names of created objects
-objects()
+objects() #<<
 ```
 
 ]
 
 .pull-right[
 
-# .center[Console Output]
+# .center[Console ]
 
 ```{r ref.label="obj3", echo=FALSE}
 
@@ -810,17 +880,21 @@ objects()
 
 ---
 
+class: live-code
+
 .pull-left[
 
 # .center[R Script]
 
 ```{r obj4, eval=FALSE, echo=TRUE}
 
-age <- c(34,
-         54,
-         23,
-         65,
-         2)
+age <- c(
+  34,
+  54,
+  23,
+  65,
+  2
+)
 
 age
 ```
@@ -829,7 +903,7 @@ age
 
 .pull-right[
 
-# .center[Console Output]
+# .center[Console ]
 
 ```{r ref.label="obj4", echo=FALSE}
 
@@ -839,17 +913,21 @@ age
 
 ---
 
+class: live-code
+
 .pull-left[
 
 # .center[R Script]
 
 ```{r obj5, eval=FALSE, echo=TRUE}
 
-place <- c("ny",
-          "ber",
-          "dhl",
-          "tko",
-          "lon")
+place <- c(
+  "ny",
+  "ber",
+  "dhl",
+  "tko",
+  "lon"
+)
 
 place
 ```
@@ -858,7 +936,7 @@ place
 
 .pull-right[
 
-# .center[Console Output]
+# .center[Console ]
 
 ```{r ref.label="obj5", echo=FALSE}
 
@@ -867,6 +945,8 @@ place
 ]
 
 ---
+
+class: live-code
 
 .pull-left[
 
@@ -883,7 +963,7 @@ books
 
 .pull-right[
 
-# .center[Console Output]
+# .center[Console ]
 
 ```{r ref.label="obj6", echo=FALSE}
 
@@ -905,6 +985,24 @@ knitr::include_graphics("images/01-basics/env-rstd.png")
 
 class: center
 
+# to be tidy, our data should look like 👇
+
+```{r, echo=FALSE}
+soc <- data.frame(
+  age,
+  books,
+  name,
+  place,
+  salary
+)
+
+soc
+```
+
+---
+
+class: center
+
 # R understands 'tidy' 🛀 Data
 
 ```{r echo=FALSE, out.width="100%"}
@@ -917,17 +1015,66 @@ Source: [Book of Hadley & Grolemund](https://r4ds.had.co.nz/index.html)
 
 ---
 
-class: center
+class: live-code
 
-# to be tidy, our data should look like 👇
+.pull-left[
+# R Script
 
-```{r, echo=FALSE}
-people <- data.frame(age,
-                     books,
-                     name,
-                     place,
-                     salary)
+```{r df1, eval=FALSE}
+objects()
+```
 
-people
+```{r df2, eval=FALSE}
+soc <- data.frame( #<<
+  age,
+  books,
+  name,
+  place,
+  salary
+)
+
+soc
+```
+
+
+]
+
+.pull-right[
+# Console
+
+```{r ref.label="df1", echo=FALSE}
+
+```
+
+```{r ref.label="df2", echo=FALSE}
+
+```
+
+]
+
+---
+
+class: your-turn, hide-count
+
+# Your turn 🏋🏽‍♂️ 
+
+```{r echo=FALSE}
+countdown(minutes = 10, top = 0, font_size = "3em")
+```
+
+## .gold[Write codes to prepare this data + add a new variable of your choice:]
+
+```{r echo=FALSE}
+state <- c("Germany", "France", "India", "Russia", "USA", "New Zealand")
+
+pop <- c(20, 19, 50, 25, 30, 5)
+
+capital <- c("Berlin", "Paris", "Delhi", "Moscow", "Washington", "Wellington")
+
+foundation <- c("1870-12-10", "1789-07-14", "1947-08-15", "1990-06-12", "1776-07-04", "1840-02-06")
+
+world <- data.frame(state, pop, capital, foundation)
+
+world
 ```
 

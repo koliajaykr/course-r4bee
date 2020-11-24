@@ -11,7 +11,7 @@ interval = false
 
 # Slide height (optional).
 # E.g. `500px` for 500 pixels or `calc(100vh - 70px)` for full screen.
-height = "385px"
+height = "397px"
 
 # Slides.
 # Duplicate an `[[item]]` block to add more slides.
@@ -69,4 +69,13 @@ height = "385px"
   overlay_color = "#555"  # An HTML color value.
   overlay_img = "img/b4.png"  # Image path relative to your `static/media/` folder.
   overlay_filter = 0.5  # Darken the image. Value in range 0-1.
+  
+[[item]]
+  title = "Babu George"
+  content = "\"It has been a very comprehensive yet accessible overview of R. Ajay understands students' minds and modulate his style accordingly. He is excellent in relating numbers with real world problems and offering visualizations that decompose complex realities into intuitive visualizations.\" <br>Dean and Professor - Christian Brothers University, USA"
+  align = "center"
+
+  overlay_color = "#555"  # An HTML color value.
+  overlay_img = "img/babu1.jpg"  # Image path relative to your `static/media/` folder.
+  overlay_filter = 0.5  # Darken the image. Value in range 0-1.  
 +++
