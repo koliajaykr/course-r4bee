@@ -4,7 +4,7 @@
     <title>Getting started: The Basics of R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Ajay Koli" />
-    <meta name="date" content="2020-11-23" />
+    <meta name="date" content="2020-11-24" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
@@ -34,13 +34,13 @@ class: title-slide, center, bottom
 background-image: url(images/01-basics/featured.jpg)
 background-size: 50%
 background-position: 50% 25%
-background-color: #FFFFFF
+background-color: #24292E
 
-# Getting started: The Basics of R
+# .white[Getting started: The Basics of R]
 
 ## .orange[Topic - 1]
 
-### Ajay Koli
+### .white[Ajay Koli]
 
 ---
 
@@ -62,7 +62,6 @@ background-position: center bottom
 
 # Open RStudio
 
-
 ---
 
 class: center
@@ -72,6 +71,25 @@ background-size: 70%
 background-position: center bottom
 
 # Open RStudio
+
+---
+
+class: inverse, center, middle
+
+# .big-text[RStudio Project 🗂]
+
+---
+
+class: center
+background-image: url("images/01-basics/r-projects.jpg")
+background-size: 70%
+background-position: 50% 80%
+
+# Using RStudio Project
+
+.footnote[
+Img: [Allison Horst](https://www.allisonhorst.com/)
+]
 
 ---
 
@@ -106,53 +124,32 @@ Source: [RStudio Support](https://support.rstudio.com/hc/en-us/articles/20052620
 ]
 
 ---
+class: center, middle
 
-class: center
-background-image: url("images/01-basics/r-projects.jpg")
-background-size: 70%
-background-position: 50% 80%
+# Create R Project in 4 Steps:
 
-# Create R Projects in 4 Steps:
-
-.footnote[
-Img: [Allison Horst](https://www.allisonhorst.com/)
-]
+&lt;img src="images/01-basics/rstd-proj-1.png" width="500" /&gt;
 
 ---
+class: center, middle
 
-class: center
-background-image: url("images/01-basics/rstd-proj-1.png")
-background-size: 50%
-background-position: 50% 80%
+# Create R Project in 4 Steps:
 
-# Create R Projects in 4 Steps:
+&lt;img src="images/01-basics/rstd-proj-2.png" width="500" /&gt;
 
 ---
+class: center, middle
 
-class: center
-background-image: url("images/01-basics/rstd-proj-2.png")
-background-size: 50%
-background-position: 50% 80%
+# Create R Project in 4 Steps:
 
-# Create R Projects in 4 Steps:
+&lt;img src="images/01-basics/rstd-proj-3.png" width="500" /&gt;
 
 ---
+class: center, middle
 
-class: center
-background-image: url("images/01-basics/rstd-proj-3.png")
-background-size: 50%
-background-position: 50% 80%
+# Create R Project in 4 Steps:
 
-# Create R Projects in 4 Steps:
-
----
-
-class: center
-background-image: url("images/01-basics/rstd-proj-4.png")
-background-size: 50%
-background-position: 50% 80%
-
-# Create R Projects in 4 Steps:
+&lt;img src="images/01-basics/rstd-proj-4.png" width="500" /&gt;
 
 ---
 
@@ -212,8 +209,7 @@ background-image: url("images/01-basics/script-to-console1.png")
 background-size: 70%
 background-position: center bottom
 
-# **Script** file for writing the R codes 
-
+# **Script** file for writing the codes 
 
 ---
 
@@ -223,7 +219,7 @@ background-image: url("images/01-basics/script-to-console2.png")
 background-size: 70%
 background-position: center bottom
 
-# Console to process the codes 
+# **Console** to process the codes 
 
 ---
 
@@ -247,7 +243,7 @@ background-position: center bottom
 
 ---
 
-# How to run R script codes? 🤔
+# How to run R script in console? 🤔
 
 --
 
@@ -261,13 +257,13 @@ background-position: center bottom
 
 class: inverse, center, middle
 
-# .big-text[R Script 📝 📜]
+# .big-text[R Script 📜]
 
 ---
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 
 ```r
@@ -291,13 +287,13 @@ class: inverse, center, middle
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 
 ```r
 1
 
-1 + 1 
+1 + 1
 ```
 
 ]
@@ -318,7 +314,7 @@ class: inverse, center, middle
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 
 ```r
@@ -348,7 +344,7 @@ class: inverse, center, middle
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 
 ```r
@@ -381,7 +377,7 @@ class: inverse, center, middle
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 
 ```r
@@ -417,7 +413,7 @@ class: inverse, center, middle
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 
 ```r
@@ -456,7 +452,7 @@ class: inverse, center, middle
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 
 ```r
@@ -502,11 +498,11 @@ class: inverse, center, middle
 
 ---
 
-class: inverse
+background-color: #FDF4A7
 
 # 🤯 Challenge
 
-1. 
+## 1. 
 
 ---
 
@@ -529,8 +525,6 @@ class: inverse, class, middle
 
 
 ```r
-sqrt(9)
-
 round(9.1565, 2)
 ```
 
@@ -542,7 +536,6 @@ round(9.1565, 2)
 
 
 ```
-[1] 3
 [1] 9.16
 ```
 
@@ -561,11 +554,14 @@ background-position: 60% 70%
 
 .pull-left[
 
-# .center[R code]
+# .center[R Script]
 
 
 ```r
-round(34.456, 1)
+round(
+  x = 564.56743,
+  digits = 2
+)
 ```
 
 ]
@@ -576,12 +572,394 @@ round(34.456, 1)
 
 
 ```
-[1] 34.5
+[1] 564.57
 ```
 
 ]
 
+???
 
+use tab key inside empty function bracket
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+
+```r
+sqrt(
+  x = 9
+)
+```
+
+]
+
+.pull-right[
+
+# .center[Console output]
+
+
+```
+[1] 3
+```
+
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+
+```r
+seq.int(
+  from = 10,
+  to = 30,
+  by = 5
+)
+```
+
+]
+
+.pull-right[
+
+# .center[Console output]
+
+
+```
+[1] 10 15 20 25 30
+```
+
+]
+
+---
+
+# R Comment:
+
+- "a comment is a programmer-readable explanation or annotation in the source code of a computer program." &lt;sup&gt;1&lt;/sup&gt;
+
+--
+
+- "Humans will be able to read the comments, but your computer will pass over them."
+
+--
+
+- `#` is used as a commenting symbol
+
+.footnote[
+[1]. Source: [Wikipedia](https://en.wikipedia.org/wiki/Comment_(computer_programming)
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+
+```r
+# hello world!
+
+## is a comment
+
+(1 + 4) - (3 * 5) / 10
+```
+
+]
+
+.pull-right[
+
+# .center[Console output]
+
+
+```
+[1] 3.5
+```
+
+]
+
+---
+
+class: inverse, middle, right
+
+background-image: url("images/01-basics/amelia.png"), url("images/01-basics/amelia2.jpg"), url("images/01-basics/amelia3.jpg"), url("images/01-basics/amelia4.jpg")
+background-position: 0% 0%, 50% 0%, 0% 100%, 90% 0%
+background-size: 25%, 30%, 22%, 20%
+
+# .big-text[R Packages]
+
+
+---
+
+class: center
+
+# Download R package
+
+&lt;img src="images/01-basics/pkg-download.png" width="60%" /&gt;
+
+---
+
+# Use R package
+
+
+```r
+library(tidyverse)
+```
+
+- To use R package write one time inside your script:  
+`library(name of the package)`
+
+---
+
+class: inverse, center, middle
+
+# .big-text[R Objects]
+
+---
+
+# R Object
+
+## "Just a name that you can use to call up stored data"
+
+.footnote[
+Source: https://rstudio-education.github.io/hopr/basics.html
+]
+
+---
+
+# Guideline to name `objects` in R:
+
+  - a name cannot start with a number  
+  
+--
+
+  - a name cannot use some special symbols, like ^, !, $, @, +, -, /, or *:  
+  
+--
+
+  - avoid caps  
+  
+--
+
+  - avoid space  
+--
+
+  - use dash (like na-me) or underscore (like na_me)  
+  
+--
+
+  - if chronology matters then add date (2020-09-05-file-name)
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+
+```r
+
+*salary &lt;- c(20, 30, 40, 50, -10)
+
+salary
+```
+
+]
+
+.pull-right[
+
+# .center[Console Output]
+
+
+```
+[1]  20  30  40  50 -10
+```
+
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+
+```r
+
+name &lt;- c("Ram",
+          "John",
+          "Ali",
+          "Preeti",
+          "Rani")
+
+name
+```
+
+]
+
+.pull-right[
+
+# .center[Console Output]
+
+
+```
+[1] "Ram"    "John"   "Ali"    "Preeti" "Rani"  
+```
+
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+
+```r
+# names of created objects
+objects()
+```
+
+]
+
+.pull-right[
+
+# .center[Console Output]
+
+
+```
+[1] "age"    "books"  "name"   "people" "place"  "salary"
+```
+
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+
+```r
+
+age &lt;- c(34,
+         54,
+         23,
+         65,
+         2)
+
+age
+```
+
+]
+
+.pull-right[
+
+# .center[Console Output]
+
+
+```
+[1] 34 54 23 65  2
+```
+
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+
+```r
+
+place &lt;- c("ny",
+          "ber",
+          "dhl",
+          "tko",
+          "lon")
+
+place
+```
+
+]
+
+.pull-right[
+
+# .center[Console Output]
+
+
+```
+[1] "ny"  "ber" "dhl" "tko" "lon"
+```
+
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+
+```r
+
+books &lt;- c(4, 0, 3, 24, 5)
+
+books
+```
+
+]
+
+.pull-right[
+
+# .center[Console Output]
+
+
+```
+[1]  4  0  3 24  5
+```
+
+]
+
+---
+
+class: center
+
+# RStudio Environment Window
+
+&lt;img src="images/01-basics/env-rstd.png" width="70%" /&gt;
+
+---
+
+class: center
+
+# R understands 'tidy' 🛀 Data
+
+&lt;img src="images/01-basics/tidy-1.png" width="100%" /&gt;
+
+.footnote[
+Source: [Book of Hadley &amp; Grolemund](https://r4ds.had.co.nz/index.html)
+]
+
+---
+
+class: center
+
+# to be tidy, our data should look like 👇
+
+
+```
+  age books   name place salary
+1  34     4    Ram    ny     20
+2  54     0   John   ber     30
+3  23     3    Ali   dhl     40
+4  65    24 Preeti   tko     50
+5   2     5   Rani   lon    -10
+```
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
@@ -589,6 +967,7 @@ round(34.456, 1)
 <script>var slideshow = remark.create({
 "highlightStyle": "solarized-light",
 "highlightLanguage": ["r", "css", "yaml"],
+"slideNumberFormat": " ",
 "highlightLines": true,
 "countIncrementalSlides": false,
 "ratio": "16:9"

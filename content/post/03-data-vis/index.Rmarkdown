@@ -23,15 +23,17 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 
-links:
-- icon: flask
-  icon_pack: fas
-  name: lab
+# links:
+# - icon: flask
+#   icon_pack: fas
+#   name: lab
 #  url: /labs/00-install_name_plot.html
-- icon: magic
-  icon_pack: fas
-  name: slides
+# - icon: magic
+#   icon_pack: fas
+#   name: slides
 #  url: /slides/00-slides.html
 ---
 
 Data visualisation using mainly R package `ggplot2`.
+
+***Work in Progress***

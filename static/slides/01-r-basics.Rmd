@@ -12,7 +12,7 @@ output:
       # autoplay: 5000
       highlightStyle: solarized-light
       highlightLanguage: ["r", "css", "yaml"]
-      #slideNumberFormat: "" 
+      slideNumberFormat: " " 
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
@@ -20,9 +20,11 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
-knitr::opts_chunk$set(collapse = TRUE,
-                      fig.retina = 3,
-                      comment = "")
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.retina = 3,
+  comment = ""
+)
 library(ymlthis)
 library(tidyverse)
 library(magick)
@@ -48,13 +50,13 @@ class: title-slide, center, bottom
 background-image: url(images/01-basics/featured.jpg)
 background-size: 50%
 background-position: 50% 25%
-background-color: #FFFFFF
+background-color: #24292E
 
-# `r rmarkdown::metadata$title`
+# .white[`r rmarkdown::metadata$title`]
 
 ## .orange[`r rmarkdown::metadata$subtitle`]
 
-### `r rmarkdown::metadata$author`
+### .white[`r rmarkdown::metadata$author`]
 
 ---
 
@@ -76,7 +78,6 @@ background-position: center bottom
 
 # Open RStudio
 
-
 ---
 
 class: center
@@ -86,6 +87,25 @@ background-size: 70%
 background-position: center bottom
 
 # Open RStudio
+
+---
+
+class: inverse, center, middle
+
+# .big-text[RStudio Project 🗂]
+
+---
+
+class: center
+background-image: url("images/01-basics/r-projects.jpg")
+background-size: 70%
+background-position: 50% 80%
+
+# Using RStudio Project
+
+.footnote[
+Img: [Allison Horst](https://www.allisonhorst.com/)
+]
 
 ---
 
@@ -120,53 +140,40 @@ Source: [RStudio Support](https://support.rstudio.com/hc/en-us/articles/20052620
 ]
 
 ---
+class: center, middle
 
-class: center
-background-image: url("images/01-basics/r-projects.jpg")
-background-size: 70%
-background-position: 50% 80%
+# Create R Project in 4 Steps:
 
-# Create R Projects in 4 Steps:
-
-.footnote[
-Img: [Allison Horst](https://www.allisonhorst.com/)
-]
+```{r echo=FALSE}
+knitr::include_graphics("images/01-basics/rstd-proj-1.png")
+```
 
 ---
+class: center, middle
 
-class: center
-background-image: url("images/01-basics/rstd-proj-1.png")
-background-size: 50%
-background-position: 50% 80%
+# Create R Project in 4 Steps:
 
-# Create R Projects in 4 Steps:
-
----
-
-class: center
-background-image: url("images/01-basics/rstd-proj-2.png")
-background-size: 50%
-background-position: 50% 80%
-
-# Create R Projects in 4 Steps:
+```{r echo=FALSE}
+knitr::include_graphics("images/01-basics/rstd-proj-2.png")
+```
 
 ---
+class: center, middle
 
-class: center
-background-image: url("images/01-basics/rstd-proj-3.png")
-background-size: 50%
-background-position: 50% 80%
+# Create R Project in 4 Steps:
 
-# Create R Projects in 4 Steps:
+```{r echo=FALSE}
+knitr::include_graphics("images/01-basics/rstd-proj-3.png")
+```
 
 ---
+class: center, middle
 
-class: center
-background-image: url("images/01-basics/rstd-proj-4.png")
-background-size: 50%
-background-position: 50% 80%
+# Create R Project in 4 Steps:
 
-# Create R Projects in 4 Steps:
+```{r echo=FALSE}
+knitr::include_graphics("images/01-basics/rstd-proj-4.png")
+```
 
 ---
 
@@ -226,8 +233,7 @@ background-image: url("images/01-basics/script-to-console1.png")
 background-size: 70%
 background-position: center bottom
 
-# **Script** file for writing the R codes 
-
+# **Script** file for writing the codes 
 
 ---
 
@@ -237,7 +243,7 @@ background-image: url("images/01-basics/script-to-console2.png")
 background-size: 70%
 background-position: center bottom
 
-# Console to process the codes 
+# **Console** to process the codes 
 
 ---
 
@@ -261,7 +267,7 @@ background-position: center bottom
 
 ---
 
-# How to run R script codes? 🤔
+# How to run R script in console? 🤔
 
 --
 
@@ -275,13 +281,13 @@ background-position: center bottom
 
 class: inverse, center, middle
 
-# .big-text[R Script 📝 📜]
+# .big-text[R Script 📜]
 
 ---
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 ```{r calci1, eval=FALSE, echo=TRUE}
 1
@@ -303,12 +309,12 @@ class: inverse, center, middle
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 ```{r calci2, eval=FALSE, echo=TRUE}
 1
 
-1 + 1 
+1 + 1
 ```
 
 ]
@@ -327,7 +333,7 @@ class: inverse, center, middle
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 ```{r calci3, eval=FALSE, echo=TRUE}
 1
@@ -353,7 +359,7 @@ class: inverse, center, middle
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 ```{r calci4, eval=FALSE, echo=TRUE}
 1
@@ -381,7 +387,7 @@ class: inverse, center, middle
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 ```{r calci5, eval=FALSE, echo=TRUE}
 1
@@ -411,7 +417,7 @@ class: inverse, center, middle
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 ```{r calci6, eval=FALSE, echo=TRUE}
 1
@@ -443,7 +449,7 @@ class: inverse, center, middle
 
 .pull-left[
 
-# .center[R as calculator]
+# .center[R Script]
 
 ```{r calci7, eval=FALSE, echo=TRUE}
 1
@@ -479,11 +485,11 @@ class: inverse, center, middle
 
 ---
 
-class: inverse
+background-color: #FDF4A7
 
 # 🤯 Challenge
 
-1. 
+## 1. 
 
 ---
 
@@ -505,8 +511,6 @@ class: inverse, class, middle
 ## .center[R function]
 
 ```{r func1, eval=FALSE, echo=TRUE}
-sqrt(9)
-
 round(9.1565, 2)
 ```
 
@@ -535,10 +539,13 @@ background-position: 60% 70%
 
 .pull-left[
 
-# .center[R code]
+# .center[R Script]
 
 ```{r func2, eval=FALSE, echo=TRUE}
-round(34.456, 1)
+round(
+  x = 564.56743,
+  digits = 2
+)
 ```
 
 ]
@@ -553,5 +560,374 @@ round(34.456, 1)
 
 ]
 
+???
 
+use tab key inside empty function bracket
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+```{r sqrt, eval=FALSE, echo=TRUE}
+sqrt(
+  x = 9
+)
+```
+
+]
+
+.pull-right[
+
+# .center[Console output]
+
+```{r ref.label="sqrt", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+```{r seq, eval=FALSE, echo=TRUE}
+seq.int(
+  from = 10,
+  to = 30,
+  by = 5
+)
+```
+
+]
+
+.pull-right[
+
+# .center[Console output]
+
+```{r ref.label="seq", echo=FALSE}
+
+```
+
+]
+
+---
+
+# R Comment:
+
+- "a comment is a programmer-readable explanation or annotation in the source code of a computer program." <sup>1</sup>
+
+--
+
+- "Humans will be able to read the comments, but your computer will pass over them."
+
+--
+
+- `#` is used as a commenting symbol
+
+.footnote[
+[1]. Source: [Wikipedia](https://en.wikipedia.org/wiki/Comment_(computer_programming)
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+```{r comment, eval=FALSE, echo=TRUE}
+# hello world!
+
+## is a comment
+
+(1 + 4) - (3 * 5) / 10
+```
+
+]
+
+.pull-right[
+
+# .center[Console output]
+
+```{r ref.label="comment", echo=FALSE}
+
+```
+
+]
+
+---
+
+class: inverse, middle, right
+
+background-image: url("images/01-basics/amelia.png"), url("images/01-basics/amelia2.jpg"), url("images/01-basics/amelia3.jpg"), url("images/01-basics/amelia4.jpg")
+background-position: 0% 0%, 50% 0%, 0% 100%, 90% 0%
+background-size: 25%, 30%, 22%, 20%
+
+# .big-text[R Packages]
+
+
+---
+
+class: center
+
+# Download R package
+
+```{r echo=FALSE, out.width="60%"}
+knitr::include_graphics("images/01-basics/pkg-download.png")
+```
+
+---
+
+# Use R package
+
+```{r pkg-use, echo=T}
+library(tidyverse)
+```
+
+- To use R package write one time inside your script:  
+`library(name of the package)`
+
+---
+
+class: inverse, center, middle
+
+# .big-text[R Objects]
+
+---
+
+# R Object
+
+## "Just a name that you can use to call up stored data"
+
+.footnote[
+Source: https://rstudio-education.github.io/hopr/basics.html
+]
+
+---
+
+# Guideline to name `objects` in R:
+
+  - a name cannot start with a number  
+  
+--
+
+  - a name cannot use some special symbols, like ^, !, $, @, +, -, /, or *:  
+  
+--
+
+  - avoid caps  
+  
+--
+
+  - avoid space  
+--
+
+  - use dash (like na-me) or underscore (like na_me)  
+  
+--
+
+  - if chronology matters then add date (2020-09-05-file-name)
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+```{r obj1, eval=FALSE, echo=TRUE}
+
+salary <- c(20, 30, 40, 50, -10) #<<
+
+salary
+```
+
+]
+
+.pull-right[
+
+# .center[Console Output]
+
+```{r ref.label="obj1", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+```{r obj2, eval=FALSE, echo=TRUE}
+
+name <- c("Ram",
+          "John",
+          "Ali",
+          "Preeti",
+          "Rani")
+
+name
+```
+
+]
+
+.pull-right[
+
+# .center[Console Output]
+
+```{r ref.label="obj2", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+```{r obj3, eval=FALSE, echo=TRUE}
+# names of created objects
+objects()
+```
+
+]
+
+.pull-right[
+
+# .center[Console Output]
+
+```{r ref.label="obj3", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+```{r obj4, eval=FALSE, echo=TRUE}
+
+age <- c(34,
+         54,
+         23,
+         65,
+         2)
+
+age
+```
+
+]
+
+.pull-right[
+
+# .center[Console Output]
+
+```{r ref.label="obj4", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+```{r obj5, eval=FALSE, echo=TRUE}
+
+place <- c("ny",
+          "ber",
+          "dhl",
+          "tko",
+          "lon")
+
+place
+```
+
+]
+
+.pull-right[
+
+# .center[Console Output]
+
+```{r ref.label="obj5", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+# .center[R Script]
+
+```{r obj6, eval=FALSE, echo=TRUE}
+
+books <- c(4, 0, 3, 24, 5)
+
+books
+```
+
+]
+
+.pull-right[
+
+# .center[Console Output]
+
+```{r ref.label="obj6", echo=FALSE}
+
+```
+
+]
+
+---
+
+class: center
+
+# RStudio Environment Window
+
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("images/01-basics/env-rstd.png")
+```
+
+---
+
+class: center
+
+# R understands 'tidy' 🛀 Data
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/01-basics/tidy-1.png")
+```
+
+.footnote[
+Source: [Book of Hadley & Grolemund](https://r4ds.had.co.nz/index.html)
+]
+
+---
+
+class: center
+
+# to be tidy, our data should look like 👇
+
+```{r, echo=FALSE}
+people <- data.frame(age,
+                     books,
+                     name,
+                     place,
+                     salary)
+
+people
+```
 

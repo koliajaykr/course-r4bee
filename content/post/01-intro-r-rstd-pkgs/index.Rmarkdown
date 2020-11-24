@@ -34,17 +34,19 @@ links:
   url: /slides/01-r-basics.html
 ---
 
-## Readings
+***Work in Progress***
+
+<!-- ## Readings -->
 
 
-+ [R4DS `ggplot2` chapter](http://r4ds.had.co.nz/data-visualisation.html)
+<!-- + [R4DS `ggplot2` chapter](http://r4ds.had.co.nz/data-visualisation.html) -->
 
-+ [ModernDive `ggplot2` chapter](http://moderndive.com/3-viz.html)
+<!-- + [ModernDive `ggplot2` chapter](http://moderndive.com/3-viz.html) -->
 
-+ [RStudio `ggplot2` Cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf)
+<!-- + [RStudio `ggplot2` Cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf) -->
 
-+ [R4DS `dplyr` chapter](http://r4ds.had.co.nz/transform.html)
+<!-- + [R4DS `dplyr` chapter](http://r4ds.had.co.nz/transform.html) -->
 
-+ [ModernDive `dplyr` chapter](http://moderndive.com/5-wrangling.html)
+<!-- + [ModernDive `dplyr` chapter](http://moderndive.com/5-wrangling.html) -->
 
-+ [RStudio `dplyr` Cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf)
+<!-- + [RStudio `dplyr` Cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf) -->
