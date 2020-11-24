@@ -69,8 +69,8 @@ meta() %>%
   meta_social(
     title = "Introduce Yourself to R, Rstudio & Packages",
     url = "https://r4b.netlify.app/slides/00-welcome.html#1",
-    image = "https://r4b.netlify.app/slides/00-welcome.html#1",
-    image_alt = "The first slide features a flying machine",
+    image = "https://github.com/koliajaykr/course-r4bee/blob/master/static/slides/images/00-welcome/00-cover.jpg",
+    image_alt = "The first slide features pottery with a heart shape",
     og_type = "website",
     twitter_card_type = "summary_large_image"
   )
