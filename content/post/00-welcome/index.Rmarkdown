@@ -34,7 +34,7 @@ projects: []
 #  url: /slides/00-welcome.html
 ---
 
-Welcome! 
+Slides
 
 ```{r echo=FALSE}
 library(xaringanExtra)

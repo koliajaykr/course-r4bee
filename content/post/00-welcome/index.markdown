@@ -34,7 +34,7 @@ projects: []
 #  url: /slides/00-welcome.html
 ---
 
-Welcome! 
+Slides
 
 <!--html_preserve--><div class="shareagain" style="min-width:300px;margin:1em auto;">
 <iframe src="/slides/00-welcome.html" width="400" height="300" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
