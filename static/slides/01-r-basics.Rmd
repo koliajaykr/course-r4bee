@@ -12,7 +12,7 @@ output:
       # autoplay: 5000
       highlightStyle: solarized-light
       highlightLanguage: ["r", "css", "yaml"]
-      slideNumberFormat: " " 
+      slideNumberFormat: "%current% " 
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
@@ -30,6 +30,7 @@ library(countdown)
 library(tidyverse)
 library(magick)
 library(icon)
+library(countdown)
 library(xaringanExtra)
 xaringanExtra::use_tachyons()
 ```
@@ -38,16 +39,9 @@ layout: true
 
 <a class="footer-link" href="https://r4b.netlify.app/">r4b/share</a>
 
-```{css side-hie, echo=FALSE}
-# codes to hide specific slide number
-.hide-count .remark-slide-number {
-  display: none;
-}
-```
-
 ---
 
-class: title-slide, center, bottom
+class: title-slide, center, bottom, hide-count
 background-image: url(images/01-basics/featured.jpg)
 background-size: 58%
 background-position: 50% 0%
@@ -91,30 +85,23 @@ background-position: center bottom
 
 ---
 
-class: inverse, center, middle
+class: inverse, hide-count
+background-image: url("images/01-basics/project-logo.png")
+background-size: 30%
+background-position: 10%
 
-# .big-text[RStudio Project 🗂]
-
----
-
-class: center
-background-image: url("images/01-basics/r-projects.jpg")
-background-size: 70%
-background-position: 50% 80%
-
-# Using RStudio Project
-
-.footnote[
-Img: [Allison Horst](https://www.allisonhorst.com/)
+<br>
+.right-column[
+# .center.big-text[RStudio Project]
 ]
 
 ---
 
-background-image: url("images/01-basics/project-logo.png")
-background-size: 30%
-background-position: right center
+background-image: url("images/01-basics/r-projects.jpg")
+background-size: 65%
+background-position: 100% 80%
 
-# Using RStudio Projects
+# About RStudio Projects
 
 - "to divide your work into multiple contexts, each with their own:         
 
@@ -136,7 +123,7 @@ background-position: right center
 
 .footnote[
 
-Source: [RStudio Support](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) 
+Source: [RStudio Support](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects); Img: [Allison Horst](https://www.allisonhorst.com/) 
 
 ]
 
@@ -180,7 +167,7 @@ knitr::include_graphics("images/01-basics/rstd-proj-4.png")
 
 class: center
 
-background-image: url("images/01-basics/rstd-project-open.png")
+background-image: url("images/01-basics/rstd-proj-name.png")
 background-size: 70%
 background-position: center bottom
 
@@ -190,7 +177,7 @@ background-position: center bottom
 
 class: center
 
-background-image: url("images/01-basics/rstd-project-open1.png")
+background-image: url("images/01-basics/rstd-proj-work.png")
 background-size: 70%
 background-position: center bottom
 
@@ -200,7 +187,7 @@ background-position: center bottom
 
 class: center
 
-background-image: url("images/01-basics/rstd-project-open2.png")
+background-image: url("images/01-basics/rstd-proj-work2.png")
 background-size: 70%
 background-position: center bottom
 
@@ -208,9 +195,16 @@ background-position: center bottom
 
 ---
 
-class: inverse, center, middle
+class: inverse, hide-count, center
+background-image: url("images/01-basics/code_hero.gif")
+background-size: 37%
+background-position: 15% 50%
 
-# .big-text[R Script 📜]
+<br>
+
+.pull-right[
+# .bottom.big-text[R Script]
+]
 
 ---
 
@@ -260,7 +254,7 @@ background-image: url("images/01-basics/script-to-console3.png")
 background-size: 70%
 background-position: center bottom
 
-# R **Script** is processed in **Console**
+# R Script $\rightarrow$ Console $\rightarrow$ Output
 
 ---
 
@@ -270,7 +264,7 @@ background-image: url("images/01-basics/script-to-console4.png")
 background-size: 70%
 background-position: center bottom
 
-# R **Script** is processed in **Console**
+# R Script $\rightarrow$ Console $\rightarrow$ Output
 
 ---
 
@@ -288,9 +282,11 @@ background-position: center bottom
 
 class: live-code
 
+# R as a big calculator
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r calci1, eval=FALSE, echo=TRUE}
 1 #<<
@@ -300,7 +296,7 @@ class: live-code
 
 .pull-right[
 
-# .center[Console ]
+## .gold[Console ]
 
 ```{r ref.label="calci1", echo=FALSE}
 
@@ -312,9 +308,11 @@ class: live-code
 
 class: live-code
 
+# R as a big calculator
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r calci2, eval=FALSE, echo=TRUE}
 1
@@ -326,7 +324,7 @@ class: live-code
 
 .pull-right[
 
-# .center[Console ]
+## .gold[Console ]
 
 ```{r ref.label="calci2", echo=FALSE}
 
@@ -338,23 +336,25 @@ class: live-code
 
 class: live-code
 
+# R as a big calculator
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r calci3, eval=FALSE, echo=TRUE}
 1
 
 1 + 1
 
-34 - 40 #<<
+34 / 40 #<<
 ```
 
 ]
 
 .pull-right[
 
-# .center[Console ]
+## .gold[Console ]
 
 ```{r ref.label="calci3", echo=FALSE}
 
@@ -366,25 +366,27 @@ class: live-code
 
 class: live-code
 
+# R as a big calculator
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r calci4, eval=FALSE, echo=TRUE}
 1
 
 1 + 1
 
-34 - 40
+34 / 40
 
-5 * 4 #<<
+5 < 4 #<<
 ```
 
 ]
 
 .pull-right[
 
-# .center[Console ]
+## .gold[Console ]
 
 ```{r ref.label="calci4", echo=FALSE}
 
@@ -396,27 +398,29 @@ class: live-code
 
 class: live-code
 
+# R as a big calculator
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r calci5, eval=FALSE, echo=TRUE}
 1
 
 1 + 1
 
-34 - 40
+34 / 40
 
-5 * 4
+5 < 4
 
-16 / 2 #<<
+16 == 16 #<<
 ```
 
 ]
 
 .pull-right[
 
-# .center[Console ]
+## .gold[Console ]
 
 ```{r ref.label="calci5", echo=FALSE}
 
@@ -428,29 +432,31 @@ class: live-code
 
 class: live-code
 
+# R as a big calculator
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r calci6, eval=FALSE, echo=TRUE}
 1
 
 1 + 1
 
-34 - 40
+34 / 40
 
-5 * 4
+5 < 4
 
-16 / 2
+16 == 16 
 
-0.2 + 0.8 #<<
+12 > 2 #<<
 ```
 
 ]
 
 .pull-right[
 
-# .center[Console ]
+## .gold[Console ]
 
 ```{r ref.label="calci6", echo=FALSE}
 
@@ -458,60 +464,25 @@ class: live-code
 
 ]
 
----
 
-class: live-code
-
-.pull-left[
-
-# .center[R Script]
-
-```{r calci7, eval=FALSE, echo=TRUE}
-1
-
-1 + 1
-
-34 - 40
-
-5 * 4
-
-16 / 2
-
-0.2 + 0.8
-
-3 > 7 #<<
-
-3 == 3 #<<
-
-3 < 5 #<<
-```
-
-]
-
-.pull-right[
-
-# .center[Console ]
-
-```{r ref.label="calci7", echo=FALSE}
-
-```
-
-]
 
 ---
+exclude: true
 
 class: your-turn, inverse
 
-# 🤯 Your Turn
+# 👨🏽‍💻👩‍💻 Your Turn
 
 ## 1. *ab ye kar ke dikhao* 🕺🏽💃🏼
 
 ---
 
-class: inverse, center, middle
+class: inverse, hide-count, center, bottom
+background-image: url("images/01-basics/rainbowr.gif")
+background-size: 50%
+background-position: 50% 5%
 
-# .big-text[R Function🪅]
-
+# .bottom.big-text[Functions]
 
 ---
 
@@ -523,7 +494,7 @@ class: inverse, center, middle
 
 .pull-left[
 
-## .center[R function]
+## .center[R Script]
 
 ```{r func1, eval=FALSE, echo=TRUE}
 round(9.1565, 2)
@@ -546,7 +517,7 @@ round(9.1565, 2)
 ---
 
 class: center
-background-image: url("images/01-basics/function.png")
+background-image: url("images/01-basics/function-args.png")
 background-size: 90%
 background-position: 60% 70%
 
@@ -554,9 +525,12 @@ background-position: 60% 70%
 
 ---
 class: live-code
+
+# Round Function
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r func2, eval=FALSE, echo=TRUE}
 round(
@@ -569,7 +543,7 @@ round(
 
 .pull-right[
 
-# .center[Console]
+## .gold[Console]
 
 ```{r ref.label="func2", echo=FALSE}
 
@@ -583,9 +557,12 @@ use tab key inside empty function bracket
 
 ---
 class: live-code
+
+# Square Root Function
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r sqrt, eval=FALSE, echo=TRUE}
 sqrt(
@@ -597,7 +574,7 @@ sqrt(
 
 .pull-right[
 
-# .center[Console]
+## .gold[Console]
 
 ```{r ref.label="sqrt", echo=FALSE}
 
@@ -607,9 +584,12 @@ sqrt(
 
 ---
 class: live-code
+
+# Sequence Function
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r seq, eval=FALSE, echo=TRUE}
 seq.int(
@@ -623,13 +603,22 @@ seq.int(
 
 .pull-right[
 
-# .center[Console]
+## .gold[Console]
 
 ```{r ref.label="seq", echo=FALSE}
 
 ```
 
 ]
+
+---
+
+class: inverse, hide-count, center, bottom
+background-image: url("images/01-basics/stormyr.gif")
+background-size: 45%
+background-position: 50% 5%
+
+# .bottom.big-text[Comments]
 
 ---
 
@@ -651,14 +640,15 @@ seq.int(
 
 ---
 class: live-code
+
+# Add Comment
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r comment, eval=FALSE, echo=TRUE}
 # hello world!
-
-## is a comment
 
 (1 + 4) - (3 * 5) / 10
 ```
@@ -667,7 +657,7 @@ class: live-code
 
 .pull-right[
 
-# .center[Console]
+## .gold[Console]
 
 ```{r ref.label="comment", echo=FALSE}
 
@@ -677,11 +667,11 @@ class: live-code
 
 ---
 
-class: inverse, middle, right
+class: inverse, middle, right, hide-count
 
-background-image: url("images/01-basics/amelia.png"), url("images/01-basics/amelia2.jpg"), url("images/01-basics/amelia3.jpg"), url("images/01-basics/amelia4.jpg")
-background-position: 0% 0%, 50% 0%, 0% 100%, 90% 0%
-background-size: 25%, 30%, 22%, 20%
+background-image: url("images/01-basics/amelia.png"), url("images/01-basics/amelia2.jpg"), url("images/01-basics/amelia3.jpg"), url("images/01-basics/amelia4.jpg"), url("images/00-welcome/tidyverse_celestial.png")
+background-position: 0% 0%, 50% 0%, 0% 100%, 90% 0%, 30% 100%
+background-size: 25%, 30%, 22%, 20%, 20%
 
 # .big-text[R Packages]
 
@@ -690,7 +680,7 @@ background-size: 25%, 30%, 22%, 20%
 
 class: center
 
-# Download R package
+# Download (Tools $\rightarrow$ Install Packages)
 
 ```{r echo=FALSE, out.width="60%"}
 knitr::include_graphics("images/01-basics/pkg-download.png")
@@ -704,16 +694,17 @@ knitr::include_graphics("images/01-basics/pkg-download.png")
 library(tidyverse)
 ```
 
-- To use R package write one time inside your script:  
-`library(name of the package)`
+##- To use R package write one time `library(name of the package)` inside your script  
 
 ---
 
 class: live-code
 
+# Use R Package
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r lib1, eval=FALSE, echo=TRUE}
 library(tidyverse)
@@ -723,7 +714,7 @@ library(tidyverse)
 
 .pull-right[
 
-# .center[Console ]
+## .gold[Console ]
 
 ```{r ref.label="lib1", echo=FALSE}
 
@@ -731,12 +722,41 @@ library(tidyverse)
 
 ]
 
+---
+
+class: live-code
+
+# Use R Package
+
+.pull-left[
+
+## .gold[R Script]
+
+```{r lib2, eval=FALSE, echo=TRUE}
+library(vcd)
+```
+
+]
+
+.pull-right[
+
+## .gold[Console ]
+
+```{r lib22, echo=T, eval=FALSE}
+<packageNotFoundError in library(vcd): there is no package called 'vcd'>
+```
+
+]
+
 
 ---
 
-class: inverse, center, middle
+class: inverse, hide-count, center, bottom
+background-image: url("images/01-basics/heartyr.gif")
+background-size: 50%
+background-position: 50% 5%
 
-# .big-text[R Objects 🎈]
+# .bottom.big-text[Objects]
 
 ---
 
@@ -750,7 +770,7 @@ Source: https://rstudio-education.github.io/hopr/basics.html
 
 ---
 
-# Guideline to name `objects` in R:
+# 🚨Guideline to name `objects` in R:
 
   - a name cannot start with a number  
   
@@ -777,9 +797,11 @@ Source: https://rstudio-education.github.io/hopr/basics.html
 
 class: live-code
 
+# Create Object
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r obj1, eval=FALSE, echo=TRUE}
 
@@ -792,7 +814,7 @@ salary
 
 .pull-right[
 
-# .center[Console ]
+## .gold[Console ]
 
 ```{r ref.label="obj1", echo=FALSE}
 
@@ -804,9 +826,11 @@ salary
 
 class: live-code
 
+# Create Object
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r obj2, eval=FALSE, echo=TRUE}
 
@@ -825,7 +849,7 @@ name
 
 .pull-right[
 
-# .center[Console ]
+## .gold[Console ]
 
 ```{r ref.label="obj2", echo=FALSE}
 
@@ -833,38 +857,16 @@ name
 
 ]
 
----
-
-class: live-code
-
-.pull-left[
-
-# .center[R Script]
-
-```{r obj3, eval=FALSE, echo=TRUE}
-# names of created objects
-objects() #<<
-```
-
-]
-
-.pull-right[
-
-# .center[Console ]
-
-```{r ref.label="obj3", echo=FALSE}
-
-```
-
-]
 
 ---
 
 class: live-code
 
+# Create Object
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r obj4, eval=FALSE, echo=TRUE}
 
@@ -883,7 +885,7 @@ age
 
 .pull-right[
 
-# .center[Console ]
+## .gold[Console ]
 
 ```{r ref.label="obj4", echo=FALSE}
 
@@ -895,9 +897,11 @@ age
 
 class: live-code
 
+# Create Object
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r obj5, eval=FALSE, echo=TRUE}
 
@@ -916,7 +920,7 @@ place
 
 .pull-right[
 
-# .center[Console ]
+## .gold[Console ]
 
 ```{r ref.label="obj5", echo=FALSE}
 
@@ -928,9 +932,11 @@ place
 
 class: live-code
 
+# Create Object
+
 .pull-left[
 
-# .center[R Script]
+## .gold[R Script]
 
 ```{r obj6, eval=FALSE, echo=TRUE}
 
@@ -943,7 +949,7 @@ books
 
 .pull-right[
 
-# .center[Console ]
+## .gold[Console ]
 
 ```{r ref.label="obj6", echo=FALSE}
 
@@ -960,6 +966,28 @@ class: center
 ```{r echo=FALSE, out.width="70%"}
 knitr::include_graphics("images/01-basics/env-rstd.png")
 ```
+
+--
+
+# 🤷🏽‍♂️  * how to convert these variables into a **tidy** data*
+
+---
+
+class: hide-count
+background-image: url("images/01-basics/tidydata_7.jpg")
+background-size: cover
+
+---
+
+class: hide-count
+background-image: url("images/01-basics/tidydata_1.jpg")
+background-size: contain
+
+---
+
+class: hide-count
+background-image: url("images/01-basics/tidydata_2.jpg")
+background-size: contain
 
 ---
 
@@ -979,13 +1007,9 @@ soc <- data.frame(
 soc
 ```
 
----
+--
 
-class: center
-
-# R understands 'tidy' 🛀 Data
-
-```{r echo=FALSE, out.width="100%"}
+```{r echo=FALSE, out.width="70%"}
 knitr::include_graphics("images/01-basics/tidy-1.png")
 ```
 
@@ -997,14 +1021,13 @@ Source: [Book of Hadley & Grolemund](https://r4ds.had.co.nz/index.html)
 
 class: live-code
 
+# Create Data Object
+
 .pull-left[
-# R Script
+
+## .gold[R Script]
 
 ```{r df1, eval=FALSE}
-objects()
-```
-
-```{r df2, eval=FALSE}
 soc <- data.frame( #<<
   age,
   books,
@@ -1020,13 +1043,37 @@ soc
 ]
 
 .pull-right[
-# Console
+
+## .gold[Console]
 
 ```{r ref.label="df1", echo=FALSE}
 
 ```
 
-```{r ref.label="df2", echo=FALSE}
+]
+
+---
+
+class: live-code
+
+# Get a List of all Objects
+
+.pull-left[
+
+## .gold[R Script]
+
+```{r obj3, eval=FALSE, echo=TRUE}
+# names of created objects
+objects() #<<
+```
+
+]
+
+.pull-right[
+
+## .gold[Console ]
+
+```{r ref.label="obj3", echo=FALSE}
 
 ```
 
@@ -1042,7 +1089,7 @@ class: your-turn, hide-count
 countdown(minutes = 10, top = 0, font_size = "3em")
 ```
 
-## .gold[Write codes to prepare this data + add a new variable of your choice:]
+## .yellow[Write codes to prepare this data + add a new variable of your choice:]
 
 ```{r echo=FALSE}
 state <- c("Germany", "France", "India", "Russia", "USA", "New Zealand")
