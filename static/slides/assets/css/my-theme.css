@@ -554,3 +554,9 @@ pre {
   font-family: 'Noto Serif JP';
   font-size: 1.2em;
 }
+
+/*to hide the number of a specific slide*/
+
+.hide-count .remark-slide-number {
+  display: none;
+}

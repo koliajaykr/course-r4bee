@@ -12,7 +12,7 @@ output:
       # autoplay: 5000
       highlightStyle: solarized-light
       highlightLanguage: ["r", "css", "yaml"]
-      slideNumberFormat: " " 
+      slideNumberFormat: "%current%" 
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
@@ -39,12 +39,6 @@ layout: true
 
 <a class="footer-link" href="https://r4b.netlify.app/">r4b/share</a>
 
-```{css echo=FALSE}
-# codes to hide specific slide number
-.hide-count .remark-slide-number {
-  display: none;
-}
-```
 ---
 
 class: title-slide, left, middle, hide-count
@@ -82,7 +76,7 @@ class: center
 
 # Hello! Ajay here.
 
-```{r echo=FALSE, out.width="35%"}
+```{r instructor-img, echo=FALSE, out.width="35%"}
 magick::image_read("images/00-welcome/ajay.png") 
 ```
 
@@ -94,7 +88,7 @@ class: center
 
 # Why R?
 
-```{r  out.width="50%"}
+```{r whyR-img,  out.width="50%"}
 magick::image_read("images/00-welcome/why-r.png") 
 ```
 
@@ -209,7 +203,7 @@ background-position: 95% 50%
 
 --
 
-- "R, like S, is designed around a true computer language, and it allows users to add additional functionality by defining new functions." 
+- "R, like S, is designed around a true computer language, and it allows users to **add additional functionality** by defining new functions." 
 
 .footnote[
 Source: [R Project](https://www.r-project.org/about.html)
@@ -221,7 +215,7 @@ class: center
 
 # R Console "`>`"
 
-```{r echo=FALSE, out.width="42%"}
+```{r interp-img, echo=FALSE, out.width="42%"}
 magick::image_read("images/00-welcome/r-console.png") 
 ```
 
@@ -231,7 +225,7 @@ class: center
 
 # Quit R Console
 
-```{r echo=FALSE, out.width="42%"}
+```{r quitR-img, echo=FALSE, out.width="42%"}
 magick::image_read("images/00-welcome/r-quit.png") 
 ```
 
@@ -299,7 +293,7 @@ class: center
 
 ## Imagine ***RStudio*** as a stylish car ...
 
-```{r echo=FALSE, out.width=""}
+```{r car-img, echo=FALSE, out.width=""}
 image_read("images/00-welcome/car.jpg")
 ```
 
@@ -311,7 +305,7 @@ image_read("images/00-welcome/car.jpg")
 
 ## and ***R*** as its powerful engine.
 
-```{r echo=FALSE, out.width="50%"}
+```{r eng-img, echo=FALSE, out.width="50%"}
 image_read("images/00-welcome/engine.jpg")
 ```
 ]
@@ -322,15 +316,22 @@ Image source: [Photo Boards](https://unsplash.com/@aplaceforcreation) & [Erik Mc
 
 ---
 
-class: inverse, middle, center
+class: inverse, middle, hide-count
+background-image: url("images/00-welcome/tidyverse_celestial.png")
+background-size: 60%
+background-position: 0% 60%
 
-# .big-text[Packages 📦]
+# .right.big-text[R <br>Packages]
 
 ---
 
-# R Packages:
+# 📦 R Packages:
 
 - "An R package is a **collection** of functions, data, and documentation that extends the capabilities of base R. Using packages is **key** to the successful use of R."
+
+--
+
+- Available CRAN [Packages](https://cran.r-project.org/web/packages/available_packages_by_name.html) (16699) By Name or on [GitHub](https://github.com/)
 
 --
 
@@ -348,7 +349,7 @@ class: center
 
 ## Install package once
 
-```{r echo=FALSE, out.width="60%"}
+```{r lib-img, echo=FALSE, out.width="60%"}
 image_read("images/00-welcome/library.jpg")
 ```
 
@@ -360,7 +361,7 @@ image_read("images/00-welcome/library.jpg")
 
 ## use it for forever.
 
-```{r echo=FALSE, out.width="55%"}
+```{r book-img, echo=FALSE, out.width="55%"}
 image_read("images/00-welcome/book.jpg")
 ```
 
@@ -380,7 +381,7 @@ class: center
 
 ## Install package once
 
-```{r echo=FALSE, out.width="65%"}
+```{r buld-img, echo=FALSE, out.width="65%"}
 image_read("images/00-welcome/bulb.jpg")
 ```
 
@@ -392,7 +393,7 @@ image_read("images/00-welcome/bulb.jpg")
 
 ## use it for forever.
 
-```{r echo=FALSE, out.width="60%"}
+```{r switch-img, echo=FALSE, out.width="60%"}
 image_read("images/00-welcome/switch.jpg")
 ```
 
@@ -404,12 +405,11 @@ Image credit: [rawkkim](https://images.unsplash.com/photo-1536238187740-bfc4ba69
 
 ]
 
-
 ---
 
-class: inverse, center, middle
+class: inverse, center, middle, hide-count
 
-# .big-text[Challenges! 🤯]
+# .big-text[🏋🏽‍♀️ Challenges]
 
 ---
 
@@ -425,9 +425,15 @@ class: inverse, center, middle
 
 ---
 
-class: inverse, center, middle
+class: inverse, right, middle, hide-count
+background-image: url("images/00-welcome/code_hero.jpg")
+background-size: 30%
+background-position: 0% 50%
 
-# .big-text[Find Help ! 🐶]
+# .big-text[Find Help]
+
+
+
 
 ---
 
@@ -467,31 +473,29 @@ class: center
 
 ---
 
-class: inverse, center, middle
+class: inverse, middle, hide-count
 
-# .big-text[Feedback ! 🤩]
+# .big-text[🙈 Feedback]
 
 ---
-
-class: hide-count
 
 # Your feedback
 
 - ⭐️ on [GitHub](https://github.com/koliajaykr/course-r4bee)
 
-- 📝 on Google Form at the end of the course
+- 📝 using Google Form at the end of the course
 
-- 👨🏼‍🏫 Any time during the sessions.
+- 🙋🏼‍♂️🙋🏽‍♀  you can also share your views and suggestions any time during the sessions.
 
 ---
 
 class: center, middle
 
-# .big-text[Q n A <br>🙋🏼‍♂️🙋🏽‍♀️]
+# .big-text[🧃 Q & A]
 
 ---
 
-class: center, middle, inverse
+class: center, middle, inverse, hide-count
 
 ### Next Session
 

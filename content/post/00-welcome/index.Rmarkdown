@@ -36,8 +36,9 @@ projects: []
 
 Slides
 
-```{r echo=FALSE}
+```{r echo=FALSE, fig.align='center'}
 library(xaringanExtra)
-xaringanExtra::embed_xaringan(url = "/slides/00-welcome.html", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/00-welcome.html", ratio = "4:3",
+                              max_width = 600)
 ```
 
