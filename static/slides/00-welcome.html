@@ -1,599 +1,351 @@
-<!DOCTYPE html>
-<html lang="" xml:lang="">
-  <head>
-    <title>Introduce Yourself  to R, RStudio, Packages  and Me!</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="Ajay Koli | India" />
-    <meta name="date" content="2020-11-25" />
-    <script src="libs/header-attrs/header-attrs.js"></script>
-    <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
-    <script src="libs/tile-view/tile-view.js"></script>
-    <script src="libs/xaringanExtra-webcam/webcam.js"></script>
-    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
-    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
-    <script src="libs/clipboard/clipboard.min.js"></script>
-    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
-    <script src="libs/shareon/shareon.min.js"></script>
-    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
-    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
-    <meta name="description" content="Welcome"/>
-    <meta name="generator" content="xaringan and remark.js"/>
-    <meta name="github-repo" content="koliajaykr/course-r4bee"/>
-    <meta name="twitter:title" content="Introduce Yourself to R, Rstudio &amp; Packages"/>
-    <meta name="twitter:description" content="Welcome"/>
-    <meta name="twitter:url" content="https://r4b.netlify.app/slides/00-welcome.html#1"/>
-    <meta name="twitter:image:src" content="https://github.com/koliajaykr/course-r4bee/blob/master/static/slides/images/00-welcome/00-cover.jpg"/>
-    <meta name="twitter:image:alt" content="The first slide features pottery with a heart shape"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta property="og:title" content="Introduce Yourself to R, Rstudio &amp; Packages"/>
-    <meta property="og:description" content="Welcome"/>
-    <meta property="og:url" content="https://r4b.netlify.app/slides/00-welcome.html#1"/>
-    <meta property="og:image" content="https://github.com/koliajaykr/course-r4bee/blob/master/static/slides/images/00-welcome/00-cover.jpg"/>
-    <meta property="og:image:alt" content="The first slide features pottery with a heart shape"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:locale" content="en_US"/>
-    <link href="libs/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/my-theme.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/my-fonts.css" type="text/css" />
-  </head>
-  <body>
-    <textarea id="source">
+---
+title: "Introduce Yourself <br>to R, RStudio, Packages <br>and Me!"
+subtitle: "Welcome"
+author: Ajay Koli | India
+date: "November 25, 2020"
+output:
+  xaringan::moon_reader:
+    css: ["default", "assets/css/my-theme.css", "assets/css/my-fonts.css"]
+    seal: false
+    lib_dir: libs
+    nature:
+      # autoplay: 5000
+      highlightStyle: solarized-light
+      highlightLanguage: ["r", "css", "yaml"]
+      slideNumberFormat: " " 
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+<link href="/rmarkdown-libs/tachyons/tachyons.min.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/tile-view/tile-view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/tile-view/tile-view.js"></script>
+<script src="/rmarkdown-libs/xaringanExtra-webcam/webcam.js"></script>
+<script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
+<script src="/rmarkdown-libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+<script src="/rmarkdown-libs/clipboard/clipboard.min.js"></script>
+<link href="/rmarkdown-libs/shareon/shareon.min.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/shareon/shareon.min.js"></script>
+<link href="/rmarkdown-libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/xaringanExtra-shareagain/shareagain.js"></script>
+<meta name="description" content="Welcome"/>
+<meta name="generator" content="xaringan and remark.js"/>
+<meta name="github-repo" content="koliajaykr/course-r4bee"/>
+<meta name="twitter:title" content="Introduce Yourself to R, Rstudio &amp; Packages"/>
+<meta name="twitter:description" content="Welcome"/>
+<meta name="twitter:url" content="https://r4b.netlify.app/"/>
+<meta name="twitter:image:src" content="https://imgur.com/Vmv6Y1K"/>
+<meta name="twitter:image:alt" content="The first slide features pottery with a heart shape"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:title" content="Introduce Yourself to R, Rstudio &amp; Packages"/>
+<meta property="og:description" content="Welcome"/>
+<meta property="og:url" content="https://r4b.netlify.app/"/>
+<meta property="og:image" content="https://imgur.com/Vmv6Y1K"/>
+<meta property="og:image:alt" content="The first slide features pottery with a heart shape"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_US"/>
+<link href="/rmarkdown-libs/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
 
 
-
-
-layout: true
-
-&lt;a class="footer-link" href="https://r4b.netlify.app/"&gt;r4b/share&lt;/a&gt;
-
-&lt;style type="text/css"&gt;
+<p>layout: true</p>
+<p><a class="footer-link" href="https://r4b.netlify.app/">r4b/share</a></p>
+<style type="text/css">
 # codes to hide specific slide number
 .hide-count .remark-slide-number {
   display: none;
 }
-&lt;/style&gt;
----
-
-class: title-slide, left, middle, hide-count
+</style>
+<hr />
+<p>class: title-slide, left, middle, hide-count
 background-image: url(images/00-welcome/featured.jpg)
-background-size: cover
-
-# .white[Introduce Yourself &lt;br&gt;to R, RStudio, Packages &lt;br&gt;and Me!]
-
-## .orange[Welcome]
-
-### .white[Ajay Koli | India]
-
-
-
-
----
-
-class: center
-
-# Hello! Ajay here.
-
-&lt;img src="00-welcome_files/figure-html/unnamed-chunk-2-1.png" width="35%" /&gt;
-
-<i class="fab  fa-twitter "></i>[@koliajaykr](https://twitter.com/koliajaykr) &lt;br&gt; <i class="fas  fa-envelope "></i>   [koliajaykumar@gmail.com](koliajaykumar@gmail.com)
-
----
-
-class: center
-
-# Why R?
-
-&lt;img src="00-welcome_files/figure-html/unnamed-chunk-3-1.png" width="50%" /&gt;
-
-.footnote[
-🙈 me ["Why R"](https://youtu.be/VBxnFdJFD7Y) on YouTube.
-]
-
----
-
-background-image: url("images/00-welcome/grow.png")
+background-size: cover</p>
+<div id="whiteintroduce-yourself-to-r-rstudio-packages-and-me" class="section level1">
+<h1>.white[Introduce Yourself <br>to R, RStudio, Packages <br>and Me!]</h1>
+<div id="orangewelcome" class="section level2">
+<h2>.orange[Welcome]</h2>
+<div id="whiteajay-koli-india" class="section level3">
+<h3>.white[Ajay Koli | India]</h3>
+<hr />
+<p>class: center</p>
+</div>
+</div>
+</div>
+<div id="hello-ajay-here." class="section level1">
+<h1>Hello! Ajay here.</h1>
+<p><img src="static/slides/00-welcome_files/figure-html/unnamed-chunk-2-1.png" width="35%" /></p>
+<p><i class="fab  fa-twitter "></i><span class="citation">[@koliajaykr]</span>(<a href="https://twitter.com/koliajaykr" class="uri">https://twitter.com/koliajaykr</a>) <br> <i class="fas  fa-envelope "></i> <a href="koliajaykumar@gmail.com">koliajaykumar@gmail.com</a></p>
+<hr />
+<p>class: center</p>
+</div>
+<div id="why-r" class="section level1">
+<h1>Why R?</h1>
+<p><img src="static/slides/00-welcome_files/figure-html/unnamed-chunk-3-1.png" width="50%" /></p>
+<p>.footnote[
+🙈 me <a href="https://youtu.be/VBxnFdJFD7Y">“Why R”</a> on YouTube.]</p>
+<hr />
+<p>background-image: url(“images/00-welcome/grow.png”)
 background-size: contain
-background-color: #F5F4F2
-
-# .center[You are not alone !]
-
-.footnote[
-Source: [RStudio Education](https://education.rstudio.com)
-]
-
----
-class: center
-background-image: url("images/00-welcome/data-science.png")
+background-color: #F5F4F2</p>
+</div>
+<div id="centeryou-are-not-alone" class="section level1">
+<h1>.center[You are not alone !]</h1>
+<p>.footnote[
+Source: <a href="https://education.rstudio.com">RStudio Education</a>]</p>
+<p>class: center
+background-image: url(“images/00-welcome/data-science-wrangle.png”)
 background-size: 70%
-background-position: center, middle
-
-# Program in R
-
-.footnote[
-Source: [Book by Garrett &amp; Hadley](https://r4ds.had.co.nz/introduction.html)
-]
-
----
-class: center
-background-image: url("images/00-welcome/data-science-wrangle.png")
+background-position: center, middle</p>
+</div>
+<div id="program-in-r-data-wrangling" class="section level1">
+<h1>Program in R: Data Wrangling</h1>
+<p>.footnote[
+Source: <a href="https://r4ds.had.co.nz/introduction.html">Book by Garrett &amp; Hadley</a>]</p>
+<p>class: center
+background-image: url(“images/00-welcome/data-science-model.png”)
 background-size: 70%
-background-position: center, middle
-
-# Program in R: Data Wrangling
-
-.footnote[
-Source: [Book by Garrett &amp; Hadley](https://r4ds.had.co.nz/introduction.html)
-]
-
----
-class: center
-background-image: url("images/00-welcome/data-science-communicate.png")
+background-position: center, middle</p>
+</div>
+<div id="program-in-r-modeling" class="section level1">
+<h1>Program in R: Modeling</h1>
+<p>.footnote[
+Source: <a href="https://r4ds.had.co.nz/introduction.html">Book by Garrett &amp; Hadley</a>]</p>
+<p>class: center
+background-image: url(“images/00-welcome/data-science-program.png”)
 background-size: 70%
-background-position: center, middle
-
-# Program in R: Data Visualisation
-
-.footnote[
-Source: [Book by Garrett &amp; Hadley](https://r4ds.had.co.nz/introduction.html)
-]
-
----
-class: center
-background-image: url("images/00-welcome/data-science-model.png")
-background-size: 70%
-background-position: center, middle
-
-# Program in R: Modeling
-
-.footnote[
-Source: [Book by Garrett &amp; Hadley](https://r4ds.had.co.nz/introduction.html)
-]
-
----
-class: center
-background-image: url("images/00-welcome/data-science-explore.png")
-background-size: 70%
-background-position: center, middle
-
-# Program in R: Exploratory Analysis
-
-.footnote[
-Source: [Book by Garrett &amp; Hadley](https://r4ds.had.co.nz/introduction.html)
-]
-
----
-class: center
-background-image: url("images/00-welcome/data-science-program.png")
-background-size: 70%
-background-position: center, middle
-
-# Program in R
-
-.footnote[
-Source: [Book by Garrett &amp; Hadley](https://r4ds.had.co.nz/introduction.html)
-]
-
----
-
-class: left, middle, inverse
-background-image: url("images/00-welcome/r-logo.png")
-background-size: 25% 
-background-position: 95% 50%
-
-# Download and Install
-
-.orange[ <i class="fas  fa-link "></i> https://www.r-project.org/]
-
----
-
-# About <i class="fab  fa-r-project "></i>:
-
-- "R is a language and environment for statistical computing and graphics."
-
---
-
-- "S language &amp; Bell Laboratries"
-
---
-
-- "R, like S, is designed around a true computer language, and it allows users to add additional functionality by defining new functions." 
-
-.footnote[
-Source: [R Project](https://www.r-project.org/about.html)
-]
-
----
-
-class: center
-
-# R Console "`&gt;`"
-
-&lt;img src="00-welcome_files/figure-html/unnamed-chunk-4-1.png" width="42%" /&gt;
-
----
-
-class: center
-
-# Quit R Console
-
-&lt;img src="00-welcome_files/figure-html/unnamed-chunk-5-1.png" width="42%" /&gt;
-
-
-
----
-class: left, middle, inverse
-background-image: url("images/00-welcome/RStudio-Logo-White.png")
-background-size: 35% 
-background-position: 90% 50%
-
-# Download and Install
-
-.orange[<i class="fas  fa-link "></i> https://rstudio.com/]
-
----
-
-# About RStudio:
-
-- "RStudio provides **free and open source** tools for R and enterprise-ready professional software for data science teams to develop and share their work at scale."
-
---
-
-- "RStudio’s **mission** is to create free and open-source software for data science, scientific research, and technical communication."
-
-.footnote[
-Source: [RStudio](https://rstudio.com/about/)
-]
-
----
-
-background-image: url("images/00-welcome/rstd-ide.png")
+background-position: center, middle</p>
+</div>
+<div id="program-in-r" class="section level1">
+<h1>Program in R</h1>
+<p>.footnote[
+Source: <a href="https://r4ds.had.co.nz/introduction.html">Book by Garrett &amp; Hadley</a>]</p>
+<hr />
+<p>class: left, middle, inverse
+background-image: url(“images/00-welcome/r-logo.png”)
+background-size: 25%
+background-position: 95% 50%</p>
+</div>
+<div id="download-and-install" class="section level1">
+<h1>Download and Install</h1>
+<p>.orange[ <i class="fas  fa-link "></i> <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>]</p>
+<hr />
+</div>
+<div class="section level1">
+<h1>About <i class="fab  fa-r-project "></i>:</h1>
+<ul>
+<li>“R is a language and environment for statistical computing and graphics.”</li>
+</ul>
+<p>–</p>
+<ul>
+<li>“S language &amp; Bell Laboratries”</li>
+</ul>
+<p>–</p>
+<ul>
+<li>“R, like S, is designed around a true computer language, and it allows users to add additional functionality by defining new functions.”</li>
+</ul>
+<p>.footnote[
+Source: <a href="https://www.r-project.org/about.html">R Project</a>]</p>
+<hr />
+<p>class: center</p>
+</div>
+<div id="r-console" class="section level1">
+<h1>R Console “<code>&gt;</code>”</h1>
+<p><img src="static/slides/00-welcome_files/figure-html/unnamed-chunk-4-1.png" width="42%" /></p>
+<hr />
+<p>class: center</p>
+</div>
+<div id="quit-r-console" class="section level1">
+<h1>Quit R Console</h1>
+<p><img src="static/slides/00-welcome_files/figure-html/unnamed-chunk-5-1.png" width="42%" /></p>
+</div>
+<div id="about-rstudio" class="section level1">
+<h1>About RStudio:</h1>
+<ul>
+<li>“RStudio provides <strong>free and open source</strong> tools for R and enterprise-ready professional software for data science teams to develop and share their work at scale.”</li>
+</ul>
+<p>–</p>
+<ul>
+<li>“RStudio’s <strong>mission</strong> is to create free and open-source software for data science, scientific research, and technical communication.”</li>
+</ul>
+<p>.footnote[
+Source: <a href="https://rstudio.com/about/">RStudio</a>]</p>
+<hr />
+<p>background-image: url(“images/00-welcome/rstd-ide.png”)
 background-size: 60%
 background-position: 50% 70%
-class: center
-
-# RStudio IDE "`&gt;`"
-
----
-
-class: center
-
-background-image: url("images/00-welcome/rstd-options.png")
+class: center</p>
+</div>
+<div id="rstudio-ide" class="section level1">
+<h1>RStudio IDE “<code>&gt;</code>”</h1>
+<hr />
+<p>class: center</p>
+<p>background-image: url(“images/00-welcome/rstd-options.png”)
 background-size: 40%
-background-position: center bottom
-
-# RStudio `\(\rightarrow\)` Tools `\(\rightarrow\)` Global Options
-
----
-
-class: center
-
-background-image: url("images/00-welcome/rstd-options2.png")
+background-position: center bottom</p>
+</div>
+<div id="rstudio-rightarrow-tools-rightarrow-global-options" class="section level1">
+<h1>RStudio <span class="math inline">\(\rightarrow\)</span> Tools <span class="math inline">\(\rightarrow\)</span> Global Options</h1>
+<hr />
+<p>class: center</p>
+<p>background-image: url(“images/00-welcome/rstd-options2.png”)
 background-size: 40%
-background-position: center bottom
-
-# RStudio `\(\rightarrow\)` Tools `\(\rightarrow\)` Global Options
-
-
----
-
-class: center
-
-.pull-left[
-
-## Imagine ***RStudio*** as a stylish car ...
-
-&lt;img src="00-welcome_files/figure-html/unnamed-chunk-6-1.png" width="" /&gt;
-
-]
-
---
-
-.pull-right[
-
-## and ***R*** as its powerful engine.
-
-&lt;img src="00-welcome_files/figure-html/unnamed-chunk-7-1.png" width="50%" /&gt;
-]
-
-.footnote[
-Image source: [Photo Boards](https://unsplash.com/@aplaceforcreation) &amp; [Erik Mclean](https://unsplash.com/@introspectivedsgn)
-]
-
----
-
-class: inverse, middle, center
-
-# .big-text[Packages 📦]
-
----
-
-# R Packages:
-
-- "An R package is a **collection** of functions, data, and documentation that extends the capabilities of base R. Using packages is **key** to the successful use of R."
-
---
-
-- [Quick list of useful R packages](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages) by Garrett Grolemund on Aug 21, 2020
-
-.footnote[
-Source: [Book by Garrett &amp; Hadley](https://r4ds.had.co.nz/introduction.html)
-]
-
----
-
-class: center
-
-.pull-left[
-
-## Install package once
-
-&lt;img src="00-welcome_files/figure-html/unnamed-chunk-8-1.png" width="60%" /&gt;
-
-]
-
---
-
-.pull-right[
-
-## use it for forever.
-
-&lt;img src="00-welcome_files/figure-html/unnamed-chunk-9-1.png" width="55%" /&gt;
-
-]
-
-.footnote[
-
-Image credit: [Jon Tyson](https://unsplash.com/photos/kGUmNEYaSMY) &amp; [Clay Banks](https://unsplash.com/photos/GX8KBbVmC6c)
-
-]
-
----
-
-class: center
-
-.pull-left[
-
-## Install package once
-
-&lt;img src="00-welcome_files/figure-html/unnamed-chunk-10-1.png" width="65%" /&gt;
-
-]
-
---
-
-.pull-right[
-
-## use it for forever.
-
-&lt;img src="00-welcome_files/figure-html/unnamed-chunk-11-1.png" width="60%" /&gt;
-
-]
-
-.footnote[
-
-Image credit: [rawkkim](https://images.unsplash.com/photo-1536238187740-bfc4ba690aeb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1004&amp;q=80) &amp; [Heeren Darji](https://images.unsplash.com/photo-1590327813360-fdbca9ec1cc6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=975&amp;q=80)
-
-]
-
-
----
-
-class: inverse, center, middle
-
-# .big-text[Challenges! 🤯]
-
----
-
-# Challenges:
-
---
-
-##-  👨🏽‍💻👩‍💻 "Your Turn" practice exercies during each session
-
---
-
-##- 📚 Homework assignments 
-
----
-
-class: inverse, center, middle
-
-# .big-text[Find Help ! 🐶]
-
----
-
-background-image: url("images/00-welcome/rstd-help.png")
+background-position: center bottom</p>
+</div>
+<div id="rstudio-rightarrow-tools-rightarrow-global-options-1" class="section level1">
+<h1>RStudio <span class="math inline">\(\rightarrow\)</span> Tools <span class="math inline">\(\rightarrow\)</span> Global Options</h1>
+<hr />
+<p>class: center</p>
+<p>.pull-left[</p>
+<div id="imagine-rstudio-as-a-stylish-car" class="section level2">
+<h2>Imagine <strong><em>RStudio</em></strong> as a stylish car …</h2>
+<p><img src="static/slides/00-welcome_files/figure-html/unnamed-chunk-6-1.png" width="" /></p>
+<p>]</p>
+<p>–</p>
+<p>.pull-right[</p>
+</div>
+<div id="and-r-as-its-powerful-engine." class="section level2">
+<h2>and <strong><em>R</em></strong> as its powerful engine.</h2>
+<p><img src="static/slides/00-welcome_files/figure-html/unnamed-chunk-7-1.png" width="50%" />
+]</p>
+<p>.footnote[
+Image source: <a href="https://unsplash.com/@aplaceforcreation">Photo Boards</a> &amp; <a href="https://unsplash.com/@introspectivedsgn">Erik Mclean</a>]</p>
+<hr />
+<p>class: inverse, middle, center</p>
+</div>
+</div>
+<div id="big-textpackages" class="section level1">
+<h1>.big-text[Packages 📦]</h1>
+<hr />
+</div>
+<div id="r-packages" class="section level1">
+<h1>R Packages:</h1>
+<ul>
+<li>“An R package is a <strong>collection</strong> of functions, data, and documentation that extends the capabilities of base R. Using packages is <strong>key</strong> to the successful use of R.”</li>
+</ul>
+<p>–</p>
+<ul>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages">Quick list of useful R packages</a> by Garrett Grolemund on Aug 21, 2020</li>
+</ul>
+<p>.footnote[
+Source: <a href="https://r4ds.had.co.nz/introduction.html">Book by Garrett &amp; Hadley</a>]</p>
+<hr />
+<p>class: center</p>
+<p>.pull-left[</p>
+<div id="install-package-once" class="section level2">
+<h2>Install package once</h2>
+<p><img src="static/slides/00-welcome_files/figure-html/unnamed-chunk-8-1.png" width="60%" /></p>
+<p>]</p>
+<p>–</p>
+<p>.pull-right[</p>
+</div>
+<div id="use-it-for-forever." class="section level2">
+<h2>use it for forever.</h2>
+<p><img src="static/slides/00-welcome_files/figure-html/unnamed-chunk-9-1.png" width="55%" /></p>
+<p>]</p>
+<p>.footnote[</p>
+<p>Image credit: <a href="https://unsplash.com/photos/kGUmNEYaSMY">Jon Tyson</a> &amp; <a href="https://unsplash.com/photos/GX8KBbVmC6c">Clay Banks</a></p>
+<p>]</p>
+<hr />
+<p>class: center</p>
+<p>.pull-left[</p>
+</div>
+<div id="install-package-once-1" class="section level2">
+<h2>Install package once</h2>
+<p><img src="static/slides/00-welcome_files/figure-html/unnamed-chunk-10-1.png" width="65%" /></p>
+<p>]</p>
+<p>–</p>
+<p>.pull-right[</p>
+</div>
+<div id="use-it-for-forever.-1" class="section level2">
+<h2>use it for forever.</h2>
+<p><img src="static/slides/00-welcome_files/figure-html/unnamed-chunk-11-1.png" width="60%" /></p>
+<p>]</p>
+<p>.footnote[</p>
+<p>Image credit: <a href="https://images.unsplash.com/photo-1536238187740-bfc4ba690aeb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1004&amp;q=80">rawkkim</a> &amp; <a href="https://images.unsplash.com/photo-1590327813360-fdbca9ec1cc6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=975&amp;q=80">Heeren Darji</a></p>
+<p>]</p>
+<hr />
+<p>class: inverse, center, middle</p>
+</div>
+</div>
+<div id="big-textchallenges" class="section level1">
+<h1>.big-text[Challenges! 🤯]</h1>
+<hr />
+</div>
+<div id="challenges" class="section level1">
+<h1>Challenges:</h1>
+<p>–</p>
+<p>##- 👨🏽‍💻👩‍💻 “Your Turn” practice exercies during each session</p>
+<p>–</p>
+<p>##- 📚 Homework assignments</p>
+<hr />
+<p>class: inverse, center, middle</p>
+</div>
+<div id="big-textfind-help" class="section level1">
+<h1>.big-text[Find Help ! 🐶]</h1>
+<hr />
+<p>background-image: url(“images/00-welcome/rstd-help.png”)
 background-size: 70%
 background-position: 50% 70%
-class: center
-
-# Find Help: [RStudio Community](https://community.rstudio.com/)
-
----
-
-background-image: url("images/00-welcome/github-issue.png")
+class: center</p>
+</div>
+<div id="find-help-rstudio-community" class="section level1">
+<h1>Find Help: <a href="https://community.rstudio.com/">RStudio Community</a></h1>
+<hr />
+<p>background-image: url(“images/00-welcome/github-issue.png”)
 background-size: 70%
 background-position: 50% 70%
-class: center
-
-# Find Help: [GitHub Issues](https://github.com/)
-
----
-
-background-image: url("images/00-welcome/stackoverflow.png")
+class: center</p>
+</div>
+<div id="find-help-github-issues" class="section level1">
+<h1>Find Help: <a href="https://github.com/">GitHub Issues</a></h1>
+<hr />
+<p>background-image: url(“images/00-welcome/stackoverflow.png”)
 background-size: 70%
 background-position: 50% 70%
-class: center
-
-# Find Help: [stackoverflow](https://stackoverflow.com/)
-
----
-
-background-image: url("images/00-welcome/twt-help.png")
+class: center</p>
+</div>
+<div id="find-help-stackoverflow" class="section level1">
+<h1>Find Help: <a href="https://stackoverflow.com/">stackoverflow</a></h1>
+<hr />
+<p>background-image: url(“images/00-welcome/twt-help.png”)
 background-size: 35%
 background-position: 50% 70%
-class: center
-
-# Find Help: [Twitter](https://twitter.com/home) #rstats
-
----
-
-class: inverse, center, middle
-
-# .big-text[Feedback ! 🤩]
-
----
-
-class: hide-count
-
-# Your feedback
-
-- ⭐️ on [GitHub](https://github.com/koliajaykr/course-r4bee)
-
-- 📝 on Google Form at the end of the course
-
-- 👨🏼‍🏫 Any time during the sessions.
-
----
-
-class: center, middle
-
-# .big-text[Q n A &lt;br&gt;🙋🏼‍♂️🙋🏽‍♀️]
-
----
-
-class: center, middle, inverse
-
-### Next Session
-
-### .orange[Topic - 1]
-
-# Getting Started: The Basics of R
-    </textarea>
-<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"highlightStyle": "solarized-light",
-"highlightLanguage": ["r", "css", "yaml"],
-"slideNumberFormat": " ",
-"highlightLines": true,
-"countIncrementalSlides": false,
-"ratio": "16:9"
-});
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
-  window.dispatchEvent(new Event('resize'));
-});
-(function(d) {
-  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
-  if (!r) return;
-  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
-  d.head.appendChild(s);
-})(document);
-
-(function(d) {
-  var el = d.getElementsByClassName("remark-slides-area");
-  if (!el) return;
-  var slide, slides = slideshow.getSlides(), els = el[0].children;
-  for (var i = 1; i < slides.length; i++) {
-    slide = slides[i];
-    if (slide.properties.continued === "true" || slide.properties.count === "false") {
-      els[i - 1].className += ' has-continuation';
-    }
-  }
-  var s = d.createElement("style");
-  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
-  d.head.appendChild(s);
-})(document);
-// delete the temporary CSS (for displaying all slides initially) when the user
-// starts to view slides
-(function() {
-  var deleted = false;
-  slideshow.on('beforeShowSlide', function(slide) {
-    if (deleted) return;
-    var sheets = document.styleSheets, node;
-    for (var i = 0; i < sheets.length; i++) {
-      node = sheets[i].ownerNode;
-      if (node.dataset["target"] !== "print-only") continue;
-      node.parentNode.removeChild(node);
-    }
-    deleted = true;
-  });
-})();
-(function() {
-  "use strict"
-  // Replace <script> tags in slides area to make them executable
-  var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container script'
-  );
-  if (!scripts.length) return;
-  for (var i = 0; i < scripts.length; i++) {
-    var s = document.createElement('script');
-    var code = document.createTextNode(scripts[i].textContent);
-    s.appendChild(code);
-    var scriptAttrs = scripts[i].attributes;
-    for (var j = 0; j < scriptAttrs.length; j++) {
-      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
-    }
-    scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-})();
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-// adds .remark-code-has-line-highlighted class to <pre> parent elements
-// of code chunks containing highlighted lines with class .remark-code-line-highlighted
-(function(d) {
-  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
-  const preParents = [];
-  const findPreParent = function(line, p = 0) {
-    if (p > 1) return null; // traverse up no further than grandparent
-    const el = line.parentElement;
-    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
-  };
-
-  for (let line of hlines) {
-    let pre = findPreParent(line);
-    if (pre && !preParents.includes(pre)) preParents.push(pre);
-  }
-  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
-})(document);</script>
-
-<script>
-slideshow._releaseMath = function(el) {
-  var i, text, code, codes = el.getElementsByTagName('code');
-  for (i = 0; i < codes.length;) {
-    code = codes[i];
-    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-      text = code.textContent;
-      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-          /^\$\$(.|\s)+\$\$$/.test(text) ||
-          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-        code.outerHTML = code.innerHTML;  // remove <code></code>
-        continue;
-      }
-    }
-    i++;
-  }
-};
-slideshow._releaseMath(document);
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>
+class: center</p>
+</div>
+<div id="find-help-twitter-rstats" class="section level1">
+<h1>Find Help: <a href="https://twitter.com/home">Twitter</a> #rstats</h1>
+<hr />
+<p>class: inverse, center, middle</p>
+</div>
+<div id="big-textfeedback" class="section level1">
+<h1>.big-text[Feedback ! 🤩]</h1>
+<hr />
+<p>class: hide-count</p>
+</div>
+<div id="your-feedback" class="section level1">
+<h1>Your feedback</h1>
+<ul>
+<li><p>⭐️ on <a href="https://github.com/koliajaykr/course-r4bee">GitHub</a></p></li>
+<li><p>📝 on Google Form at the end of the course</p></li>
+<li><p>👨🏼‍🏫 Any time during the sessions.</p></li>
+</ul>
+<hr />
+<p>class: center, middle</p>
+</div>
+<div id="big-textq-n-a-️️" class="section level1">
+<h1>.big-text[Q n A <br>🙋🏼‍♂️🙋🏽‍♀️]</h1>
+<hr />
+<p>class: center, middle, inverse</p>
+<div id="next-session" class="section level3">
+<h3>Next Session</h3>
+</div>
+<div id="orangetopic---1" class="section level3">
+<h3>.orange[Topic - 1]</h3>
+</div>
+</div>
+<div id="getting-started-the-basics-of-r" class="section level1">
+<h1>Getting Started: The Basics of R</h1>
+</div>
