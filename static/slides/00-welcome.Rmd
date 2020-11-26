@@ -32,7 +32,8 @@ xaringanExtra::use_tachyons()
 xaringanExtra::use_tile_view()
 xaringanExtra::use_webcam()
 xaringanExtra::use_fit_screen()
-xaringanExtra::use_share_again()
+xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = TRUE)
+
 ```
 
 layout: true
@@ -66,7 +67,7 @@ meta() %>%
   meta_social(
     title = "Introduce Yourself to R, Rstudio & Packages",
     url = "https://r4b.netlify.app/slides/00-welcome.html#1",
-    image = "https://github.com/koliajaykr/course-r4bee/issues/new",
+    image = "https://r4b.netlify.app/slides/images/00-welcome/00-cover.jpg",
     image_alt = "The first slide features pottery with a heart shape",
     og_type = "website",
     twitter_card_type = "summary_large_image"
