@@ -4,10 +4,20 @@
     <title>Getting started: The Basics of R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Ajay Koli" />
-    <meta name="date" content="2020-11-25" />
+    <meta name="date" content="2020-11-26" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <script src="libs/xaringanExtra-webcam/webcam.js"></script>
+    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
+    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
     <link href="libs/countdown/countdown.css" rel="stylesheet" />
     <script src="libs/countdown/countdown.js"></script>
     <link rel="stylesheet" href="assets/css/my-theme.css" type="text/css" />
@@ -143,7 +153,7 @@ class: center, middle
 
 class: center
 
-background-image: url("images/01-basics/rstd-proj-name.png")
+background-image: url("images/01-basics/rstd-project-name.png")
 background-size: 70%
 background-position: center bottom
 
@@ -153,7 +163,7 @@ background-position: center bottom
 
 class: center
 
-background-image: url("images/01-basics/rstd-proj-work.png")
+background-image: url("images/01-basics/rstd-project-path.png")
 background-size: 70%
 background-position: center bottom
 
@@ -163,7 +173,7 @@ background-position: center bottom
 
 class: center
 
-background-image: url("images/01-basics/rstd-proj-work2.png")
+background-image: url("images/01-basics/rstd-project-path2.png")
 background-size: 70%
 background-position: center bottom
 
@@ -688,25 +698,32 @@ background-size: 25%, 30%, 22%, 20%, 20%
 
 # .big-text[R Packages]
 
-
 ---
 
 class: center
 
 # Download (Tools `\(\rightarrow\)` Install Packages)
 
-&lt;img src="images/01-basics/pkg-download.png" width="60%" /&gt;
+&lt;img src="images/01-basics/pkg-download1.png" width="100%" /&gt;
 
 ---
 
-# Use R package
+class: center
+
+# Name of the R Package(s)
+
+&lt;img src="images/01-basics/pkg-download2.png" width="60%" /&gt;
+
+---
+
+# How to use R package?
 
 
 ```r
 library(tidyverse)
 ```
 
-##- To use R package write one time `library(name of the package)` inside your script  
+- To use R package write one time `library(name of the package)` inside your R script.  
 
 ---
 
@@ -720,6 +737,8 @@ class: live-code
 
 
 ```r
+# this pkd is installed
+
 library(tidyverse)
 ```
 
@@ -745,6 +764,15 @@ class: live-code
 
 
 ```r
+# this pkd is installed
+
+library(tidyverse)
+```
+
+
+```r
+# this pkg is not installed
+
 library(vcd)
 ```
 
@@ -753,6 +781,8 @@ library(vcd)
 .pull-right[
 
 ## .gold[Console ]
+
+
 
 
 ```r
@@ -783,7 +813,7 @@ Source: https://rstudio-education.github.io/hopr/basics.html
 
 ---
 
-# 🚨Guideline to name `objects` in R:
+# 🚨Guidelines to name `objects` in R:
 
   - a name cannot start with a number  
   
@@ -990,7 +1020,7 @@ class: center
 
 --
 
-# 🤷🏽‍♂️  * how to convert these variables into a **tidy** data*
+## 🤷🏽‍♂️  * how to convert these&lt;br&gt; objects/ variables into a **tidy** data*
 
 ---
 
@@ -1001,20 +1031,32 @@ background-size: cover
 ---
 
 class: hide-count
-background-image: url("images/01-basics/tidydata_1.jpg")
+background-image: url("images/01-basics/tidydata_1_1.jpg")
 background-size: contain
 
 ---
 
 class: hide-count
-background-image: url("images/01-basics/tidydata_2.jpg")
+background-image: url("images/01-basics/tidydata_1_2.jpg")
+background-size: contain
+
+---
+
+class: hide-count
+background-image: url("images/01-basics/tidydata_2_1.jpg")
+background-size: contain
+
+---
+
+class: hide-count
+background-image: url("images/01-basics/tidydata_2_2.jpg")
 background-size: contain
 
 ---
 
 class: center
 
-# to be tidy, our data should look like 👇
+# Tidy data should look like 👇
 
 
 ```
@@ -1078,6 +1120,29 @@ soc
 
 ---
 
+class: your-turn, hide-count
+
+# Your turn 🏋🏽‍♂️ 
+
+<div class="countdown" id="timer_5fbf3e5a" style="top:0;right:0;font-size:3em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+## .yellow[Write codes to prepare this data + add a new variable of your choice:]
+
+
+```
+        state pop    capital foundation
+1     Germany  20     Berlin 1870-12-10
+2      France  19      Paris 1789-07-14
+3       India  50      Delhi 1947-08-15
+4      Russia  25     Moscow 1990-06-12
+5         USA  30 Washington 1776-07-04
+6 New Zealand   5 Wellington 1840-02-06
+```
+
+---
+
 class: live-code
 
 # Get a List of all Objects
@@ -1106,30 +1171,6 @@ class: live-code
 ```
 
 ]
-
----
-
-class: your-turn, hide-count
-
-# Your turn 🏋🏽‍♂️ 
-
-<div class="countdown" id="timer_5fbe7c86" style="top:0;right:0;font-size:3em;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-
-## .yellow[Write codes to prepare this data + add a new variable of your choice:]
-
-
-```
-        state pop    capital foundation
-1     Germany  20     Berlin 1870-12-10
-2      France  19      Paris 1789-07-14
-3       India  50      Delhi 1947-08-15
-4      Russia  25     Moscow 1990-06-12
-5         USA  30 Washington 1776-07-04
-6 New Zealand   5 Wellington 1840-02-06
-```
-
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -26,13 +26,15 @@ knitr::opts_chunk$set(
   comment = ""
 )
 library(ymlthis)
-library(countdown)
 library(tidyverse)
 library(magick)
 library(icon)
-library(countdown)
 library(xaringanExtra)
 xaringanExtra::use_tachyons()
+xaringanExtra::use_tile_view()
+xaringanExtra::use_webcam()
+xaringanExtra::use_fit_screen()
+xaringanExtra::use_share_again()
 ```
 
 layout: true
@@ -167,7 +169,7 @@ knitr::include_graphics("images/01-basics/rstd-proj-4.png")
 
 class: center
 
-background-image: url("images/01-basics/rstd-proj-name.png")
+background-image: url("images/01-basics/rstd-project-name.png")
 background-size: 70%
 background-position: center bottom
 
@@ -177,7 +179,7 @@ background-position: center bottom
 
 class: center
 
-background-image: url("images/01-basics/rstd-proj-work.png")
+background-image: url("images/01-basics/rstd-project-path.png")
 background-size: 70%
 background-position: center bottom
 
@@ -187,7 +189,7 @@ background-position: center bottom
 
 class: center
 
-background-image: url("images/01-basics/rstd-proj-work2.png")
+background-image: url("images/01-basics/rstd-project-path2.png")
 background-size: 70%
 background-position: center bottom
 
@@ -675,26 +677,35 @@ background-size: 25%, 30%, 22%, 20%, 20%
 
 # .big-text[R Packages]
 
-
 ---
 
 class: center
 
 # Download (Tools $\rightarrow$ Install Packages)
 
-```{r echo=FALSE, out.width="60%"}
-knitr::include_graphics("images/01-basics/pkg-download.png")
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/01-basics/pkg-download1.png")
 ```
 
 ---
 
-# Use R package
+class: center
+
+# Name of the R Package(s)
+
+```{r echo=FALSE, out.width="60%"}
+knitr::include_graphics("images/01-basics/pkg-download2.png")
+```
+
+---
+
+# How to use R package?
 
 ```{r pkg-use, echo=T}
 library(tidyverse)
 ```
 
-##- To use R package write one time `library(name of the package)` inside your script  
+- To use R package write one time `library(name of the package)` inside your R script.  
 
 ---
 
@@ -707,6 +718,8 @@ class: live-code
 ## .gold[R Script]
 
 ```{r lib1, eval=FALSE, echo=TRUE}
+# this pkd is installed
+
 library(tidyverse)
 ```
 
@@ -732,7 +745,15 @@ class: live-code
 
 ## .gold[R Script]
 
-```{r lib2, eval=FALSE, echo=TRUE}
+```{r lib21, eval=FALSE, echo=TRUE}
+# this pkd is installed
+
+library(tidyverse)
+```
+
+```{r lib22, eval=FALSE, echo=TRUE}
+# this pkg is not installed
+
 library(vcd)
 ```
 
@@ -742,7 +763,11 @@ library(vcd)
 
 ## .gold[Console ]
 
-```{r lib22, echo=T, eval=FALSE}
+```{r ref.label="lib21", echo=FALSE}
+
+```
+
+```{r lib23, echo=T, eval=FALSE}
 <packageNotFoundError in library(vcd): there is no package called 'vcd'>
 ```
 
@@ -770,7 +795,7 @@ Source: https://rstudio-education.github.io/hopr/basics.html
 
 ---
 
-# 🚨Guideline to name `objects` in R:
+# 🚨Guidelines to name `objects` in R:
 
   - a name cannot start with a number  
   
@@ -969,7 +994,7 @@ knitr::include_graphics("images/01-basics/env-rstd.png")
 
 --
 
-# 🤷🏽‍♂️  * how to convert these variables into a **tidy** data*
+## 🤷🏽‍♂️  * how to convert these<br> objects/ variables into a **tidy** data*
 
 ---
 
@@ -980,20 +1005,32 @@ background-size: cover
 ---
 
 class: hide-count
-background-image: url("images/01-basics/tidydata_1.jpg")
+background-image: url("images/01-basics/tidydata_1_1.jpg")
 background-size: contain
 
 ---
 
 class: hide-count
-background-image: url("images/01-basics/tidydata_2.jpg")
+background-image: url("images/01-basics/tidydata_1_2.jpg")
+background-size: contain
+
+---
+
+class: hide-count
+background-image: url("images/01-basics/tidydata_2_1.jpg")
+background-size: contain
+
+---
+
+class: hide-count
+background-image: url("images/01-basics/tidydata_2_2.jpg")
 background-size: contain
 
 ---
 
 class: center
 
-# to be tidy, our data should look like 👇
+# Tidy data should look like 👇
 
 ```{r, echo=FALSE}
 soc <- data.frame(
@@ -1054,33 +1091,6 @@ soc
 
 ---
 
-class: live-code
-
-# Get a List of all Objects
-
-.pull-left[
-
-## .gold[R Script]
-
-```{r obj3, eval=FALSE, echo=TRUE}
-# names of created objects
-objects() #<<
-```
-
-]
-
-.pull-right[
-
-## .gold[Console ]
-
-```{r ref.label="obj3", echo=FALSE}
-
-```
-
-]
-
----
-
 class: your-turn, hide-count
 
 # Your turn 🏋🏽‍♂️ 
@@ -1105,3 +1115,29 @@ world <- data.frame(state, pop, capital, foundation)
 world
 ```
 
+---
+
+class: live-code
+
+# Get a List of all Objects
+
+.pull-left[
+
+## .gold[R Script]
+
+```{r obj3, eval=FALSE, echo=TRUE}
+# names of created objects
+objects() #<<
+```
+
+]
+
+.pull-right[
+
+## .gold[Console ]
+
+```{r ref.label="obj3", echo=FALSE}
+
+```
+
+]

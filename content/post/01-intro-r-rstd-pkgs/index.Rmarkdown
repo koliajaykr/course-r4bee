@@ -28,14 +28,19 @@ links:
 #   icon_pack: fas
 #   name: lab
 #  url: /labs/02-moma.html
-- icon: magic
-  icon_pack: fas
-  name: slides
-  url: /slides/01-r-basics.html
+#- icon: magic
+#  icon_pack: fas
+#  name: slides
+#  url: /slides/01-r-basics.html
 ---
 
-***Work in Progress***
+Slides
 
+```{r echo=FALSE, fig.align='center'}
+library(xaringanExtra)
+xaringanExtra::embed_xaringan(url = "/slides/01-r-basics.html", ratio = "4:3",
+                              max_width = 600)
+```
 <!-- ## Readings -->
 
 

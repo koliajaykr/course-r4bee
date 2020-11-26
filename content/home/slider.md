@@ -35,13 +35,31 @@ height = "435px"
 #  cta_icon = "graduation-cap"
 
 [[item]]
-  title = "Batch - 1"
-  content = "\"Thanks a lot, it was an excellent course with a lot of useful information. I would like to follow other R lessons. Let me know please when you open other sessions. Good luck.\""
+  title = "Babu George"
+  content = "\"It has been a very comprehensive yet accessible overview of R. Ajay understands students' minds and modulate his style accordingly. He is excellent in relating numbers with real world problems and offering visualizations that decompose complex realities into intuitive visualizations.\" <br>*Dean and Professor - Christian Brothers University, USA*"
+  align = "center"
+
+  overlay_color = "#555"  # An HTML color value.
+  overlay_img = "img/b6lake.jpg"  # Image path relative to your `static/media/` folder.
+  overlay_filter = 0.5  # Darken the image. Value in range 0-1.
+  
+[[item]]
+  title = "Batch - 4"
+  content = "\"Great classes, great teacher. He is friendly, knowledgeable, and fun to talk with ... He teaches you right from 'you know nothing' to make your own presentations in just 20 hours of learning ... My lessons with him were quite productive and useful.\""
+  align = "center"
+
+  overlay_color = "#555"  # An HTML color value.
+  overlay_img = "img/b4.png"  # Image path relative to your `static/media/` folder.
+  overlay_filter = 0.5  # Darken the image. Value in range 0-1.  
+  
+[[item]]
+  title = "Batch - 3"
+  content = "\"Enjoyed learning a lot it was a really enriching and fun experience.\""
   align = "center"
 
   overlay_color = "#333"  # An HTML color value.
-  overlay_img = "img/b1.png"  # Image path relative to your `static/media/` folder.
-  overlay_filter = 0.5  # Darken the image. Value in range 0-1.
+  overlay_img = "img/b3.png"  # Image path relative to your `static/media/` folder.
+  overlay_filter = 0.5  # Darken the image. Value in range 0-1.  
 
 [[item]]
   title = "Batch - 2"
@@ -53,29 +71,12 @@ height = "435px"
   overlay_filter = 0.5  # Darken the image. Value in range 0-1.
 
 [[item]]
-  title = "Batch - 3"
-  content = "\"Enjoyed learning a lot it was a really enriching and fun experience.\""
+  title = "Batch - 1"
+  content = "\"Thanks a lot, it was an excellent course with a lot of useful information. I would like to follow other R lessons. Let me know please when you open other sessions. Good luck.\""
   align = "center"
 
   overlay_color = "#333"  # An HTML color value.
-  overlay_img = "img/b3.png"  # Image path relative to your `static/media/` folder.
+  overlay_img = "img/b1.png"  # Image path relative to your `static/media/` folder.
   overlay_filter = 0.5  # Darken the image. Value in range 0-1.
   
-[[item]]
-  title = "Batch - 4"
-  content = "\"Great classes, great teacher. He is friendly, knowledgeable, and fun to talk with ... He teaches you right from 'you know nothing' to make your own presentations in just 20 hours of learning ... My lessons with him were quite productive and useful.\""
-  align = "center"
-
-  overlay_color = "#555"  # An HTML color value.
-  overlay_img = "img/b4.png"  # Image path relative to your `static/media/` folder.
-  overlay_filter = 0.5  # Darken the image. Value in range 0-1.
-  
-[[item]]
-  title = "Babu George"
-  content = "\"It has been a very comprehensive yet accessible overview of R. Ajay understands students' minds and modulate his style accordingly. He is excellent in relating numbers with real world problems and offering visualizations that decompose complex realities into intuitive visualizations.\" <br>*Dean and Professor - Christian Brothers University, USA*"
-  align = "center"
-
-  overlay_color = "#555"  # An HTML color value.
-  overlay_img = "img/b6lake.jpg"  # Image path relative to your `static/media/` folder.
-  overlay_filter = 0.5  # Darken the image. Value in range 0-1.  
 +++

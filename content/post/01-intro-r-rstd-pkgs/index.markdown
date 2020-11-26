@@ -28,14 +28,18 @@ links:
 #   icon_pack: fas
 #   name: lab
 #  url: /labs/02-moma.html
-- icon: magic
-  icon_pack: fas
-  name: slides
-  url: /slides/01-r-basics.html
+#- icon: magic
+#  icon_pack: fas
+#  name: slides
+#  url: /slides/01-r-basics.html
 ---
 
-***Work in Progress***
+Slides
 
+<!--html_preserve--><div class="shareagain" style="min-width:300px;margin:1em auto;max-width:600px;">
+<iframe src="/slides/01-r-basics.html" width="400" height="300" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div><!--/html_preserve-->
 <!-- ## Readings -->
 
 
