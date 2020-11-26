@@ -33,7 +33,8 @@ xaringanExtra::use_tile_view()
 xaringanExtra::use_webcam()
 xaringanExtra::use_fit_screen()
 xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = TRUE)
-
+xaringanExtra::use_share_again()
+style_share_again(share_buttons = c("twitter", "linkedin", "facebook"))
 ```
 
 layout: true
