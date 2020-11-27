@@ -1,5 +1,5 @@
 ---
-title: "Topic - 4"
+title: "Topic - 5"
 subtitle: "Reporting Results in R"
 summary: Reporting Results in R
 date: "2020-01-24"
@@ -11,4 +11,4 @@ image:
   preview_only: yes
 ---
 
-***Work in Progress***
+***Slides are available only for registered participants. Thank you.***

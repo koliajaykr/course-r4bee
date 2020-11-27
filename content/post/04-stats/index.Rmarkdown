@@ -1,7 +1,7 @@
 ---
-title: 'Topic - 3'
-subtitle: 'Data Visualisation'
-summary: Data Visualisation
+title: 'Topic - 4'
+subtitle: 'Basic Statistics'
+summary: Basic Statistics
 date: "2020-01-24"
 featured: false
 draft: false
@@ -12,7 +12,7 @@ draft: false
 # Focal point options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
 image:
   placement: 2
-  caption: 'Image credit: [**Andreas Fickl**](https://unsplash.com/@afafa) on Unsplash'
+  caption: 'Image credit: [**Viviane Okubo**](https://unsplash.com/@vivianeokubo) on Unsplash'
   focal_point: ""
   preview_only: yes
 
@@ -34,6 +34,6 @@ projects: []
 #  url: /slides/00-slides.html
 ---
 
-Data visualisation using mainly R package `ggplot2`.
+The basics of statistics.
 
 ***Slides are available only for registered participants. Thank you.***

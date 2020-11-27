@@ -11,4 +11,4 @@ image:
   preview_only: yes
 ---
 
-***Work in Progress***
+***Slides are available only for registered participants. Thank you.***

@@ -14,7 +14,7 @@ role: Instructor
 #  url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: I teach data science using R. My research is about who, why and how people work with waste in India. 
+bio: I teach data science using R. My research is about who, how and why people work with waste in India. 
 
 #interests:
 #- Artificial Intelligence
@@ -76,13 +76,13 @@ user_groups:
 
 Hello,
 
-In this course, you will learn data science using R from scratch. It is equally good for students and professionals. Purpose of this course is to build your confidence by introducing the basics of R, R markdown, visualisations, data wrangling, tables and slides. 
+In this course, you will learn data science using R from scratch. It is equally good for students and professionals. Purpose of this course is to build your confidence by introducing the basics of R, data wrangling, data visualisation, R Markdown and slide-crafting using **xaringan** package. 
 
-Right now lectures and practice sessions are combined. In one batch maximum thirty students will be registered. This increases interaction and focuses upon the learning of each participant. 
+Right now lectures and practice sessions are combined. In one batch maximum thirty participants will be registered. This increases interaction and focuses upon the learning of each participant. 
 
 English will be used as the medium of instruction. I can teach in Hindi as well if required.
 
-If you’ve any course related query or a teaching opportunity for me then I’ll be very happy 🙂 to read your email.
+If you have any course related query or a teaching opportunity for me then I will be very happy 🙂 to read your email.
 
 -- [Ajay](https://ajaykoli.netlify.app/)
 

@@ -1,5 +1,5 @@
 ---
-title: "Topic - 5"
+title: "Topic - 6"
 subtitle: 'Slidecrafting'
 summary: Slidecrafting
 date: "2020-01-24"
@@ -11,4 +11,4 @@ image:
   preview_only: yes
 ---
 
-***Work in Progress***
+***Slides are available only for registered participants. Thank you.***
