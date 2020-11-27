@@ -1,7 +1,7 @@
 ---
 title: 'Topic - 3'
-subtitle: 'Basics of Statistics'
-summary: Basics of Statistics
+subtitle: 'Heat of Statistics'
+summary: Heat of Statistics
 date: "2020-01-24"
 featured: false
 draft: false
@@ -34,6 +34,6 @@ projects: []
 #  url: /slides/00-slides.html
 ---
 
-The basics of statistics.
+It includes the basics of statistics.
 
 ***Slides are available only for registered participants. Thank you.***

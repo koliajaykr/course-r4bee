@@ -19,6 +19,8 @@
     <script src="libs/shareon/shareon.min.js"></script>
     <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
     <link rel="stylesheet" href="assets/css/my-theme.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/my-fonts.css" type="text/css" />
   </head>
@@ -39,7 +41,6 @@ background-image: url(images/02-wrangling/featured.jpg)
 background-size: 58%
 background-position: 50% 0%
 
-
 # Data Wrangling
 
 ## .orange[Topic - 2]
@@ -48,11 +49,94 @@ background-position: 50% 0%
 
 ---
 
+background-image: url(images/02-wrangling/readr-logo.png)
+background-size: 15%
+background-position: 97% 5%
+
 # Import your data
 
 - using pkg [**readr**](https://readr.tidyverse.org/):
 
 - "fast and friendly way to read rectangular data (like csv, tsv, and fwf)"
+
+- it comes with pkg **tidyverse** package, so no need to install or library it separately
+
+---
+
+class: live-code
+
+# Import Data
+
+.panelset[
+
+.panel[.panel-name[R Script]
+
+
+```r
+family &lt;- read_csv(
+  "data/india-family.csv"
+)
+
+family
+```
+]
+
+.panel[.panel-name[Console]
+
+
+```
+# A tibble: 6 x 7
+  name  sex      age salary books marks job  
+  &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+1 Ram   Male      68  30000     1 C     No   
+2 Savi  Female    58      0     0 F     No   
+3 Ajay  Male      37  45000    15 B     Yes  
+4 Asha  Female    42  70000    10 A     No   
+5 Anju  Female    40  70000     5 C     No   
+6 Anita Female    32 100000    15 B     Yes  
+```
+
+]
+]
+
+
+---
+
+class: live-code
+
+# Import data
+
+.pull-left[
+## .gold[R script]
+
+
+```r
+family &lt;- read_csv(
+  "data/india-family.csv"
+)
+
+family
+```
+
+]
+
+.pull-right[
+## .gold[Console]
+
+
+```
+# A tibble: 6 x 7
+  name  sex      age salary books marks job  
+  &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+1 Ram   Male      68  30000     1 C     No   
+2 Savi  Female    58      0     0 F     No   
+3 Ajay  Male      37  45000    15 B     Yes  
+4 Asha  Female    42  70000    10 A     No   
+5 Anju  Female    40  70000     5 C     No   
+6 Anita Female    32 100000    15 B     Yes  
+```
+
+]
 
 ---
 

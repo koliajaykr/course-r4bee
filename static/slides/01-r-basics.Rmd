@@ -26,6 +26,7 @@ knitr::opts_chunk$set(
   comment = ""
 )
 library(ymlthis)
+library(countdown)
 library(tidyverse)
 library(magick)
 library(icon)
@@ -46,9 +47,8 @@ layout: true
 
 class: title-slide, center, bottom, hide-count
 background-image: url(images/01-basics/featured.jpg)
-background-size: 58%
+background-size: 55%
 background-position: 50% 0%
-
 
 # `r rmarkdown::metadata$title`
 
@@ -59,6 +59,26 @@ background-position: 50% 0%
 ---
 
 class: center
+
+```{r meta, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "Welcome",
+    generator = "xaringan and remark.js"
+  ) %>% 
+  meta_name("github-repo" = "koliajaykr/course-r4bee") %>% 
+  meta_social(
+    title = "Introduce Yourself to R, Rstudio & Packages",
+    url = "https://r4b.netlify.app/slides/01-r-basics.html#1",
+    image = "https://r4b.netlify.app/slides/images/01-basics/01-card.jpg",
+    og_type = "website",
+    og_author = "Ajay Koli",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@koliajaykr"
+  )
+```
+
 
 background-image: url("images/01-basics/rstd-proj.png")
 background-size: 70%
@@ -673,7 +693,7 @@ class: live-code
 class: inverse, middle, right, hide-count
 
 background-image: url("images/01-basics/amelia.png"), url("images/01-basics/amelia2.jpg"), url("images/01-basics/amelia3.jpg"), url("images/01-basics/amelia4.jpg"), url("images/00-welcome/tidyverse_celestial.png")
-background-position: 0% 0%, 50% 0%, 0% 100%, 90% 0%, 30% 100%
+background-position: 0% 0%, 50% 0%, 0% 100%, 90% 0%, 50% 100%
 background-size: 25%, 30%, 22%, 20%, 20%
 
 # .big-text[R Packages]
