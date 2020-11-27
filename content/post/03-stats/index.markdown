@@ -1,7 +1,7 @@
 ---
-title: 'Topic - 4'
-subtitle: 'Basic Statistics'
-summary: Basic Statistics
+title: 'Topic - 3'
+subtitle: 'Basics of Statistics'
+summary: Basics of Statistics
 date: "2020-01-24"
 featured: false
 draft: false
