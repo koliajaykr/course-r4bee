@@ -64,12 +64,12 @@ class: center
 library(metathis)
 meta() %>%
   meta_general(
-    description = "Welcome",
+    description = "RStudio projects, R scripts, functions, comments, packages & R objects",
     generator = "xaringan and remark.js"
   ) %>% 
   meta_name("github-repo" = "koliajaykr/course-r4bee") %>% 
   meta_social(
-    title = "Introduce Yourself to R, Rstudio & Packages",
+    title = "Getting started: The Basics of R",
     url = "https://r4b.netlify.app/slides/01-r-basics.html#1",
     image = "https://r4b.netlify.app/slides/images/01-basics/01-card.jpg",
     og_type = "website",
