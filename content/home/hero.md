@@ -8,7 +8,7 @@ weight = 1  # Order that this section will appear.
 title = "R for Beeginners"
 
 # Hero image (optional). Enter filename of an image in the `static/media/` folder.
-hero_media = "img/logo.jpeg"
+hero_media = "img/logo.png"
 
 [design.background]
   # Apply a background color, gradient, or image.
