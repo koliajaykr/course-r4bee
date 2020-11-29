@@ -39,6 +39,8 @@ font_size = "L"
 #   E.g. Person, Organization, LocalBusiness, Project, EducationalOrganization
 site_type = "Person"
 
+logo = "logo.jpeg"
+
 # Local business type (optional)
 # If you entered "LocalBusiness" above, choose the type of business from https://schema.org/LocalBusiness#subtypes
 local_business_type = ""
@@ -124,7 +126,7 @@ contact_links = [
 ############################
 
 # Default image for social sharing and search engines. Place image in `static/media/` folder and specify image name here.
-sharing_image = ""
+sharing_image = "logo.png"
 
 # Twitter username (without @). Used when a visitor shares your site on Twitter.
 twitter = "koliajaykr"
