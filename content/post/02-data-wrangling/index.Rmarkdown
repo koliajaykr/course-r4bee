@@ -6,7 +6,7 @@ date: "2020-01-24"
 
 image:
   placement: 2
-  caption: 'Image credit: [**Jade Scarlato**](https://unsplash.com/@jadoca) on Unsplash'
+  caption: 'Image credit: [**Anne Nygård**](https://unsplash.com/@polarmermaid) on Unsplash'
   focal_point: ""
   preview_only: yes
 ---

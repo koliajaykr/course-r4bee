@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Data Wrangling</title>
+    <title>Data  Wrangling</title>
     <meta charset="utf-8" />
     <meta name="author" content="Ajay Koli" />
-    <meta name="date" content="2020-11-27" />
-    <script src="libs/header-attrs/header-attrs.js"></script>
+    <meta name="date" content="2020-11-30" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
@@ -14,11 +13,6 @@
     <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
     <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
-    <script src="libs/clipboard/clipboard.min.js"></script>
-    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
-    <script src="libs/shareon/shareon.min.js"></script>
-    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
-    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
     <link rel="stylesheet" href="assets/css/my-theme.css" type="text/css" />
@@ -32,111 +26,27 @@
 
 layout: true
 
-&lt;a class="footer-link" href="https://r4b.netlify.app/"&gt;r4b/share&lt;/a&gt;
-
 ---
 
-class: title-slide, center, bottom, hide-count
-background-image: url(images/02-wrangling/featured.jpg)
-background-size: 58%
-background-position: 50% 0%
+class: title-slide, hide-count, top
+background-image: url(images/02-wrangling/cover.jpg)
+background-size: cover
+background-position: 50% 50%
+
+.left-column[
+# .center.b.white.left.top[Data &lt;br&gt;Wrangling]
+]
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+
+### .b.right.orange[Topic - 2 | Ajay Koli]
+
+---
 
 # Data Wrangling
 
-## .orange[Topic - 2]
-
-### Ajay Koli
-
----
-
-background-image: url(images/02-wrangling/readr-logo.png)
-background-size: 15%
-background-position: 97% 5%
-
-# Import your data
-
-- using pkg [**readr**](https://readr.tidyverse.org/):
-
-- "fast and friendly way to read rectangular data (like csv, tsv, and fwf)"
-
-- it comes with pkg **tidyverse** package, so no need to install or library it separately
-
----
-
-class: live-code
-
-# Import Data
-
-.panelset[
-
-.panel[.panel-name[R Script]
-
-
-```r
-family &lt;- read_csv(
-  "data/india-family.csv"
-)
-
-family
-```
-]
-
-.panel[.panel-name[Console]
-
-
-```
-# A tibble: 6 x 7
-  name  sex      age salary books marks job  
-  &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
-1 Ram   Male      68  30000     1 C     No   
-2 Savi  Female    58      0     0 F     No   
-3 Ajay  Male      37  45000    15 B     Yes  
-4 Asha  Female    42  70000    10 A     No   
-5 Anju  Female    40  70000     5 C     No   
-6 Anita Female    32 100000    15 B     Yes  
-```
-
-]
-]
-
-
----
-
-class: live-code
-
-# Import data
-
-.pull-left[
-## .gold[R script]
-
-
-```r
-family &lt;- read_csv(
-  "data/india-family.csv"
-)
-
-family
-```
-
-]
-
-.pull-right[
-## .gold[Console]
-
-
-```
-# A tibble: 6 x 7
-  name  sex      age salary books marks job  
-  &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
-1 Ram   Male      68  30000     1 C     No   
-2 Savi  Female    58      0     0 F     No   
-3 Ajay  Male      37  45000    15 B     Yes  
-4 Asha  Female    42  70000    10 A     No   
-5 Anju  Female    40  70000     5 C     No   
-6 Anita Female    32 100000    15 B     Yes  
-```
-
-]
+- "tidying and transforming"
 
 ---
 
@@ -153,21 +63,240 @@ family
 
 - "creating new variables that are functions of existing variables"
 
+
+
 ---
 
+# Make sure that:
 
-# Data Wrangling
+- ✅ you are working in RStudio Project.
 
-- "tidying and transforming"
+- ✅ download package **tidyverse** &amp; **palmerpenguins**.
 
 ---
+
+class: middle
+background-image: url(images/02-wrangling/lter_penguins.png)
+background-size: 50%
+background-position: 5% 50%
+
+.pull-right[
+# .center[penguins]
+]
+
+.footnote[
+Artwork by [@allison_horst](https://www.allisonhorst.com/)
+]
+
+---
+
+# `penguins` data
+
+.panelset[
+
+.panel[.panel-name[R Script]
+
+
+```r
+library(palmerpenguins)
+
+*penguins
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+# A tibble: 344 x 8
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+ 1 Adelie  Torge…           39.1          18.7              181        3750 male 
+ 2 Adelie  Torge…           39.5          17.4              186        3800 fema…
+ 3 Adelie  Torge…           40.3          18                195        3250 fema…
+ 4 Adelie  Torge…           NA            NA                 NA          NA &lt;NA&gt; 
+ 5 Adelie  Torge…           36.7          19.3              193        3450 fema…
+ 6 Adelie  Torge…           39.3          20.6              190        3650 male 
+ 7 Adelie  Torge…           38.9          17.8              181        3625 fema…
+ 8 Adelie  Torge…           39.2          19.6              195        4675 male 
+ 9 Adelie  Torge…           34.1          18.1              193        3475 &lt;NA&gt; 
+10 Adelie  Torge…           42            20.2              190        4250 &lt;NA&gt; 
+# … with 334 more rows, and 1 more variable: year &lt;int&gt;
+```
+
+]
+]
+
+---
+
+# `Select` particular columns
+
+.panelset[
+
+.panel[.panel-name[R Script]
+
+
+```r
+penguins %&gt;% 
+* select(sex, year)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+# A tibble: 344 x 2
+   sex     year
+   &lt;fct&gt;  &lt;int&gt;
+ 1 male    2007
+ 2 female  2007
+ 3 female  2007
+ 4 &lt;NA&gt;    2007
+ 5 female  2007
+ 6 male    2007
+ 7 female  2007
+ 8 male    2007
+ 9 &lt;NA&gt;    2007
+10 &lt;NA&gt;    2007
+# … with 334 more rows
+```
+
+]
+]
+
+---
+
+# `Select` particular columns
+
+.panelset[
+
+.panel[.panel-name[R Script]
+
+
+```r
+penguins %&gt;% 
+* select(-c(sex, year))
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+# A tibble: 344 x 6
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.5          17.4               186        3800
+ 3 Adelie  Torgersen           40.3          18                 195        3250
+ 4 Adelie  Torgersen           NA            NA                  NA          NA
+ 5 Adelie  Torgersen           36.7          19.3               193        3450
+ 6 Adelie  Torgersen           39.3          20.6               190        3650
+ 7 Adelie  Torgersen           38.9          17.8               181        3625
+ 8 Adelie  Torgersen           39.2          19.6               195        4675
+ 9 Adelie  Torgersen           34.1          18.1               193        3475
+10 Adelie  Torgersen           42            20.2               190        4250
+# … with 334 more rows
+```
+
+]
+]
+
+
+
+---
+
+write data file to your computer
+
+read data file from your computer
+
+
+
+
+---
+
+background-image: url(images/02-wrangling/readr-logo.png)
+background-size: 10%
+background-position: 97% 5%
+
+# Write/Read your data
+
+- using pkg [**readr**](https://readr.tidyverse.org/):
+
+- "fast and friendly way to read rectangular data (like csv, tsv, and fwf)"
+
+- it comes with pkg **tidyverse** package, so no need to install or library it separately
+
+---
+
+class:
+
+# Write Data file to your computer
+
+
+```r
+*write_csv(
+  penguins,
+  "data/palmer-penguins.csv"
+)
+
+```
+
+---
+
+class:
+
+# Read Data file from your computer
+
+.panelset[
+
+.panel[.panel-name[R Script]
+
+
+```r
+read_csv(
+  "data/new-penguins.csv"
+)
+
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+# A tibble: 311 x 5
+   species island    bill_length_mm bill_depth_mm flipper_length_mm
+   &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;
+ 1 Adelie  Torgersen           39.1          18.7               181
+ 2 Adelie  Torgersen           39.5          17.4               186
+ 3 Adelie  Torgersen           40.3          18                 195
+ 4 Adelie  Torgersen           NA            NA                  NA
+ 5 Adelie  Torgersen           36.7          19.3               193
+ 6 Adelie  Torgersen           39.3          20.6               190
+ 7 Adelie  Torgersen           38.9          17.8               181
+ 8 Adelie  Torgersen           39.2          19.6               195
+ 9 Adelie  Torgersen           34.1          18.1               193
+10 Adelie  Torgersen           42            20.2               190
+# … with 301 more rows
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/bee.jpeg)
+background-size: 27%
+background-position: 50% 50%
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "solarized-light",
 "highlightLanguage": ["r", "css", "yaml"],
-"slideNumberFormat": "%current% ",
+"slideNumberFormat": "%current%/%total%",
 "highlightLines": true,
 "countIncrementalSlides": false,
 "ratio": "16:9"

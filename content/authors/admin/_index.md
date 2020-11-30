@@ -76,11 +76,11 @@ user_groups:
 
 Hello,
 
-In this course, you will learn data science using R from scratch. It is equally good for students and professionals. Purpose of this course is to build your confidence by introducing the basics of R, data wrangling, data visualisation, R Markdown and slide-crafting using **xaringan** package. 
+In this course, you will learn data science using R from scratch. It is equally good for students and professionals. Purpose of this course is to build your confidence by introducing the basics of R, data wrangling, basics of statistics, data visualisation, R Markdown and slide-crafting using **xaringan**. 
 
-Right now lectures and practice sessions are combined. In one batch maximum thirty participants will be registered. This increases interaction and focuses upon the learning of each participant. 
+Right now lectures and practice sessions are combined. In one batch maximum thirty participants will be registered. It increases interaction and focus upon the learning of each participant. 
 
-English will be used as the medium of instruction. I can teach in Hindi as well if required.
+English will be the medium of instruction. I can teach in Hindi as well if required.
 
 If you have any course related query or a teaching opportunity for me then I will be very happy 🙂 to read your email.
 
@@ -88,4 +88,10 @@ If you have any course related query or a teaching opportunity for me then I wil
 
 ----
 
-P.S. *Why bee? Bee rhymes with the word beginner. The shape of R packages is like a hexagonal honeycomb. Moreover, to support the cause “save the bees”.*
+P.S. 
+
+- Bee artwork by Neha
+
+- *Why bee?* Bee sounds cool with beginners. The shape of R packages is similar to honeycomb. Moreover, to support the cause "save the bees".
+
+

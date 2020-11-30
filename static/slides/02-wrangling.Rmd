@@ -1,5 +1,5 @@
 ---
-title: "Data Wrangling"
+title: "Data <br>Wrangling"
 subtitle: "Topic - 2"
 author: Ajay Koli
 date: "`r Sys.Date()`"
@@ -12,7 +12,7 @@ output:
       # autoplay: 5000
       highlightStyle: solarized-light
       highlightLanguage: ["r", "css", "yaml"]
-      slideNumberFormat: "%current% " 
+      slideNumberFormat: "%current%/%total%" 
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
@@ -26,7 +26,10 @@ knitr::opts_chunk$set(
   comment = ""
 )
 library(ymlthis)
+library(emo)
+library(emojifont)
 library(tidyverse)
+library(fontawesome)
 library(magick)
 library(icon)
 library(xaringanExtra)
@@ -35,97 +38,34 @@ xaringanExtra::use_tile_view()
 xaringanExtra::use_webcam()
 xaringanExtra::use_fit_screen()
 xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = TRUE)
-xaringanExtra::use_share_again()
+#xaringanExtra::use_share_again()
 xaringanExtra::use_panelset()
+#<a class="footer-link" href="https://r4b.netlify.app/">r4b/share</a>
 ```
 
 layout: true
 
-<a class="footer-link" href="https://r4b.netlify.app/">r4b/share</a>
+---
+
+class: title-slide, hide-count, top
+background-image: url(images/02-wrangling/cover.jpg)
+background-size: cover
+background-position: 50% 50%
+
+.left-column[
+# .center.b.white.left.top[`r rmarkdown::metadata$title`]
+]
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+### .b.right.orange[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
 
 ---
 
-class: title-slide, center, bottom, hide-count
-background-image: url(images/02-wrangling/featured.jpg)
-background-size: 58%
-background-position: 50% 0%
+# Data Wrangling
 
-# `r rmarkdown::metadata$title`
-
-## .orange[`r rmarkdown::metadata$subtitle`]
-
-### `r rmarkdown::metadata$author`
-
----
-
-background-image: url(images/02-wrangling/readr-logo.png)
-background-size: 15%
-background-position: 97% 5%
-
-# Import your data
-
-- using pkg [**readr**](https://readr.tidyverse.org/):
-
-- "fast and friendly way to read rectangular data (like csv, tsv, and fwf)"
-
-- it comes with pkg **tidyverse** package, so no need to install or library it separately
-
----
-
-class: live-code
-
-# Import Data
-
-.panelset[
-
-.panel[.panel-name[R Script]
-
-```{r import1, message=FALSE, eval=FALSE}
-family <- read_csv(
-  "data/india-family.csv"
-)
-
-family
-```
-]
-
-.panel[.panel-name[Console]
-
-```{r ref.label="import1", echo=FALSE, message=FALSE}
-
-```
-
-]
-]
-
-
----
-
-class: live-code
-
-# Import data
-
-.pull-left[
-## .gold[R script]
-
-```{r import, message=FALSE, eval=FALSE}
-family <- read_csv(
-  "data/india-family.csv"
-)
-
-family
-```
-
-]
-
-.pull-right[
-## .gold[Console]
-
-```{r ref.label="import", echo=FALSE, message=FALSE}
-
-```
-
-]
+- "tidying and transforming"
 
 ---
 
@@ -142,11 +82,169 @@ family
 
 - "creating new variables that are functions of existing variables"
 
+
+
 ---
 
+# Make sure that:
 
-# Data Wrangling
+- `r emo::ji("check")` you are working in RStudio Project.
 
-- "tidying and transforming"
+- `r emo::ji("check")` download package **tidyverse** & **palmerpenguins**.
 
 ---
+
+class: middle
+background-image: url(images/02-wrangling/lter_penguins.png)
+background-size: 50%
+background-position: 5% 50%
+
+.pull-right[
+# .center[penguins]
+]
+
+.footnote[
+Artwork by [@allison_horst](https://www.allisonhorst.com/)
+]
+
+---
+
+# `penguins` data
+
+.panelset[
+
+.panel[.panel-name[R Script]
+
+```{r data-peng, message=FALSE, eval=FALSE}
+library(palmerpenguins)
+
+penguins #<<
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="data-peng", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+# `Select` particular columns
+
+.panelset[
+
+.panel[.panel-name[R Script]
+
+```{r select-col, message=FALSE, eval=FALSE}
+penguins %>% 
+  select(sex, year) #<<
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="select-col", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+# `Select` particular columns
+
+.panelset[
+
+.panel[.panel-name[R Script]
+
+```{r select-col2, message=FALSE, eval=FALSE}
+penguins %>% 
+  select(-c(sex, year)) #<<
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="select-col2", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+
+
+---
+
+write data file to your computer
+
+read data file from your computer
+
+
+
+
+---
+
+background-image: url(images/02-wrangling/readr-logo.png)
+background-size: 10%
+background-position: 97% 5%
+
+# Write/Read your data
+
+- using pkg [**readr**](https://readr.tidyverse.org/):
+
+- "fast and friendly way to read rectangular data (like csv, tsv, and fwf)"
+
+- it comes with pkg **tidyverse** package, so no need to install or library it separately
+
+---
+
+class:
+
+# Write Data file to your computer
+
+```{r write-data, message=FALSE, eval=FALSE}
+write_csv( #<<
+  penguins,
+  "data/palmer-penguins.csv"
+)
+
+```
+
+---
+
+class:
+
+# Read Data file from your computer
+
+.panelset[
+
+.panel[.panel-name[R Script]
+
+```{r import1, message=FALSE, eval=FALSE}
+read_csv(
+  "data/new-penguins.csv"
+)
+
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="import1", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/bee.jpeg)
+background-size: 26%
+background-position: 50% 50%

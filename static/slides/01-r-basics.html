@@ -4,8 +4,7 @@
     <title>Getting started: The Basics of R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Ajay Koli" />
-    <meta name="date" content="2020-11-27" />
-    <script src="libs/header-attrs/header-attrs.js"></script>
+    <meta name="date" content="2020-11-30" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
@@ -49,20 +48,20 @@
 
 layout: true
 
-&lt;a class="footer-link" href="https://r4b.netlify.app/"&gt;r4b/share&lt;/a&gt;
-
 ---
 
-class: title-slide, center, bottom, hide-count
-background-image: url(images/01-basics/featured.jpg)
-background-size: 55%
-background-position: 50% 0%
+class: title-slide, hide-count, top
+background-image: url(images/01-basics/cover.jpg)
+background-size: cover
 
-# Getting started: The Basics of R
+.left-column[
+&lt;br&gt;
+# .center.b.white.left.top[The Basics &lt;br&gt;of R]
+]
 
-## .orange[Topic - 1]
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-### Ajay Koli
+### .b.right.orange[Topic - 1 | Ajay Koli]
 
 ---
 
@@ -1144,7 +1143,7 @@ class: your-turn, hide-count
 
 # Your turn 🏋🏽‍♂️ 
 
-<div class="countdown" id="timer_5fc107b0" style="top:0;right:0;font-size:3em;" data-warnwhen="0">
+<div class="countdown" id="timer_5fc4e37a" style="top:0;right:0;font-size:3em;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1185,9 +1184,8 @@ class: live-code
 
 
 ```
- [1] "age"        "books"      "capital"    "foundation" "name"      
- [6] "place"      "pop"        "salary"     "soc"        "state"     
-[11] "world"     
+ [1] "age"        "books"      "capital"    "foundation" "name"       "place"     
+ [7] "pop"        "salary"     "soc"        "state"      "world"     
 ```
 
 ]
@@ -1197,7 +1195,7 @@ class: live-code
 <script>var slideshow = remark.create({
 "highlightStyle": "solarized-light",
 "highlightLanguage": ["r", "css", "yaml"],
-"slideNumberFormat": "%current% ",
+"slideNumberFormat": "%current%/%total%",
 "highlightLines": true,
 "countIncrementalSlides": false,
 "ratio": "16:9"

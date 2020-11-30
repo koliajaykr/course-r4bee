@@ -12,7 +12,7 @@ output:
       # autoplay: 5000
       highlightStyle: solarized-light
       highlightLanguage: ["r", "css", "yaml"]
-      slideNumberFormat: "%current% " 
+      slideNumberFormat: "%current%/%total%" 
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
@@ -41,20 +41,20 @@ xaringanExtra::use_share_again()
 
 layout: true
 
-<a class="footer-link" href="https://r4b.netlify.app/">r4b/share</a>
-
 ---
 
-class: title-slide, center, bottom, hide-count
-background-image: url(images/01-basics/featured.jpg)
-background-size: 55%
-background-position: 50% 0%
+class: title-slide, hide-count, top
+background-image: url(images/01-basics/cover.jpg)
+background-size: cover
 
-# `r rmarkdown::metadata$title`
+.left-column[
+<br>
+# .center.b.white.left.top[The Basics <br>of R]
+]
 
-## .orange[`r rmarkdown::metadata$subtitle`]
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-### `r rmarkdown::metadata$author`
+### .b.right.orange[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
 
 ---
 

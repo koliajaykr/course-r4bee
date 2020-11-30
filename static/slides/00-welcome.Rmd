@@ -12,7 +12,7 @@ output:
       # autoplay: 5000
       highlightStyle: solarized-light
       highlightLanguage: ["r", "css", "yaml"]
-      slideNumberFormat: "%current%" 
+      slideNumberFormat: "%current%/%total%" 
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
@@ -37,8 +37,6 @@ xaringanExtra::use_share_again()
 ```
 
 layout: true
-
-<a class="footer-link" href="https://r4b.netlify.app/">r4b/share</a>
 
 ---
 

@@ -1,0 +1,64 @@
+---
+title: "Heat of Statistics"
+subtitle: "Topic - 3"
+author: "Ajay Koli"
+output:
+  html_document:
+    theme: flatly
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 2
+    number_sections: TRUE
+    code_folding: hide
+---
+```{r setup, include = FALSE, cache = FALSE}
+knitr::opts_chunk$set(error = TRUE, comment = NA, warning = FALSE, errors = FALSE, message = FALSE, tidy = FALSE, cache = FALSE, fig.path= "03-figs/")
+```
+
+# R Markdown
+
+```{r}
+# lab codes for topic - 2 Data Wrangling
+
+# introduce to the %>% pipe function, how it works
+
+#knitr ops
+library(tidyverse)
+library(knitr)
+
+# data penguins
+library(palmerpenguins)
+
+penguins
+
+# select particular variables
+
+penguins %>%
+  select(sex, year)
+
+# write a new data file in your computer
+
+penguins %>%
+  select(sex, year) %>%
+  write_csv("peng1.csv")
+
+```
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+# Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
