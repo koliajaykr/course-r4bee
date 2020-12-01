@@ -76,7 +76,7 @@ user_groups:
 
 Hello,
 
-In this course, you will learn data science using R from scratch. It is equally good for students and professionals. Purpose of this course is to build your confidence by introducing the basics of R, data wrangling, basics of statistics, data visualisation, R Markdown and slide-crafting using **xaringan**. 
+In this course, you will learn data science using R from scratch. It is equally good for students and professionals. Purpose of this course is to build your confidence by introducing the basics of R, data wrangling, basics of statistics, data visualisation, R Markdown and slide-crafting using xaringan. 
 
 Right now lectures and practice sessions are combined. In one batch maximum thirty participants will be registered. It increases interaction and focus upon the learning of each participant. 
 

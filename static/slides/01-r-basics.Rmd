@@ -43,18 +43,18 @@ layout: true
 
 ---
 
-class: title-slide, hide-count, top
+class: title-slide, hide-count, bottom
 background-image: url(images/01-basics/cover.jpg)
 background-size: cover
 
 .left-column[
-<br>
-# .center.b.white.left.top[The Basics <br>of R]
+
+# .b--dark-white.ba.ph4.bw3.center.b.white[The Basics <br>of R]
 ]
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-### .b.right.orange[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
+### .b.right.orange[`r rmarkdown::metadata$subtitle` <br> `r rmarkdown::metadata$author`]
 
 ---
 
@@ -218,16 +218,12 @@ background-position: center bottom
 
 ---
 
-class: inverse, hide-count, center
-background-image: url("images/01-basics/code_hero.gif")
-background-size: 37%
-background-position: 15% 50%
+class: inverse, hide-count, center, bottom
+background-image: url("images/01-basics/logo-rmd.png")
+background-size: 25%
+background-position: 50% 20%
 
-<br>
-
-.pull-right[
-# .bottom.big-text[R Script]
-]
+# .bottom.big-text[R Markdown]
 
 ---
 
@@ -237,7 +233,47 @@ background-image: url("images/01-basics/script-new.png")
 background-size: 70%
 background-position: center bottom
 
-# File $\rightarrow$ New File $\rightarrow$ R Script
+# File $\rightarrow$ New File $\rightarrow$ R Markdown
+
+---
+
+class: center
+
+background-image: url("images/01-basics/script-options.png")
+background-size: 65%
+background-position: center bottom
+
+# R Markdown
+
+---
+
+class: center
+
+background-image: url("images/01-basics/script-options1.png")
+background-size: 65%
+background-position: center bottom
+
+# R Markdown
+
+---
+
+class: center
+
+background-image: url("images/01-basics/script-options2.png")
+background-size: 65%
+background-position: center bottom
+
+# R Markdown
+
+---
+
+class: center
+
+background-image: url("images/01-basics/script-options3.png")
+background-size: 65%
+background-position: center bottom
+
+# R Markdown
 
 ---
 
@@ -251,6 +287,7 @@ background-position: center bottom
 
 ---
 
+exclude: true
 class: center
 
 background-image: url("images/01-basics/script-to-console1.png")
@@ -261,6 +298,7 @@ background-position: center bottom
 
 ---
 
+exclude: true
 class: center
 
 background-image: url("images/01-basics/script-to-console2.png")
@@ -271,6 +309,7 @@ background-position: center bottom
 
 ---
 
+exclude: true
 class: center
 
 background-image: url("images/01-basics/script-to-console3.png")
@@ -281,6 +320,7 @@ background-position: center bottom
 
 ---
 
+exclude: true
 class: center
 
 background-image: url("images/01-basics/script-to-console4.png")
@@ -291,25 +331,105 @@ background-position: center bottom
 
 ---
 
-# How to run R script in console? 🤔
+# To get output of R Markdown file:
+
+- Click the `Knit` button
+
+```{r out.width="50%", echo=FALSE}
+knitr::include_graphics("images/01-basics/knit.png")
+```
 
 --
 
-##- To run the current line or selection: `ctrl + enter`
-
---
-
-##- To run the active document script: `ctrl + shift + enter`  
+- or use the keyboard shortcut `ctrl + shift + k`  
 
 ---
 
-class: live-code
+# Three important parts of R Markdown:
+
+##- .purple[YAML]
+
+##- .orange[Code chunk]
+
+##- .blue[Text]
+
+---
+
+background-image: url("images/01-basics/temp-yaml.png")
+background-size: cover
+background-position: left
+
+---
+
+background-image: url("images/01-basics/temp-chunk.png")
+background-size: cover
+background-position: left
+
+---
+
+background-image: url("images/01-basics/temp-text.png")
+background-size: cover
+background-position: left
+
+---
+
+class: center, bottom, inverse, hide-count
+background-image: url("images/01-basics/code_hero.gif")
+background-size: 30%
+background-position: 50% 15%
+
+# .big-text[Code Chunk]
+
+---
+
+# Code Chunk
+
+```{r echo=FALSE, out.width="75%"}
+knitr::include_graphics("images/01-basics/code-chunk.png")
+```
+
+--
+
+- To get a new code chunk use `Ctrl + Alt + i`
+
+---
+
+# Code Chunk: To modify the options
+
+```{r echo=FALSE, out.width="75%"}
+knitr::include_graphics("images/01-basics/code-chunk-modify.png")
+```
+
+---
+
+# Code Chunk: To run previous chunks
+
+```{r echo=FALSE, out.width="75%"}
+knitr::include_graphics("images/01-basics/code-chunk-before.png")
+```
+
+--
+
+```{r echo=FALSE, out.width="75%"}
+knitr::include_graphics("images/01-basics/code-chunk-before-run.png")
+```
+
+
+---
+
+# Code Chunk: To run the current Chunk
+
+```{r echo=FALSE, out.width="75%"}
+knitr::include_graphics("images/01-basics/code-chunk-current.png")
+```
+
+---
 
 # R as a big calculator
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r calci1, eval=FALSE, echo=TRUE}
 1 #<<
@@ -319,7 +439,7 @@ class: live-code
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="calci1", echo=FALSE}
 
@@ -329,13 +449,11 @@ class: live-code
 
 ---
 
-class: live-code
-
 # R as a big calculator
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r calci2, eval=FALSE, echo=TRUE}
 1
@@ -347,7 +465,7 @@ class: live-code
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="calci2", echo=FALSE}
 
@@ -355,15 +473,14 @@ class: live-code
 
 ]
 
----
 
-class: live-code
+---
 
 # R as a big calculator
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r calci3, eval=FALSE, echo=TRUE}
 1
@@ -377,7 +494,7 @@ class: live-code
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="calci3", echo=FALSE}
 
@@ -387,13 +504,11 @@ class: live-code
 
 ---
 
-class: live-code
-
 # R as a big calculator
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r calci4, eval=FALSE, echo=TRUE}
 1
@@ -409,7 +524,7 @@ class: live-code
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="calci4", echo=FALSE}
 
@@ -419,13 +534,11 @@ class: live-code
 
 ---
 
-class: live-code
-
 # R as a big calculator
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r calci5, eval=FALSE, echo=TRUE}
 1
@@ -443,7 +556,7 @@ class: live-code
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="calci5", echo=FALSE}
 
@@ -453,13 +566,11 @@ class: live-code
 
 ---
 
-class: live-code
-
 # R as a big calculator
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r calci6, eval=FALSE, echo=TRUE}
 1
@@ -479,24 +590,13 @@ class: live-code
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="calci6", echo=FALSE}
 
 ```
 
 ]
-
-
-
----
-exclude: true
-
-class: your-turn, inverse
-
-# 👨🏽‍💻👩‍💻 Your Turn
-
-## 1. *ab ye kar ke dikhao* 🕺🏽💃🏼
 
 ---
 
@@ -547,13 +647,12 @@ background-position: 60% 70%
 # Structure of R function
 
 ---
-class: live-code
 
 # Round Function
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r func2, eval=FALSE, echo=TRUE}
 round(
@@ -566,7 +665,7 @@ round(
 
 .pull-right[
 
-## .gold[Console]
+## Output
 
 ```{r ref.label="func2", echo=FALSE}
 
@@ -579,13 +678,12 @@ round(
 use tab key inside empty function bracket
 
 ---
-class: live-code
 
 # Square Root Function
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r sqrt, eval=FALSE, echo=TRUE}
 sqrt(
@@ -597,7 +695,7 @@ sqrt(
 
 .pull-right[
 
-## .gold[Console]
+## Output
 
 ```{r ref.label="sqrt", echo=FALSE}
 
@@ -606,13 +704,12 @@ sqrt(
 ]
 
 ---
-class: live-code
 
 # Sequence Function
 
 .pull-left[
 
-## .gold[R Script]
+## R Script
 
 ```{r seq, eval=FALSE, echo=TRUE}
 seq.int(
@@ -626,7 +723,7 @@ seq.int(
 
 .pull-right[
 
-## .gold[Console]
+## Console
 
 ```{r ref.label="seq", echo=FALSE}
 
@@ -662,13 +759,12 @@ background-position: 50% 5%
 ]
 
 ---
-class: live-code
 
 # Add Comment
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r comment, eval=FALSE, echo=TRUE}
 # hello world!
@@ -680,7 +776,7 @@ class: live-code
 
 .pull-right[
 
-## .gold[Console]
+## Output
 
 ```{r ref.label="comment", echo=FALSE}
 
@@ -730,13 +826,11 @@ library(tidyverse)
 
 ---
 
-class: live-code
-
 # Use R Package
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r lib1, eval=FALSE, echo=TRUE}
 # this pkd is installed
@@ -748,7 +842,7 @@ library(tidyverse)
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="lib1", echo=FALSE}
 
@@ -764,7 +858,7 @@ class: live-code
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r lib21, eval=FALSE, echo=TRUE}
 # this pkd is installed
@@ -782,7 +876,7 @@ library(vcd)
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="lib21", echo=FALSE}
 
@@ -841,13 +935,11 @@ Source: https://rstudio-education.github.io/hopr/basics.html
 
 ---
 
-class: live-code
-
 # Create Object
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r obj1, eval=FALSE, echo=TRUE}
 
@@ -860,7 +952,7 @@ salary
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="obj1", echo=FALSE}
 
@@ -870,13 +962,11 @@ salary
 
 ---
 
-class: live-code
-
 # Create Object
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r obj2, eval=FALSE, echo=TRUE}
 
@@ -895,7 +985,7 @@ name
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="obj2", echo=FALSE}
 
@@ -906,13 +996,11 @@ name
 
 ---
 
-class: live-code
-
 # Create Object
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r obj4, eval=FALSE, echo=TRUE}
 
@@ -931,7 +1019,7 @@ age
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="obj4", echo=FALSE}
 
@@ -941,13 +1029,11 @@ age
 
 ---
 
-class: live-code
-
 # Create Object
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r obj5, eval=FALSE, echo=TRUE}
 
@@ -966,7 +1052,7 @@ place
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="obj5", echo=FALSE}
 
@@ -976,13 +1062,11 @@ place
 
 ---
 
-class: live-code
-
 # Create Object
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r obj6, eval=FALSE, echo=TRUE}
 
@@ -995,7 +1079,7 @@ books
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="obj6", echo=FALSE}
 
@@ -1077,13 +1161,11 @@ Source: [Book of Hadley & Grolemund](https://r4ds.had.co.nz/index.html)
 
 ---
 
-class: live-code
-
 # Create Data Object
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r df1, eval=FALSE}
 soc <- data.frame( #<<
@@ -1102,7 +1184,7 @@ soc
 
 .pull-right[
 
-## .gold[Console]
+## Output
 
 ```{r ref.label="df1", echo=FALSE}
 
@@ -1138,13 +1220,11 @@ world
 
 ---
 
-class: live-code
-
 # Get a List of all Objects
 
 .pull-left[
 
-## .gold[R Script]
+## Code
 
 ```{r obj3, eval=FALSE, echo=TRUE}
 # names of created objects
@@ -1155,7 +1235,7 @@ objects() #<<
 
 .pull-right[
 
-## .gold[Console ]
+## Output
 
 ```{r ref.label="obj3", echo=FALSE}
 

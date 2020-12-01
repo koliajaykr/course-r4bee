@@ -1,6 +1,5 @@
 ---
-title: "Heat of Statistics"
-subtitle: "Topic - 3"
+title: "Data Wrangling"
 author: "Ajay Koli"
 output:
   html_document:
@@ -14,7 +13,4 @@ output:
 ```{r setup, include = FALSE, cache = FALSE}
 knitr::opts_chunk$set(error = TRUE, comment = NA, warning = FALSE, errors = FALSE, message = FALSE, tidy = FALSE, cache = FALSE, fig.path= "03-figs/")
 ```
-
-
-
 
