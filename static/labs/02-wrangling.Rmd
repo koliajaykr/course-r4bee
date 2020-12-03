@@ -3,14 +3,112 @@ title: "Data Wrangling"
 author: "Ajay Koli"
 output:
   html_document:
-    theme: flatly
+    theme: united
+    highlight: tango
     toc: TRUE
-    toc_float: TRUE
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
     toc_depth: 2
     number_sections: TRUE
-    code_folding: hide
+    #code_folding
 ---
 ```{r setup, include = FALSE, cache = FALSE}
 knitr::opts_chunk$set(error = TRUE, comment = NA, warning = FALSE, errors = FALSE, message = FALSE, tidy = FALSE, cache = FALSE, fig.path= "03-figs/")
 ```
 
+# data wrangling
+
+it combines data tidying and transformation.
+
+## data tidying
+
+## data transformation
+
+
+# Packages required
+
+```{r}
+# to use the dplyr pkg
+library(tidyverse)
+```
+
+## tidyverse 
+
+It is a set of these packages:
+
+- `ggplot2`, for data visualisation.
+
+- `dplyr`, for data manipulation.
+
+- `tidyr`, for data tidying.
+
+- `readr`, for data import.
+
+- `purrr`, for functional programming.
+
+- `tibble`, for tibbles, a modern re-imagining of data frames.
+
+- `stringr`, for strings.
+
+- `forcats`, for factors.
+
+We will be using dplyr and readr packages.
+
+## palmerpenguins
+
+```{r}
+# to get penguins data
+library(palmerpenguins)
+```
+
+and from this package we will be using `penguins` data
+
+```{r}
+penguins
+```
+
+### types of the variables
+
+- `int` stands for integers.
+
+- `dbl` stands for doubles, or real numbers.
+
+- `chr` stands for character vectors, or strings.
+
+- `dttm` stands for date-times (a date + a time).
+
+- `lgl` stands for logical, vectors that contain only TRUE or FALSE.
+
+- `fct` stands for factors, which R uses to represent categorical variables with fixed possible values.
+
+- `date` stands for dates.
+
+
+as we can see in the output all variable names are not visible. we can use a specific R function to just read the name of all the variables in the data set.
+
+```{r}
+names(penguins)
+```
+
+we can use the help function to learn more about the penguins data
+
+```{r}
+?penguins
+```
+
+# dplyr package
+
+five key functions:
+
+- Pick observations by their values using function `filter()`.
+    
+- Reorder the rows using function `arrange()`.
+
+- Pick variables by their names using function `select()`.
+
+- Create new variables with functions of existing variables using function `mutate()`.
+
+- Collapse many values down to a single summary using function `summarise()`.
+
+## 

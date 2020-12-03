@@ -52,8 +52,8 @@ background-image: url(images/02-wrangling/cover.jpg)
 background-size: cover
 background-position: 50% 50%
 
-.left-column[
-# .center.b.white.left.top[`r rmarkdown::metadata$title`]
+.pull-left[
+# .pv3.b--dark-white.ba.ph4.bw3.center.b.white.top[`r rmarkdown::metadata$title`]
 ]
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -113,7 +113,7 @@ Artwork by [@allison_horst](https://www.allisonhorst.com/)
 
 .panelset[
 
-.panel[.panel-name[R Script]
+.panel[.panel-name[Codes]
 
 ```{r data-peng, message=FALSE, eval=FALSE}
 library(palmerpenguins)
@@ -133,11 +133,11 @@ penguins #<<
 
 ---
 
-# `Select` particular columns
+# Select columns
 
 .panelset[
 
-.panel[.panel-name[R Script]
+.panel[.panel-name[Codes]
 
 ```{r select-col, message=FALSE, eval=FALSE}
 penguins %>% 
@@ -243,8 +243,4 @@ read_csv(
 ]
 ]
 
----
 
-background-image: url(images/02-wrangling/bee.jpeg)
-background-size: 26%
-background-position: 50% 50%

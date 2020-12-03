@@ -36,6 +36,7 @@ xaringanExtra::use_tile_view()
 xaringanExtra::use_webcam()
 xaringanExtra::use_fit_screen()
 xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = TRUE)
+xaringanExtra::use_panelset()
 xaringanExtra::use_share_again()
 ```
 
@@ -43,18 +44,22 @@ layout: true
 
 ---
 
-class: title-slide, hide-count, bottom
+class: title-slide, hide-count
 background-image: url(images/01-basics/cover.jpg)
 background-size: cover
 
 .left-column[
-
-# .b--dark-white.ba.ph4.bw3.center.b.white[The Basics <br>of R]
+# .b.white[The Basics &nbsp; &nbsp;&nbsp;&nbsp; of R]
 ]
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+.pull-right[
 
-### .b.right.orange[`r rmarkdown::metadata$subtitle` <br> `r rmarkdown::metadata$author`]
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+# .right.b.ttc.f3.white[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
+
+]
+
 
 ---
 
@@ -146,7 +151,7 @@ background-position: 100% 80%
 
 .footnote[
 
-Source: [RStudio Support](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects); Img: [Allison Horst](https://www.allisonhorst.com/) 
+Source: [RStudio Support](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects); Artwork by [Allison Horst](https://www.allisonhorst.com/) 
 
 ]
 
@@ -283,7 +288,7 @@ background-image: url("images/01-basics/script-saved.png")
 background-size: 70%
 background-position: center bottom
 
-# Saved R Script
+# Saved R Markdown file
 
 ---
 
@@ -345,7 +350,7 @@ knitr::include_graphics("images/01-basics/knit.png")
 
 ---
 
-# Three important parts of R Markdown:
+# R Markdown has 3 important parts:
 
 ##- .purple[YAML]
 
@@ -390,7 +395,31 @@ knitr::include_graphics("images/01-basics/code-chunk.png")
 
 --
 
+- Code chunk is used "as a means render R output into documents or to simply display code for illustration" <sup>1</sup> 
+
+- "you can produce text output, tables, or graphics" <sup>2</sup>
+
+.footnote[
+
+[1.] [RStudio](https://garrettgman.github.io/rmarkdown/authoring_rcodechunks.html)
+
+[2.] [Book by Yihui Xie, J. J. Allaire, Garrett Grolemund](https://bookdown.org/yihui/rmarkdown/r-code.html)
+
+]
+
+---
+
+# New code chunk
+
 - To get a new code chunk use `Ctrl + Alt + i`
+
+--
+
+- click the `insert` option in RStudio
+
+```{r echo=FALSE, out.width="75%"}
+knitr::include_graphics("images/01-basics/chunk-insert.png")
+```
 
 ---
 
@@ -425,11 +454,11 @@ knitr::include_graphics("images/01-basics/code-chunk-current.png")
 
 ---
 
-# R as a big calculator
+# .center[R as a big calculator]
 
 .pull-left[
 
-## Code
+## .center[Code]
 
 ```{r calci1, eval=FALSE, echo=TRUE}
 1 #<<
@@ -439,7 +468,7 @@ knitr::include_graphics("images/01-basics/code-chunk-current.png")
 
 .pull-right[
 
-## Output
+## .center[Output]
 
 ```{r ref.label="calci1", echo=FALSE}
 
@@ -449,11 +478,11 @@ knitr::include_graphics("images/01-basics/code-chunk-current.png")
 
 ---
 
-# R as a big calculator
+# .center[R as a big calculator]
 
 .pull-left[
 
-## Code
+## .center[Code]
 
 ```{r calci2, eval=FALSE, echo=TRUE}
 1
@@ -465,7 +494,7 @@ knitr::include_graphics("images/01-basics/code-chunk-current.png")
 
 .pull-right[
 
-## Output
+## .center[Output]
 
 ```{r ref.label="calci2", echo=FALSE}
 
@@ -476,11 +505,11 @@ knitr::include_graphics("images/01-basics/code-chunk-current.png")
 
 ---
 
-# R as a big calculator
+# .center[R as a big calculator]
 
 .pull-left[
 
-## Code
+## .center[Code]
 
 ```{r calci3, eval=FALSE, echo=TRUE}
 1
@@ -494,7 +523,7 @@ knitr::include_graphics("images/01-basics/code-chunk-current.png")
 
 .pull-right[
 
-## Output
+## .center[Output]
 
 ```{r ref.label="calci3", echo=FALSE}
 
@@ -504,11 +533,11 @@ knitr::include_graphics("images/01-basics/code-chunk-current.png")
 
 ---
 
-# R as a big calculator
+# .center[R as a big calculator]
 
 .pull-left[
 
-## Code
+## .center[Code]
 
 ```{r calci4, eval=FALSE, echo=TRUE}
 1
@@ -524,7 +553,7 @@ knitr::include_graphics("images/01-basics/code-chunk-current.png")
 
 .pull-right[
 
-## Output
+## .center[Output]
 
 ```{r ref.label="calci4", echo=FALSE}
 
@@ -534,11 +563,11 @@ knitr::include_graphics("images/01-basics/code-chunk-current.png")
 
 ---
 
-# R as a big calculator
+# .center[R as a big calculator]
 
 .pull-left[
 
-## Code
+## .center[Code]
 
 ```{r calci5, eval=FALSE, echo=TRUE}
 1
@@ -556,7 +585,7 @@ knitr::include_graphics("images/01-basics/code-chunk-current.png")
 
 .pull-right[
 
-## Output
+## .center[Output]
 
 ```{r ref.label="calci5", echo=FALSE}
 
@@ -566,11 +595,11 @@ knitr::include_graphics("images/01-basics/code-chunk-current.png")
 
 ---
 
-# R as a big calculator
+# .center[R as a big calculator]
 
 .pull-left[
 
-## Code
+## .center[Code]
 
 ```{r calci6, eval=FALSE, echo=TRUE}
 1
@@ -590,7 +619,7 @@ knitr::include_graphics("images/01-basics/code-chunk-current.png")
 
 .pull-right[
 
-## Output
+## .center[Output]
 
 ```{r ref.label="calci6", echo=FALSE}
 
@@ -617,7 +646,7 @@ background-position: 50% 5%
 
 .pull-left[
 
-## .center[R Script]
+## .center[Code]
 
 ```{r func1, eval=FALSE, echo=TRUE}
 round(9.1565, 2)
@@ -629,7 +658,7 @@ round(9.1565, 2)
 
 .pull-right[
 
-## .center[Console ]
+## .center[Output]
 
 ```{r ref.label="func1", echo=FALSE}
 
@@ -648,11 +677,11 @@ background-position: 60% 70%
 
 ---
 
-# Round Function
+# .center[Round Function]
 
 .pull-left[
 
-## Code
+## .center[Code]
 
 ```{r func2, eval=FALSE, echo=TRUE}
 round(
@@ -665,7 +694,7 @@ round(
 
 .pull-right[
 
-## Output
+## .center[Output]
 
 ```{r ref.label="func2", echo=FALSE}
 
@@ -679,11 +708,38 @@ use tab key inside empty function bracket
 
 ---
 
-# Square Root Function
+# .center[Round Function]
 
 .pull-left[
 
-## Code
+## .center[Code]
+
+```{r func3, eval=FALSE, echo=TRUE}
+round(
+  x = 564.56743,
+  digits = 1
+)
+```
+
+]
+
+.pull-right[
+
+## .center[Output]
+
+```{r ref.label="func3", echo=FALSE}
+
+```
+
+]
+
+---
+
+# .center[Square Root Function]
+
+.pull-left[
+
+## .center[Code]
 
 ```{r sqrt, eval=FALSE, echo=TRUE}
 sqrt(
@@ -695,7 +751,7 @@ sqrt(
 
 .pull-right[
 
-## Output
+## .center[Output]
 
 ```{r ref.label="sqrt", echo=FALSE}
 
@@ -705,11 +761,11 @@ sqrt(
 
 ---
 
-# Sequence Function
+# .center[Sequence Function]
 
 .pull-left[
 
-## R Script
+## .center[Code]
 
 ```{r seq, eval=FALSE, echo=TRUE}
 seq.int(
@@ -723,7 +779,7 @@ seq.int(
 
 .pull-right[
 
-## Console
+## .center[Output]
 
 ```{r ref.label="seq", echo=FALSE}
 
@@ -735,7 +791,7 @@ seq.int(
 
 class: inverse, hide-count, center, bottom
 background-image: url("images/01-basics/stormyr.gif")
-background-size: 45%
+background-size: 42%
 background-position: 50% 5%
 
 # .bottom.big-text[Comments]
@@ -760,11 +816,11 @@ background-position: 50% 5%
 
 ---
 
-# Add Comment
+# .center[Add Comment(s)]
 
 .pull-left[
 
-## Code
+## .center[Code]
 
 ```{r comment, eval=FALSE, echo=TRUE}
 # hello world!
@@ -776,7 +832,7 @@ background-position: 50% 5%
 
 .pull-right[
 
-## Output
+## .center[Output]
 
 ```{r ref.label="comment", echo=FALSE}
 
@@ -822,15 +878,15 @@ knitr::include_graphics("images/01-basics/pkg-download2.png")
 library(tidyverse)
 ```
 
-- To use R package write one time `library(name of the package)` inside your R script.  
+- To use R package write one time `library(name of the package)` inside your R Markdown document.  
 
 ---
 
-# Use R Package
+# .center[Use R Package]
 
 .pull-left[
 
-## Code
+## .center[Code]
 
 ```{r lib1, eval=FALSE, echo=TRUE}
 # this pkd is installed
@@ -842,7 +898,7 @@ library(tidyverse)
 
 .pull-right[
 
-## Output
+## .center[Output]
 
 ```{r ref.label="lib1", echo=FALSE}
 
@@ -852,13 +908,11 @@ library(tidyverse)
 
 ---
 
-class: live-code
-
-# Use R Package
+# .center[Use R Package]
 
 .pull-left[
 
-## Code
+## .center[Code]
 
 ```{r lib21, eval=FALSE, echo=TRUE}
 # this pkd is installed
@@ -876,7 +930,7 @@ library(vcd)
 
 .pull-right[
 
-## Output
+## .center[Output]
 
 ```{r ref.label="lib21", echo=FALSE}
 
@@ -887,7 +941,6 @@ library(vcd)
 ```
 
 ]
-
 
 ---
 
@@ -902,10 +955,10 @@ background-position: 50% 5%
 
 # R Object
 
-## "Just a name that you can use to call up stored data"
+##- "Just a name that you can use to call up stored data"
 
 .footnote[
-Source: https://rstudio-education.github.io/hopr/basics.html
+Source: [RStudio](https://rstudio-education.github.io/hopr/basics.html) 
 ]
 
 ---
@@ -935,12 +988,11 @@ Source: https://rstudio-education.github.io/hopr/basics.html
 
 ---
 
-# Create Object
+# .center[Create Object]
 
-.pull-left[
+.panelset[
 
-## Code
-
+.panel[.panel-name[Code]
 ```{r obj1, eval=FALSE, echo=TRUE}
 
 salary <- c(20, 30, 40, 50, -10) #<<
@@ -950,142 +1002,118 @@ salary
 
 ]
 
-.pull-right[
-
-## Output
+.panel[.panel-name[Output]
 
 ```{r ref.label="obj1", echo=FALSE}
 
 ```
+]
 
 ]
 
 ---
 
-# Create Object
+# .center[Create Object]
 
-.pull-left[
-
-## Code
-
+.panelset[
+  
+.panel[.panel-name[Code]
+         
 ```{r obj2, eval=FALSE, echo=TRUE}
 
-name <- c(
-  "Ram",
-  "John",
-  "Ali",
-  "Preeti",
-  "Rani"
-)
+name <- c("Ram", "Rani", "Ali", "Preeti", "John")
 
 name
 ```
-
+         
 ]
-
-.pull-right[
-
-## Output
-
+  
+.panel[.panel-name[Output]
+         
 ```{r ref.label="obj2", echo=FALSE}
 
-```
-
+```         
 ]
-
+  
+]
 
 ---
 
-# Create Object
+# .center[Create Object]
 
-.pull-left[
-
-## Code
-
+.panelset[
+  
+  .panel[.panel-name[Code]
+  
 ```{r obj4, eval=FALSE, echo=TRUE}
-
-age <- c(
-  34,
-  54,
-  23,
-  65,
-  2
-)
+age <- c(34, 54, 23, 65, 2 )
 
 age
 ```
-
-]
-
-.pull-right[
-
-## Output
-
+      
+  ]
+  
+  .panel[.panel-name[Output]
+  
 ```{r ref.label="obj4", echo=FALSE}
 
-```
-
+```         
+         
+  ]
+  
 ]
 
 ---
 
-# Create Object
+# .center[Create Object]
 
-.pull-left[
-
-## Code
-
+.panelset[
+  
+  .panel[.panel-name[Code]
+         
 ```{r obj5, eval=FALSE, echo=TRUE}
 
-place <- c(
-  "ny",
-  "ber",
-  "dhl",
-  "tko",
-  "lon"
-)
+place <- c("ny", "ber", "dhl", "tko", "lon")
 
 place
-```
-
-]
-
-.pull-right[
-
-## Output
-
+```         
+  ]
+  
+  .panel[.panel-name[Output]
 ```{r ref.label="obj5", echo=FALSE}
 
-```
-
+```         
+         
+  ]
+  
 ]
 
 ---
 
-# Create Object
+# .center[Create Object]
 
-.pull-left[
-
-## Code
-
+.panelset[
+  
+  .panel[.panel-name[Code]
 ```{r obj6, eval=FALSE, echo=TRUE}
 
 books <- c(4, 0, 3, 24, 5)
 
 books
 ```
-
-]
-
-.pull-right[
-
-## Output
-
+         
+         
+  ]
+  
+  .panel[.panel-name[Output]
 ```{r ref.label="obj6", echo=FALSE}
 
-```
-
+```         
+         
+  ]
+  
 ]
+
 
 ---
 
@@ -1161,12 +1189,11 @@ Source: [Book of Hadley & Grolemund](https://r4ds.had.co.nz/index.html)
 
 ---
 
-# Create Data Object
+# .center[Create Data Object]
 
-.pull-left[
-
-## Code
-
+.panelset[
+  
+  .panel[.panel-name[Code]
 ```{r df1, eval=FALSE}
 soc <- data.frame( #<<
   age,
@@ -1178,18 +1205,17 @@ soc <- data.frame( #<<
 
 soc
 ```
-
-
-]
-
-.pull-right[
-
-## Output
-
+         
+         
+  ]
+  
+  .panel[.panel-name[Output]
 ```{r ref.label="df1", echo=FALSE}
 
-```
-
+```         
+         
+  ]
+  
 ]
 
 ---
@@ -1220,25 +1246,34 @@ world
 
 ---
 
-# Get a List of all Objects
+# .center[Get a List of all Objects]
 
-.pull-left[
-
-## Code
-
+.panelset[
+  
+  .panel[.panel-name[Code]
 ```{r obj3, eval=FALSE, echo=TRUE}
 # names of created objects
 objects() #<<
 ```
-
-]
-
-.pull-right[
-
-## Output
-
+         
+         
+  ]
+  
+  .panel[.panel-name[Output]
 ```{r ref.label="obj3", echo=FALSE}
 
-```
-
+```         
+         
+  ]
+  
 ]
+
+---
+
+class: center, middle, inverse, hide-count
+
+### Next Session
+
+### .orange[Topic - 2]
+
+# Data Wrangling
