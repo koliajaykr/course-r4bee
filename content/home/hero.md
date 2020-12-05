@@ -52,5 +52,5 @@ hero_media = "img/logo.png"
 
 ## Command a happy career !
 
-<span style="text-shadow: none;"><a class="github-button" href="https://github.com/koliajaykr/course-r-for-beginners" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span>
+<span style="text-shadow: none;"><a class="github-button" href="https://github.com/koliajaykr/course-r4bee" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span>
 

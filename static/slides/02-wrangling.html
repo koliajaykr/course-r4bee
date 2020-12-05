@@ -4,7 +4,8 @@
     <title>Data  Wrangling</title>
     <meta charset="utf-8" />
     <meta name="author" content="Ajay Koli" />
-    <meta name="date" content="2020-12-01" />
+    <meta name="date" content="2020-12-04" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
@@ -31,16 +32,18 @@ layout: true
 class: title-slide, hide-count, top
 background-image: url(images/02-wrangling/cover.jpg)
 background-size: cover
-background-position: 50% 50%
 
-.pull-left[
-# .pv3.b--dark-white.ba.ph4.bw3.center.b.white.top[Data &lt;br&gt;Wrangling]
+.left-column[
+# .center.b.white[Data Wrangling]
 ]
+
+.pull-right[
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
+# .right.b.ttc.f3.white[Topic - 2 | Ajay Koli]
 
-### .b.right.orange[Topic - 2 | Ajay Koli]
+]
 
 ---
 
@@ -109,19 +112,20 @@ library(palmerpenguins)
 
 ```
 # A tibble: 344 x 8
-   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
- 1 Adelie  Torge…           39.1          18.7              181        3750 male 
- 2 Adelie  Torge…           39.5          17.4              186        3800 fema…
- 3 Adelie  Torge…           40.3          18                195        3250 fema…
- 4 Adelie  Torge…           NA            NA                 NA          NA &lt;NA&gt; 
- 5 Adelie  Torge…           36.7          19.3              193        3450 fema…
- 6 Adelie  Torge…           39.3          20.6              190        3650 male 
- 7 Adelie  Torge…           38.9          17.8              181        3625 fema…
- 8 Adelie  Torge…           39.2          19.6              195        4675 male 
- 9 Adelie  Torge…           34.1          18.1              193        3475 &lt;NA&gt; 
-10 Adelie  Torge…           42            20.2              190        4250 &lt;NA&gt; 
-# … with 334 more rows, and 1 more variable: year &lt;int&gt;
+   species island bill_length_mm bill_depth_mm flipper_length_…
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;
+ 1 Adelie  Torge…           39.1          18.7              181
+ 2 Adelie  Torge…           39.5          17.4              186
+ 3 Adelie  Torge…           40.3          18                195
+ 4 Adelie  Torge…           NA            NA                 NA
+ 5 Adelie  Torge…           36.7          19.3              193
+ 6 Adelie  Torge…           39.3          20.6              190
+ 7 Adelie  Torge…           38.9          17.8              181
+ 8 Adelie  Torge…           39.2          19.6              195
+ 9 Adelie  Torge…           34.1          18.1              193
+10 Adelie  Torge…           42            20.2              190
+# … with 334 more rows, and 3 more variables: body_mass_g &lt;int&gt;,
+#   sex &lt;fct&gt;, year &lt;int&gt;
 ```
 
 ]
@@ -185,19 +189,19 @@ penguins %&gt;%
 
 ```
 # A tibble: 344 x 6
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7               181        3750
- 2 Adelie  Torgersen           39.5          17.4               186        3800
- 3 Adelie  Torgersen           40.3          18                 195        3250
- 4 Adelie  Torgersen           NA            NA                  NA          NA
- 5 Adelie  Torgersen           36.7          19.3               193        3450
- 6 Adelie  Torgersen           39.3          20.6               190        3650
- 7 Adelie  Torgersen           38.9          17.8               181        3625
- 8 Adelie  Torgersen           39.2          19.6               195        4675
- 9 Adelie  Torgersen           34.1          18.1               193        3475
-10 Adelie  Torgersen           42            20.2               190        4250
-# … with 334 more rows
+   species island bill_length_mm bill_depth_mm flipper_length_…
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;
+ 1 Adelie  Torge…           39.1          18.7              181
+ 2 Adelie  Torge…           39.5          17.4              186
+ 3 Adelie  Torge…           40.3          18                195
+ 4 Adelie  Torge…           NA            NA                 NA
+ 5 Adelie  Torge…           36.7          19.3              193
+ 6 Adelie  Torge…           39.3          20.6              190
+ 7 Adelie  Torge…           38.9          17.8              181
+ 8 Adelie  Torge…           39.2          19.6              195
+ 9 Adelie  Torge…           34.1          18.1              193
+10 Adelie  Torge…           42            20.2              190
+# … with 334 more rows, and 1 more variable: body_mass_g &lt;int&gt;
 ```
 
 ]
@@ -284,6 +288,8 @@ read_csv(
 
 ]
 ]
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

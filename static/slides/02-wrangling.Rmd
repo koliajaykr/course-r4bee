@@ -50,16 +50,18 @@ layout: true
 class: title-slide, hide-count, top
 background-image: url(images/02-wrangling/cover.jpg)
 background-size: cover
-background-position: 50% 50%
 
-.pull-left[
-# .pv3.b--dark-white.ba.ph4.bw3.center.b.white.top[`r rmarkdown::metadata$title`]
+.left-column[
+# .center.b.white[Data Wrangling]
 ]
+
+.pull-right[
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+# .right.b.ttc.f3.white[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
 
-### .b.right.orange[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
+]
 
 ---
 
