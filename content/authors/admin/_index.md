@@ -59,6 +59,7 @@ social:
 #   icon_pack: ai
 #   link: files/cv.pdf
 
+
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ""
 
@@ -74,17 +75,17 @@ user_groups:
 
 <br>
 
-Hello,
+Hi there :) 
 
-In this course, you will learn data science using R from scratch. It is equally good for students and professionals. Purpose of this course is to build your confidence by introducing the basics of R, data wrangling, basics of statistics, data visualisation, R Markdown and slide-crafting using xaringan. 
+My name is Ajay. I teach this course. 
 
-Right now lectures and practice sessions are combined. In one batch maximum thirty participants will be registered. It increases interaction and focus upon the learning of each participant. 
+I'm a PhD survivor with MBA in tourism studies. I love to teach data science using R statistical language. 
 
-English will be the medium of instruction. I can teach in Hindi as well if required.
+If you are afraid but still want to take your first step towards data science then this course is for you.
 
-If you have any course related query or a teaching opportunity for me then I will be very happy 🙂 to read your email.
+No recorded videos. There will be live interactive sessions using Google Meet. 
 
--- [Ajay](https://ajaykoli.netlify.app/)
+To join this course kindly fill this [Google Form](https://forms.gle/CN4guCNgnzLGACgW9). Please contact me if you have any queries. I'll be happy to reply to your emails and Twitter DMs. 
 
 ----
 

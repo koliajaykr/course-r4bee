@@ -47,13 +47,14 @@ layout: true
 
 ---
 
-class: title-slide, hide-count, top
-background-image: url(images/03-stats/cover1.jpg)
-background-size: cover
-background-position: 50% 50%
+class: title-slide, hide-count, center, middle
+background-image: url(images/03-stats/cover1.gif), url(images/03-stats/cover2.gif) 
+background-size: 50%, 50%
+background-position: 0% 50%, 100% 50%
+background-color: black
 
-# .b.white.left.top[`r rmarkdown::metadata$title`]
+# .b.white[Heat of Statistics]
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+# .b.ttc.f3.white[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
 
-### .b.right.orange[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
+

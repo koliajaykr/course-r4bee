@@ -22,34 +22,37 @@ knitr::opts_chunk$set(error = TRUE, comment = NA, warning = FALSE, errors = FALS
 knitr::include_graphics("images/cover2.jpg")
 ```
 
-Hello, you all are welcomed to the session of topic number 2 which is data wrangling. In this session you will learn:
+Hello, you all are welcomed to topic number 2 which is data wrangling. In this session you will learn:
 
--   how to import/export data
--   to perform data manipulation for data observations
--   to perform data manipulation for data variables
+-   how to import & export data
+-   to perform data manipulation for rows
+-   to perform data manipulation for columns
 -   to calculate summary statistics for the variables
 
-Data wrangling is focused upon the "data exploration and data manipulation" [(Jesse Mostipak)](https://www.kaggle.com/jessemostipak/dive-into-dplyr-tutorial-1). As per [Hadley & Garrett](https://r4ds.had.co.nz/index.html) "together tidy and transforming" are called wrangling. Tidy data means that your data should be stored as each row represents an unique observation and each column represents an unique variable. By data data transformation means "narrowing in on observations of interest ... creating new variables that are functions of existing variables ... and calculating a set of summary statistics."
+Data wrangling is focused upon the "data exploration and data manipulation" [(Jesse Mostipak)](https://www.kaggle.com/jessemostipak/dive-into-dplyr-tutorial-1). As per [Hadley & Garrett](https://r4ds.had.co.nz/index.html) "together tidy and transforming" are called wrangling. Tidy data means that data should be stored in a consistent format in which each row represents an unique observation and each column represents an unique variable. Data transformation means "narrowing in on observations of interest ... creating new variables that are functions of existing variables ... and calculating a set of summary statistics."
 
 # Data - Palmer Penguins
 
-data with 344 rows (sample/observations) and 8 variables (columns):
+We will be using [Palmer Penguins](https://github.com/allisonhorst/palmerpenguins) data. It is a data about 344 penguins (sample/observations) and 8 variables (columns):
 
-`species` : a factor denoting penguin species (Adélie, Chinstrap and Gentoo)
+- `species` : a factor denoting penguin species (Adélie, Chinstrap and Gentoo)
+- `island` : a factor denoting island in Palmer Archipelago, Antarctica (Biscoe, Dream or Torgersen)
+- `bill_length_mm` : a number denoting bill length (millimeters)
+- `bill_depth_mm` : a number denoting bill depth (millimeters)
+- `flipper_length_mm` :  an integer denoting flipper length (millimeters)
+- `body_mass_g` : an integer denoting body mass (grams)
+- `sex` : a factor denoting penguin sex (female, male)
+- `year` : an integer denoting the study year (2007, 2008, or 2009)
 
-`island` : a factor denoting island in Palmer Archipelago, Antarctica (Biscoe, Dream or Torgersen)
+Types of the variables:
 
-`bill_length_mm` : a number denoting bill length (millimeters)
-
-`bill_depth_mm` : a number denoting bill depth (millimeters)
-
-`flipper_length_mm` :  an integer denoting flipper length (millimeters)
-
-`body_mass_g` : an integer denoting body mass (grams)
-
-`sex` : a factor denoting penguin sex (female, male)
-
-`year` : an integer denoting the study year (2007, 2008, or 2009)
+-   `int` stands for integers.
+-   `dbl` stands for doubles, or real numbers.
+-   `chr` stands for character vectors, or strings.
+-   `dttm` stands for date-times (a date + a time).
+-   `lgl` stands for logical, vectors that contain only TRUE or FALSE.
+-   `fct` stands for factors, which R uses to represent categorical variables with fixed possible values.
+-   `date` stands for dates.
 
 ## Import data
 
@@ -69,43 +72,25 @@ penguins <- read_csv("data/penguins.csv",
 )
 ```
 
-Types of the variables:
-
--   `int` stands for integers.
-
--   `dbl` stands for doubles, or real numbers.
-
--   `chr` stands for character vectors, or strings.
-
--   `dttm` stands for date-times (a date + a time).
-
--   `lgl` stands for logical, vectors that contain only TRUE or FALSE.
-
--   `fct` stands for factors, which R uses to represent categorical variables with fixed possible values.
-
--   `date` stands for dates.
-
 ```{r}
 library(dplyr)
 
 glimpse(penguins)
 ```
 
+In the above output, you can check and ensure that each variable is of correct type. Did you notice `NA` value in some variables? These are the missing values.
+
 ## Data summary
 
-It is also a good idea to summarise the data.
-
-### using the skim function
+After knowing about the different types of the variables available in the penguin data, now you should try to summarise the whole data. Here, `skimr` package is used. You can also try to use `summary()`, `str()` & `dim()` functions. 
 
 ```{r}
 library(skimr)
 
-skimr::skim(penguins)
+skim(penguins)
 ```
 
-you should also try the functions `str()` and `dim()`.
-
-# `dplyr` package for data manipulation
+# Data manipulation using `dplyr` package
 
 ```{r}
 # use tidyverse package
@@ -328,3 +313,23 @@ penguins %>%
     weight = body_mass_g
   )
 ```
+
+##########################
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r , eval=FALSE}
+
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="select-col", echo=FALSE, message=FALSE}
+
+```
+
+]
+]

@@ -25,6 +25,7 @@ knitr::opts_chunk$set(
   fig.retina = 3,
   comment = ""
 )
+
 library(ymlthis)
 library(emo)
 library(emojifont)
@@ -50,60 +51,89 @@ layout: true
 class: title-slide, hide-count, top
 background-image: url(images/02-wrangling/cover.jpg)
 background-size: cover
+background-position: 
 
-.left-column[
-# .center.b.white[Data Wrangling]
-]
+.pull-left[
+# .center.b.white[Data <br>Wrangling]
 
-.pull-right[
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-# .right.b.ttc.f3.white[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
-
+# .center.b.ttc.f3.white[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
 ]
 
 ---
 
-# Data Wrangling
+# Check that:
 
-- "tidying and transforming"
+ `r emo::ji("check")` internet is working on your computer
 
----
-
-# Tidy your data
-
-- "your data is tidy, each column is a variable, and each row is an observation"
-
+`r emo::ji("check")` you are working in your RStudio Project
 
 ---
 
-# Transform your data
+class: center
+background-image: url(images/02-wrangling/data-science-wrangle.png)
+background-size: 75%
+background-position: 50% 50%
 
-- "includes narrowing in on observations of interest"
-
-- "creating new variables that are functions of existing variables"
-
-
-
----
-
-# Make sure that:
-
-- `r emo::ji("check")` you are working in RStudio Project.
-
-- `r emo::ji("check")` download package **tidyverse** & **palmerpenguins**.
+# Course Progress
 
 ---
 
-class: middle
-background-image: url(images/02-wrangling/lter_penguins.png)
-background-size: 50%
-background-position: 5% 50%
+# Objectives:
 
-.pull-right[
-# .center[penguins]
-]
+1.   To import & export data
+
+--
+
+1.   To perform data manipulation for rows
+
+--
+
+1.   To perform data manipulation for columns
+
+--
+
+1.   To calculate summary statistics for the variables
+
+---
+
+# Data Wrangling:
+
+--
+
+- "data exploration and data manipulation" [(Jesse Mostipak)](https://www.kaggle.com/jessemostipak/dive-into-dplyr-tutorial-1)
+
+--
+
+- "tidying and transforming" [(Hadley & Garrett)](https://r4ds.had.co.nz/index.html)
+
+---
+
+background-image: url(images/02-wrangling/tidy-1.png)
+background-size: 75%
+background-position: 50% 55%
+
+# Tidying data means:
+
+- "each column is a variable, and each row is an observation" [(Hadley & Garrett)](https://r4ds.had.co.nz/index.html)
+
+---
+
+# Transforming data means:
+
+- "narrowing in on observations of interest ... 
+
+- creating new variables that are functions of existing variables ... and
+
+- calculating a set of summary statistics." [(Hadley & Garrett)](https://r4ds.had.co.nz/index.html)
+
+---
+
+class: center
+background-image: url(images/02-wrangling/penguin-logo.png)
+background-size: 30%
+background-position: 50% 60%
+
+# Palmer Penguins Data
 
 .footnote[
 Artwork by [@allison_horst](https://www.allisonhorst.com/)
@@ -111,138 +141,847 @@ Artwork by [@allison_horst](https://www.allisonhorst.com/)
 
 ---
 
-# `penguins` data
+background-image: url(images/02-wrangling/penguin-logo.png)
+background-size: 30%
+background-position: 95% 60%
 
-.panelset[
+# Data - Palmer Penguins
 
-.panel[.panel-name[Codes]
+- [Palmer Staion, Antarctica LTER](https://pal.lternet.edu/)
 
-```{r data-peng, message=FALSE, eval=FALSE}
-library(palmerpenguins)
+---
 
-penguins #<<
-```
-]
+background-image: url(images/02-wrangling/lter_penguins.png)
+background-size: 50%
+background-position: 95% 60%
 
-.panel[.panel-name[Output]
+# Data - Palmer Penguins
 
-```{r ref.label="data-peng", echo=FALSE, message=FALSE}
+- Three types of penguin species
 
-```
-
-]
+.footnote[
+Artwork by [@allison_horst](https://www.allisonhorst.com/)
 ]
 
 ---
 
-# Select columns
+background-image: url(images/02-wrangling/culmen_depth.png)
+background-size: 50%
+background-position: 95% 60%
 
-.panelset[
+# Data - Palmer Penguins
 
-.panel[.panel-name[Codes]
+- Penguin's bill
 
-```{r select-col, message=FALSE, eval=FALSE}
-penguins %>% 
-  select(sex, year) #<<
-```
-]
-
-.panel[.panel-name[Output]
-
-```{r ref.label="select-col", echo=FALSE, message=FALSE}
-
-```
-
-]
+.footnote[
+Artwork by [@allison_horst](https://www.allisonhorst.com/)
 ]
 
 ---
 
-# `Select` particular columns
+background-image: url(images/02-wrangling/penguin-logo.png)
+background-size: 10%
+background-position: 95% 5%
 
-.panelset[
+# Penguin Data Variables
 
-.panel[.panel-name[R Script]
+- `species` : a factor denoting penguin species (Adélie, Chinstrap and Gentoo)
 
-```{r select-col2, message=FALSE, eval=FALSE}
-penguins %>% 
-  select(-c(sex, year)) #<<
-```
-]
+--
 
-.panel[.panel-name[Output]
+- `island` : a factor denoting island in Palmer Archipelago, Antarctica (Biscoe, Dream or Torgersen)
 
-```{r ref.label="select-col2", echo=FALSE, message=FALSE}
+--
 
-```
+- `bill_length_mm` : a number denoting bill length (millimeters)
 
-]
-]
+--
 
+- `bill_depth_mm` : a number denoting bill depth (millimeters)
 
+--
+
+- `flipper_length_mm` :  an integer denoting flipper length (millimeters)
+
+--
+
+- `body_mass_g` : an integer denoting body mass (grams)
+
+--
+
+- `sex` : a factor denoting penguin sex (female, male)
+
+--
+
+- `year` : an integer denoting the study year (2007, 2008, or 2009)
 
 ---
 
-write data file to your computer
+# Variables types in R:
 
-read data file from your computer
+- `int` stands for integers.
 
+--
 
+- `dbl` stands for doubles, or real numbers.
 
+--
+
+- `chr` stands for character vectors, or strings.
+
+--
+
+- `dttm` stands for date-times (a date + a time).
+
+--
+
+- `lgl` stands for logical, vectors that contain only TRUE or FALSE.
+
+--
+
+- `fct` stands for factors, which R uses to represent categorical variables with fixed possible values.
+
+--
+
+- `date` stands for dates.
 
 ---
 
-background-image: url(images/02-wrangling/readr-logo.png)
+background-image: url(images/02-wrangling/logo-readr.png)
 background-size: 10%
 background-position: 97% 5%
 
-# Write/Read your data
-
-- using pkg [**readr**](https://readr.tidyverse.org/):
-
-- "fast and friendly way to read rectangular data (like csv, tsv, and fwf)"
-
-- it comes with pkg **tidyverse** package, so no need to install or library it separately
-
----
-
-class:
-
-# Write Data file to your computer
-
-```{r write-data, message=FALSE, eval=FALSE}
-write_csv( #<<
-  penguins,
-  "data/palmer-penguins.csv"
-)
-
-```
-
----
-
-class:
-
-# Read Data file from your computer
+# Import Data
 
 .panelset[
 
-.panel[.panel-name[R Script]
+.panel[.panel-name[Codes]
 
-```{r import1, message=FALSE, eval=FALSE}
-read_csv(
-  "data/new-penguins.csv"
+```{r imp-data, eval=FALSE}
+library(readr)
+
+penguins <- read_csv("data/penguins.csv")
+
+penguins
+
+ts
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="imp-data", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+# Variable Types
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r col-types, eval=FALSE}
+penguins <- read_csv("data/penguins.csv",
+  col_types = cols(
+    species = col_factor(),
+    island = col_factor(),
+    bill_length_mm = col_double(),
+    bill_depth_mm = col_double(),
+    flipper_length_mm = col_integer(),
+    body_mass_g = col_integer(),
+    sex = col_factor(),
+    year = col_integer()
+  )
 )
 
+penguins
 ```
 ]
 
 .panel[.panel-name[Output]
 
-```{r ref.label="import1", echo=FALSE, message=FALSE}
+```{r ref.label="col-types", echo=FALSE, message=FALSE}
 
 ```
 
 ]
 ]
 
+---
+
+background-image: url(images/02-wrangling/logo-skimr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# Data summary using [`skimr`](https://docs.ropensci.org/skimr/)
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r summ-data, eval=FALSE}
+library(skimr)
+
+skim(penguins)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="summ-data", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+# Data summary using `summary`
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r summ-data2, eval=FALSE}
+summary(penguins)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="summ-data2", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# Data overview
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r glmp-data, eval=FALSE}
+library(dplyr)
+
+glimpse(penguins)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="glmp-data", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# [`dplyr`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8) functions based upon:
+
+--
+
+.panelset[
+
+.panel[.panel-name[Rows]
+
+- `filter()` chooses rows based on column values.
+    
+- `slice()` chooses rows based on location.
+    
+- `arrange()` changes the order of the rows.
+    
+]
+
+.panel[.panel-name[Columns]
+
+- `select()` changes whether or not a column is included.
+    
+- `rename()` changes the name of columns.
+    
+- `mutate()` changes the values of columns and creates new columns.
+    
+- `relocate()` changes the order of the columns.
+    
+.panel[.panel-name[Groups of rows]
+
+- `summarise()` collapses a group into a single row.
+
+]
+]
+]
+
+---
+
+class: inverse, hide-count
+
+# .big-text[dplyr rows]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `filter()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r filter-fun, eval=FALSE}
+penguins %>% 
+  filter(species == "Gentoo")
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="filter-fun", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+# Comparison: Relational Operators
+
+`x < y`
+
+`x > y`
+
+`x <= y`
+
+`x >= y`
+
+`x == y` (equal)
+
+`x != y` (not equal)
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `filter()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r filter-fun2, eval=FALSE}
+penguins %>% 
+  filter(bill_length_mm > 43)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="filter-fun2", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `filter()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r filter-fun3, eval=FALSE}
+penguins %>% 
+  filter(sex == "female",
+         bill_length_mm > 45)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="filter-fun3", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `filter()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r filter-fun4, eval=FALSE}
+penguins %>% 
+  filter(sex != "female",
+         bill_length_mm > 45,
+         body_mass_g > 4000)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="filter-fun4", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `slice()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r slc-fun1, eval=FALSE}
+penguins %>% 
+  slice(51:150)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="slc-fun1", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `arrange()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r arg-fun, eval=FALSE}
+penguins %>% 
+  arrange(body_mass_g)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="arg-fun", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `arrange()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r arg-fun2, eval=FALSE}
+penguins %>% 
+  arrange(desc(body_mass_g))
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="arg-fun2", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `arrange()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r arg-fun3, eval=FALSE}
+penguins %>% 
+  arrange(species) %>% 
+  tail()
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="arg-fun3", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+class: inverse, hide-count
+
+# .big-text[dplyr columns]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `select()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r col-fun1, eval=FALSE}
+penguins %>% 
+  select(species)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="col-fun1", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `select()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r col-fun2, eval=FALSE}
+penguins %>% 
+  select(species : bill_depth_mm)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="col-fun2", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `select()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r col-fun3, eval=FALSE}
+penguins %>% 
+  select(4:8)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="col-fun3", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `select()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r col-fun4, eval=FALSE}
+penguins %>% 
+  select(species, body_mass_g, year)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="col-fun4", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `select()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r col-fun5, eval=FALSE}
+penguins %>% 
+  select(-c(species, body_mass_g, year))
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="col-fun5", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `rename()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r col-fun6, eval=FALSE}
+penguins %>% 
+  rename(weight = body_mass_g,
+        flipper_weight = flipper_length_mm)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="col-fun6", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `mutate()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r col-fun7, eval=FALSE}
+penguins %>% 
+  mutate(body_mass_g = body_mass_g / 1000)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="col-fun7", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `mutate()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r col-fun8, eval=FALSE}
+penguins %>% 
+  mutate(body_mass_g = body_mass_g / 1000,
+         bill = bill_length_mm * bill_depth_mm)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="col-fun8", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `transmute()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r col-fun9, eval=FALSE}
+penguins %>% 
+  transmute(body_mass_kg = body_mass_g / 1000,
+         bill_cm = (bill_length_mm * 0.1) * (bill_depth_mm * 0.1))
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="col-fun9", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `relocate()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r col-fun10, eval=FALSE}
+penguins %>% 
+  relocate(year, sex)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="col-fun10", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%
+
+# `relocate()` function
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r col-fun11, eval=FALSE}
+penguins %>% 
+  relocate(year, sex, .after = bill_length_mm)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="col-fun11", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+class: inverse, hide-count
+
+# .big-text[groups of rows]
 

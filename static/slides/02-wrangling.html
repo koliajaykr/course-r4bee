@@ -1,418 +1,1203 @@
-<!DOCTYPE html>
-<html lang="" xml:lang="">
-  <head>
-    <title>Data  Wrangling</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="Ajay Koli" />
-    <meta name="date" content="2020-12-04" />
-    <script src="libs/header-attrs/header-attrs.js"></script>
-    <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
-    <script src="libs/tile-view/tile-view.js"></script>
-    <script src="libs/xaringanExtra-webcam/webcam.js"></script>
-    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
-    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
-    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
-    <link href="libs/panelset/panelset.css" rel="stylesheet" />
-    <script src="libs/panelset/panelset.js"></script>
-    <link rel="stylesheet" href="assets/css/my-theme.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/my-fonts.css" type="text/css" />
-  </head>
-  <body>
-    <textarea id="source">
-
-
-
-
-layout: true
-
+---
+title: "Data <br>Wrangling"
+subtitle: "Topic - 2"
+author: Ajay Koli
+date: "2020-12-14"
+output:
+  xaringan::moon_reader:
+    css: ["default", "assets/css/my-theme.css", "assets/css/my-fonts.css"]
+    seal: false
+    lib_dir: libs
+    nature:
+      # autoplay: 5000
+      highlightStyle: solarized-light
+      highlightLanguage: ["r", "css", "yaml"]
+      slideNumberFormat: "%current%/%total%" 
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
 ---
 
-class: title-slide, hide-count, top
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+<link href="/rmarkdown-libs/tachyons/tachyons.min.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/tile-view/tile-view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/tile-view/tile-view.js"></script>
+<script src="/rmarkdown-libs/xaringanExtra-webcam/webcam.js"></script>
+<script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
+<script src="/rmarkdown-libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+<link href="/rmarkdown-libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/panelset/panelset.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/panelset/panelset.js"></script>
+
+
+<p>layout: true</p>
+<hr />
+<p>class: title-slide, hide-count, top
 background-image: url(images/02-wrangling/cover.jpg)
 background-size: cover
-
-.left-column[
-# .center.b.white[Data Wrangling]
-]
-
-.pull-right[
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-# .right.b.ttc.f3.white[Topic - 2 | Ajay Koli]
-
-]
-
----
-
-# Data Wrangling
-
-- "tidying and transforming"
-
----
-
-# Tidy your data
-
-- "your data is tidy, each column is a variable, and each row is an observation"
-
-
----
-
-# Transform your data
-
-- "includes narrowing in on observations of interest"
-
-- "creating new variables that are functions of existing variables"
-
-
-
----
-
-# Make sure that:
-
-- ✅ you are working in RStudio Project.
-
-- ✅ download package **tidyverse** &amp; **palmerpenguins**.
-
----
-
-class: middle
-background-image: url(images/02-wrangling/lter_penguins.png)
+background-position:</p>
+<p>.pull-left[
+# .center.b.white[Data <br>Wrangling]</p>
+<div id="center.b.ttc.f3.whitetopic---2-ajay-koli" class="section level1">
+<h1>.center.b.ttc.f3.white[Topic - 2 | Ajay Koli]</h1>
+<p>]</p>
+<hr />
+</div>
+<div id="check-that" class="section level1">
+<h1>Check that:</h1>
+<p>✅ internet is working on your computer</p>
+<p>✅ you are working in your RStudio Project</p>
+<hr />
+<p>class: center
+background-image: url(images/02-wrangling/data-science-wrangle.png)
+background-size: 75%
+background-position: 50% 50%</p>
+</div>
+<div id="course-progress" class="section level1">
+<h1>Course Progress</h1>
+<hr />
+</div>
+<div id="objectives" class="section level1">
+<h1>Objectives:</h1>
+<ol style="list-style-type: decimal">
+<li>To import &amp; export data</li>
+</ol>
+<p>–</p>
+<ol style="list-style-type: decimal">
+<li>To perform data manipulation for rows</li>
+</ol>
+<p>–</p>
+<ol style="list-style-type: decimal">
+<li>To perform data manipulation for columns</li>
+</ol>
+<p>–</p>
+<ol style="list-style-type: decimal">
+<li>To calculate summary statistics for the variables</li>
+</ol>
+<hr />
+</div>
+<div id="data-wrangling" class="section level1">
+<h1>Data Wrangling:</h1>
+<p>–</p>
+<ul>
+<li>“data exploration and data manipulation” <a href="https://www.kaggle.com/jessemostipak/dive-into-dplyr-tutorial-1">(Jesse Mostipak)</a></li>
+</ul>
+<p>–</p>
+<ul>
+<li>“tidying and transforming” <a href="https://r4ds.had.co.nz/index.html">(Hadley &amp; Garrett)</a></li>
+</ul>
+<hr />
+<p>background-image: url(images/02-wrangling/tidy-1.png)
+background-size: 75%
+background-position: 50% 55%</p>
+</div>
+<div id="tidying-data-means" class="section level1">
+<h1>Tidying data means:</h1>
+<ul>
+<li>“each column is a variable, and each row is an observation” <a href="https://r4ds.had.co.nz/index.html">(Hadley &amp; Garrett)</a></li>
+</ul>
+<hr />
+</div>
+<div id="transforming-data-means" class="section level1">
+<h1>Transforming data means:</h1>
+<ul>
+<li><p>"narrowing in on observations of interest …</p></li>
+<li><p>creating new variables that are functions of existing variables … and</p></li>
+<li><p>calculating a set of summary statistics." <a href="https://r4ds.had.co.nz/index.html">(Hadley &amp; Garrett)</a></p></li>
+</ul>
+<hr />
+<p>class: center
+background-image: url(images/02-wrangling/penguin-logo.png)
+background-size: 30%
+background-position: 50% 60%</p>
+</div>
+<div id="palmer-penguins-data" class="section level1">
+<h1>Palmer Penguins Data</h1>
+<p>.footnote[
+Artwork by <span class="citation">[@allison_horst]</span>(<a href="https://www.allisonhorst.com/" class="uri">https://www.allisonhorst.com/</a>)]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/penguin-logo.png)
+background-size: 30%
+background-position: 95% 60%</p>
+</div>
+<div id="data---palmer-penguins" class="section level1">
+<h1>Data - Palmer Penguins</h1>
+<ul>
+<li><a href="https://pal.lternet.edu/">Palmer Staion, Antarctica LTER</a></li>
+</ul>
+<hr />
+<p>background-image: url(images/02-wrangling/lter_penguins.png)
 background-size: 50%
-background-position: 5% 50%
-
-.pull-right[
-# .center[penguins]
-]
-
-.footnote[
-Artwork by [@allison_horst](https://www.allisonhorst.com/)
-]
-
----
-
-# `penguins` data
-
-.panelset[
-
-.panel[.panel-name[Codes]
-
-
-```r
-library(palmerpenguins)
-
-*penguins
-```
-]
-
-.panel[.panel-name[Output]
-
-
-```
-# A tibble: 344 x 8
-   species island bill_length_mm bill_depth_mm flipper_length_…
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;
- 1 Adelie  Torge…           39.1          18.7              181
- 2 Adelie  Torge…           39.5          17.4              186
- 3 Adelie  Torge…           40.3          18                195
- 4 Adelie  Torge…           NA            NA                 NA
- 5 Adelie  Torge…           36.7          19.3              193
- 6 Adelie  Torge…           39.3          20.6              190
- 7 Adelie  Torge…           38.9          17.8              181
- 8 Adelie  Torge…           39.2          19.6              195
- 9 Adelie  Torge…           34.1          18.1              193
-10 Adelie  Torge…           42            20.2              190
-# … with 334 more rows, and 3 more variables: body_mass_g &lt;int&gt;,
-#   sex &lt;fct&gt;, year &lt;int&gt;
-```
-
-]
-]
-
----
-
-# Select columns
-
-.panelset[
-
-.panel[.panel-name[Codes]
-
-
-```r
-penguins %&gt;% 
-* select(sex, year)
-```
-]
-
-.panel[.panel-name[Output]
-
-
-```
-# A tibble: 344 x 2
-   sex     year
-   &lt;fct&gt;  &lt;int&gt;
- 1 male    2007
- 2 female  2007
- 3 female  2007
- 4 &lt;NA&gt;    2007
- 5 female  2007
- 6 male    2007
- 7 female  2007
- 8 male    2007
- 9 &lt;NA&gt;    2007
-10 &lt;NA&gt;    2007
-# … with 334 more rows
-```
-
-]
-]
-
----
-
-# `Select` particular columns
-
-.panelset[
-
-.panel[.panel-name[R Script]
-
-
-```r
-penguins %&gt;% 
-* select(-c(sex, year))
-```
-]
-
-.panel[.panel-name[Output]
-
-
-```
-# A tibble: 344 x 6
-   species island bill_length_mm bill_depth_mm flipper_length_…
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;
- 1 Adelie  Torge…           39.1          18.7              181
- 2 Adelie  Torge…           39.5          17.4              186
- 3 Adelie  Torge…           40.3          18                195
- 4 Adelie  Torge…           NA            NA                 NA
- 5 Adelie  Torge…           36.7          19.3              193
- 6 Adelie  Torge…           39.3          20.6              190
- 7 Adelie  Torge…           38.9          17.8              181
- 8 Adelie  Torge…           39.2          19.6              195
- 9 Adelie  Torge…           34.1          18.1              193
-10 Adelie  Torge…           42            20.2              190
-# … with 334 more rows, and 1 more variable: body_mass_g &lt;int&gt;
-```
-
-]
-]
-
-
-
----
-
-write data file to your computer
-
-read data file from your computer
-
-
-
-
----
-
-background-image: url(images/02-wrangling/readr-logo.png)
+background-position: 95% 60%</p>
+</div>
+<div id="data---palmer-penguins-1" class="section level1">
+<h1>Data - Palmer Penguins</h1>
+<ul>
+<li>Three types of penguin species</li>
+</ul>
+<p>.footnote[
+Artwork by <span class="citation">[@allison_horst]</span>(<a href="https://www.allisonhorst.com/" class="uri">https://www.allisonhorst.com/</a>)]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/culmen_depth.png)
+background-size: 50%
+background-position: 95% 60%</p>
+</div>
+<div id="data---palmer-penguins-2" class="section level1">
+<h1>Data - Palmer Penguins</h1>
+<ul>
+<li>Penguin’s bill</li>
+</ul>
+<p>.footnote[
+Artwork by <span class="citation">[@allison_horst]</span>(<a href="https://www.allisonhorst.com/" class="uri">https://www.allisonhorst.com/</a>)]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/penguin-logo.png)
 background-size: 10%
-background-position: 97% 5%
+background-position: 95% 5%</p>
+</div>
+<div id="penguin-data-variables" class="section level1">
+<h1>Penguin Data Variables</h1>
+<ul>
+<li><code>species</code> : a factor denoting penguin species (Adélie, Chinstrap and Gentoo)</li>
+</ul>
+<p>–</p>
+<ul>
+<li><code>island</code> : a factor denoting island in Palmer Archipelago, Antarctica (Biscoe, Dream or Torgersen)</li>
+</ul>
+<p>–</p>
+<ul>
+<li><code>bill_length_mm</code> : a number denoting bill length (millimeters)</li>
+</ul>
+<p>–</p>
+<ul>
+<li><code>bill_depth_mm</code> : a number denoting bill depth (millimeters)</li>
+</ul>
+<p>–</p>
+<ul>
+<li><code>flipper_length_mm</code> : an integer denoting flipper length (millimeters)</li>
+</ul>
+<p>–</p>
+<ul>
+<li><code>body_mass_g</code> : an integer denoting body mass (grams)</li>
+</ul>
+<p>–</p>
+<ul>
+<li><code>sex</code> : a factor denoting penguin sex (female, male)</li>
+</ul>
+<p>–</p>
+<ul>
+<li><code>year</code> : an integer denoting the study year (2007, 2008, or 2009)</li>
+</ul>
+<hr />
+</div>
+<div id="variables-types-in-r" class="section level1">
+<h1>Variables types in R:</h1>
+<ul>
+<li><code>int</code> stands for integers.</li>
+</ul>
+<p>–</p>
+<ul>
+<li><code>dbl</code> stands for doubles, or real numbers.</li>
+</ul>
+<p>–</p>
+<ul>
+<li><code>chr</code> stands for character vectors, or strings.</li>
+</ul>
+<p>–</p>
+<ul>
+<li><code>dttm</code> stands for date-times (a date + a time).</li>
+</ul>
+<p>–</p>
+<ul>
+<li><code>lgl</code> stands for logical, vectors that contain only TRUE or FALSE.</li>
+</ul>
+<p>–</p>
+<ul>
+<li><code>fct</code> stands for factors, which R uses to represent categorical variables with fixed possible values.</li>
+</ul>
+<p>–</p>
+<ul>
+<li><code>date</code> stands for dates.</li>
+</ul>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-readr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="import-data" class="section level1">
+<h1>Import Data</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>library(readr)
 
-# Write/Read your data
+penguins &lt;- read_csv(&quot;data/penguins.csv&quot;)
 
-- using pkg [**readr**](https://readr.tidyverse.org/):
+penguins
 
-- "fast and friendly way to read rectangular data (like csv, tsv, and fwf)"
-
-- it comes with pkg **tidyverse** package, so no need to install or library it separately
-
----
-
-class:
-
-# Write Data file to your computer
-
-
-```r
-*write_csv(
-  penguins,
-  "data/palmer-penguins.csv"
+ts</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 8
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+   &lt;chr&gt;   &lt;chr&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt;
+ 1 Adelie  Torge…           39.1          18.7              181        3750
+ 2 Adelie  Torge…           39.5          17.4              186        3800
+ 3 Adelie  Torge…           40.3          18                195        3250
+ 4 Adelie  Torge…           NA            NA                 NA          NA
+ 5 Adelie  Torge…           36.7          19.3              193        3450
+ 6 Adelie  Torge…           39.3          20.6              190        3650
+ 7 Adelie  Torge…           38.9          17.8              181        3625
+ 8 Adelie  Torge…           39.2          19.6              195        4675
+ 9 Adelie  Torge…           34.1          18.1              193        3475
+10 Adelie  Torge…           42            20.2              190        4250
+# … with 334 more rows, and 2 more variables: sex &lt;chr&gt;, year &lt;dbl&gt;
+function (data = NA, start = 1, end = numeric(), frequency = 1, 
+    deltat = 1, ts.eps = getOption(&quot;ts.eps&quot;), class = if (nseries &gt; 
+        1) c(&quot;mts&quot;, &quot;ts&quot;, &quot;matrix&quot;) else &quot;ts&quot;, names = if (!is.null(dimnames(data))) colnames(data) else paste(&quot;Series&quot;, 
+        seq(nseries))) 
+{
+    if (is.data.frame(data)) 
+        data &lt;- data.matrix(data)
+    if (is.matrix(data)) {
+        nseries &lt;- ncol(data)
+        ndata &lt;- nrow(data)
+        dimnames(data) &lt;- list(NULL, names)
+    }
+    else {
+        nseries &lt;- 1
+        ndata &lt;- length(data)
+    }
+    if (ndata == 0) 
+        stop(&quot;&#39;ts&#39; object must have one or more observations&quot;)
+    if (missing(frequency)) 
+        frequency &lt;- 1/deltat
+    else if (missing(deltat)) 
+        deltat &lt;- 1/frequency
+    if (frequency &gt; 1 &amp;&amp; 0 &lt; (d &lt;- abs(frequency - round(frequency))) &amp;&amp; 
+        d &lt; ts.eps) 
+        frequency &lt;- round(frequency)
+    if (!missing(start)) 
+        start &lt;- as.numeric(start)
+    if (length(start) &gt; 1L) {
+        start &lt;- start[1L] + (start[2L] - 1)/frequency
+    }
+    if (!missing(end)) 
+        end &lt;- as.numeric(end)
+    if (length(end) &gt; 1L) {
+        end &lt;- end[1L] + (end[2L] - 1)/frequency
+    }
+    if (missing(end)) 
+        end &lt;- start + (ndata - 1)/frequency
+    else if (missing(start)) 
+        start &lt;- end - (ndata - 1)/frequency
+    if (start &gt; end) 
+        stop(&quot;&#39;start&#39; cannot be after &#39;end&#39;&quot;)
+    cycles &lt;- as.numeric((end - start) * frequency)
+    if (abs(round(cycles) - cycles) &gt; ts.eps * max(cycles, 1)) 
+        stop(&quot;&#39;end&#39; must be a whole number of cycles after &#39;start&#39;&quot;)
+    nobs &lt;- floor(cycles + 1.01)
+    if (nobs != ndata) 
+        data &lt;- if (NCOL(data) == 1) {
+            if (ndata &lt; nobs) 
+                rep_len(data, nobs)
+            else if (ndata &gt; nobs) 
+                data[1L:nobs]
+        }
+        else {
+            if (ndata &lt; nobs) 
+                data[rep_len(1L:ndata, nobs), ]
+            else if (ndata &gt; nobs) 
+                data[1L:nobs, ]
+        }
+    attr(data, &quot;tsp&quot;) &lt;- c(start, end, frequency)
+    if (!is.null(class) &amp;&amp; class[[1]] != &quot;none&quot;) 
+        attr(data, &quot;class&quot;) &lt;- class
+    data
+}
+&lt;bytecode: 0x7ff2ef60a270&gt;
+&lt;environment: namespace:stats&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+</div>
+<div id="variable-types" class="section level1">
+<h1>Variable Types</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins &lt;- read_csv(&quot;data/penguins.csv&quot;,
+  col_types = cols(
+    species = col_factor(),
+    island = col_factor(),
+    bill_length_mm = col_double(),
+    bill_depth_mm = col_double(),
+    flipper_length_mm = col_integer(),
+    body_mass_g = col_integer(),
+    sex = col_factor(),
+    year = col_integer()
+  )
 )
 
-```
+penguins</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 8
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Torge…           39.1          18.7              181        3750
+ 2 Adelie  Torge…           39.5          17.4              186        3800
+ 3 Adelie  Torge…           40.3          18                195        3250
+ 4 Adelie  Torge…           NA            NA                 NA          NA
+ 5 Adelie  Torge…           36.7          19.3              193        3450
+ 6 Adelie  Torge…           39.3          20.6              190        3650
+ 7 Adelie  Torge…           38.9          17.8              181        3625
+ 8 Adelie  Torge…           39.2          19.6              195        4675
+ 9 Adelie  Torge…           34.1          18.1              193        3475
+10 Adelie  Torge…           42            20.2              190        4250
+# … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-skimr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="data-summary-using-skimr" class="section level1">
+<h1>Data summary using <a href="https://docs.ropensci.org/skimr/"><code>skimr</code></a></h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>library(skimr)
 
----
+skim(penguins)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 1: </span>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">penguins</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">344</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">8</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">factor</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">numeric</td>
+<td align="left">5</td>
+</tr>
+<tr class="even">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">ordered</th>
+<th align="right">n_unique</th>
+<th align="left">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">species</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="left">FALSE</td>
+<td align="right">3</td>
+<td align="left">Ade: 152, Gen: 124, Chi: 68</td>
+</tr>
+<tr class="even">
+<td align="left">island</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="left">FALSE</td>
+<td align="right">3</td>
+<td align="left">Bis: 168, Dre: 124, Tor: 52</td>
+</tr>
+<tr class="odd">
+<td align="left">sex</td>
+<td align="right">11</td>
+<td align="right">0.97</td>
+<td align="left">FALSE</td>
+<td align="right">2</td>
+<td align="left">mal: 168, fem: 165</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bill_length_mm</td>
+<td align="right">2</td>
+<td align="right">0.99</td>
+<td align="right">43.92</td>
+<td align="right">5.46</td>
+<td align="right">32.1</td>
+<td align="right">39.23</td>
+<td align="right">44.45</td>
+<td align="right">48.5</td>
+<td align="right">59.6</td>
+<td align="left">▃▇▇▆▁</td>
+</tr>
+<tr class="even">
+<td align="left">bill_depth_mm</td>
+<td align="right">2</td>
+<td align="right">0.99</td>
+<td align="right">17.15</td>
+<td align="right">1.97</td>
+<td align="right">13.1</td>
+<td align="right">15.60</td>
+<td align="right">17.30</td>
+<td align="right">18.7</td>
+<td align="right">21.5</td>
+<td align="left">▅▅▇▇▂</td>
+</tr>
+<tr class="odd">
+<td align="left">flipper_length_mm</td>
+<td align="right">2</td>
+<td align="right">0.99</td>
+<td align="right">200.92</td>
+<td align="right">14.06</td>
+<td align="right">172.0</td>
+<td align="right">190.00</td>
+<td align="right">197.00</td>
+<td align="right">213.0</td>
+<td align="right">231.0</td>
+<td align="left">▂▇▃▅▂</td>
+</tr>
+<tr class="even">
+<td align="left">body_mass_g</td>
+<td align="right">2</td>
+<td align="right">0.99</td>
+<td align="right">4201.75</td>
+<td align="right">801.95</td>
+<td align="right">2700.0</td>
+<td align="right">3550.00</td>
+<td align="right">4050.00</td>
+<td align="right">4750.0</td>
+<td align="right">6300.0</td>
+<td align="left">▃▇▆▃▂</td>
+</tr>
+<tr class="odd">
+<td align="left">year</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">2008.03</td>
+<td align="right">0.82</td>
+<td align="right">2007.0</td>
+<td align="right">2007.00</td>
+<td align="right">2008.00</td>
+<td align="right">2009.0</td>
+<td align="right">2009.0</td>
+<td align="left">▇▁▇▁▇</td>
+</tr>
+</tbody>
+</table>
+<p>]
+]</p>
+<hr />
+</div>
+<div id="data-summary-using-summary" class="section level1">
+<h1>Data summary using <code>summary</code></h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>summary(penguins)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code>      species          island    bill_length_mm  bill_depth_mm  
+ Adelie   :152   Torgersen: 52   Min.   :32.10   Min.   :13.10  
+ Gentoo   :124   Biscoe   :168   1st Qu.:39.23   1st Qu.:15.60  
+ Chinstrap: 68   Dream    :124   Median :44.45   Median :17.30  
+                                 Mean   :43.92   Mean   :17.15  
+                                 3rd Qu.:48.50   3rd Qu.:18.70  
+                                 Max.   :59.60   Max.   :21.50  
+                                 NA&#39;s   :2       NA&#39;s   :2      
+ flipper_length_mm  body_mass_g       sex           year     
+ Min.   :172.0     Min.   :2700   male  :168   Min.   :2007  
+ 1st Qu.:190.0     1st Qu.:3550   female:165   1st Qu.:2007  
+ Median :197.0     Median :4050   NA&#39;s  : 11   Median :2008  
+ Mean   :200.9     Mean   :4202                Mean   :2008  
+ 3rd Qu.:213.0     3rd Qu.:4750                3rd Qu.:2009  
+ Max.   :231.0     Max.   :6300                Max.   :2009  
+ NA&#39;s   :2         NA&#39;s   :2                                 </code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="data-overview" class="section level1">
+<h1>Data overview</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>library(dplyr)
 
-class:
-
-# Read Data file from your computer
-
-.panelset[
-
-.panel[.panel-name[R Script]
-
-
-```r
-read_csv(
-  "data/new-penguins.csv"
-)
-
-```
+glimpse(penguins)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code>Rows: 344
+Columns: 8
+$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ade…
+$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgers…
+$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1,…
+$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1,…
+$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 18…
+$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475,…
+$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, mal…
+$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 200…</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="dplyr-functions-based-upon" class="section level1">
+<h1><a href="https://www.rdocumentation.org/packages/dplyr/versions/0.7.8"><code>dplyr</code></a> functions based upon:</h1>
+<p>–</p>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Rows]</p>
+<ul>
+<li><p><code>filter()</code> chooses rows based on column values.</p></li>
+<li><p><code>slice()</code> chooses rows based on location.</p></li>
+<li><p><code>arrange()</code> changes the order of the rows.</p></li>
+</ul>
+<p>]</p>
+<p>.panel[.panel-name[Columns]</p>
+<ul>
+<li><p><code>select()</code> changes whether or not a column is included.</p></li>
+<li><p><code>rename()</code> changes the name of columns.</p></li>
+<li><p><code>mutate()</code> changes the values of columns and creates new columns.</p></li>
+<li><p><code>relocate()</code> changes the order of the columns.</p></li>
+</ul>
+<p>.panel[.panel-name[Groups of rows]</p>
+<ul>
+<li><code>summarise()</code> collapses a group into a single row.</li>
+</ul>
+<p>]
 ]
-
-.panel[.panel-name[Output]
-
-
-```
-# A tibble: 311 x 5
-   species island    bill_length_mm bill_depth_mm flipper_length_mm
-   &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;
- 1 Adelie  Torgersen           39.1          18.7               181
- 2 Adelie  Torgersen           39.5          17.4               186
- 3 Adelie  Torgersen           40.3          18                 195
- 4 Adelie  Torgersen           NA            NA                  NA
- 5 Adelie  Torgersen           36.7          19.3               193
- 6 Adelie  Torgersen           39.3          20.6               190
- 7 Adelie  Torgersen           38.9          17.8               181
- 8 Adelie  Torgersen           39.2          19.6               195
- 9 Adelie  Torgersen           34.1          18.1               193
-10 Adelie  Torgersen           42            20.2               190
-# … with 301 more rows
-```
-
-]
-]
-
-
-    </textarea>
-<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"highlightStyle": "solarized-light",
-"highlightLanguage": ["r", "css", "yaml"],
-"slideNumberFormat": "%current%/%total%",
-"highlightLines": true,
-"countIncrementalSlides": false,
-"ratio": "16:9"
-});
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
-  window.dispatchEvent(new Event('resize'));
-});
-(function(d) {
-  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
-  if (!r) return;
-  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
-  d.head.appendChild(s);
-})(document);
-
-(function(d) {
-  var el = d.getElementsByClassName("remark-slides-area");
-  if (!el) return;
-  var slide, slides = slideshow.getSlides(), els = el[0].children;
-  for (var i = 1; i < slides.length; i++) {
-    slide = slides[i];
-    if (slide.properties.continued === "true" || slide.properties.count === "false") {
-      els[i - 1].className += ' has-continuation';
-    }
-  }
-  var s = d.createElement("style");
-  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
-  d.head.appendChild(s);
-})(document);
-// delete the temporary CSS (for displaying all slides initially) when the user
-// starts to view slides
-(function() {
-  var deleted = false;
-  slideshow.on('beforeShowSlide', function(slide) {
-    if (deleted) return;
-    var sheets = document.styleSheets, node;
-    for (var i = 0; i < sheets.length; i++) {
-      node = sheets[i].ownerNode;
-      if (node.dataset["target"] !== "print-only") continue;
-      node.parentNode.removeChild(node);
-    }
-    deleted = true;
-  });
-})();
-(function() {
-  "use strict"
-  // Replace <script> tags in slides area to make them executable
-  var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container script'
-  );
-  if (!scripts.length) return;
-  for (var i = 0; i < scripts.length; i++) {
-    var s = document.createElement('script');
-    var code = document.createTextNode(scripts[i].textContent);
-    s.appendChild(code);
-    var scriptAttrs = scripts[i].attributes;
-    for (var j = 0; j < scriptAttrs.length; j++) {
-      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
-    }
-    scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-})();
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-// adds .remark-code-has-line-highlighted class to <pre> parent elements
-// of code chunks containing highlighted lines with class .remark-code-line-highlighted
-(function(d) {
-  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
-  const preParents = [];
-  const findPreParent = function(line, p = 0) {
-    if (p > 1) return null; // traverse up no further than grandparent
-    const el = line.parentElement;
-    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
-  };
-
-  for (let line of hlines) {
-    let pre = findPreParent(line);
-    if (pre && !preParents.includes(pre)) preParents.push(pre);
-  }
-  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
-})(document);</script>
-
-<script>
-slideshow._releaseMath = function(el) {
-  var i, text, code, codes = el.getElementsByTagName('code');
-  for (i = 0; i < codes.length;) {
-    code = codes[i];
-    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-      text = code.textContent;
-      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-          /^\$\$(.|\s)+\$\$$/.test(text) ||
-          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-        code.outerHTML = code.innerHTML;  // remove <code></code>
-        continue;
-      }
-    }
-    i++;
-  }
-};
-slideshow._releaseMath(document);
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>
+]</p>
+<hr />
+<p>class: inverse, hide-count</p>
+</div>
+<div id="big-textdplyr-rows" class="section level1">
+<h1>.big-text[dplyr rows]</h1>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="filter-function" class="section level1">
+<h1><code>filter()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  filter(species == &quot;Gentoo&quot;)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 124 x 8
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
+ 1 Gentoo  Biscoe           46.1          13.2              211        4500
+ 2 Gentoo  Biscoe           50            16.3              230        5700
+ 3 Gentoo  Biscoe           48.7          14.1              210        4450
+ 4 Gentoo  Biscoe           50            15.2              218        5700
+ 5 Gentoo  Biscoe           47.6          14.5              215        5400
+ 6 Gentoo  Biscoe           46.5          13.5              210        4550
+ 7 Gentoo  Biscoe           45.4          14.6              211        4800
+ 8 Gentoo  Biscoe           46.7          15.3              219        5200
+ 9 Gentoo  Biscoe           43.3          13.4              209        4400
+10 Gentoo  Biscoe           46.8          15.4              215        5150
+# … with 114 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+</div>
+<div id="comparison-relational-operators" class="section level1">
+<h1>Comparison: Relational Operators</h1>
+<p><code>x &lt; y</code></p>
+<p><code>x &gt; y</code></p>
+<p><code>x &lt;= y</code></p>
+<p><code>x &gt;= y</code></p>
+<p><code>x == y</code> (equal)</p>
+<p><code>x != y</code> (not equal)</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="filter-function-1" class="section level1">
+<h1><code>filter()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  filter(bill_length_mm &gt; 43)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 188 x 8
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Torge…           46            21.5              194        4200
+ 2 Adelie  Dream            44.1          19.7              196        4400
+ 3 Adelie  Torge…           45.8          18.9              197        4150
+ 4 Adelie  Dream            43.2          18.5              192        4100
+ 5 Adelie  Biscoe           43.2          19                197        4775
+ 6 Adelie  Biscoe           45.6          20.3              191        4600
+ 7 Adelie  Torge…           44.1          18                210        4000
+ 8 Adelie  Torge…           43.1          19.2              197        3500
+ 9 Gentoo  Biscoe           46.1          13.2              211        4500
+10 Gentoo  Biscoe           50            16.3              230        5700
+# … with 178 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="filter-function-2" class="section level1">
+<h1><code>filter()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  filter(sex == &quot;female&quot;,
+         bill_length_mm &gt; 45)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 67 x 8
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
+ 1 Gentoo  Biscoe           46.1          13.2              211        4500
+ 2 Gentoo  Biscoe           48.7          14.1              210        4450
+ 3 Gentoo  Biscoe           46.5          13.5              210        4550
+ 4 Gentoo  Biscoe           45.4          14.6              211        4800
+ 5 Gentoo  Biscoe           45.5          13.7              214        4650
+ 6 Gentoo  Biscoe           45.8          14.6              210        4200
+ 7 Gentoo  Biscoe           46.2          14.5              209        4800
+ 8 Gentoo  Biscoe           45.1          14.5              215        5000
+ 9 Gentoo  Biscoe           46.5          14.5              213        4400
+10 Gentoo  Biscoe           48.2          14.3              210        4600
+# … with 57 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="filter-function-3" class="section level1">
+<h1><code>filter()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  filter(sex != &quot;female&quot;,
+         bill_length_mm &gt; 45,
+         body_mass_g &gt; 4000)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 76 x 8
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Torge…           46            21.5              194        4200
+ 2 Adelie  Torge…           45.8          18.9              197        4150
+ 3 Adelie  Biscoe           45.6          20.3              191        4600
+ 4 Gentoo  Biscoe           50            16.3              230        5700
+ 5 Gentoo  Biscoe           50            15.2              218        5700
+ 6 Gentoo  Biscoe           47.6          14.5              215        5400
+ 7 Gentoo  Biscoe           46.7          15.3              219        5200
+ 8 Gentoo  Biscoe           46.8          15.4              215        5150
+ 9 Gentoo  Biscoe           49            16.1              216        5550
+10 Gentoo  Biscoe           48.4          14.6              213        5850
+# … with 66 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="slice-function" class="section level1">
+<h1><code>slice()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  slice(51:150)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 100 x 8
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Biscoe           39.6          17.7              186        3500
+ 2 Adelie  Biscoe           40.1          18.9              188        4300
+ 3 Adelie  Biscoe           35            17.9              190        3450
+ 4 Adelie  Biscoe           42            19.5              200        4050
+ 5 Adelie  Biscoe           34.5          18.1              187        2900
+ 6 Adelie  Biscoe           41.4          18.6              191        3700
+ 7 Adelie  Biscoe           39            17.5              186        3550
+ 8 Adelie  Biscoe           40.6          18.8              193        3800
+ 9 Adelie  Biscoe           36.5          16.6              181        2850
+10 Adelie  Biscoe           37.6          19.1              194        3750
+# … with 90 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="arrange-function" class="section level1">
+<h1><code>arrange()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  arrange(body_mass_g)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 8
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
+ 1 Chinst… Dream            46.9          16.6              192        2700
+ 2 Adelie  Biscoe           36.5          16.6              181        2850
+ 3 Adelie  Biscoe           36.4          17.1              184        2850
+ 4 Adelie  Biscoe           34.5          18.1              187        2900
+ 5 Adelie  Dream            33.1          16.1              178        2900
+ 6 Adelie  Torge…           38.6          17                188        2900
+ 7 Chinst… Dream            43.2          16.6              187        2900
+ 8 Adelie  Biscoe           37.9          18.6              193        2925
+ 9 Adelie  Dream            37.5          18.9              179        2975
+10 Adelie  Dream            37            16.9              185        3000
+# … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="arrange-function-1" class="section level1">
+<h1><code>arrange()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  arrange(desc(body_mass_g))</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 8
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
+ 1 Gentoo  Biscoe           49.2          15.2              221        6300
+ 2 Gentoo  Biscoe           59.6          17                230        6050
+ 3 Gentoo  Biscoe           51.1          16.3              220        6000
+ 4 Gentoo  Biscoe           48.8          16.2              222        6000
+ 5 Gentoo  Biscoe           45.2          16.4              223        5950
+ 6 Gentoo  Biscoe           49.8          15.9              229        5950
+ 7 Gentoo  Biscoe           48.4          14.6              213        5850
+ 8 Gentoo  Biscoe           49.3          15.7              217        5850
+ 9 Gentoo  Biscoe           55.1          16                230        5850
+10 Gentoo  Biscoe           49.5          16.2              229        5800
+# … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="arrange-function-2" class="section level1">
+<h1><code>arrange()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  arrange(species) %&gt;% 
+  tail()</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 6 x 8
+  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+1 Chinst… Dream            45.7          17                195        3650 fema…
+2 Chinst… Dream            55.8          19.8              207        4000 male 
+3 Chinst… Dream            43.5          18.1              202        3400 fema…
+4 Chinst… Dream            49.6          18.2              193        3775 male 
+5 Chinst… Dream            50.8          19                210        4100 male 
+6 Chinst… Dream            50.2          18.7              198        3775 fema…
+# … with 1 more variable: year &lt;int&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+<p>class: inverse, hide-count</p>
+</div>
+<div id="big-textdplyr-columns" class="section level1">
+<h1>.big-text[dplyr columns]</h1>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="select-function" class="section level1">
+<h1><code>select()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  select(species)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 1
+   species
+   &lt;fct&gt;  
+ 1 Adelie 
+ 2 Adelie 
+ 3 Adelie 
+ 4 Adelie 
+ 5 Adelie 
+ 6 Adelie 
+ 7 Adelie 
+ 8 Adelie 
+ 9 Adelie 
+10 Adelie 
+# … with 334 more rows</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="select-function-1" class="section level1">
+<h1><code>select()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  select(species : bill_depth_mm)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 4
+   species island    bill_length_mm bill_depth_mm
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;
+ 1 Adelie  Torgersen           39.1          18.7
+ 2 Adelie  Torgersen           39.5          17.4
+ 3 Adelie  Torgersen           40.3          18  
+ 4 Adelie  Torgersen           NA            NA  
+ 5 Adelie  Torgersen           36.7          19.3
+ 6 Adelie  Torgersen           39.3          20.6
+ 7 Adelie  Torgersen           38.9          17.8
+ 8 Adelie  Torgersen           39.2          19.6
+ 9 Adelie  Torgersen           34.1          18.1
+10 Adelie  Torgersen           42            20.2
+# … with 334 more rows</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="select-function-2" class="section level1">
+<h1><code>select()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  select(4:8)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 5
+   bill_depth_mm flipper_length_mm body_mass_g sex     year
+           &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt;  &lt;int&gt;
+ 1          18.7               181        3750 male    2007
+ 2          17.4               186        3800 female  2007
+ 3          18                 195        3250 female  2007
+ 4          NA                  NA          NA &lt;NA&gt;    2007
+ 5          19.3               193        3450 female  2007
+ 6          20.6               190        3650 male    2007
+ 7          17.8               181        3625 female  2007
+ 8          19.6               195        4675 male    2007
+ 9          18.1               193        3475 &lt;NA&gt;    2007
+10          20.2               190        4250 &lt;NA&gt;    2007
+# … with 334 more rows</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="select-function-3" class="section level1">
+<h1><code>select()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  select(species, body_mass_g, year)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 3
+   species body_mass_g  year
+   &lt;fct&gt;         &lt;int&gt; &lt;int&gt;
+ 1 Adelie         3750  2007
+ 2 Adelie         3800  2007
+ 3 Adelie         3250  2007
+ 4 Adelie           NA  2007
+ 5 Adelie         3450  2007
+ 6 Adelie         3650  2007
+ 7 Adelie         3625  2007
+ 8 Adelie         4675  2007
+ 9 Adelie         3475  2007
+10 Adelie         4250  2007
+# … with 334 more rows</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="select-function-4" class="section level1">
+<h1><code>select()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  select(-c(species, body_mass_g, year))</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 5
+   island    bill_length_mm bill_depth_mm flipper_length_mm sex   
+   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt; &lt;fct&gt; 
+ 1 Torgersen           39.1          18.7               181 male  
+ 2 Torgersen           39.5          17.4               186 female
+ 3 Torgersen           40.3          18                 195 female
+ 4 Torgersen           NA            NA                  NA &lt;NA&gt;  
+ 5 Torgersen           36.7          19.3               193 female
+ 6 Torgersen           39.3          20.6               190 male  
+ 7 Torgersen           38.9          17.8               181 female
+ 8 Torgersen           39.2          19.6               195 male  
+ 9 Torgersen           34.1          18.1               193 &lt;NA&gt;  
+10 Torgersen           42            20.2               190 &lt;NA&gt;  
+# … with 334 more rows</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="rename-function" class="section level1">
+<h1><code>rename()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  rename(weight = body_mass_g,
+        flipper_weight = flipper_length_mm)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 8
+   species island bill_length_mm bill_depth_mm flipper_weight weight sex    year
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;          &lt;int&gt;  &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Adelie  Torge…           39.1          18.7            181   3750 male   2007
+ 2 Adelie  Torge…           39.5          17.4            186   3800 fema…  2007
+ 3 Adelie  Torge…           40.3          18              195   3250 fema…  2007
+ 4 Adelie  Torge…           NA            NA               NA     NA &lt;NA&gt;   2007
+ 5 Adelie  Torge…           36.7          19.3            193   3450 fema…  2007
+ 6 Adelie  Torge…           39.3          20.6            190   3650 male   2007
+ 7 Adelie  Torge…           38.9          17.8            181   3625 fema…  2007
+ 8 Adelie  Torge…           39.2          19.6            195   4675 male   2007
+ 9 Adelie  Torge…           34.1          18.1            193   3475 &lt;NA&gt;   2007
+10 Adelie  Torge…           42            20.2            190   4250 &lt;NA&gt;   2007
+# … with 334 more rows</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="mutate-function" class="section level1">
+<h1><code>mutate()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  mutate(body_mass_g = body_mass_g / 1000)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 8
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;dbl&gt;
+ 1 Adelie  Torge…           39.1          18.7              181        3.75
+ 2 Adelie  Torge…           39.5          17.4              186        3.8 
+ 3 Adelie  Torge…           40.3          18                195        3.25
+ 4 Adelie  Torge…           NA            NA                 NA       NA   
+ 5 Adelie  Torge…           36.7          19.3              193        3.45
+ 6 Adelie  Torge…           39.3          20.6              190        3.65
+ 7 Adelie  Torge…           38.9          17.8              181        3.62
+ 8 Adelie  Torge…           39.2          19.6              195        4.68
+ 9 Adelie  Torge…           34.1          18.1              193        3.48
+10 Adelie  Torge…           42            20.2              190        4.25
+# … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="mutate-function-1" class="section level1">
+<h1><code>mutate()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  mutate(body_mass_g = body_mass_g / 1000,
+         bill = bill_length_mm * bill_depth_mm)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 9
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;dbl&gt;
+ 1 Adelie  Torge…           39.1          18.7              181        3.75
+ 2 Adelie  Torge…           39.5          17.4              186        3.8 
+ 3 Adelie  Torge…           40.3          18                195        3.25
+ 4 Adelie  Torge…           NA            NA                 NA       NA   
+ 5 Adelie  Torge…           36.7          19.3              193        3.45
+ 6 Adelie  Torge…           39.3          20.6              190        3.65
+ 7 Adelie  Torge…           38.9          17.8              181        3.62
+ 8 Adelie  Torge…           39.2          19.6              195        4.68
+ 9 Adelie  Torge…           34.1          18.1              193        3.48
+10 Adelie  Torge…           42            20.2              190        4.25
+# … with 334 more rows, and 3 more variables: sex &lt;fct&gt;, year &lt;int&gt;, bill &lt;dbl&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="transmute-function" class="section level1">
+<h1><code>transmute()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  transmute(body_mass_kg = body_mass_g / 1000,
+         bill_cm = (bill_length_mm * 0.1) * (bill_depth_mm * 0.1))</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 2
+   body_mass_kg bill_cm
+          &lt;dbl&gt;   &lt;dbl&gt;
+ 1         3.75    7.31
+ 2         3.8     6.87
+ 3         3.25    7.25
+ 4        NA      NA   
+ 5         3.45    7.08
+ 6         3.65    8.10
+ 7         3.62    6.92
+ 8         4.68    7.68
+ 9         3.48    6.17
+10         4.25    8.48
+# … with 334 more rows</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="relocate-function" class="section level1">
+<h1><code>relocate()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  relocate(year, sex)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 8
+    year sex   species island bill_length_mm bill_depth_mm flipper_length_…
+   &lt;int&gt; &lt;fct&gt; &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;
+ 1  2007 male  Adelie  Torge…           39.1          18.7              181
+ 2  2007 fema… Adelie  Torge…           39.5          17.4              186
+ 3  2007 fema… Adelie  Torge…           40.3          18                195
+ 4  2007 &lt;NA&gt;  Adelie  Torge…           NA            NA                 NA
+ 5  2007 fema… Adelie  Torge…           36.7          19.3              193
+ 6  2007 male  Adelie  Torge…           39.3          20.6              190
+ 7  2007 fema… Adelie  Torge…           38.9          17.8              181
+ 8  2007 male  Adelie  Torge…           39.2          19.6              195
+ 9  2007 &lt;NA&gt;  Adelie  Torge…           34.1          18.1              193
+10  2007 &lt;NA&gt;  Adelie  Torge…           42            20.2              190
+# … with 334 more rows, and 1 more variable: body_mass_g &lt;int&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+<p>background-image: url(images/02-wrangling/logo-dplyr.png)
+background-size: 10%
+background-position: 97% 5%</p>
+</div>
+<div id="relocate-function-1" class="section level1">
+<h1><code>relocate()</code> function</h1>
+<p>.panelset[</p>
+<p>.panel[.panel-name[Codes]</p>
+<pre class="r"><code>penguins %&gt;% 
+  relocate(year, sex, .after = bill_length_mm)</code></pre>
+<p>]</p>
+<p>.panel[.panel-name[Output]</p>
+<pre><code># A tibble: 344 x 8
+   species island bill_length_mm  year sex   bill_depth_mm flipper_length_…
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt; &lt;int&gt; &lt;fct&gt;         &lt;dbl&gt;            &lt;int&gt;
+ 1 Adelie  Torge…           39.1  2007 male           18.7              181
+ 2 Adelie  Torge…           39.5  2007 fema…          17.4              186
+ 3 Adelie  Torge…           40.3  2007 fema…          18                195
+ 4 Adelie  Torge…           NA    2007 &lt;NA&gt;           NA                 NA
+ 5 Adelie  Torge…           36.7  2007 fema…          19.3              193
+ 6 Adelie  Torge…           39.3  2007 male           20.6              190
+ 7 Adelie  Torge…           38.9  2007 fema…          17.8              181
+ 8 Adelie  Torge…           39.2  2007 male           19.6              195
+ 9 Adelie  Torge…           34.1  2007 &lt;NA&gt;           18.1              193
+10 Adelie  Torge…           42    2007 &lt;NA&gt;           20.2              190
+# … with 334 more rows, and 1 more variable: body_mass_g &lt;int&gt;</code></pre>
+<p>]
+]</p>
+<hr />
+<p>class: inverse, hide-count</p>
+</div>
+<div id="big-textgroups-of-rows" class="section level1">
+<h1>.big-text[groups of rows]</h1>
+</div>
