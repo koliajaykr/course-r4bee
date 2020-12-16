@@ -11,4 +11,12 @@ image:
   preview_only: yes
 ---
 
-***Slides are available only for registered participants. Thank you.***
+<!-- ***Slides are available only for registered participants. Thank you.*** -->
+
+Slides
+
+```{r slides-top2, echo=FALSE, fig.align='center'}
+library(xaringanExtra)
+xaringanExtra::embed_xaringan(url = "/slides/02-wrangling.html", ratio = "4:3",
+                              max_width = 600)
+```

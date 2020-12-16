@@ -47,14 +47,17 @@ layout: true
 
 ---
 
-class: title-slide, hide-count, center, middle
-background-image: url(images/03-stats/cover1.gif), url(images/03-stats/cover2.gif) 
-background-size: 50%, 50%
-background-position: 0% 50%, 100% 50%
-background-color: black
+class: title-slide, hide-count, left, middle
+background-image: url(images/03-stats/cover1.jpg)
+background-size: 50%
+background-position: right
+background-color: 
 
-# .b.white[Heat of Statistics]
 
-# .b.ttc.f3.white[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
+.pull-left[
+# .center.b.navy[The Fire of <br>Statistics]
+
+# .center.b.ttc.f3.navy[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
+]
 
 

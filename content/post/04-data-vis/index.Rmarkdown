@@ -34,6 +34,14 @@ projects: []
 #  url: /slides/00-slides.html
 ---
 
-Data visualisation using mainly R package `ggplot2`.
+<!-- Data visualisation using mainly R package `ggplot2`. -->
 
-***Slides are available only for registered participants. Thank you.***
+<!-- ***Slides are available only for registered participants. Thank you.*** -->
+
+Slides
+
+```{r slides-top4, echo=FALSE, fig.align='center'}
+library(xaringanExtra)
+xaringanExtra::embed_xaringan(url = "/slides/04-vis.html", ratio = "4:3",
+                              max_width = 600)
+```

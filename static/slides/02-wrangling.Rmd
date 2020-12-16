@@ -48,8 +48,8 @@ layout: true
 
 ---
 
-class: title-slide, hide-count, top
-background-image: url(images/02-wrangling/cover.jpg)
+class: title-slide, hide-count, middle
+background-image: url(images/02-wrangling/cover1.jpg)
 background-size: cover
 background-position: 
 
@@ -57,6 +57,7 @@ background-position:
 # .center.b.white[Data <br>Wrangling]
 
 # .center.b.ttc.f3.white[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
+<br><br><br>
 ]
 
 ---
@@ -66,6 +67,8 @@ background-position:
  `r emo::ji("check")` internet is working on your computer
 
 `r emo::ji("check")` you are working in your RStudio Project
+
+`r emo::ji("check")` keep a notebook ready to write technical terms
 
 ---
 
@@ -122,7 +125,11 @@ background-position: 50% 55%
 
 - "narrowing in on observations of interest ... 
 
+--
+
 - creating new variables that are functions of existing variables ... and
+
+--
 
 - calculating a set of summary statistics." [(Hadley & Garrett)](https://r4ds.had.co.nz/index.html)
 
@@ -185,39 +192,39 @@ background-position: 95% 5%
 
 # Penguin Data Variables
 
-- `species` : a factor denoting penguin species (Adélie, Chinstrap and Gentoo)
+- `species` : a **factor** denoting penguin species (Adélie, Chinstrap and Gentoo)
 
 --
 
-- `island` : a factor denoting island in Palmer Archipelago, Antarctica (Biscoe, Dream or Torgersen)
+- `island` : a **factor** denoting island in Palmer Archipelago, Antarctica (Biscoe, Dream or Torgersen)
 
 --
 
-- `bill_length_mm` : a number denoting bill length (millimeters)
+- `bill_length_mm` : a **number** denoting bill length (millimeters)
 
 --
 
-- `bill_depth_mm` : a number denoting bill depth (millimeters)
+- `bill_depth_mm` : a **number** denoting bill depth (millimeters)
 
 --
 
-- `flipper_length_mm` :  an integer denoting flipper length (millimeters)
+- `flipper_length_mm` :  an **integer** denoting flipper length (millimeters)
 
 --
 
-- `body_mass_g` : an integer denoting body mass (grams)
+- `body_mass_g` : an **integer** denoting body mass (grams)
 
 --
 
-- `sex` : a factor denoting penguin sex (female, male)
+- `sex` : a **factor** denoting penguin sex (female, male)
 
 --
 
-- `year` : an integer denoting the study year (2007, 2008, or 2009)
+- `year` : an **integer** denoting the study year (2007, 2008, or 2009)
 
 ---
 
-# Variables types in R:
+# Variable types in R:
 
 - `int` stands for integers.
 
@@ -251,7 +258,9 @@ background-image: url(images/02-wrangling/logo-readr.png)
 background-size: 10%
 background-position: 97% 5%
 
-# Import Data
+# Import Data using [`readr`](https://readr.tidyverse.org/) pkg
+
+--
 
 .panelset[
 
@@ -264,7 +273,6 @@ penguins <- read_csv("data/penguins.csv")
 
 penguins
 
-ts
 ```
 
 ]
@@ -281,6 +289,8 @@ ts
 ---
 
 # Variable Types
+
+--
 
 .panelset[
 
@@ -319,7 +329,9 @@ background-image: url(images/02-wrangling/logo-skimr.png)
 background-size: 10%
 background-position: 97% 5%
 
-# Data summary using [`skimr`](https://docs.ropensci.org/skimr/)
+# Data summary using [`skimr`](https://docs.ropensci.org/skimr/) pkg
+
+--
 
 .panelset[
 
@@ -343,7 +355,7 @@ skim(penguins)
 
 ---
 
-# Data summary using `summary`
+# Data summary using `summary` fun
 
 .panelset[
 
@@ -369,7 +381,7 @@ background-image: url(images/02-wrangling/logo-dplyr.png)
 background-size: 10%
 background-position: 97% 5%
 
-# Data overview
+# Data manipulation using `dplyr` pkg
 
 .panelset[
 
@@ -433,9 +445,9 @@ background-position: 97% 5%
 
 ---
 
-class: inverse, hide-count
+class: inverse, hide-count, center, middle
 
-# .big-text[dplyr rows]
+# .big-text[Row-wise<br>🚣🏽]
 
 ---
 
@@ -443,7 +455,11 @@ background-image: url(images/02-wrangling/logo-dplyr.png)
 background-size: 10%
 background-position: 97% 5%
 
-# `filter()` function
+# `filter()` function:
+
+- chooses rows based on column values.
+
+---
 
 .panelset[
 
@@ -470,23 +486,27 @@ penguins %>%
 
 `x < y`
 
+--
+
 `x > y`
+
+--
 
 `x <= y`
 
+--
+
 `x >= y`
 
+--
+
 `x == y` (equal)
+
+--
 
 `x != y` (not equal)
 
 ---
-
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `filter()` function
 
 .panelset[
 
@@ -509,19 +529,13 @@ penguins %>%
 
 ---
 
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `filter()` function
-
 .panelset[
 
 .panel[.panel-name[Codes]
 
 ```{r filter-fun3, eval=FALSE}
 penguins %>% 
-  filter(sex == "female",
+  filter(species == "Gentoo",
          bill_length_mm > 45)
 ```
 ]
@@ -537,19 +551,13 @@ penguins %>%
 
 ---
 
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `filter()` function
-
 .panelset[
 
 .panel[.panel-name[Codes]
 
 ```{r filter-fun4, eval=FALSE}
 penguins %>% 
-  filter(sex != "female",
+  filter(species != "Gentoo",
          bill_length_mm > 45,
          body_mass_g > 4000)
 ```
@@ -566,11 +574,39 @@ penguins %>%
 
 ---
 
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r filter-fun41, eval=FALSE}
+penguins %>% 
+  filter(species != "Gentoo",
+         bill_length_mm > 45,
+         body_mass_g > 4000) %>% 
+  head()
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="filter-fun41", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
 background-image: url(images/02-wrangling/logo-dplyr.png)
 background-size: 10%
 background-position: 97% 5%
 
-# `slice()` function
+# `slice()` function:
+
+- chooses rows based on location.
+
+---
 
 .panelset[
 
@@ -597,7 +633,11 @@ background-image: url(images/02-wrangling/logo-dplyr.png)
 background-size: 10%
 background-position: 97% 5%
 
-# `arrange()` function
+# `arrange()` function:
+
+- changes the order of the rows.
+
+---
 
 .panelset[
 
@@ -620,12 +660,6 @@ penguins %>%
 
 ---
 
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `arrange()` function
-
 .panelset[
 
 .panel[.panel-name[Codes]
@@ -646,12 +680,6 @@ penguins %>%
 ]
 
 ---
-
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `arrange()` function
 
 .panelset[
 
@@ -675,9 +703,9 @@ penguins %>%
 
 ---
 
-class: inverse, hide-count
+class: inverse, hide-count, center, middle
 
-# .big-text[dplyr columns]
+# .big-text[Column-wise]
 
 ---
 
@@ -686,6 +714,10 @@ background-size: 10%
 background-position: 97% 5%
 
 # `select()` function
+
+- changes whether or not a column is included.
+
+---
 
 .panelset[
 
@@ -708,12 +740,6 @@ penguins %>%
 
 ---
 
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `select()` function
-
 .panelset[
 
 .panel[.panel-name[Codes]
@@ -734,12 +760,6 @@ penguins %>%
 ]
 
 ---
-
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `select()` function
 
 .panelset[
 
@@ -762,12 +782,6 @@ penguins %>%
 
 ---
 
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `select()` function
-
 .panelset[
 
 .panel[.panel-name[Codes]
@@ -788,12 +802,6 @@ penguins %>%
 ]
 
 ---
-
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `select()` function
 
 .panelset[
 
@@ -821,6 +829,10 @@ background-size: 10%
 background-position: 97% 5%
 
 # `rename()` function
+
+- changes the name of columns.
+
+---
 
 .panelset[
 
@@ -850,6 +862,10 @@ background-position: 97% 5%
 
 # `mutate()` function
 
+- changes the values of columns and creates new columns.
+
+---
+
 .panelset[
 
 .panel[.panel-name[Codes]
@@ -870,12 +886,6 @@ penguins %>%
 ]
 
 ---
-
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `mutate()` function
 
 .panelset[
 
@@ -905,6 +915,8 @@ background-position: 97% 5%
 
 # `transmute()` function
 
+---
+
 .panelset[
 
 .panel[.panel-name[Codes]
@@ -933,6 +945,10 @@ background-position: 97% 5%
 
 # `relocate()` function
 
+- changes the order of the columns.
+
+---
+
 .panelset[
 
 .panel[.panel-name[Codes]
@@ -953,12 +969,6 @@ penguins %>%
 ]
 
 ---
-
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `relocate()` function
 
 .panelset[
 
@@ -985,3 +995,4 @@ class: inverse, hide-count
 
 # .big-text[groups of rows]
 
+collapses a group into a single row.

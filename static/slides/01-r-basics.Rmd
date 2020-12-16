@@ -44,22 +44,16 @@ layout: true
 
 ---
 
-class: title-slide, hide-count
+class: title-slide, hide-count, middle, center
 background-image: url(images/01-basics/cover.jpg)
 background-size: cover
+background-position:
 
-.left-column[
-# .b.white[The Basics &nbsp; &nbsp;&nbsp;&nbsp; of R]
+.pull-left[
+# .center.b.white[The Basics of R]
+
+# .center.b.ttc.f3.white[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
 ]
-
-.pull-right[
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-# .right.b.ttc.f3.white[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
-
-]
-
 
 ---
 

@@ -91,8 +91,8 @@ To join this course kindly fill this [Google Form](https://forms.gle/CN4guCNgnzL
 
 P.S. 
 
-- Bee artwork by Neha
+- Thank you so much Vineeta for zillion invaluable inputs and Neha for contributing awesome bee artworks.
 
-- *Why bee?* Bee sounds cool with beginners. The shape of R packages is similar to honeycomb. Moreover, to support the cause "save the bees".
+- *Why bee?* Bee sounds cool with beginners. Also, the shape of R packages is similar to honeycomb. And moreover, to support the cause "save the bees".
 
 
