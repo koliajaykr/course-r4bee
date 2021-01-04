@@ -38,8 +38,6 @@ projects: []
 
 ***Slides are available only for registered participants. Thank you.***
 
-Slides
-
 ```{r slides-top3, echo=FALSE, fig.align='center', eval=FALSE}
 library(xaringanExtra)
 xaringanExtra::embed_xaringan(url = "/slides/03-stats.html", ratio = "4:3",

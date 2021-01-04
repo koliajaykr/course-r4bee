@@ -13,7 +13,5 @@ image:
 
 ***Slides are available only for registered participants. Thank you.***
 
-Slides
-
 
 

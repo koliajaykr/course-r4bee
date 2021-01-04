@@ -13,8 +13,6 @@ image:
 
 ***Slides are available only for registered participants. Thank you.***
 
-Slides
-
 ```{r slides-top2, echo=FALSE, fig.align='center', eval=FALSE}
 library(xaringanExtra)
 xaringanExtra::embed_xaringan(url = "/slides/02-wrangling.html", ratio = "4:3",
