@@ -36,11 +36,11 @@ projects: []
 
 <!-- Data visualisation using mainly R package `ggplot2`. -->
 
-<!-- ***Slides are available only for registered participants. Thank you.*** -->
+***Slides are available only for registered participants. Thank you.***
 
 Slides
 
-```{r slides-top4, echo=FALSE, fig.align='center'}
+```{r slides-top4, echo=FALSE, fig.align='center', eval=FALSE}
 library(xaringanExtra)
 xaringanExtra::embed_xaringan(url = "/slides/04-vis.html", ratio = "4:3",
                               max_width = 600)

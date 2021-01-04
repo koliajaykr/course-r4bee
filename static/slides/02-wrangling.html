@@ -4,7 +4,7 @@
     <title>Data  Wrangling</title>
     <meta charset="utf-8" />
     <meta name="author" content="Ajay Koli" />
-    <meta name="date" content="2020-12-16" />
+    <meta name="date" content="2020-12-21" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
@@ -56,7 +56,7 @@ background-position:
 class: center
 background-image: url(images/02-wrangling/data-science-wrangle.png)
 background-size: 75%
-background-position: 50% 50%
+background-position: 50% 55%
 
 # Course Progress
 
@@ -80,7 +80,7 @@ background-position: 50% 50%
 
 ---
 
-# Data Wrangling:
+# Data wrangling:
 
 --
 
@@ -96,13 +96,13 @@ background-image: url(images/02-wrangling/tidy-1.png)
 background-size: 75%
 background-position: 50% 55%
 
-# Tidying data means:
+# "Tidying" data means:
 
 - "each column is a variable, and each row is an observation" [(Hadley &amp; Garrett)](https://r4ds.had.co.nz/index.html)
 
 ---
 
-# Transforming data means:
+# "Transforming" data means:
 
 - "narrowing in on observations of interest ... 
 
@@ -116,36 +116,29 @@ background-position: 50% 55%
 
 ---
 
-class: center
-background-image: url(images/02-wrangling/penguin-logo.png)
-background-size: 30%
-background-position: 50% 60%
+class: inverse, center, middle, hide-count
 
-# Palmer Penguins Data
-
-.footnote[
-Artwork by [@allison_horst](https://www.allisonhorst.com/)
-]
+# .big-text[Data]
 
 ---
 
-background-image: url(images/02-wrangling/penguin-logo.png)
-background-size: 30%
-background-position: 95% 60%
+background-image: url(images/02-wrangling/palmer.png)
+background-size: 70%
+background-position: 95% 65%
 
-# Data - Palmer Penguins
+# Palmer penguins data
 
 - [Palmer Staion, Antarctica LTER](https://pal.lternet.edu/)
 
 ---
 
 background-image: url(images/02-wrangling/lter_penguins.png)
-background-size: 50%
-background-position: 95% 60%
+background-size: 55%
+background-position: 95% 70%
 
-# Data - Palmer Penguins
+# Penguin data variables
 
-- Three types of penguin species
+- species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, year
 
 .footnote[
 Artwork by [@allison_horst](https://www.allisonhorst.com/)
@@ -154,12 +147,12 @@ Artwork by [@allison_horst](https://www.allisonhorst.com/)
 ---
 
 background-image: url(images/02-wrangling/culmen_depth.png)
-background-size: 50%
-background-position: 95% 60%
+background-size: 55%
+background-position: 95% 70%
 
-# Data - Palmer Penguins
+# Penguin data variables
 
-- Penguin's bill
+- species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, year
 
 .footnote[
 Artwork by [@allison_horst](https://www.allisonhorst.com/)
@@ -167,51 +160,84 @@ Artwork by [@allison_horst](https://www.allisonhorst.com/)
 
 ---
 
-background-image: url(images/02-wrangling/penguin-logo.png)
-background-size: 10%
-background-position: 95% 5%
+class: middle, inverse, hide-count
+background-image: url(images/02-wrangling/readr.svg)
+background-size: 40%
+background-position: 95% 50%
 
-# Penguin Data Variables
+.pull-left[
+# .center.big-text[`readr` &lt;br&gt;pkg]
+]
 
-- `species` : a **factor** denoting penguin species (Adélie, Chinstrap and Gentoo)
+---
 
---
+background-image: url(images/02-wrangling/readr.svg)
+background-size: 7%
+background-position: 90% 5%
 
-- `island` : a **factor** denoting island in Palmer Archipelago, Antarctica (Biscoe, Dream or Torgersen)
+# `readr` pkg
 
---
-
-- `bill_length_mm` : a **number** denoting bill length (millimeters)
-
---
-
-- `bill_depth_mm` : a **number** denoting bill depth (millimeters)
-
---
-
-- `flipper_length_mm` :  an **integer** denoting flipper length (millimeters)
+- "to provide a fast and friendly way to read **rectangular** data (like csv, tsv, and fwf)".
 
 --
 
-- `body_mass_g` : an **integer** denoting body mass (grams)
+- function is `read_csv()`
 
---
+.footnote[
+Source: [tidyverse](https://readr.tidyverse.org/)
+]
 
-- `sex` : a **factor** denoting penguin sex (female, male)
+---
 
---
+.panelset[
 
-- `year` : an **integer** denoting the study year (2007, 2008, or 2009)
+.panel[.panel-name[Codes]
+
+
+```r
+# import data
+library(readr)
+
+penguins &lt;- read_csv("data/penguins.csv")
+
+penguins
+
+```
+
+]
+
+.panel[.panel-name[Output]
+
+
+```
+# A tibble: 344 x 8
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+   &lt;chr&gt;   &lt;chr&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;
+ 1 Adelie  Torge…           39.1          18.7              181        3750 male 
+ 2 Adelie  Torge…           39.5          17.4              186        3800 fema…
+ 3 Adelie  Torge…           40.3          18                195        3250 fema…
+ 4 Adelie  Torge…           NA            NA                 NA          NA &lt;NA&gt; 
+ 5 Adelie  Torge…           36.7          19.3              193        3450 fema…
+ 6 Adelie  Torge…           39.3          20.6              190        3650 male 
+ 7 Adelie  Torge…           38.9          17.8              181        3625 fema…
+ 8 Adelie  Torge…           39.2          19.6              195        4675 male 
+ 9 Adelie  Torge…           34.1          18.1              193        3475 &lt;NA&gt; 
+10 Adelie  Torge…           42            20.2              190        4250 &lt;NA&gt; 
+# … with 334 more rows, and 1 more variable: year &lt;dbl&gt;
+```
+
+]
+]
 
 ---
 
 # Variable types in R:
 
-- `int` stands for integers.
+- `int` stands for integers, like 4, 55, 300.
 
 --
 
-- `dbl` stands for doubles, or real numbers.
+- `dbl` stands for doubles, or real numbers like 3, 7.45, 1.565, 12.
 
 --
 
@@ -235,58 +261,39 @@ background-position: 95% 5%
 
 ---
 
-background-image: url(images/02-wrangling/logo-readr.png)
-background-size: 10%
-background-position: 97% 5%
+# Change variable types in penguin data:
 
-# Import Data using [`readr`](https://readr.tidyverse.org/) pkg
+1. `species` : a **factor** denoting penguin species (Adélie, Chinstrap and Gentoo)
 
 --
 
-.panelset[
+1. `island` : a **factor** denoting island in Palmer Archipelago, Antarctica (Biscoe, Dream or Torgersen)
 
-.panel[.panel-name[Codes]
+--
 
+1. `bill_length_mm` : a **number** denoting bill length (millimeters)
 
-```r
-library(readr)
+--
 
-penguins &lt;- read_csv("data/penguins.csv")
+1. `bill_depth_mm` : a **number** denoting bill depth (millimeters)
 
-penguins
+--
 
-```
+1. `flipper_length_mm` :  an **integer** denoting flipper length (millimeters)
 
-]
+--
 
-.panel[.panel-name[Output]
+1. `body_mass_g` : an **integer** denoting body mass (grams)
 
+--
 
-```
-# A tibble: 344 x 8
-   species island  bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex    year
-   &lt;chr&gt;   &lt;chr&gt;            &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
- 1 Adelie  Torger…           39.1          18.7              181        3750 male   2007
- 2 Adelie  Torger…           39.5          17.4              186        3800 fema…  2007
- 3 Adelie  Torger…           40.3          18                195        3250 fema…  2007
- 4 Adelie  Torger…           NA            NA                 NA          NA &lt;NA&gt;   2007
- 5 Adelie  Torger…           36.7          19.3              193        3450 fema…  2007
- 6 Adelie  Torger…           39.3          20.6              190        3650 male   2007
- 7 Adelie  Torger…           38.9          17.8              181        3625 fema…  2007
- 8 Adelie  Torger…           39.2          19.6              195        4675 male   2007
- 9 Adelie  Torger…           34.1          18.1              193        3475 &lt;NA&gt;   2007
-10 Adelie  Torger…           42            20.2              190        4250 &lt;NA&gt;   2007
-# … with 334 more rows
-```
+1. `sex` : a **factor** denoting penguin sex (female, male)
 
-]
-]
+--
+
+1. `year` : an **integer** denoting the study year (2007, 2008, or 2009)
 
 ---
-
-# Variable Types
-
---
 
 .panelset[
 
@@ -295,7 +302,7 @@ penguins
 
 ```r
 penguins &lt;- read_csv("data/penguins.csv",
-  col_types = cols(
+  col_types = cols( 
     species = col_factor(),
     island = col_factor(),
     bill_length_mm = col_double(),
@@ -316,19 +323,19 @@ penguins
 
 ```
 # A tibble: 344 x 8
-   species island  bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex    year
-   &lt;fct&gt;   &lt;fct&gt;            &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Torger…           39.1          18.7              181        3750 male   2007
- 2 Adelie  Torger…           39.5          17.4              186        3800 fema…  2007
- 3 Adelie  Torger…           40.3          18                195        3250 fema…  2007
- 4 Adelie  Torger…           NA            NA                 NA          NA &lt;NA&gt;   2007
- 5 Adelie  Torger…           36.7          19.3              193        3450 fema…  2007
- 6 Adelie  Torger…           39.3          20.6              190        3650 male   2007
- 7 Adelie  Torger…           38.9          17.8              181        3625 fema…  2007
- 8 Adelie  Torger…           39.2          19.6              195        4675 male   2007
- 9 Adelie  Torger…           34.1          18.1              193        3475 &lt;NA&gt;   2007
-10 Adelie  Torger…           42            20.2              190        4250 &lt;NA&gt;   2007
-# … with 334 more rows
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+ 1 Adelie  Torge…           39.1          18.7              181        3750 male 
+ 2 Adelie  Torge…           39.5          17.4              186        3800 fema…
+ 3 Adelie  Torge…           40.3          18                195        3250 fema…
+ 4 Adelie  Torge…           NA            NA                 NA          NA &lt;NA&gt; 
+ 5 Adelie  Torge…           36.7          19.3              193        3450 fema…
+ 6 Adelie  Torge…           39.3          20.6              190        3650 male 
+ 7 Adelie  Torge…           38.9          17.8              181        3625 fema…
+ 8 Adelie  Torge…           39.2          19.6              195        4675 male 
+ 9 Adelie  Torge…           34.1          18.1              193        3475 &lt;NA&gt; 
+10 Adelie  Torge…           42            20.2              190        4250 &lt;NA&gt; 
+# … with 334 more rows, and 1 more variable: year &lt;int&gt;
 ```
 
 ]
@@ -336,13 +343,69 @@ penguins
 
 ---
 
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+summary(penguins)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+      species          island    bill_length_mm  bill_depth_mm   flipper_length_mm
+ Adelie   :152   Torgersen: 52   Min.   :32.10   Min.   :13.10   Min.   :172.0    
+ Gentoo   :124   Biscoe   :168   1st Qu.:39.23   1st Qu.:15.60   1st Qu.:190.0    
+ Chinstrap: 68   Dream    :124   Median :44.45   Median :17.30   Median :197.0    
+                                 Mean   :43.92   Mean   :17.15   Mean   :200.9    
+                                 3rd Qu.:48.50   3rd Qu.:18.70   3rd Qu.:213.0    
+                                 Max.   :59.60   Max.   :21.50   Max.   :231.0    
+                                 NA's   :2       NA's   :2       NA's   :2        
+  body_mass_g       sex           year     
+ Min.   :2700   male  :168   Min.   :2007  
+ 1st Qu.:3550   female:165   1st Qu.:2007  
+ Median :4050   NA's  : 11   Median :2008  
+ Mean   :4202                Mean   :2008  
+ 3rd Qu.:4750                3rd Qu.:2009  
+ Max.   :6300                Max.   :2009  
+ NA's   :2                                 
+```
+
+]
+]
+
+---
+
+class: middle, inverse, hide-count
+background-image: url(images/02-wrangling/logo-skimr.png)
+background-size: 40%
+background-position: 95% 55%
+
+.pull-left[
+# .center.big-text[`skimr` pkg]
+]
+
+---
+
 background-image: url(images/02-wrangling/logo-skimr.png)
 background-size: 10%
-background-position: 97% 5%
+background-position: 93% 1%
 
-# Data summary using [`skimr`](https://docs.ropensci.org/skimr/) pkg
+# `skimr` pkg
 
---
+- "displaying summary statistics the user can skim quickly to understand their data"
+
+- function is `skim()`
+
+.footnote[
+Source: [rOpenSci](https://docs.ropensci.org/skimr/) 
+]
+
+---
 
 .panelset[
 
@@ -350,6 +413,8 @@ background-position: 97% 5%
 
 
 ```r
+# install.packages("skimr")
+
 library(skimr)
 
 skim(penguins)
@@ -398,50 +463,49 @@ Table: Data summary
 
 ---
 
-# Data summary using `summary` fun
+class: middle, inverse, hide-count
+background-image: url(images/02-wrangling/dplyr.svg)
+background-size: 60%
+background-position: 100% 60%
 
-.panelset[
-
-.panel[.panel-name[Codes]
-
-
-```r
-summary(penguins)
-```
+.pull-left[
+# .center.big-text[`dplyr` pkg]
 ]
-
-.panel[.panel-name[Output]
-
-
-```
-      species          island    bill_length_mm  bill_depth_mm   flipper_length_mm
- Adelie   :152   Torgersen: 52   Min.   :32.10   Min.   :13.10   Min.   :172.0    
- Gentoo   :124   Biscoe   :168   1st Qu.:39.23   1st Qu.:15.60   1st Qu.:190.0    
- Chinstrap: 68   Dream    :124   Median :44.45   Median :17.30   Median :197.0    
-                                 Mean   :43.92   Mean   :17.15   Mean   :200.9    
-                                 3rd Qu.:48.50   3rd Qu.:18.70   3rd Qu.:213.0    
-                                 Max.   :59.60   Max.   :21.50   Max.   :231.0    
-                                 NA's   :2       NA's   :2       NA's   :2        
-  body_mass_g       sex           year     
- Min.   :2700   male  :168   Min.   :2007  
- 1st Qu.:3550   female:165   1st Qu.:2007  
- Median :4050   NA's  : 11   Median :2008  
- Mean   :4202                Mean   :2008  
- 3rd Qu.:4750                3rd Qu.:2009  
- Max.   :6300                Max.   :2009  
- NA's   :2                                 
-```
-
-]
-]
-
 ---
 
 background-image: url(images/02-wrangling/logo-dplyr.png)
 background-size: 10%
 background-position: 97% 5%
 
-# Data manipulation using `dplyr` pkg
+# `dplyr` pkg to
+
+1. to get an overview of data use `glimpse()`.
+
+--
+
+1. "Pick observations by their values `filter()`."
+
+--
+
+1. "Reorder the rows `arrange()`."
+
+--
+
+1. "Pick variables by their names `select()`."
+
+--
+
+1. "Create new variables with functions of existing variables `mutate()`."
+
+--
+
+1. "Collapse many values down to a single summary `summarise()`."
+
+.footnote[
+Source: [Hadley &amp; Garrett](https://r4ds.had.co.nz/transform.html) &amp; [tidyverse](https://dplyr.tidyverse.org/)
+]
+
+---
 
 .panelset[
 
@@ -461,14 +525,14 @@ glimpse(penguins)
 ```
 Rows: 344
 Columns: 8
-$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ade…
-$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torg…
-$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, 3…
-$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, 1…
-$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180, …
-$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, 3…
-$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, N…
-$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007,…
+$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie…
+$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen,…
+$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42…
+$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20…
+$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, …
+$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 42…
+$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, …
+$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, …
 ```
 
 ]
@@ -476,59 +540,11 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 
 ---
 
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
+# `filter()` function
 
-# [`dplyr`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8) functions based upon:
+- "Pick observations by their values."
 
---
-
-.panelset[
-
-.panel[.panel-name[Rows]
-
-- `filter()` chooses rows based on column values.
-    
-- `slice()` chooses rows based on location.
-    
-- `arrange()` changes the order of the rows.
-    
-]
-
-.panel[.panel-name[Columns]
-
-- `select()` changes whether or not a column is included.
-    
-- `rename()` changes the name of columns.
-    
-- `mutate()` changes the values of columns and creates new columns.
-    
-- `relocate()` changes the order of the columns.
-    
-.panel[.panel-name[Groups of rows]
-
-- `summarise()` collapses a group into a single row.
-
-]
-]
-]
-
----
-
-class: inverse, hide-count, center, middle
-
-# .big-text[Row-wise&lt;br&gt;🚣🏽]
-
----
-
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `filter()` function:
-
-- chooses rows based on column values.
+&lt;img src="images/02-wrangling/01-filter.png" width="610" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -538,6 +554,7 @@ background-position: 97% 5%
 
 
 ```r
+# three species are Chinstrap, Gentoo, Adelie
 penguins %&gt;% 
   filter(species == "Gentoo")
 ```
@@ -548,19 +565,19 @@ penguins %&gt;%
 
 ```
 # A tibble: 124 x 8
-   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Gentoo  Biscoe           46.1          13.2               211        4500 fema…  2007
- 2 Gentoo  Biscoe           50            16.3               230        5700 male   2007
- 3 Gentoo  Biscoe           48.7          14.1               210        4450 fema…  2007
- 4 Gentoo  Biscoe           50            15.2               218        5700 male   2007
- 5 Gentoo  Biscoe           47.6          14.5               215        5400 male   2007
- 6 Gentoo  Biscoe           46.5          13.5               210        4550 fema…  2007
- 7 Gentoo  Biscoe           45.4          14.6               211        4800 fema…  2007
- 8 Gentoo  Biscoe           46.7          15.3               219        5200 male   2007
- 9 Gentoo  Biscoe           43.3          13.4               209        4400 fema…  2007
-10 Gentoo  Biscoe           46.8          15.4               215        5150 male   2007
-# … with 114 more rows
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+ 1 Gentoo  Biscoe           46.1          13.2              211        4500 fema…
+ 2 Gentoo  Biscoe           50            16.3              230        5700 male 
+ 3 Gentoo  Biscoe           48.7          14.1              210        4450 fema…
+ 4 Gentoo  Biscoe           50            15.2              218        5700 male 
+ 5 Gentoo  Biscoe           47.6          14.5              215        5400 male 
+ 6 Gentoo  Biscoe           46.5          13.5              210        4550 fema…
+ 7 Gentoo  Biscoe           45.4          14.6              211        4800 fema…
+ 8 Gentoo  Biscoe           46.7          15.3              219        5200 male 
+ 9 Gentoo  Biscoe           43.3          13.4              209        4400 fema…
+10 Gentoo  Biscoe           46.8          15.4              215        5150 male 
+# … with 114 more rows, and 1 more variable: year &lt;int&gt;
 ```
 
 ]
@@ -610,19 +627,19 @@ penguins %&gt;%
 
 ```
 # A tibble: 188 x 8
-   species island  bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex    year
-   &lt;fct&gt;   &lt;fct&gt;            &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Torger…           46            21.5              194        4200 male   2007
- 2 Adelie  Dream             44.1          19.7              196        4400 male   2007
- 3 Adelie  Torger…           45.8          18.9              197        4150 male   2008
- 4 Adelie  Dream             43.2          18.5              192        4100 male   2008
- 5 Adelie  Biscoe            43.2          19                197        4775 male   2009
- 6 Adelie  Biscoe            45.6          20.3              191        4600 male   2009
- 7 Adelie  Torger…           44.1          18                210        4000 male   2009
- 8 Adelie  Torger…           43.1          19.2              197        3500 male   2009
- 9 Gentoo  Biscoe            46.1          13.2              211        4500 fema…  2007
-10 Gentoo  Biscoe            50            16.3              230        5700 male   2007
-# … with 178 more rows
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+ 1 Adelie  Torge…           46            21.5              194        4200 male 
+ 2 Adelie  Dream            44.1          19.7              196        4400 male 
+ 3 Adelie  Torge…           45.8          18.9              197        4150 male 
+ 4 Adelie  Dream            43.2          18.5              192        4100 male 
+ 5 Adelie  Biscoe           43.2          19                197        4775 male 
+ 6 Adelie  Biscoe           45.6          20.3              191        4600 male 
+ 7 Adelie  Torge…           44.1          18                210        4000 male 
+ 8 Adelie  Torge…           43.1          19.2              197        3500 male 
+ 9 Gentoo  Biscoe           46.1          13.2              211        4500 fema…
+10 Gentoo  Biscoe           50            16.3              230        5700 male 
+# … with 178 more rows, and 1 more variable: year &lt;int&gt;
 ```
 
 ]
@@ -647,19 +664,19 @@ penguins %&gt;%
 
 ```
 # A tibble: 100 x 8
-   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Gentoo  Biscoe           46.1          13.2               211        4500 fema…  2007
- 2 Gentoo  Biscoe           50            16.3               230        5700 male   2007
- 3 Gentoo  Biscoe           48.7          14.1               210        4450 fema…  2007
- 4 Gentoo  Biscoe           50            15.2               218        5700 male   2007
- 5 Gentoo  Biscoe           47.6          14.5               215        5400 male   2007
- 6 Gentoo  Biscoe           46.5          13.5               210        4550 fema…  2007
- 7 Gentoo  Biscoe           45.4          14.6               211        4800 fema…  2007
- 8 Gentoo  Biscoe           46.7          15.3               219        5200 male   2007
- 9 Gentoo  Biscoe           46.8          15.4               215        5150 male   2007
-10 Gentoo  Biscoe           49            16.1               216        5550 male   2007
-# … with 90 more rows
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+ 1 Gentoo  Biscoe           46.1          13.2              211        4500 fema…
+ 2 Gentoo  Biscoe           50            16.3              230        5700 male 
+ 3 Gentoo  Biscoe           48.7          14.1              210        4450 fema…
+ 4 Gentoo  Biscoe           50            15.2              218        5700 male 
+ 5 Gentoo  Biscoe           47.6          14.5              215        5400 male 
+ 6 Gentoo  Biscoe           46.5          13.5              210        4550 fema…
+ 7 Gentoo  Biscoe           45.4          14.6              211        4800 fema…
+ 8 Gentoo  Biscoe           46.7          15.3              219        5200 male 
+ 9 Gentoo  Biscoe           46.8          15.4              215        5150 male 
+10 Gentoo  Biscoe           49            16.1              216        5550 male 
+# … with 90 more rows, and 1 more variable: year &lt;int&gt;
 ```
 
 ]
@@ -685,26 +702,27 @@ penguins %&gt;%
 
 ```
 # A tibble: 18 x 8
-   species  island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex    year
-   &lt;fct&gt;    &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie   Torge…           46            21.5              194        4200 male   2007
- 2 Adelie   Torge…           45.8          18.9              197        4150 male   2008
- 3 Adelie   Biscoe           45.6          20.3              191        4600 male   2009
- 4 Chinstr… Dream            46            18.9              195        4150 fema…  2007
- 5 Chinstr… Dream            52            18.1              201        4050 male   2007
- 6 Chinstr… Dream            50.5          19.6              201        4050 male   2007
- 7 Chinstr… Dream            49.2          18.2              195        4400 male   2007
- 8 Chinstr… Dream            52            19                197        4150 male   2007
- 9 Chinstr… Dream            52.8          20                205        4550 male   2008
-10 Chinstr… Dream            54.2          20.8              201        4300 male   2008
-11 Chinstr… Dream            51            18.8              203        4100 male   2008
-12 Chinstr… Dream            52            20.7              210        4800 male   2008
-13 Chinstr… Dream            53.5          19.9              205        4500 male   2008
-14 Chinstr… Dream            50.8          18.5              201        4450 male   2009
-15 Chinstr… Dream            49            19.6              212        4300 male   2009
-16 Chinstr… Dream            50.7          19.7              203        4050 male   2009
-17 Chinstr… Dream            49.3          19.9              203        4050 male   2009
-18 Chinstr… Dream            50.8          19                210        4100 male   2009
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+ 1 Adelie  Torge…           46            21.5              194        4200 male 
+ 2 Adelie  Torge…           45.8          18.9              197        4150 male 
+ 3 Adelie  Biscoe           45.6          20.3              191        4600 male 
+ 4 Chinst… Dream            46            18.9              195        4150 fema…
+ 5 Chinst… Dream            52            18.1              201        4050 male 
+ 6 Chinst… Dream            50.5          19.6              201        4050 male 
+ 7 Chinst… Dream            49.2          18.2              195        4400 male 
+ 8 Chinst… Dream            52            19                197        4150 male 
+ 9 Chinst… Dream            52.8          20                205        4550 male 
+10 Chinst… Dream            54.2          20.8              201        4300 male 
+11 Chinst… Dream            51            18.8              203        4100 male 
+12 Chinst… Dream            52            20.7              210        4800 male 
+13 Chinst… Dream            53.5          19.9              205        4500 male 
+14 Chinst… Dream            50.8          18.5              201        4450 male 
+15 Chinst… Dream            49            19.6              212        4300 male 
+16 Chinst… Dream            50.7          19.7              203        4050 male 
+17 Chinst… Dream            49.3          19.9              203        4050 male 
+18 Chinst… Dream            50.8          19                210        4100 male 
+# … with 1 more variable: year &lt;int&gt;
 ```
 
 ]
@@ -731,64 +749,62 @@ penguins %&gt;%
 
 ```
 # A tibble: 6 x 8
-  species  island  bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex    year
-  &lt;fct&gt;    &lt;fct&gt;            &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-1 Adelie   Torger…           46            21.5              194        4200 male   2007
-2 Adelie   Torger…           45.8          18.9              197        4150 male   2008
-3 Adelie   Biscoe            45.6          20.3              191        4600 male   2009
-4 Chinstr… Dream             46            18.9              195        4150 fema…  2007
-5 Chinstr… Dream             52            18.1              201        4050 male   2007
-6 Chinstr… Dream             50.5          19.6              201        4050 male   2007
+  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+1 Adelie  Torge…           46            21.5              194        4200 male 
+2 Adelie  Torge…           45.8          18.9              197        4150 male 
+3 Adelie  Biscoe           45.6          20.3              191        4600 male 
+4 Chinst… Dream            46            18.9              195        4150 fema…
+5 Chinst… Dream            52            18.1              201        4050 male 
+6 Chinst… Dream            50.5          19.6              201        4050 male 
+# … with 1 more variable: year &lt;int&gt;
 ```
 
 ]
 ]
+
 
 ---
 
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
+# dplyr function `arrange()`:
 
-# `slice()` function:
+- chooses rows based on column values.
 
-- chooses rows based on location.
+&lt;br&gt;
+
+&lt;img src="images/02-wrangling/02-arrange.png" width="612" style="display: block; margin: auto;" /&gt;
 
 ---
 
-.panelset[
+# dplyr function `select()`:
 
-.panel[.panel-name[Codes]
+- chooses rows based on column values.
+
+&lt;br&gt;
+
+&lt;img src="images/02-wrangling/03-select.png" width="444" style="display: block; margin: auto;" /&gt;
+
+---
+
+# dplyr function `mutate()`:
+
+- chooses rows based on column values.
+
+&lt;br&gt;
+
+&lt;img src="images/02-wrangling/04-mutate.png" width="645" style="display: block; margin: auto;" /&gt;
+
+---
+
+# dplyr function `summarise()`:
+
+- chooses rows based on column values.
+
+&lt;br&gt;
+
+&lt;img src="images/02-wrangling/05-summarise.png" width="612" style="display: block; margin: auto;" /&gt;
 
 
-```r
-penguins %&gt;% 
-  slice(51:150)
-```
-]
-
-.panel[.panel-name[Output]
-
-
-```
-# A tibble: 100 x 8
-   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Biscoe           39.6          17.7               186        3500 fema…  2008
- 2 Adelie  Biscoe           40.1          18.9               188        4300 male   2008
- 3 Adelie  Biscoe           35            17.9               190        3450 fema…  2008
- 4 Adelie  Biscoe           42            19.5               200        4050 male   2008
- 5 Adelie  Biscoe           34.5          18.1               187        2900 fema…  2008
- 6 Adelie  Biscoe           41.4          18.6               191        3700 male   2008
- 7 Adelie  Biscoe           39            17.5               186        3550 fema…  2008
- 8 Adelie  Biscoe           40.6          18.8               193        3800 male   2008
- 9 Adelie  Biscoe           36.5          16.6               181        2850 fema…  2008
-10 Adelie  Biscoe           37.6          19.1               194        3750 male   2008
-# … with 90 more rows
-```
-
-]
-]
 
 ---
 
@@ -818,19 +834,19 @@ penguins %&gt;%
 
 ```
 # A tibble: 344 x 8
-   species  island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex    year
-   &lt;fct&gt;    &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Chinstr… Dream            46.9          16.6              192        2700 fema…  2008
- 2 Adelie   Biscoe           36.5          16.6              181        2850 fema…  2008
- 3 Adelie   Biscoe           36.4          17.1              184        2850 fema…  2008
- 4 Adelie   Biscoe           34.5          18.1              187        2900 fema…  2008
- 5 Adelie   Dream            33.1          16.1              178        2900 fema…  2008
- 6 Adelie   Torge…           38.6          17                188        2900 fema…  2009
- 7 Chinstr… Dream            43.2          16.6              187        2900 fema…  2007
- 8 Adelie   Biscoe           37.9          18.6              193        2925 fema…  2009
- 9 Adelie   Dream            37.5          18.9              179        2975 &lt;NA&gt;   2007
-10 Adelie   Dream            37            16.9              185        3000 fema…  2007
-# … with 334 more rows
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+ 1 Chinst… Dream            46.9          16.6              192        2700 fema…
+ 2 Adelie  Biscoe           36.5          16.6              181        2850 fema…
+ 3 Adelie  Biscoe           36.4          17.1              184        2850 fema…
+ 4 Adelie  Biscoe           34.5          18.1              187        2900 fema…
+ 5 Adelie  Dream            33.1          16.1              178        2900 fema…
+ 6 Adelie  Torge…           38.6          17                188        2900 fema…
+ 7 Chinst… Dream            43.2          16.6              187        2900 fema…
+ 8 Adelie  Biscoe           37.9          18.6              193        2925 fema…
+ 9 Adelie  Dream            37.5          18.9              179        2975 &lt;NA&gt; 
+10 Adelie  Dream            37            16.9              185        3000 fema…
+# … with 334 more rows, and 1 more variable: year &lt;int&gt;
 ```
 
 ]
@@ -854,19 +870,19 @@ penguins %&gt;%
 
 ```
 # A tibble: 344 x 8
-   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Gentoo  Biscoe           49.2          15.2               221        6300 male   2007
- 2 Gentoo  Biscoe           59.6          17                 230        6050 male   2007
- 3 Gentoo  Biscoe           51.1          16.3               220        6000 male   2008
- 4 Gentoo  Biscoe           48.8          16.2               222        6000 male   2009
- 5 Gentoo  Biscoe           45.2          16.4               223        5950 male   2008
- 6 Gentoo  Biscoe           49.8          15.9               229        5950 male   2009
- 7 Gentoo  Biscoe           48.4          14.6               213        5850 male   2007
- 8 Gentoo  Biscoe           49.3          15.7               217        5850 male   2007
- 9 Gentoo  Biscoe           55.1          16                 230        5850 male   2009
-10 Gentoo  Biscoe           49.5          16.2               229        5800 male   2008
-# … with 334 more rows
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+ 1 Gentoo  Biscoe           49.2          15.2              221        6300 male 
+ 2 Gentoo  Biscoe           59.6          17                230        6050 male 
+ 3 Gentoo  Biscoe           51.1          16.3              220        6000 male 
+ 4 Gentoo  Biscoe           48.8          16.2              222        6000 male 
+ 5 Gentoo  Biscoe           45.2          16.4              223        5950 male 
+ 6 Gentoo  Biscoe           49.8          15.9              229        5950 male 
+ 7 Gentoo  Biscoe           48.4          14.6              213        5850 male 
+ 8 Gentoo  Biscoe           49.3          15.7              217        5850 male 
+ 9 Gentoo  Biscoe           55.1          16                230        5850 male 
+10 Gentoo  Biscoe           49.5          16.2              229        5800 male 
+# … with 334 more rows, and 1 more variable: year &lt;int&gt;
 ```
 
 ]
@@ -891,24 +907,19 @@ penguins %&gt;%
 
 ```
 # A tibble: 6 x 8
-  species  island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
-  &lt;fct&gt;    &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-1 Chinstr… Dream            45.7          17                 195        3650 fema…  2009
-2 Chinstr… Dream            55.8          19.8               207        4000 male   2009
-3 Chinstr… Dream            43.5          18.1               202        3400 fema…  2009
-4 Chinstr… Dream            49.6          18.2               193        3775 male   2009
-5 Chinstr… Dream            50.8          19                 210        4100 male   2009
-6 Chinstr… Dream            50.2          18.7               198        3775 fema…  2009
+  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+1 Chinst… Dream            45.7          17                195        3650 fema…
+2 Chinst… Dream            55.8          19.8              207        4000 male 
+3 Chinst… Dream            43.5          18.1              202        3400 fema…
+4 Chinst… Dream            49.6          18.2              193        3775 male 
+5 Chinst… Dream            50.8          19                210        4100 male 
+6 Chinst… Dream            50.2          18.7              198        3775 fema…
+# … with 1 more variable: year &lt;int&gt;
 ```
 
 ]
 ]
-
----
-
-class: inverse, hide-count, center, middle
-
-# .big-text[Column-wise]
 
 ---
 
@@ -1106,53 +1117,6 @@ background-image: url(images/02-wrangling/logo-dplyr.png)
 background-size: 10%
 background-position: 97% 5%
 
-# `rename()` function
-
-- changes the name of columns.
-
----
-
-.panelset[
-
-.panel[.panel-name[Codes]
-
-
-```r
-penguins %&gt;% 
-  rename(weight = body_mass_g,
-        flipper_weight = flipper_length_mm)
-```
-]
-
-.panel[.panel-name[Output]
-
-
-```
-# A tibble: 344 x 8
-   species island    bill_length_mm bill_depth_mm flipper_weight weight sex     year
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;          &lt;int&gt;  &lt;int&gt; &lt;fct&gt;  &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7            181   3750 male    2007
- 2 Adelie  Torgersen           39.5          17.4            186   3800 female  2007
- 3 Adelie  Torgersen           40.3          18              195   3250 female  2007
- 4 Adelie  Torgersen           NA            NA               NA     NA &lt;NA&gt;    2007
- 5 Adelie  Torgersen           36.7          19.3            193   3450 female  2007
- 6 Adelie  Torgersen           39.3          20.6            190   3650 male    2007
- 7 Adelie  Torgersen           38.9          17.8            181   3625 female  2007
- 8 Adelie  Torgersen           39.2          19.6            195   4675 male    2007
- 9 Adelie  Torgersen           34.1          18.1            193   3475 &lt;NA&gt;    2007
-10 Adelie  Torgersen           42            20.2            190   4250 &lt;NA&gt;    2007
-# … with 334 more rows
-```
-
-]
-]
-
----
-
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
 # `mutate()` function
 
 - changes the values of columns and creates new columns.
@@ -1175,19 +1139,19 @@ penguins %&gt;%
 
 ```
 # A tibble: 344 x 8
-   species island  bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex    year
-   &lt;fct&gt;   &lt;fct&gt;            &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;dbl&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Torger…           39.1          18.7              181        3.75 male   2007
- 2 Adelie  Torger…           39.5          17.4              186        3.8  fema…  2007
- 3 Adelie  Torger…           40.3          18                195        3.25 fema…  2007
- 4 Adelie  Torger…           NA            NA                 NA       NA    &lt;NA&gt;   2007
- 5 Adelie  Torger…           36.7          19.3              193        3.45 fema…  2007
- 6 Adelie  Torger…           39.3          20.6              190        3.65 male   2007
- 7 Adelie  Torger…           38.9          17.8              181        3.62 fema…  2007
- 8 Adelie  Torger…           39.2          19.6              195        4.68 male   2007
- 9 Adelie  Torger…           34.1          18.1              193        3.48 &lt;NA&gt;   2007
-10 Adelie  Torger…           42            20.2              190        4.25 &lt;NA&gt;   2007
-# … with 334 more rows
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;dbl&gt; &lt;fct&gt;
+ 1 Adelie  Torge…           39.1          18.7              181        3.75 male 
+ 2 Adelie  Torge…           39.5          17.4              186        3.8  fema…
+ 3 Adelie  Torge…           40.3          18                195        3.25 fema…
+ 4 Adelie  Torge…           NA            NA                 NA       NA    &lt;NA&gt; 
+ 5 Adelie  Torge…           36.7          19.3              193        3.45 fema…
+ 6 Adelie  Torge…           39.3          20.6              190        3.65 male 
+ 7 Adelie  Torge…           38.9          17.8              181        3.62 fema…
+ 8 Adelie  Torge…           39.2          19.6              195        4.68 male 
+ 9 Adelie  Torge…           34.1          18.1              193        3.48 &lt;NA&gt; 
+10 Adelie  Torge…           42            20.2              190        4.25 &lt;NA&gt; 
+# … with 334 more rows, and 1 more variable: year &lt;int&gt;
 ```
 
 ]
@@ -1212,19 +1176,19 @@ penguins %&gt;%
 
 ```
 # A tibble: 344 x 9
-   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex    year
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;dbl&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Torge…           39.1          18.7              181        3.75 male   2007
- 2 Adelie  Torge…           39.5          17.4              186        3.8  fema…  2007
- 3 Adelie  Torge…           40.3          18                195        3.25 fema…  2007
- 4 Adelie  Torge…           NA            NA                 NA       NA    &lt;NA&gt;   2007
- 5 Adelie  Torge…           36.7          19.3              193        3.45 fema…  2007
- 6 Adelie  Torge…           39.3          20.6              190        3.65 male   2007
- 7 Adelie  Torge…           38.9          17.8              181        3.62 fema…  2007
- 8 Adelie  Torge…           39.2          19.6              195        4.68 male   2007
- 9 Adelie  Torge…           34.1          18.1              193        3.48 &lt;NA&gt;   2007
-10 Adelie  Torge…           42            20.2              190        4.25 &lt;NA&gt;   2007
-# … with 334 more rows, and 1 more variable: bill &lt;dbl&gt;
+   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;dbl&gt; &lt;fct&gt;
+ 1 Adelie  Torge…           39.1          18.7              181        3.75 male 
+ 2 Adelie  Torge…           39.5          17.4              186        3.8  fema…
+ 3 Adelie  Torge…           40.3          18                195        3.25 fema…
+ 4 Adelie  Torge…           NA            NA                 NA       NA    &lt;NA&gt; 
+ 5 Adelie  Torge…           36.7          19.3              193        3.45 fema…
+ 6 Adelie  Torge…           39.3          20.6              190        3.65 male 
+ 7 Adelie  Torge…           38.9          17.8              181        3.62 fema…
+ 8 Adelie  Torge…           39.2          19.6              195        4.68 male 
+ 9 Adelie  Torge…           34.1          18.1              193        3.48 &lt;NA&gt; 
+10 Adelie  Torge…           42            20.2              190        4.25 &lt;NA&gt; 
+# … with 334 more rows, and 2 more variables: year &lt;int&gt;, bill &lt;dbl&gt;
 ```
 
 ]
@@ -1236,134 +1200,41 @@ background-image: url(images/02-wrangling/logo-dplyr.png)
 background-size: 10%
 background-position: 97% 5%
 
-# `transmute()` function
+# [`dplyr`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8) functions based upon:
 
----
-
-.panelset[
-
-.panel[.panel-name[Codes]
-
-
-```r
-penguins %&gt;% 
-  transmute(body_mass_kg = body_mass_g / 1000,
-         bill_cm = (bill_length_mm * 0.1) * (bill_depth_mm * 0.1))
-```
-]
-
-.panel[.panel-name[Output]
-
-
-```
-# A tibble: 344 x 2
-   body_mass_kg bill_cm
-          &lt;dbl&gt;   &lt;dbl&gt;
- 1         3.75    7.31
- 2         3.8     6.87
- 3         3.25    7.25
- 4        NA      NA   
- 5         3.45    7.08
- 6         3.65    8.10
- 7         3.62    6.92
- 8         4.68    7.68
- 9         3.48    6.17
-10         4.25    8.48
-# … with 334 more rows
-```
-
-]
-]
-
----
-
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `relocate()` function
-
-- changes the order of the columns.
-
----
+--
 
 .panelset[
 
-.panel[.panel-name[Codes]
+.panel[.panel-name[Rows]
 
-
-```r
-penguins %&gt;% 
-  relocate(year, sex)
-```
+- `filter()` chooses rows based on column values.
+    
+- `slice()` chooses rows based on location.
+    
+- `arrange()` changes the order of the rows.
+    
 ]
 
-.panel[.panel-name[Output]
+.panel[.panel-name[Columns]
 
+- `select()` changes whether or not a column is included.
+    
+- `rename()` changes the name of columns.
+    
+- `mutate()` changes the values of columns and creates new columns.
+    
+- `relocate()` changes the order of the columns.
+    
+.panel[.panel-name[Groups of rows]
 
-```
-# A tibble: 344 x 8
-    year sex    species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
-   &lt;int&gt; &lt;fct&gt;  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
- 1  2007 male   Adelie  Torge…           39.1          18.7              181        3750
- 2  2007 female Adelie  Torge…           39.5          17.4              186        3800
- 3  2007 female Adelie  Torge…           40.3          18                195        3250
- 4  2007 &lt;NA&gt;   Adelie  Torge…           NA            NA                 NA          NA
- 5  2007 female Adelie  Torge…           36.7          19.3              193        3450
- 6  2007 male   Adelie  Torge…           39.3          20.6              190        3650
- 7  2007 female Adelie  Torge…           38.9          17.8              181        3625
- 8  2007 male   Adelie  Torge…           39.2          19.6              195        4675
- 9  2007 &lt;NA&gt;   Adelie  Torge…           34.1          18.1              193        3475
-10  2007 &lt;NA&gt;   Adelie  Torge…           42            20.2              190        4250
-# … with 334 more rows
-```
+- `summarise()` collapses a group into a single row.
 
 ]
 ]
-
----
-
-.panelset[
-
-.panel[.panel-name[Codes]
-
-
-```r
-penguins %&gt;% 
-  relocate(year, sex, .after = bill_length_mm)
-```
 ]
 
-.panel[.panel-name[Output]
 
-
-```
-# A tibble: 344 x 8
-   species island  bill_length_mm  year sex   bill_depth_mm flipper_length_… body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;            &lt;dbl&gt; &lt;int&gt; &lt;fct&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
- 1 Adelie  Torger…           39.1  2007 male           18.7              181        3750
- 2 Adelie  Torger…           39.5  2007 fema…          17.4              186        3800
- 3 Adelie  Torger…           40.3  2007 fema…          18                195        3250
- 4 Adelie  Torger…           NA    2007 &lt;NA&gt;           NA                 NA          NA
- 5 Adelie  Torger…           36.7  2007 fema…          19.3              193        3450
- 6 Adelie  Torger…           39.3  2007 male           20.6              190        3650
- 7 Adelie  Torger…           38.9  2007 fema…          17.8              181        3625
- 8 Adelie  Torger…           39.2  2007 male           19.6              195        4675
- 9 Adelie  Torger…           34.1  2007 &lt;NA&gt;           18.1              193        3475
-10 Adelie  Torger…           42    2007 &lt;NA&gt;           20.2              190        4250
-# … with 334 more rows
-```
-
-]
-]
-
----
-
-class: inverse, hide-count
-
-# .big-text[groups of rows]
-
-collapses a group into a single row.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
