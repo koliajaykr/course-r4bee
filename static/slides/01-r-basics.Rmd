@@ -15,7 +15,7 @@ output:
       slideNumberFormat: "%current%/%total%" 
       highlightLines: true
       countIncrementalSlides: false
-      ratio: "16:9"
+      ratio: "191:100"
 ---
 
 ```{r setup, include=FALSE}
