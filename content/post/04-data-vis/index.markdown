@@ -36,6 +36,6 @@ projects: []
 
 <!-- Data visualisation using mainly R package `ggplot2`. -->
 
-***Slides are available only for registered participants. Thank you.***
+***Coming soon !***
 
 

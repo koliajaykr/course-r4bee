@@ -11,7 +11,7 @@ image:
   preview_only: yes
 ---
 
-***Slides are available only for registered participants. Thank you.***
+***Coming soon !***
 
 
 

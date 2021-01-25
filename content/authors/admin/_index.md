@@ -77,7 +77,7 @@ user_groups:
 
 Hi there :) 
 
-My name is Ajay. I teach this course. 
+My name is [Ajay](https://ajaykoli.netlify.app/). I teach this course. 
 
 I'm a PhD survivor with MBA in tourism studies. I love to teach data science using R statistical language. 
 

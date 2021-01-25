@@ -38,7 +38,7 @@ hero_media = "img/logo.png"
 #   Remove a link/note by deleting a cta/note block.
 [cta]
   url = "https://forms.gle/GuGJPdnKdMEAQgmP8"
-  label = "Join Now"
+  label = "Register Now | Last date 30 Jan 2021"
   #icon_pack = "fas"
   #icon = "feather"
   
@@ -49,7 +49,7 @@ hero_media = "img/logo.png"
 # using {{< icon name="r-project" pack="fab" >}}
 +++
 
-## An online certificate course <br>to learn data science 
+## Free online data science workshop using R
 
 <span style="text-shadow: none;"><a class="github-button" href="https://github.com/koliajaykr/course-r4bee" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span>
 

@@ -36,6 +36,6 @@ projects: []
 
 <!-- It includes the basics of statistics. -->
 
-***Slides are available only for registered participants. Thank you.***
+***Coming soon !***
 
 
