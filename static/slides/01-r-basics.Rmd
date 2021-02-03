@@ -15,7 +15,7 @@ output:
       slideNumberFormat: "%current%/%total%" 
       highlightLines: true
       countIncrementalSlides: false
-      ratio: "191:100"
+      ratio: "16:9"
 ---
 
 ```{r setup, include=FALSE}
@@ -53,8 +53,56 @@ background-position:
 .pull-left[
 # .center.b.white[The Basics of R]
 
-# .center.b.ttc.f3.white[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
+# .center.b.ttu.f3.orange.bg-white.pv1[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
+
+# .center.b.f3.white[ 2020-10-20 (updated on `r format( Sys.Date(),format="%d %b %Y")`)]
 ]
+
+---
+
+# What will we learn?
+
+🎯 how to create RStudio project?
+
+--
+
+🎯 how to create R Markdown document?
+
+--
+
+🎯 what the fnk is code chunk?
+
+--
+
+🎯 R as calculator?
+
+--
+
+🎯 R functions
+
+--
+
+🎯 Comments
+
+--
+
+🎯 How to install & use R packages?
+
+--
+
+🎯 R objects
+
+--
+
+🎯 What is tidy data?
+
+---
+
+## 🌼 all beautiful artwork is taken from a data scientist & artist 👩🏽‍🎨 [Allison Horst](https://www.allisonhorst.com/)
+
+## 🌼 xaringan slides are awesome due to the css file from [Alison Presmanes Hill](https://alison.rbind.io/) 🦸🏽‍♀️ and awesome-awesome  [Garrick Aden‑Buie](https://www.garrickadenbuie.com/) 🦸🏽‍♂️
+
+## 🌼 📚 a lot of learnings from the books of genius 😎 data scientists like [Hadley Wickham](http://hadley.nz/) & [Yihui Xie](https://yihui.org/en/) & [Garrett Grolemund](https://twitter.com/StatGarrett).
 
 ---
 
@@ -71,7 +119,7 @@ meta() %>%
   meta_social(
     title = "Getting started: The Basics of R",
     url = "https://r4b.netlify.app/slides/01-r-basics.html#1",
-    image = "https://r4b.netlify.app/slides/images/01-basics/01-card.jpg",
+    image = "https://r4b.netlify.app/slides/images/01-basics/01-card.png",
     og_type = "website",
     og_author = "Ajay Koli",
     twitter_card_type = "summary_large_image",
@@ -80,31 +128,32 @@ meta() %>%
   include_meta()
 ```
 
-background-image: url("images/01-basics/rstd-proj.png")
-background-size: 70%
-background-position: center bottom
-
 # Open RStudio
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/01-basics/rstd-proj.png")
+```
 
 ---
 
 class: center
 
-background-image: url("images/01-basics/rstd-proj-none.png")
-background-size: 70%
-background-position: center bottom
-
 # Open RStudio
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/01-basics/rstd-proj-none.png")
+```
+
 
 ---
 
 class: center
 
-background-image: url("images/01-basics/rstd-proj-folders.png")
-background-size: 70%
-background-position: center bottom
-
 # Open RStudio
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/01-basics/rstd-proj-folders.png")
+```
 
 ---
 
@@ -121,7 +170,7 @@ background-position: 10%
 ---
 
 background-image: url("images/01-basics/r-projects.jpg")
-background-size: 65%
+background-size: 62%
 background-position: 100% 80%
 
 # About RStudio Projects
@@ -151,38 +200,44 @@ Source: [RStudio Support](https://support.rstudio.com/hc/en-us/articles/20052620
 ]
 
 ---
+
 class: center, middle
 
-# Create R Project in 4 Steps:
+# How to create RStudio project? 🤯
 
-```{r echo=FALSE}
+---
+class: center, middle
+
+# How to create RStudio project?
+
+```{r echo=FALSE, out.width="65%"}
 knitr::include_graphics("images/01-basics/rstd-proj-1.png")
 ```
 
 ---
 class: center, middle
 
-# Create R Project in 4 Steps:
+# How to create RStudio project?
 
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="65%"}
 knitr::include_graphics("images/01-basics/rstd-proj-2.png")
 ```
 
 ---
 class: center, middle
 
-# Create R Project in 4 Steps:
+# How to create RStudio project?
 
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="65%"}
 knitr::include_graphics("images/01-basics/rstd-proj-3.png")
 ```
 
 ---
 class: center, middle
 
-# Create R Project in 4 Steps:
+# How to create RStudio project?
 
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="65%"}
 knitr::include_graphics("images/01-basics/rstd-proj-4.png")
 ```
 
@@ -190,31 +245,31 @@ knitr::include_graphics("images/01-basics/rstd-proj-4.png")
 
 class: center
 
-background-image: url("images/01-basics/rstd-project-name.png")
-background-size: 70%
-background-position: center bottom
-
 # Open RStudio Project
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/01-basics/rstd-project-name.png")
+```
 
 ---
 
 class: center
 
-background-image: url("images/01-basics/rstd-project-path.png")
-background-size: 70%
-background-position: center bottom
-
 # Open RStudio Project
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/01-basics/rstd-project-path.png")
+```
 
 ---
 
 class: center
 
-background-image: url("images/01-basics/rstd-project-path2.png")
-background-size: 70%
-background-position: center bottom
-
 # Open RStudio Project
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/01-basics/rstd-project-path2.png")
+```
 
 ---
 
@@ -222,8 +277,9 @@ class: inverse, hide-count, center, bottom
 background-image: url("images/01-basics/logo-rmd.png")
 background-size: 25%
 background-position: 50% 20%
+background-color: white
 
-# .bottom.big-text[R Markdown]
+# .bottom.big-text.black[R Markdown]
 
 ---
 
@@ -233,7 +289,7 @@ background-position: 90% 5%
 
 # About R Markdown:
 
-- "The rmarkdown package helps you create dynamic analysis documents that combine code, rendered output (such as figures), and prose."
+- "The rmarkdown package helps you create **dynamic analysis documents** that combine code, rendered output (such as figures), and prose."
 
 .footnote[
 Source: [rstudio/rmarkdown](https://github.com/rstudio/rmarkdown)
@@ -247,7 +303,7 @@ background-position: 90% 5%
 
 # About R Markdown:
 
-- You bring your data, code, and ideas, and R Markdown renders your content into a polished document that can be used to:
+- "You bring your data, code, and ideas, and R Markdown renders your content into a polished document that can be used to:
 
   - Do data science interactively within the RStudio IDE,
 
@@ -255,7 +311,7 @@ background-position: 90% 5%
 
   - Collaborate and share code with others, and
 
-  - Communicate your results with others.
+  - Communicate your results with others."
 
 
 .footnote[
@@ -264,63 +320,118 @@ Source: [rstudio/rmarkdown](https://github.com/rstudio/rmarkdown)
 
 ---
 
-class: center
+class: middle, center
 
-background-image: url("images/01-basics/script-new.png")
-background-size: 68%
-background-position: center bottom
+# R Markdown 💫
+
+<iframe src="https://player.vimeo.com/video/178485416?color=428bca" width="840" height="500" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/178485416">What is R Markdown?</a> from <a href="https://vimeo.com/rstudioinc">RStudio, Inc.</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+---
+class: center, middle
+
+# How to create a new R Markdown <br>(.Rmd) file? 🤔
+
+---
+
+class: center
 
 # File $\rightarrow$ New File $\rightarrow$ R Markdown
 
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/01-basics/script-new.png")
+```
+
 ---
 
 class: center
-
-background-image: url("images/01-basics/script-options.png")
-background-size: 63%
-background-position: center bottom
 
 # R Markdown
 
+```{r echo=FALSE, out.width="65%"}
+knitr::include_graphics("images/01-basics/script-options.png")
+```
+
 ---
 
 class: center
-
-background-image: url("images/01-basics/script-options1.png")
-background-size: 63%
-background-position: center bottom
 
 # R Markdown
 
+```{r echo=FALSE, out.width="65%"}
+knitr::include_graphics("images/01-basics/script-options1.png")
+```
+
 ---
 
 class: center
-
-background-image: url("images/01-basics/script-options2.png")
-background-size: 63%
-background-position: center bottom
 
 # R Markdown
 
+```{r echo=FALSE, out.width="65%"}
+knitr::include_graphics("images/01-basics/script-options2.png")
+```
+
 ---
 
 class: center
-
-background-image: url("images/01-basics/script-options3.png")
-background-size: 63%
-background-position: center bottom
 
 # R Markdown
 
+```{r echo=FALSE, out.width="65%"}
+knitr::include_graphics("images/01-basics/script-options3.png")
+```
+
 ---
 
 class: center
 
-background-image: url("images/01-basics/script-saved.png")
-background-size: 68%
-background-position: center bottom
+# Save your .Rmd file
 
-# Save Rmd file $\rightarrow$ in RStudio Project
+```{r echo=FALSE, out.width="65%"}
+knitr::include_graphics("images/01-basics/script-save.png")
+```
+
+---
+
+class: center
+
+# Name your .Rmd file
+
+```{r echo=FALSE, out.width="85%"}
+knitr::include_graphics("images/01-basics/script-title.png")
+```
+
+---
+
+class: center
+
+# Name your .Rmd file
+
+```{r echo=FALSE, out.width="85%"}
+knitr::include_graphics("images/01-basics/script-title1.png")
+```
+
+---
+
+class: center
+
+# Save your .Rmd file
+
+```{r echo=FALSE, out.width="85%"}
+knitr::include_graphics("images/01-basics/script-title2.png")
+```
+
+
+---
+
+class: center
+
+# Saved .Rmd file $\rightarrow$ in RStudio Project
+
+```{r echo=FALSE, out.width="95%"}
+knitr::include_graphics("images/01-basics/script-saved.png")
+```
 
 ---
 
@@ -367,18 +478,25 @@ background-position: center bottom
 # R Script $\rightarrow$ Console $\rightarrow$ Output
 
 ---
+class: center, middle
 
-# To get output of R Markdown file:
-
-- Click the `Knit` button
-
-```{r out.width="50%", echo=FALSE}
-knitr::include_graphics("images/01-basics/knit.png")
+.pull-left[
+```{r out.width="100%", echo=FALSE}
+knitr::include_graphics("images/01-basics/rmd-input.png")
 ```
+]
 
---
+.pull-right[
+```{r out.width="100%", echo=FALSE}
+knitr::include_graphics("images/01-basics/rmd-output.png")
+```
+]
 
-- or use the keyboard shortcut `ctrl + shift + k`  
+---
+
+background-image: url("images/01-basics/knit-html.png")
+background-size: contain
+background-position: center middle
 
 ---
 
@@ -447,7 +565,7 @@ knitr::include_graphics("images/01-basics/code-chunk.png")
 
 --
 
-- click the `insert` option in RStudio
+- Using RStudio
 
 ```{r echo=FALSE, out.width="75%"}
 knitr::include_graphics("images/01-basics/chunk-insert.png")
@@ -832,11 +950,11 @@ background-position: 50% 5%
 
 # R Comment:
 
-- "a comment is a programmer-readable explanation or annotation in the source code of a computer program." <sup>1</sup>
+- "a comment is a programmer-readable **explanation** or annotation in the source code of a computer program." <sup>1</sup>
 
 --
 
-- "Humans will be able to read the comments, but your computer will pass over them."
+- "Humans will be able to read the comments, but your **computer will pass** over them."
 
 --
 
@@ -886,7 +1004,7 @@ background-size: 25%, 30%, 22%, 20%, 20%
 
 class: center
 
-# Download (Tools $\rightarrow$ Install Packages)
+# Download pkgs (Tools $\rightarrow$ Install Packages)
 
 ```{r echo=FALSE, out.width="100%"}
 knitr::include_graphics("images/01-basics/pkg-download1.png")
@@ -946,12 +1064,6 @@ library(tidyverse)
 
 ## .center[Code]
 
-```{r lib21, eval=FALSE, echo=TRUE}
-# this pkd is installed
-
-library(tidyverse)
-```
-
 ```{r lib22, eval=FALSE, echo=TRUE}
 # this pkg is not installed
 
@@ -963,10 +1075,6 @@ library(vcd)
 .pull-right[
 
 ## .center[Output]
-
-```{r ref.label="lib21", echo=FALSE}
-
-```
 
 ```{r lib23, echo=T, eval=FALSE}
 <packageNotFoundError in library(vcd): there is no package called 'vcd'>
@@ -1159,7 +1267,7 @@ knitr::include_graphics("images/01-basics/env-rstd.png")
 
 --
 
-## 🤷🏽‍♂️  * how to convert these<br> objects/ variables into a **tidy** data*
+## 🤷🏽‍♂️  * how to convert these<br> objects/ variables into a data or say **tidy** data* 🙀🙀
 
 ---
 
@@ -1195,7 +1303,7 @@ background-size: contain
 
 class: center
 
-# Tidy data should look like 👇
+# Tidy data 👇 😻😻😻
 
 ```{r, echo=FALSE}
 soc <- data.frame(
@@ -1221,7 +1329,7 @@ Source: [Book of Hadley & Grolemund](https://r4ds.had.co.nz/index.html)
 
 ---
 
-# .center[Create Data Object]
+# .center[How to create a data object?]
 
 .panelset[
   
@@ -1299,6 +1407,44 @@ objects() #<<
   ]
   
 ]
+
+---
+
+# What did we learn?
+
+🎯 how to create RStudio project? ✅
+
+--
+
+🎯 how to create R Markdown document? ✅
+
+--
+
+🎯 what the fnk is code chunk? ✅
+
+--
+
+🎯 R as calculator? ✅
+
+--
+
+🎯 R functions ✅
+
+--
+
+🎯 Comments ✅
+
+--
+
+🎯 How to install & use R packages? ✅
+
+--
+
+🎯 R objects ✅
+
+--
+
+🎯 What is tidy data? ✅
 
 ---
 

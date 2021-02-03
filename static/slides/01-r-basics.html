@@ -4,7 +4,7 @@
     <title>Getting started: The Basics of R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Ajay Koli" />
-    <meta name="date" content="2021-02-01" />
+    <meta name="date" content="2021-02-03" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
@@ -27,14 +27,14 @@
     <meta name="twitter:title" content="Getting started: The Basics of R"/>
     <meta name="twitter:description" content="RStudio projects, R scripts, functions, comments, packages &amp; R objects"/>
     <meta name="twitter:url" content="https://r4b.netlify.app/slides/01-r-basics.html#1"/>
-    <meta name="twitter:image:src" content="https://r4b.netlify.app/slides/images/01-basics/01-card.jpg"/>
+    <meta name="twitter:image:src" content="https://r4b.netlify.app/slides/images/01-basics/01-card.png"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:creator" content="@koliajaykr"/>
     <meta name="twitter:site" content="@koliajaykr"/>
     <meta property="og:title" content="Getting started: The Basics of R"/>
     <meta property="og:description" content="RStudio projects, R scripts, functions, comments, packages &amp; R objects"/>
     <meta property="og:url" content="https://r4b.netlify.app/slides/01-r-basics.html#1"/>
-    <meta property="og:image" content="https://r4b.netlify.app/slides/images/01-basics/01-card.jpg"/>
+    <meta property="og:image" content="https://r4b.netlify.app/slides/images/01-basics/01-card.png"/>
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_US"/>
     <meta property="article:author" content="Ajay Koli"/>
@@ -61,40 +61,83 @@ background-position:
 .pull-left[
 # .center.b.white[The Basics of R]
 
-# .center.b.ttc.f3.white[Topic - 1 | Ajay Koli]
+# .center.b.ttu.f3.orange.bg-white.pv1[Topic - 1 | Ajay Koli]
+
+# .center.b.f3.white[ 2020-10-20 (updated on 03 Feb 2021)]
 ]
 
 ---
 
-class: center
+# What will we learn?
 
+🎯 how to create RStudio project?
 
+--
 
-background-image: url("images/01-basics/rstd-proj.png")
-background-size: 70%
-background-position: center bottom
+🎯 how to create R Markdown document?
 
-# Open RStudio
+--
+
+🎯 what the fnk is code chunk?
+
+--
+
+🎯 R as calculator?
+
+--
+
+🎯 R functions
+
+--
+
+🎯 Comments
+
+--
+
+🎯 How to install &amp; use R packages?
+
+--
+
+🎯 R objects
+
+--
+
+🎯 What is tidy data?
+
+---
+
+## 🌼 all beautiful artwork is taken from a data scientist &amp; artist 👩🏽‍🎨 [Allison Horst](https://www.allisonhorst.com/)
+
+## 🌼 xaringan slides are awesome due to the css file from [Alison Presmanes Hill](https://alison.rbind.io/) 🦸🏽‍♀️ and awesome-awesome  [Garrick Aden‑Buie](https://www.garrickadenbuie.com/) 🦸🏽‍♂️
+
+## 🌼 📚 a lot of learnings from the books of genius 😎 data scientists like [Hadley Wickham](http://hadley.nz/) &amp; [Yihui Xie](https://yihui.org/en/) &amp; [Garrett Grolemund](https://twitter.com/StatGarrett).
 
 ---
 
 class: center
 
-background-image: url("images/01-basics/rstd-proj-none.png")
-background-size: 70%
-background-position: center bottom
+
 
 # Open RStudio
+
+&lt;img src="images/01-basics/rstd-proj.png" width="90%" /&gt;
 
 ---
 
 class: center
 
-background-image: url("images/01-basics/rstd-proj-folders.png")
-background-size: 70%
-background-position: center bottom
+# Open RStudio
+
+&lt;img src="images/01-basics/rstd-proj-none.png" width="90%" /&gt;
+
+
+---
+
+class: center
 
 # Open RStudio
+
+&lt;img src="images/01-basics/rstd-proj-folders.png" width="90%" /&gt;
 
 ---
 
@@ -111,7 +154,7 @@ background-position: 10%
 ---
 
 background-image: url("images/01-basics/r-projects.jpg")
-background-size: 65%
+background-size: 62%
 background-position: 100% 80%
 
 # About RStudio Projects
@@ -141,62 +184,62 @@ Source: [RStudio Support](https://support.rstudio.com/hc/en-us/articles/20052620
 ]
 
 ---
+
 class: center, middle
 
-# Create R Project in 4 Steps:
-
-&lt;img src="images/01-basics/rstd-proj-1.png" width="500" /&gt;
+# How to create RStudio project? 🤯
 
 ---
 class: center, middle
 
-# Create R Project in 4 Steps:
+# How to create RStudio project?
 
-&lt;img src="images/01-basics/rstd-proj-2.png" width="500" /&gt;
-
----
-class: center, middle
-
-# Create R Project in 4 Steps:
-
-&lt;img src="images/01-basics/rstd-proj-3.png" width="500" /&gt;
+&lt;img src="images/01-basics/rstd-proj-1.png" width="65%" /&gt;
 
 ---
 class: center, middle
 
-# Create R Project in 4 Steps:
+# How to create RStudio project?
 
-&lt;img src="images/01-basics/rstd-proj-4.png" width="500" /&gt;
+&lt;img src="images/01-basics/rstd-proj-2.png" width="65%" /&gt;
+
+---
+class: center, middle
+
+# How to create RStudio project?
+
+&lt;img src="images/01-basics/rstd-proj-3.png" width="65%" /&gt;
+
+---
+class: center, middle
+
+# How to create RStudio project?
+
+&lt;img src="images/01-basics/rstd-proj-4.png" width="65%" /&gt;
 
 ---
 
 class: center
 
-background-image: url("images/01-basics/rstd-project-name.png")
-background-size: 70%
-background-position: center bottom
-
 # Open RStudio Project
+
+&lt;img src="images/01-basics/rstd-project-name.png" width="90%" /&gt;
 
 ---
 
 class: center
 
-background-image: url("images/01-basics/rstd-project-path.png")
-background-size: 70%
-background-position: center bottom
-
 # Open RStudio Project
+
+&lt;img src="images/01-basics/rstd-project-path.png" width="90%" /&gt;
 
 ---
 
 class: center
 
-background-image: url("images/01-basics/rstd-project-path2.png")
-background-size: 70%
-background-position: center bottom
-
 # Open RStudio Project
+
+&lt;img src="images/01-basics/rstd-project-path2.png" width="90%" /&gt;
 
 ---
 
@@ -204,8 +247,9 @@ class: inverse, hide-count, center, bottom
 background-image: url("images/01-basics/logo-rmd.png")
 background-size: 25%
 background-position: 50% 20%
+background-color: white
 
-# .bottom.big-text[R Markdown]
+# .bottom.big-text.black[R Markdown]
 
 ---
 
@@ -215,7 +259,7 @@ background-position: 90% 5%
 
 # About R Markdown:
 
-- "The rmarkdown package helps you create dynamic analysis documents that combine code, rendered output (such as figures), and prose."
+- "The rmarkdown package helps you create **dynamic analysis documents** that combine code, rendered output (such as figures), and prose."
 
 .footnote[
 Source: [rstudio/rmarkdown](https://github.com/rstudio/rmarkdown)
@@ -229,7 +273,7 @@ background-position: 90% 5%
 
 # About R Markdown:
 
-- You bring your data, code, and ideas, and R Markdown renders your content into a polished document that can be used to:
+- "You bring your data, code, and ideas, and R Markdown renders your content into a polished document that can be used to:
 
   - Do data science interactively within the RStudio IDE,
 
@@ -237,7 +281,7 @@ background-position: 90% 5%
 
   - Collaborate and share code with others, and
 
-  - Communicate your results with others.
+  - Communicate your results with others."
 
 
 .footnote[
@@ -246,63 +290,98 @@ Source: [rstudio/rmarkdown](https://github.com/rstudio/rmarkdown)
 
 ---
 
-class: center
+class: middle, center
 
-background-image: url("images/01-basics/script-new.png")
-background-size: 68%
-background-position: center bottom
+# R Markdown 💫
+
+&lt;iframe src="https://player.vimeo.com/video/178485416?color=428bca" width="840" height="500" frameborder="0" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/178485416"&gt;What is R Markdown?&lt;/a&gt; from &lt;a href="https://vimeo.com/rstudioinc"&gt;RStudio, Inc.&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+---
+class: center, middle
+
+# How to create a new R Markdown &lt;br&gt;(.Rmd) file? 🤔
+
+---
+
+class: center
 
 # File `\(\rightarrow\)` New File `\(\rightarrow\)` R Markdown
 
+&lt;img src="images/01-basics/script-new.png" width="90%" /&gt;
+
 ---
 
 class: center
-
-background-image: url("images/01-basics/script-options.png")
-background-size: 63%
-background-position: center bottom
 
 # R Markdown
 
+&lt;img src="images/01-basics/script-options.png" width="65%" /&gt;
+
 ---
 
 class: center
-
-background-image: url("images/01-basics/script-options1.png")
-background-size: 63%
-background-position: center bottom
 
 # R Markdown
 
+&lt;img src="images/01-basics/script-options1.png" width="65%" /&gt;
+
 ---
 
 class: center
-
-background-image: url("images/01-basics/script-options2.png")
-background-size: 63%
-background-position: center bottom
 
 # R Markdown
 
+&lt;img src="images/01-basics/script-options2.png" width="65%" /&gt;
+
 ---
 
 class: center
-
-background-image: url("images/01-basics/script-options3.png")
-background-size: 63%
-background-position: center bottom
 
 # R Markdown
 
+&lt;img src="images/01-basics/script-options3.png" width="65%" /&gt;
+
 ---
 
 class: center
 
-background-image: url("images/01-basics/script-saved.png")
-background-size: 68%
-background-position: center bottom
+# Save your .Rmd file
 
-# Save Rmd file `\(\rightarrow\)` in RStudio Project
+&lt;img src="images/01-basics/script-save.png" width="65%" /&gt;
+
+---
+
+class: center
+
+# Name your .Rmd file
+
+&lt;img src="images/01-basics/script-title.png" width="85%" /&gt;
+
+---
+
+class: center
+
+# Name your .Rmd file
+
+&lt;img src="images/01-basics/script-title1.png" width="85%" /&gt;
+
+---
+
+class: center
+
+# Save your .Rmd file
+
+&lt;img src="images/01-basics/script-title2.png" width="85%" /&gt;
+
+
+---
+
+class: center
+
+# Saved .Rmd file `\(\rightarrow\)` in RStudio Project
+
+&lt;img src="images/01-basics/script-saved.png" width="95%" /&gt;
 
 ---
 
@@ -349,16 +428,21 @@ background-position: center bottom
 # R Script `\(\rightarrow\)` Console `\(\rightarrow\)` Output
 
 ---
+class: center, middle
 
-# To get output of R Markdown file:
+.pull-left[
+&lt;img src="images/01-basics/rmd-input.png" width="100%" /&gt;
+]
 
-- Click the `Knit` button
+.pull-right[
+&lt;img src="images/01-basics/rmd-output.png" width="100%" /&gt;
+]
 
-&lt;img src="images/01-basics/knit.png" width="50%" /&gt;
+---
 
---
-
-- or use the keyboard shortcut `ctrl + shift + k`  
+background-image: url("images/01-basics/knit-html.png")
+background-size: contain
+background-position: center middle
 
 ---
 
@@ -425,7 +509,7 @@ background-position: 50% 15%
 
 --
 
-- click the `insert` option in RStudio
+- Using RStudio
 
 &lt;img src="images/01-basics/chunk-insert.png" width="75%" /&gt;
 
@@ -837,11 +921,11 @@ background-position: 50% 5%
 
 # R Comment:
 
-- "a comment is a programmer-readable explanation or annotation in the source code of a computer program." &lt;sup&gt;1&lt;/sup&gt;
+- "a comment is a programmer-readable **explanation** or annotation in the source code of a computer program." &lt;sup&gt;1&lt;/sup&gt;
 
 --
 
-- "Humans will be able to read the comments, but your computer will pass over them."
+- "Humans will be able to read the comments, but your **computer will pass** over them."
 
 --
 
@@ -893,7 +977,7 @@ background-size: 25%, 30%, 22%, 20%, 20%
 
 class: center
 
-# Download (Tools `\(\rightarrow\)` Install Packages)
+# Download pkgs (Tools `\(\rightarrow\)` Install Packages)
 
 &lt;img src="images/01-basics/pkg-download1.png" width="100%" /&gt;
 
@@ -951,13 +1035,6 @@ library(tidyverse)
 
 
 ```r
-# this pkd is installed
-
-library(tidyverse)
-```
-
-
-```r
 # this pkg is not installed
 
 library(vcd)
@@ -968,8 +1045,6 @@ library(vcd)
 .pull-right[
 
 ## .center[Output]
-
-
 
 
 ```r
@@ -1171,7 +1246,7 @@ class: center
 
 --
 
-## 🤷🏽‍♂️  * how to convert these&lt;br&gt; objects/ variables into a **tidy** data*
+## 🤷🏽‍♂️  * how to convert these&lt;br&gt; objects/ variables into a data or say **tidy** data* 🙀🙀
 
 ---
 
@@ -1207,7 +1282,7 @@ background-size: contain
 
 class: center
 
-# Tidy data should look like 👇
+# Tidy data 👇 😻😻😻
 
 
 ```
@@ -1229,7 +1304,7 @@ Source: [Book of Hadley &amp; Grolemund](https://r4ds.had.co.nz/index.html)
 
 ---
 
-# .center[Create Data Object]
+# .center[How to create a data object?]
 
 .panelset[
   
@@ -1271,7 +1346,7 @@ class: your-turn, hide-count
 
 # Your turn 🏋🏽‍♂️ 
 
-<div class="countdown" id="timer_6017fdc3" style="top:0;right:0;font-size:3em;" data-warnwhen="0">
+<div class="countdown" id="timer_601a4eb9" style="top:0;right:0;font-size:3em;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1318,6 +1393,44 @@ class: your-turn, hide-count
 
 ---
 
+# What did we learn?
+
+🎯 how to create RStudio project? ✅
+
+--
+
+🎯 how to create R Markdown document? ✅
+
+--
+
+🎯 what the fnk is code chunk? ✅
+
+--
+
+🎯 R as calculator? ✅
+
+--
+
+🎯 R functions ✅
+
+--
+
+🎯 Comments ✅
+
+--
+
+🎯 How to install &amp; use R packages? ✅
+
+--
+
+🎯 R objects ✅
+
+--
+
+🎯 What is tidy data? ✅
+
+---
+
 class: center, middle, inverse, hide-count
 
 ### Next Session
@@ -1334,7 +1447,7 @@ class: center, middle, inverse, hide-count
 "slideNumberFormat": "%current%/%total%",
 "highlightLines": true,
 "countIncrementalSlides": false,
-"ratio": "191:100"
+"ratio": "16:9"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
