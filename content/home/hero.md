@@ -37,8 +37,8 @@ hero_media = "img/logo.png"
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.
 #   Remove a link/note by deleting a cta/note block.
 [cta]
-  url = "https://forms.gle/GuGJPdnKdMEAQgmP8"
-  label = "Register Now | Last date 30 Jan 2021"
+  #url = "https://forms.gle/GuGJPdnKdMEAQgmP8"
+  #label = "Register Now | Last date 30 Jan 2021"
   #icon_pack = "fas"
   #icon = "feather"
   

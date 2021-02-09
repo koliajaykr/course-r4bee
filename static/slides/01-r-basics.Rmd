@@ -561,7 +561,7 @@ knitr::include_graphics("images/01-basics/code-chunk.png")
 
 # New code chunk
 
-- To insert a new code chunk use `Ctrl + Alt + i`
+- To insert a new code chunk use `Ctrl + Alt + i` for Windows & `option + command + i` for macOS
 
 --
 
@@ -958,7 +958,7 @@ background-position: 50% 5%
 
 --
 
-- `#` is used as a commenting symbol
+- in R `#` is used as a commenting symbol
 
 .footnote[
 [1]. Source: [Wikipedia](https://en.wikipedia.org/wiki/Comment_(computer_programming)
@@ -996,7 +996,7 @@ class: inverse, middle, right, hide-count
 
 background-image: url("images/01-basics/amelia.png"), url("images/01-basics/amelia2.jpg"), url("images/01-basics/amelia3.jpg"), url("images/01-basics/amelia4.jpg"), url("images/00-welcome/tidyverse_celestial.png")
 background-position: 0% 0%, 50% 0%, 0% 100%, 90% 0%, 50% 100%
-background-size: 25%, 30%, 22%, 20%, 20%
+background-size: 25%, 30%, 22%, 20%, 20%, 20%
 
 # .big-text[R Packages]
 
@@ -1004,7 +1004,7 @@ background-size: 25%, 30%, 22%, 20%, 20%
 
 class: center
 
-# Download pkgs (Tools $\rightarrow$ Install Packages)
+# Download pkgs <br>(Tools $\rightarrow$ Install Packages)
 
 ```{r echo=FALSE, out.width="100%"}
 knitr::include_graphics("images/01-basics/pkg-download1.png")

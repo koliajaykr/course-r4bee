@@ -42,6 +42,7 @@ xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code 
 #xaringanExtra::use_share_again()
 xaringanExtra::use_panelset()
 #<a class="footer-link" href="https://r4b.netlify.app/">r4b/share</a>
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
 ```
 
 layout: true
@@ -56,32 +57,27 @@ background-position:
 .pull-left[
 # .center.b.white[Data <br>Wrangling]
 
-# .center.b.ttc.f3.white[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
+# .center.b.ttu.f3.orange.bg-white.pv1[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
+
+# .center.b.f3.white[ 2020-10-20 (updated on `r Sys.Date()`)]
+
 <br><br><br>
 ]
 
 ---
 
-# Check that:
-
- `r emo::ji("check")` internet is working on your computer
-
-`r emo::ji("check")` you are working in your RStudio Project
-
-`r emo::ji("check")` keep a notebook ready to write technical terms
-
----
-
 class: center
-background-image: url(images/02-wrangling/data-science-wrangle.png)
-background-size: 75%
-background-position: 50% 55%
 
 # Course Progress
 
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/02-wrangling/data-science-wrangle.png")
+```
+
+
 ---
 
-# Objectives:
+# `r emo::ji("dart")` Objectives:
 
 1.   To import & export data
 
@@ -99,7 +95,7 @@ background-position: 50% 55%
 
 ---
 
-# Data wrangling:
+# What is Data wrangling?
 
 --
 
@@ -127,11 +123,11 @@ background-position: 50% 55%
 
 --
 
-- creating new variables that are functions of existing variables ... and
+- creating **new variables** that are functions of existing variables ... and
 
 --
 
-- calculating a set of summary statistics." [(Hadley & Garrett)](https://r4ds.had.co.nz/index.html)
+- calculating a set of **summary statistics**." [(Hadley & Garrett)](https://r4ds.had.co.nz/index.html)
 
 ---
 
@@ -141,23 +137,28 @@ class: inverse, center, middle, hide-count
 
 ---
 
-background-image: url(images/02-wrangling/palmer.png)
-background-size: 70%
-background-position: 95% 65%
-
 # Palmer penguins data
 
-- [Palmer Staion, Antarctica LTER](https://pal.lternet.edu/)
+[Palmer Staion, Antarctica LTER](https://pal.lternet.edu/)
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/02-wrangling/palmer.png")
+```
+
 
 ---
 
-background-image: url(images/02-wrangling/lter_penguins.png)
-background-size: 55%
-background-position: 95% 70%
+```{r echo=FALSE, message=FALSE}
+penguins <- read_csv("data/penguins.csv")
+```
 
-# Penguin data variables
+# Included variables are:
 
 - `r names(penguins)`
+
+```{r echo=FALSE, out.width="70%", fig.align='center'}
+knitr::include_graphics("images/02-wrangling/lter_penguins.png")
+```
 
 .footnote[
 Artwork by [@allison_horst](https://www.allisonhorst.com/)
@@ -165,13 +166,13 @@ Artwork by [@allison_horst](https://www.allisonhorst.com/)
 
 ---
 
-background-image: url(images/02-wrangling/culmen_depth.png)
-background-size: 55%
-background-position: 95% 70%
-
-# Penguin data variables
+# Included variables are:
 
 - `r names(penguins)`
+
+```{r echo=FALSE, out.width="68%", fig.align='center'}
+knitr::include_graphics("images/02-wrangling/culmen_depth.png")
+```
 
 .footnote[
 Artwork by [@allison_horst](https://www.allisonhorst.com/)
@@ -179,14 +180,12 @@ Artwork by [@allison_horst](https://www.allisonhorst.com/)
 
 ---
 
-class: middle, inverse, hide-count
+class: center, bottom, hide-count, inverse
 background-image: url(images/02-wrangling/readr.svg)
-background-size: 40%
-background-position: 95% 50%
+background-size: 33%
+background-position: 50% 50%
 
-.pull-left[
-# .center.big-text[`readr` <br>pkg]
-]
+# readr package
 
 ---
 
@@ -196,7 +195,7 @@ background-position: 90% 5%
 
 # `readr` pkg
 
-- "to provide a fast and friendly way to read **rectangular** data (like csv, tsv, and fwf)".
+- "to provide a fast and friendly way to **read rectangular** data (like csv, tsv, and fwf)".
 
 --
 
@@ -216,7 +215,7 @@ Source: [tidyverse](https://readr.tidyverse.org/)
 # import data
 library(readr)
 
-penguins <- read_csv("data/penguins.csv")
+penguins <- read_csv("data/penguins.csv") #<<
 
 penguins
 
@@ -235,7 +234,31 @@ penguins
 
 ---
 
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r summry-data, eval=FALSE}
+summary(penguins) #<<
+
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="summry-data", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
 # Variable types in R:
+
+--
 
 - `int` stands for integers, like 4, 55, 300.
 
@@ -245,7 +268,7 @@ penguins
 
 --
 
-- `chr` stands for character vectors, or strings.
+- `chr` stands for character vectors, or strings like names.
 
 --
 
@@ -257,7 +280,7 @@ penguins
 
 --
 
-- `fct` stands for factors, which R uses to represent categorical variables with fixed possible values.
+- `fct` stands for factors, which R uses to represent **categorical variables** with fixed possible values like occupation: student, professional, government, business.
 
 --
 
@@ -305,7 +328,7 @@ penguins
 
 ```{r col-types, eval=FALSE}
 penguins <- read_csv("data/penguins.csv",
-  col_types = cols( 
+  col_types = cols(  #<<
     species = col_factor(),
     island = col_factor(),
     bill_length_mm = col_double(),
@@ -317,7 +340,7 @@ penguins <- read_csv("data/penguins.csv",
   )
 )
 
-penguins
+summary(penguins)
 ```
 ]
 
@@ -332,120 +355,56 @@ penguins
 
 ---
 
-.panelset[
-
-.panel[.panel-name[Codes]
-
-```{r summ-data2, eval=FALSE}
-summary(penguins)
-```
-]
-
-.panel[.panel-name[Output]
-
-```{r ref.label="summ-data2", echo=FALSE, message=FALSE}
-
-```
-
-]
-]
-
----
-
-class: middle, inverse, hide-count
-background-image: url(images/02-wrangling/logo-skimr.png)
-background-size: 40%
-background-position: 95% 55%
-
-.pull-left[
-# .center.big-text[`skimr` pkg]
-]
-
----
-
-background-image: url(images/02-wrangling/logo-skimr.png)
-background-size: 10%
-background-position: 93% 1%
-
-# `skimr` pkg
-
-- "displaying summary statistics the user can skim quickly to understand their data"
-
-- function is `skim()`
-
-.footnote[
-Source: [rOpenSci](https://docs.ropensci.org/skimr/) 
-]
-
----
-
-.panelset[
-
-.panel[.panel-name[Codes]
-
-```{r summ-data, eval=FALSE}
-# install.packages("skimr")
-
-library(skimr)
-
-skim(penguins)
-```
-]
-
-.panel[.panel-name[Output]
-
-```{r ref.label="summ-data", echo=FALSE, message=FALSE}
-
-```
-
-]
-]
-
----
-
-class: middle, inverse, hide-count
+class: hide-count, center, bottom, inverse
 background-image: url(images/02-wrangling/dplyr.svg)
-background-size: 60%
-background-position: 100% 60%
+background-size: 50%
+background-position: 50% 50%
 
-.pull-left[
-# .center.big-text[`dplyr` pkg]
-]
+
+# dplyr package
+
+
 ---
 
 background-image: url(images/02-wrangling/logo-dplyr.png)
 background-size: 10%
 background-position: 97% 5%
 
-# `dplyr` pkg to
+# `dplyr` pkg
 
-1. to get an overview of data use `glimpse()`.
-
---
-
-1. "Pick observations by their values `filter()`."
+- "dplyr is a grammar of data manipulation"
 
 --
 
-1. "Reorder the rows `arrange()`."
+- "providing a consistent set of verbs that help you solve the most common data manipulation challenges:"
 
 --
 
-1. "Pick variables by their names `select()`."
+  - `filter()` picks cases based on their values.
 
 --
 
-1. "Create new variables with functions of existing variables `mutate()`."
+  - `select()` picks variables based on their names.
 
 --
 
-1. "Collapse many values down to a single summary `summarise()`."
+  - `mutate()` adds new variables that are functions of existing variables
+
+--
+    
+  - `arrange()` changes the ordering of the rows.
+
+--
+
+  - `summarise()` reduces multiple values down to a single summary.
 
 .footnote[
-Source: [Hadley & Garrett](https://r4ds.had.co.nz/transform.html) & [tidyverse](https://dplyr.tidyverse.org/)
+Source: [tidyverse](https://dplyr.tidyverse.org/)
 ]
 
 ---
+
+# To get a glimpse `r emo::ji("eyes")` of your data
 
 .panelset[
 
@@ -454,7 +413,7 @@ Source: [Hadley & Garrett](https://r4ds.had.co.nz/transform.html) & [tidyverse](
 ```{r glmp-data, eval=FALSE}
 library(dplyr)
 
-glimpse(penguins)
+glimpse(penguins) #<<
 ```
 ]
 
@@ -468,14 +427,23 @@ glimpse(penguins)
 ]
 
 ---
+class: center, middle, inverse, hide-count
 
 # `filter()` function
 
-- "Pick observations by their values."
+---
 
-```{r filter-img, echo=FALSE, fig.align='center'}
+# `filter()` function: Picks cases based on their values.
+
+```{r filter-img, echo=FALSE, fig.align='center', out.width="65%"}
 knitr::include_graphics("images/02-wrangling/01-filter.png")
 ```
+
+---
+
+class: center, middle 
+
+# How to have a data of only Gentoo penguins?
 
 ---
 
@@ -486,7 +454,7 @@ knitr::include_graphics("images/02-wrangling/01-filter.png")
 ```{r filter-fun, eval=FALSE}
 # three species are Chinstrap, Gentoo, Adelie
 penguins %>% 
-  filter(species == "Gentoo")
+  filter(species == "Gentoo") #<<
 ```
 ]
 
@@ -498,6 +466,57 @@ penguins %>%
 
 ]
 ]
+
+---
+
+class: center, middle
+
+# How to import data file to your computer?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r filter-fun1, eval=FALSE}
+# three species are Chinstrap, Gentoo, Adelie
+penguins %>% 
+  filter(species == "Gentoo") %>% 
+  write_csv("data/gentoo-penguins.csv") #<<
+
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="filter-fun1", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+# But wait `r emo::ji("policeman")` what the hell is `%>% `
+
+--
+
+- this is called **pipe** ( `%>%` = control + shift + m)
+
+--
+
+- "a powerful tool for clearly expressing a sequence of **multiple operations**"
+
+--
+
+- interpret/read it as **then**.
+
+```{r echo=T, eval=FALSE}
+penguins %>% 
+  filter(species == "Gentoo")
+```
 
 ---
 
@@ -526,6 +545,11 @@ penguins %>%
 `x != y` (not equal)
 
 ---
+class: center, middle 
+
+# How to have a data of penguins with bill length more than 43 mm?
+
+---
 
 .panelset[
 
@@ -547,7 +571,11 @@ penguins %>%
 ]
 
 ---
+class: center, middle 
 
+# How to have a data of Gentoo penguins with bill length more than 50 mm?
+
+---
 .panelset[
 
 .panel[.panel-name[Codes]
@@ -555,7 +583,7 @@ penguins %>%
 ```{r filter-fun3, eval=FALSE}
 penguins %>% 
   filter(species == "Gentoo",
-         bill_length_mm > 45)
+         bill_length_mm > 50)
 ```
 ]
 
@@ -567,6 +595,11 @@ penguins %>%
 
 ]
 ]
+
+---
+class: center, middle 
+
+# How to have data of non-Gentoo penguins with bill length more than 45 mm and weight more than 4 kg?
 
 ---
 
@@ -592,6 +625,11 @@ penguins %>%
 ]
 
 ---
+class: center, middle
+
+# How to have only top or bottom rows from data?
+
+---
 
 .panelset[
 
@@ -602,7 +640,7 @@ penguins %>%
   filter(species != "Gentoo",
          bill_length_mm > 45,
          body_mass_g > 4000) %>% 
-  head()
+  head(3) #<<
 ```
 ]
 
@@ -615,140 +653,47 @@ penguins %>%
 ]
 ]
 
-
 ---
 
-# dplyr function `arrange()`:
+.panelset[
 
-- chooses rows based on column values.
+.panel[.panel-name[Codes]
 
-<br>
+```{r filter-fun42, eval=FALSE}
+penguins %>% 
+  filter(species != "Gentoo",
+         bill_length_mm > 45,
+         body_mass_g > 4000) %>% 
+  tail() #<<
+```
+]
 
-```{r arrange-img, echo=FALSE, fig.align='center'}
-knitr::include_graphics("images/02-wrangling/02-arrange.png")
+.panel[.panel-name[Output]
+
+```{r ref.label="filter-fun42", echo=FALSE, message=FALSE}
+
 ```
 
+]
+]
+
+---
+class: center, middle, inverse, hide-count
+
+# `select()` function
+
 ---
 
-# dplyr function `select()`:
+# `select()` function: Chooses rows based on column values.
 
-- chooses rows based on column values.
-
-<br>
-
-```{r select-img, echo=FALSE, fig.align='center'}
+```{r select-img, echo=FALSE, fig.align='center', out.width="60%"}
 knitr::include_graphics("images/02-wrangling/03-select.png")
 ```
 
 ---
+class: center, middle
 
-# dplyr function `mutate()`:
-
-- chooses rows based on column values.
-
-<br>
-
-```{r mutate-img, echo=FALSE, fig.align='center'}
-knitr::include_graphics("images/02-wrangling/04-mutate.png")
-```
-
----
-
-# dplyr function `summarise()`:
-
-- chooses rows based on column values.
-
-<br>
-
-```{r summ-img, echo=FALSE, fig.align='center'}
-knitr::include_graphics("images/02-wrangling/05-summarise.png")
-```
-
-
-
----
-
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `arrange()` function:
-
-- changes the order of the rows.
-
----
-
-.panelset[
-
-.panel[.panel-name[Codes]
-
-```{r arg-fun, eval=FALSE}
-penguins %>% 
-  arrange(body_mass_g)
-```
-]
-
-.panel[.panel-name[Output]
-
-```{r ref.label="arg-fun", echo=FALSE, message=FALSE}
-
-```
-
-]
-]
-
----
-
-.panelset[
-
-.panel[.panel-name[Codes]
-
-```{r arg-fun2, eval=FALSE}
-penguins %>% 
-  arrange(desc(body_mass_g))
-```
-]
-
-.panel[.panel-name[Output]
-
-```{r ref.label="arg-fun2", echo=FALSE, message=FALSE}
-
-```
-
-]
-]
-
----
-
-.panelset[
-
-.panel[.panel-name[Codes]
-
-```{r arg-fun3, eval=FALSE}
-penguins %>% 
-  arrange(species) %>% 
-  tail()
-```
-]
-
-.panel[.panel-name[Output]
-
-```{r ref.label="arg-fun3", echo=FALSE, message=FALSE}
-
-```
-
-]
-]
-
----
-
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
-
-# `select()` function
-
-- changes whether or not a column is included.
+# How to have only `species` variable in data?
 
 ---
 
@@ -772,6 +717,11 @@ penguins %>%
 ]
 
 ---
+class: center, middle
+
+# How to have a specific range of variables in data?
+
+---
 
 .panelset[
 
@@ -793,6 +743,11 @@ penguins %>%
 ]
 
 ---
+class: center, middle
+
+# How to have variables based upon their location in data?
+
+---
 
 .panelset[
 
@@ -812,6 +767,11 @@ penguins %>%
 
 ]
 ]
+
+---
+class: center, middle
+
+# How to have specific variables in data?
 
 ---
 
@@ -856,14 +816,23 @@ penguins %>%
 ]
 
 ---
-
-background-image: url(images/02-wrangling/logo-dplyr.png)
-background-size: 10%
-background-position: 97% 5%
+class: center, middle, inverse
 
 # `mutate()` function
 
-- changes the values of columns and creates new columns.
+---
+
+# `mutate()` function: Adds new variables that are functions of existing variables
+
+```{r mutate-img, echo=FALSE, fig.align='center', out.width="75%"}
+knitr::include_graphics("images/02-wrangling/04-mutate.png")
+```
+
+---
+
+class: center, middle
+
+# How to convert penguin body mass from grams to kilograms?
 
 ---
 
@@ -873,7 +842,7 @@ background-position: 97% 5%
 
 ```{r col-fun7, eval=FALSE}
 penguins %>% 
-  mutate(body_mass_g = body_mass_g / 1000)
+  mutate(body_mass_g = body_mass_g / 1000) #<<
 ```
 ]
 
@@ -894,7 +863,7 @@ penguins %>%
 
 ```{r col-fun8, eval=FALSE}
 penguins %>% 
-  mutate(body_mass_g = body_mass_g / 1000,
+  mutate(body_mass_g = body_mass_g / 1000, 
          bill = bill_length_mm * bill_depth_mm)
 ```
 ]
@@ -906,6 +875,242 @@ penguins %>%
 ```
 
 ]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r col-fun81, eval=FALSE}
+penguins %>% 
+  mutate(body_mass_g = body_mass_g / 1000,
+         bill = bill_length_mm * bill_depth_mm) %>% 
+  select(body_mass_g,
+         bill)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="col-fun81", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+class: center, middle, inverse
+
+# `arrange()` function
+
+---
+
+# `arrange()` function: Changes the order of the rows.
+
+```{r arrange-img, echo=FALSE, fig.align='center', out.width="65%"}
+knitr::include_graphics("images/02-wrangling/02-arrange.png")
+```
+
+---
+
+class: center, middle
+
+# How to have data arranged by the ascending order of bill length of penguins?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r arg-fun, eval=FALSE}
+penguins %>% 
+  arrange(bill_length_mm) #<<
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="arg-fun", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r arg-fun2, eval=FALSE}
+penguins %>% 
+  arrange(desc(bill_length_mm)) #<<
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="arg-fun2", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r arg-fun3, eval=FALSE}
+penguins %>% 
+  arrange(species)
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="arg-fun3", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+class: center, middle, inverse
+
+# `summarise()` function
+
+---
+
+# `summarise()` function: Chooses rows based on column values.
+
+```{r summ-img, echo=FALSE, fig.align='center', out.width="75%"}
+knitr::include_graphics("images/02-wrangling/05-summarise.png")
+```
+
+---
+
+class: center, middle
+
+# How to find mean bill length of all penguins?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r summ-fun1, eval=FALSE}
+penguins %>% 
+  drop_na() %>% #<<
+  summarise(mean = mean(bill_length_mm)) #<<
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="summ-fun1", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to find species-wise mean bill length of penguins?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r summ-fun2, eval=FALSE}
+penguins %>% 
+  drop_na() %>% 
+  group_by(species) %>% #<<
+  summarise(mean = mean(bill_length_mm))
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="summ-fun2", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to find species-wise mean bill length of penguins and total number of penguins in each species?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r summ-fun21, eval=FALSE}
+penguins %>% 
+  drop_na() %>% 
+  group_by(species) %>% #<<
+  summarise(mean = mean(bill_length_mm), n = n())
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="summ-fun21", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+# Useful functions
+
+- Center: `mean()`, `median()`
+
+--
+
+- Spread: `sd()`, `IQR()`, `mad()`
+
+--
+
+- Range: `min()`, `max()`, `quantile()`
+
+--
+
+- Position: `first()`, `last()`, `nth()`,
+
+--
+
+- Count: `n()`, `n_distinct()`
+
+--
+
+- Logical: `any()`, `all()`
+
+.footnote[
+Source: [tidyverse.org](https://dplyr.tidyverse.org/reference/summarise.html)
 ]
 
 ---
@@ -947,5 +1152,11 @@ background-position: 97% 5%
 ]
 ]
 ]
+
+---
+
+class: center, middle, inverse, hide-count
+
+# Thank you `r emo::ji("smile")`
 
 

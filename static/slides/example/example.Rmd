@@ -2,12 +2,35 @@
 title: "example"
 author: "Ajay"
 date: "02/02/2021"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
+subtitle: first r post
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+```{r info-cars-data, echo=FALSE}
+str(cars)
+```
+
+```{r echo=FALSE}
+# this eq helps to launch the rocket- SPA22
+1 
+
+1 +1 
+
+round(9.1565, 2)
+
+sqrt(81)
+
+library(tidyverse)
+
+```
+
+
 
 ## R Markdown
 
@@ -28,3 +51,6 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+

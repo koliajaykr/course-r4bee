@@ -41,6 +41,7 @@ xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code 
 #xaringanExtra::use_share_again()
 xaringanExtra::use_panelset()
 #<a class="footer-link" href="https://r4b.netlify.app/">r4b/share</a>
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
 ```
 
 layout: true
@@ -56,6 +57,73 @@ background-size: cover
 # .center.b.navy[Data Visualisation]
 
 # .center.b.ttc.f3.navy[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
+
+# .center.b.f3.navy[ 2020-10-20 (updated on `r Sys.Date()`)]
 ]
 
+---
+
+class: center
+
+# Course Progress
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/00-welcome/data-science-communicate.png")
+```
+
+---
+class: center, bottom, hide-count
+
+background-image: url("images/04-vis/ggplot-logo.png")
+background-size: 30%
+
+# ggplot2 package
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+```{r pkgs, eval=FALSE}
+library(palmerpenguins) # to access penguin data
+
+library(tidyverse) # to use ggplot fun with other funs as well
+
+library(ggplot2) # to use only ggplots fun
+
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```{r ref.label="pkgs", echo=FALSE, message=FALSE}
+
+```
+
+]
+]
+
+---
+
+# ggplot2:
+
+--
+
+- "is a system for declaratively creating graphics, based on The Grammar of Graphics"
+
+--
+
+- [Hadley Wickham](http://hadley.nz/)
+
+```{r hadley, echo=FALSE, out.width="50%", fig.align='center'}
+knitr::include_graphics("images/04-vis/hadley.jpg")
+```
+
+.footnote[
+Source: [tidyverse.org](https://ggplot2.tidyverse.org/)
+]
+
+---
 
