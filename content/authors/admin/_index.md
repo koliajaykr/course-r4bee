@@ -14,7 +14,7 @@ role: Instructor
 #  url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: I teach data science using R. My research is about who, how and why people work with waste in India. 
+bio: I like to teach research methods and data science using R. My research interests include crafts, waste livelihoods & sustainability.
 
 #interests:
 #- Artificial Intelligence
@@ -81,7 +81,7 @@ My name is [Ajay](https://ajaykoli.netlify.app/). I teach this course.
 
 I'm a PhD survivor with MBA in tourism studies. I love to teach data science using R statistical language. 
 
-If you are afraid but still want to take your first step towards data science then this course is for you.
+If you are taking your first step towards data science and feeling really scared then this course is for you.
 
 No recorded videos. There will be live interactive sessions using Google Meet. 
 

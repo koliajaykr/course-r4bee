@@ -4,7 +4,7 @@
     <title>Data Visualisation</title>
     <meta charset="utf-8" />
     <meta name="author" content="Ajay Koli" />
-    <meta name="date" content="2021-02-09" />
+    <meta name="date" content="2021-02-15" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
@@ -32,14 +32,15 @@ layout: true
 class: title-slide, hide-count, top
 background-image: url(images/04-vis/cover.jpg)
 background-size: cover
+background-position: 100% 50%
 
 .pull-left[
 &lt;br&gt;&lt;br&gt;
 # .center.b.navy[Data Visualisation]
 
-# .center.b.ttc.f3.navy[Topic - 4 | Ajay Koli]
+# .center.b.ttu.f3.white.bg-navy.pv1[Topic - 4 | Ajay Koli]
 
-# .center.b.f3.navy[ 2020-10-20 (updated on 2021-02-09)]
+# .center.b.f3.navy[ 2020-10-20 (updated on 2021-02-15)]
 ]
 
 ---
@@ -48,15 +49,162 @@ class: center
 
 # Course Progress
 
-&lt;img src="images/00-welcome/data-science-communicate.png" width="100%" /&gt;
+&lt;img src="images/00-welcome/data-science-communicate.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 class: center, bottom, hide-count
 
 background-image: url("images/04-vis/ggplot-logo.png")
 background-size: 30%
+background-position: 50% 40%
 
 # ggplot2 package
+
+---
+
+# Packages required: 
+
+
+```r
+library(palmerpenguins) # to access penguin data
+
+library(tidyverse) # to use ggplot2 pkg
+
+```
+
+- Packages recommended:
+
+
+```r
+install.packages(c(
+  "directlabels", "dplyr", "gameofthrones", "ggforce", "gghighlight", 
+  "ggnewscale", "ggplot2", "ggraph", "ggrepel", "ggtext", "ggthemes", 
+  "hexbin", "mapproj", "maps", "munsell", "ozmaps", "paletteer", 
+  "patchwork", "rmapshaper", "scico", "seriation", "sf", "stars", 
+  "tidygraph", "tidyr", "wesanderson" 
+))
+```
+
+
+---
+
+# ggplot2:
+
+--
+
+- "is a system for declaratively creating graphics, based on [The Grammar of Graphics](https://www.springer.com/gp/book/9780387245447)"
+
+--
+
+- [Hadley Wickham](http://hadley.nz/)
+
+&lt;img src="images/04-vis/hadley.jpg" width="45%" style="display: block; margin: auto;" /&gt;
+
+.footnote[
+Source: [tidyverse.org](https://ggplot2.tidyverse.org/)
+]
+
+---
+class: hide-count
+
+background-image: url("images/04-vis/ggplot2_masterpiece.png")
+background-size: 50%
+background-position: 5% 50%
+
+--
+
+&lt;img src="images/04-vis/layer7.png" width="45%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+.footnote[
+Artwork: [Allison Horst](https://www.allisonhorst.com/) &amp; Image source: [Eric Chow](https://www.ericchowkokyew.com/data-visualization-with-ggplot2-in-r/)
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Task]
+
+&lt;img src="images/04-vis/layer1.png" width="45%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.panel[.panel-name[Codes]
+
+
+```r
+*ggplot(data = penguins)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-2-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Task]
+
+&lt;img src="images/04-vis/layer2.png" width="45%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.panel[.panel-name[Codes]
+
+
+```r
+ggplot(data = penguins,
+*      mapping = aes(x = species))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-3-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Task]
+
+&lt;img src="images/04-vis/layer3.png" width="45%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.panel[.panel-name[Codes]
+
+
+```r
+ggplot(data = penguins,
+       mapping = aes(x = species)) +
+* geom_bar()
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-4-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to export plot to your computer?
 
 ---
 
@@ -66,12 +214,10 @@ background-size: 30%
 
 
 ```r
-library(palmerpenguins) # to access penguin data
-
-library(tidyverse) # to use ggplot fun with other funs as well
-
-library(ggplot2) # to use only ggplots fun
-
+ggplot(data = penguins,
+       mapping = aes(x = species)) +
+  geom_bar() +
+* ggsave("peng-species.pdf")  # also try jpg/jpeg/png
 ```
 
 ]
@@ -79,29 +225,591 @@ library(ggplot2) # to use only ggplots fun
 .panel[.panel-name[Output]
 
 
+```
+Saving 15 x 7 in image
+```
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-5-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+class: center, middle
+
+# How to add color to bars?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+ggplot(data = penguins,
+       mapping = aes(x = species)) +
+* geom_bar(fill = "blue")
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-6-1.png" width="1080" style="display: block; margin: auto;" /&gt;
 
 ]
 ]
 
 ---
 
-# ggplot2:
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+ggplot(data = penguins,
+       mapping = aes(x = species)) +
+* geom_bar(fill = c("blue", "red", "green"))
+
+# color names should be equal to the factor levels
+# in case of factor species levels are three
+# Adele, Chinstrap &amp; Gentoo
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-7-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to add text labels on the plot?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+* count(species)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+
+```
+# A tibble: 3 x 2
+  species       n
+* &lt;fct&gt;     &lt;int&gt;
+1 Adelie      152
+2 Chinstrap    68
+3 Gentoo      124
+```
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  count(species) %&gt;% 
+  mutate(prop = n / sum(n))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+
+```
+# A tibble: 3 x 3
+  species       n  prop
+* &lt;fct&gt;     &lt;int&gt; &lt;dbl&gt;
+1 Adelie      152 0.442
+2 Chinstrap    68 0.198
+3 Gentoo      124 0.360
+```
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  count(species) %&gt;% 
+  mutate(prop = n / sum(n)) %&gt;% 
+  ggplot(aes(x = prop, y = species)) +
+* geom_col()
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-10-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to reorder the factor levels in the plot?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  count(species) %&gt;% 
+  mutate(prop = n / sum(n)) %&gt;% 
+  ggplot(aes(x = prop,
+*            y = fct_reorder(species, prop)
+             )
+         ) + 
+  geom_col()
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-11-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to add percent values on the plot?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+
+*library(scales)
+
+penguins %&gt;% 
+  count(species) %&gt;% 
+  mutate(prop = n / sum(n)) %&gt;% 
+  ggplot(aes(x = prop, y = fct_reorder(species, prop))) + 
+  geom_col() +
+* scale_x_continuous(labels = label_percent(accuracy = 1))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-12-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to add plot title, subtitle, comments, and axis labels?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  count(species) %&gt;% 
+  mutate(prop = n / sum(n)) %&gt;% 
+  ggplot(aes(x = prop, y = fct_reorder(species, prop))) + 
+  geom_col() +
+  scale_x_continuous(labels = label_percent(accuracy = 1)) +
+* labs(
+    x = "Percentage",
+    y = "Species",
+    title = "Species distribution of penguins",
+    subtitle = "Adelie, Gentoo, and Chinstrap Penguins at Palmer Station LTER",
+    caption = "Source: allisonhorst.github.io/palmerpenguins") 
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-13-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to add color in plot based upon another variable?
+
+---
+
+- `library(RColorBrewer)` use RColorBrewer package.
 
 --
 
-- "is a system for declaratively creating graphics, based on The Grammar of Graphics"
+- `scale_fill_brewer()` function for box plot, bar plot, violin plot, dot plot, etc.
 
 --
 
-- [Hadley Wickham](http://hadley.nz/)
+- `scale_color_brewer()` function for lines and points.
 
-&lt;img src="images/04-vis/hadley.jpg" width="50%" style="display: block; margin: auto;" /&gt;
 
 .footnote[
-Source: [tidyverse.org](https://ggplot2.tidyverse.org/)
+Source: [DATA NOVIA](https://www.datanovia.com/en/blog/the-a-z-of-rcolorbrewer-palette/)
 ]
 
 ---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  count(species) %&gt;% 
+  mutate(prop = n / sum(n)) %&gt;% 
+  ggplot(aes(x = prop, y = fct_reorder(species, prop),
+*            fill = species)) +
+  geom_col() +
+  scale_x_continuous(labels = label_percent(accuracy = 1)) +
+  labs( 
+    x = "Percentage",
+    y = "Species",
+    title = "Species distribution of penguins",
+    subtitle = "Adelie, Gentoo, and Chinstrap Penguins at Palmer Station LTER",
+    caption = "Source: allisonhorst.github.io/palmerpenguins") 
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-14-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to create a plot object?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+species_plot &lt;- penguins %&gt;% 
+  count(species) %&gt;% 
+  mutate(prop = (n / sum(n))) %&gt;% 
+  ggplot(aes(x = prop, y = fct_reorder(species, prop),
+             fill = species)) + 
+  geom_col() +
+  scale_x_continuous(labels = label_percent(accuracy = 1)) +
+  labs( 
+    x = "Percentage",
+    y = "Species",
+    title = "Species distribution of penguins",
+    subtitle = "Adelie, Gentoo, and Chinstrap Penguins at Palmer Station LTER",
+    caption = "Source: allisonhorst.github.io/palmerpenguins") 
+
+*species_plot
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-15-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+species_plot +
+* scale_fill_brewer(palette = "Dark2") +
+* theme(legend.position = "none")
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-16-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to change font size of the text labels?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+species_plot +
+  scale_fill_brewer(palette = "Dark2") +
+  theme(legend.position = "none") +
+* theme(text = element_text(size = 20))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-17-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+.footnote[
+Source: [Statistics Globe](https://statisticsglobe.com/change-font-size-of-ggplot2-plot-in-r-axis-text-main-title-legend)
+]
+
+---
+
+class: center, middle
+
+# How to add count labels &lt;br&gt;on the bar plot?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+species_plot +
+  scale_fill_brewer(palette = "Dark2") +
+  theme(text = element_text(size = 20),
+        legend.position = "none") +
+* geom_text(aes(label = prop), size = 12, hjust = 0, color = "white")
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-18-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to add a different theme to plot?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Task]
+
+&lt;img src="images/04-vis/layer7.png" width="45%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.panel[.panel-name[Codes]
+
+
+```r
+
+*library(ggthemes)
+
+species_plot +
+  scale_fill_brewer(palette = "Dark2") +
+  geom_text(aes(label = n), size = 12, hjust = 2, color = "white") +
+* theme_excel() +
+  theme(text = element_text(size = 20),
+        legend.position = "none")
+
+# keep the order theme_bw() then theme()
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-19-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+species_plot +
+  scale_fill_brewer(palette = "Dark2") +
+  geom_text(aes(label = n), size = 12, hjust = 2, color = "white") +
+* theme_bw() +
+  theme(text = element_text(size = 20),
+        legend.position = "none") 
+
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-20-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+species_plot +
+  scale_fill_brewer(palette = "Dark2") +
+  geom_text(aes(label = n), size = 12, hjust = 2, color = "white") +
+* theme_dark() +
+  theme(text = element_text(size = 20),
+        legend.position = "none") 
+
+# keep the order theme_bw() then theme()
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-21-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+species_plot +
+  scale_fill_brewer(palette = "Dark2") +
+  geom_text(aes(label = n), size = 12, hjust = 2, color = "white") +
+* theme_classic() +
+  theme(text = element_text(size = 20),
+        legend.position = "none") 
+
+# keep the order theme_bw() then theme()
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-22-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+species_plot +
+  scale_fill_brewer(palette = "Dark2") +
+  geom_text(aes(label = n), size = 12, hjust = 2, color = "white") +
+* theme_tufte() +
+  theme(text = element_text(size = 20),
+        legend.position = "none") 
+
+# keep the order theme_bw() then theme()
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="04-vis_files/figure-html/unnamed-chunk-23-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

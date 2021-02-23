@@ -1,0 +1,52 @@
+---
+title: "R for Beginners"
+subtitle: "Online Certificate Course  \n  Faculty of Sustainability Studies  \n  MIT-WPU - Pune"
+author: "By: Dr. Ajay Koli"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+## Total duration of the course: 12 hours
+
+## Schedule:
+
+- Starting date -- 2 March, 2021
+
+- Ending date -- 27 March, 2021
+
+- Time -- 08:00 to 09:00 PM IST (Tue - Thu - Sat) 
+
+- Platform -- Google Meet
+
+- **Last date of registration: 27 Feb, 2021 23:45 IST**
+
+## Topics covered in the course:
+
+1. Basics of R (2 & 4 March, 2021)
+
+1. Dynamic documents (6 & 9 March, 2021)
+ 
+1. Data wrangling (11 & 13 March, 2021)
+
+1. Data visualisation (16 & 18 March, 2021)
+
+1. Slide crafting (20 & 23 March, 2021)
+
+1. Creating websites in R (25 & 27 March, 2021)
+
+
+
+## Total course fee: 
+
+- For national participant -- Rs. 5999 (INR)
+
+- For international participant -- $ 299 (USD)  
+
+## Team:
+
+- Course chair -- Prof. Dr. Joe Thomas
+
+- Instructor -- Dr. Ajay Koli
+
+
+

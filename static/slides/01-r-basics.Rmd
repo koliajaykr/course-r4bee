@@ -1,5 +1,5 @@
 ---
-title: "Getting started: The Basics of R"
+title: "The Basics of R"
 subtitle: "Topic - 1"
 author: Ajay Koli
 date: "`r Sys.Date()`"
@@ -46,17 +46,38 @@ layout: true
 ---
 
 class: title-slide, hide-count, middle, center
-background-image: url(images/01-basics/cover.jpg)
-background-size: cover
-background-position:
+background-image: url(images/01-basics/r-logo.png)
+background-size: 50%
+background-position: 99%
 
 .pull-left[
-# .center.b.white[The Basics of R]
+# .center.b[The Basics of R]
 
-# .center.b.ttu.f3.orange.bg-white.pv1[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
-
-# .center.b.f3.white[ 2020-10-20 (updated on `r format( Sys.Date(),format="%d %b %Y")`)]
+# .white.center.b.ttu.f3.bg-blue.pv1[`r rmarkdown::metadata$subtitle` | `r rmarkdown::metadata$author`]
 ]
+
+---
+
+.pull-left[
+```{r instructor-img, echo=FALSE, out.width="100%"}
+magick::image_read("images/01-basics/ajay.png") 
+```
+
+`r icon::fa("twitter")`[@koliajaykr](https://twitter.com/koliajaykr) <br> 
+`r icon::fa("envelope")`   [koliajaykumar@gmail.com](koliajaykumar@gmail.com)
+
+]
+
+.pull-right[
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+# Hello !! <br> Ajay here.
+]
+
 
 ---
 

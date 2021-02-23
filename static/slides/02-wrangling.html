@@ -4,7 +4,7 @@
     <title>Data  Wrangling</title>
     <meta charset="utf-8" />
     <meta name="author" content="Ajay Koli" />
-    <meta name="date" content="2021-02-09" />
+    <meta name="date" content="2021-02-12" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
@@ -39,7 +39,7 @@ background-position:
 
 # .center.b.ttu.f3.orange.bg-white.pv1[Topic - 2 | Ajay Koli]
 
-# .center.b.f3.white[ 2020-10-20 (updated on 2021-02-09)]
+# .center.b.f3.white[ 2020-10-20 (updated on 2021-02-12)]
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 ]
@@ -199,18 +199,18 @@ penguins
 
 ```
 # A tibble: 344 x 8
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
-   &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
- 1 Adelie  Torgersen           39.1          18.7               181        3750 male   2007
- 2 Adelie  Torgersen           39.5          17.4               186        3800 fema…  2007
- 3 Adelie  Torgersen           40.3          18                 195        3250 fema…  2007
- 4 Adelie  Torgersen           NA            NA                  NA          NA &lt;NA&gt;   2007
- 5 Adelie  Torgersen           36.7          19.3               193        3450 fema…  2007
- 6 Adelie  Torgersen           39.3          20.6               190        3650 male   2007
- 7 Adelie  Torgersen           38.9          17.8               181        3625 fema…  2007
- 8 Adelie  Torgersen           39.2          19.6               195        4675 male   2007
- 9 Adelie  Torgersen           34.1          18.1               193        3475 &lt;NA&gt;   2007
-10 Adelie  Torgersen           42            20.2               190        4250 &lt;NA&gt;   2007
+   species island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
+   &lt;chr&gt;   &lt;chr&gt;             &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
+ 1 Adelie  Torgers…           39.1          18.7               181        3750 male   2007
+ 2 Adelie  Torgers…           39.5          17.4               186        3800 fema…  2007
+ 3 Adelie  Torgers…           40.3          18                 195        3250 fema…  2007
+ 4 Adelie  Torgers…           NA            NA                  NA          NA &lt;NA&gt;   2007
+ 5 Adelie  Torgers…           36.7          19.3               193        3450 fema…  2007
+ 6 Adelie  Torgers…           39.3          20.6               190        3650 male   2007
+ 7 Adelie  Torgers…           38.9          17.8               181        3625 fema…  2007
+ 8 Adelie  Torgers…           39.2          19.6               195        4675 male   2007
+ 9 Adelie  Torgers…           34.1          18.1               193        3475 &lt;NA&gt;   2007
+10 Adelie  Torgers…           42            20.2               190        4250 &lt;NA&gt;   2007
 # … with 334 more rows
 ```
 
@@ -443,14 +443,14 @@ library(dplyr)
 ```
 Rows: 344
 Columns: 8
-$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie…
-$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgers…
-$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, 37.8…
-$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, 17.1…
-$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180, 182…
-$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, 3300…
-$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA, …
-$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 20…
+$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adeli…
+$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torger…
+$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, 37.…
+$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, 17.…
+$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180, 18…
+$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, 330…
+$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA,…
+$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2…
 ```
 
 ]
@@ -610,18 +610,18 @@ penguins %&gt;%
 
 ```
 # A tibble: 188 x 8
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Torgersen           46            21.5               194        4200 male   2007
- 2 Adelie  Dream               44.1          19.7               196        4400 male   2007
- 3 Adelie  Torgersen           45.8          18.9               197        4150 male   2008
- 4 Adelie  Dream               43.2          18.5               192        4100 male   2008
- 5 Adelie  Biscoe              43.2          19                 197        4775 male   2009
- 6 Adelie  Biscoe              45.6          20.3               191        4600 male   2009
- 7 Adelie  Torgersen           44.1          18                 210        4000 male   2009
- 8 Adelie  Torgersen           43.1          19.2               197        3500 male   2009
- 9 Gentoo  Biscoe              46.1          13.2               211        4500 fema…  2007
-10 Gentoo  Biscoe              50            16.3               230        5700 male   2007
+   species island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
+   &lt;fct&gt;   &lt;fct&gt;             &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Adelie  Torgers…           46            21.5               194        4200 male   2007
+ 2 Adelie  Dream              44.1          19.7               196        4400 male   2007
+ 3 Adelie  Torgers…           45.8          18.9               197        4150 male   2008
+ 4 Adelie  Dream              43.2          18.5               192        4100 male   2008
+ 5 Adelie  Biscoe             43.2          19                 197        4775 male   2009
+ 6 Adelie  Biscoe             45.6          20.3               191        4600 male   2009
+ 7 Adelie  Torgers…           44.1          18                 210        4000 male   2009
+ 8 Adelie  Torgers…           43.1          19.2               197        3500 male   2009
+ 9 Gentoo  Biscoe             46.1          13.2               211        4500 fema…  2007
+10 Gentoo  Biscoe             50            16.3               230        5700 male   2007
 # … with 178 more rows
 ```
 
@@ -694,26 +694,26 @@ penguins %&gt;%
 
 ```
 # A tibble: 18 x 8
-   species   island   bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex    year
-   &lt;fct&gt;     &lt;fct&gt;             &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie    Torgers…           46            21.5              194        4200 male   2007
- 2 Adelie    Torgers…           45.8          18.9              197        4150 male   2008
- 3 Adelie    Biscoe             45.6          20.3              191        4600 male   2009
- 4 Chinstrap Dream              46            18.9              195        4150 fema…  2007
- 5 Chinstrap Dream              52            18.1              201        4050 male   2007
- 6 Chinstrap Dream              50.5          19.6              201        4050 male   2007
- 7 Chinstrap Dream              49.2          18.2              195        4400 male   2007
- 8 Chinstrap Dream              52            19                197        4150 male   2007
- 9 Chinstrap Dream              52.8          20                205        4550 male   2008
-10 Chinstrap Dream              54.2          20.8              201        4300 male   2008
-11 Chinstrap Dream              51            18.8              203        4100 male   2008
-12 Chinstrap Dream              52            20.7              210        4800 male   2008
-13 Chinstrap Dream              53.5          19.9              205        4500 male   2008
-14 Chinstrap Dream              50.8          18.5              201        4450 male   2009
-15 Chinstrap Dream              49            19.6              212        4300 male   2009
-16 Chinstrap Dream              50.7          19.7              203        4050 male   2009
-17 Chinstrap Dream              49.3          19.9              203        4050 male   2009
-18 Chinstrap Dream              50.8          19                210        4100 male   2009
+   species  island   bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex    year
+   &lt;fct&gt;    &lt;fct&gt;             &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Adelie   Torgers…           46            21.5              194        4200 male   2007
+ 2 Adelie   Torgers…           45.8          18.9              197        4150 male   2008
+ 3 Adelie   Biscoe             45.6          20.3              191        4600 male   2009
+ 4 Chinstr… Dream              46            18.9              195        4150 fema…  2007
+ 5 Chinstr… Dream              52            18.1              201        4050 male   2007
+ 6 Chinstr… Dream              50.5          19.6              201        4050 male   2007
+ 7 Chinstr… Dream              49.2          18.2              195        4400 male   2007
+ 8 Chinstr… Dream              52            19                197        4150 male   2007
+ 9 Chinstr… Dream              52.8          20                205        4550 male   2008
+10 Chinstr… Dream              54.2          20.8              201        4300 male   2008
+11 Chinstr… Dream              51            18.8              203        4100 male   2008
+12 Chinstr… Dream              52            20.7              210        4800 male   2008
+13 Chinstr… Dream              53.5          19.9              205        4500 male   2008
+14 Chinstr… Dream              50.8          18.5              201        4450 male   2009
+15 Chinstr… Dream              49            19.6              212        4300 male   2009
+16 Chinstr… Dream              50.7          19.7              203        4050 male   2009
+17 Chinstr… Dream              49.3          19.9              203        4050 male   2009
+18 Chinstr… Dream              50.8          19                210        4100 male   2009
 ```
 
 ]
@@ -1035,18 +1035,18 @@ penguins %&gt;%
 
 ```
 # A tibble: 344 x 8
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;dbl&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7               181        3.75 male   2007
- 2 Adelie  Torgersen           39.5          17.4               186        3.8  fema…  2007
- 3 Adelie  Torgersen           40.3          18                 195        3.25 fema…  2007
- 4 Adelie  Torgersen           NA            NA                  NA       NA    &lt;NA&gt;   2007
- 5 Adelie  Torgersen           36.7          19.3               193        3.45 fema…  2007
- 6 Adelie  Torgersen           39.3          20.6               190        3.65 male   2007
- 7 Adelie  Torgersen           38.9          17.8               181        3.62 fema…  2007
- 8 Adelie  Torgersen           39.2          19.6               195        4.68 male   2007
- 9 Adelie  Torgersen           34.1          18.1               193        3.48 &lt;NA&gt;   2007
-10 Adelie  Torgersen           42            20.2               190        4.25 &lt;NA&gt;   2007
+   species island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
+   &lt;fct&gt;   &lt;fct&gt;             &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;dbl&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Adelie  Torgers…           39.1          18.7               181        3.75 male   2007
+ 2 Adelie  Torgers…           39.5          17.4               186        3.8  fema…  2007
+ 3 Adelie  Torgers…           40.3          18                 195        3.25 fema…  2007
+ 4 Adelie  Torgers…           NA            NA                  NA       NA    &lt;NA&gt;   2007
+ 5 Adelie  Torgers…           36.7          19.3               193        3.45 fema…  2007
+ 6 Adelie  Torgers…           39.3          20.6               190        3.65 male   2007
+ 7 Adelie  Torgers…           38.9          17.8               181        3.62 fema…  2007
+ 8 Adelie  Torgers…           39.2          19.6               195        4.68 male   2007
+ 9 Adelie  Torgers…           34.1          18.1               193        3.48 &lt;NA&gt;   2007
+10 Adelie  Torgers…           42            20.2               190        4.25 &lt;NA&gt;   2007
 # … with 334 more rows
 ```
 
@@ -1164,18 +1164,18 @@ penguins %&gt;%
 
 ```
 # A tibble: 344 x 8
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Dream               32.1          15.5               188        3050 fema…  2009
- 2 Adelie  Dream               33.1          16.1               178        2900 fema…  2008
- 3 Adelie  Torgersen           33.5          19                 190        3600 fema…  2008
- 4 Adelie  Dream               34            17.1               185        3400 fema…  2008
- 5 Adelie  Torgersen           34.1          18.1               193        3475 &lt;NA&gt;   2007
- 6 Adelie  Torgersen           34.4          18.4               184        3325 fema…  2007
- 7 Adelie  Biscoe              34.5          18.1               187        2900 fema…  2008
- 8 Adelie  Torgersen           34.6          21.1               198        4400 male   2007
- 9 Adelie  Torgersen           34.6          17.2               189        3200 fema…  2008
-10 Adelie  Biscoe              35            17.9               190        3450 fema…  2008
+   species island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
+   &lt;fct&gt;   &lt;fct&gt;             &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Adelie  Dream              32.1          15.5               188        3050 fema…  2009
+ 2 Adelie  Dream              33.1          16.1               178        2900 fema…  2008
+ 3 Adelie  Torgers…           33.5          19                 190        3600 fema…  2008
+ 4 Adelie  Dream              34            17.1               185        3400 fema…  2008
+ 5 Adelie  Torgers…           34.1          18.1               193        3475 &lt;NA&gt;   2007
+ 6 Adelie  Torgers…           34.4          18.4               184        3325 fema…  2007
+ 7 Adelie  Biscoe             34.5          18.1               187        2900 fema…  2008
+ 8 Adelie  Torgers…           34.6          21.1               198        4400 male   2007
+ 9 Adelie  Torgers…           34.6          17.2               189        3200 fema…  2008
+10 Adelie  Biscoe             35            17.9               190        3450 fema…  2008
 # … with 334 more rows
 ```
 
@@ -1200,18 +1200,18 @@ penguins %&gt;%
 
 ```
 # A tibble: 344 x 8
-   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year
-   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt;  &lt;int&gt;
- 1 Gentoo    Biscoe           59.6          17                 230        6050 male    2007
- 2 Chinstrap Dream            58            17.8               181        3700 female  2007
- 3 Gentoo    Biscoe           55.9          17                 228        5600 male    2009
- 4 Chinstrap Dream            55.8          19.8               207        4000 male    2009
- 5 Gentoo    Biscoe           55.1          16                 230        5850 male    2009
- 6 Gentoo    Biscoe           54.3          15.7               231        5650 male    2008
- 7 Chinstrap Dream            54.2          20.8               201        4300 male    2008
- 8 Chinstrap Dream            53.5          19.9               205        4500 male    2008
- 9 Gentoo    Biscoe           53.4          15.8               219        5500 male    2009
-10 Chinstrap Dream            52.8          20                 205        4550 male    2008
+   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
+   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Gentoo    Biscoe           59.6          17                 230        6050 male   2007
+ 2 Chinstrap Dream            58            17.8               181        3700 fema…  2007
+ 3 Gentoo    Biscoe           55.9          17                 228        5600 male   2009
+ 4 Chinstrap Dream            55.8          19.8               207        4000 male   2009
+ 5 Gentoo    Biscoe           55.1          16                 230        5850 male   2009
+ 6 Gentoo    Biscoe           54.3          15.7               231        5650 male   2008
+ 7 Chinstrap Dream            54.2          20.8               201        4300 male   2008
+ 8 Chinstrap Dream            53.5          19.9               205        4500 male   2008
+ 9 Gentoo    Biscoe           53.4          15.8               219        5500 male   2009
+10 Chinstrap Dream            52.8          20                 205        4550 male   2008
 # … with 334 more rows
 ```
 
@@ -1236,18 +1236,18 @@ penguins %&gt;%
 
 ```
 # A tibble: 344 x 8
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7               181        3750 male   2007
- 2 Adelie  Torgersen           39.5          17.4               186        3800 fema…  2007
- 3 Adelie  Torgersen           40.3          18                 195        3250 fema…  2007
- 4 Adelie  Torgersen           NA            NA                  NA          NA &lt;NA&gt;   2007
- 5 Adelie  Torgersen           36.7          19.3               193        3450 fema…  2007
- 6 Adelie  Torgersen           39.3          20.6               190        3650 male   2007
- 7 Adelie  Torgersen           38.9          17.8               181        3625 fema…  2007
- 8 Adelie  Torgersen           39.2          19.6               195        4675 male   2007
- 9 Adelie  Torgersen           34.1          18.1               193        3475 &lt;NA&gt;   2007
-10 Adelie  Torgersen           42            20.2               190        4250 &lt;NA&gt;   2007
+   species island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
+   &lt;fct&gt;   &lt;fct&gt;             &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Adelie  Torgers…           39.1          18.7               181        3750 male   2007
+ 2 Adelie  Torgers…           39.5          17.4               186        3800 fema…  2007
+ 3 Adelie  Torgers…           40.3          18                 195        3250 fema…  2007
+ 4 Adelie  Torgers…           NA            NA                  NA          NA &lt;NA&gt;   2007
+ 5 Adelie  Torgers…           36.7          19.3               193        3450 fema…  2007
+ 6 Adelie  Torgers…           39.3          20.6               190        3650 male   2007
+ 7 Adelie  Torgers…           38.9          17.8               181        3625 fema…  2007
+ 8 Adelie  Torgers…           39.2          19.6               195        4675 male   2007
+ 9 Adelie  Torgers…           34.1          18.1               193        3475 &lt;NA&gt;   2007
+10 Adelie  Torgers…           42            20.2               190        4250 &lt;NA&gt;   2007
 # … with 334 more rows
 ```
 
@@ -1351,8 +1351,8 @@ class: center, middle
 ```r
 penguins %&gt;% 
   drop_na() %&gt;% 
-* group_by(species) %&gt;%
-  summarise(mean = mean(bill_length_mm), n = n())
+  group_by(species) %&gt;% 
+* summarise(mean = mean(bill_length_mm), n = n())
 ```
 ]
 

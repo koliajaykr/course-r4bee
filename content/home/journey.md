@@ -63,4 +63,15 @@ date_format = "Jan 2006"
   date_start = "2020-11-11"
   date_end = "2020-11-21"
   description = """recevied important critical feedback for improvement"""   
+
+[[experience]]
+  title = "Batch - 6 (R for Beginners)"
+  company = "Free | 4 students | 8 hours"
+  company_url = ""
+  location = "Online"
+  date_start = "2021-02-01"
+  date_end = "2021-02-20"
+  description = """35 people registered but only 4 participants attended"""   
+
+
 +++
