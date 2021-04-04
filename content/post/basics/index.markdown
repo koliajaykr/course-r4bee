@@ -1,5 +1,5 @@
 ---
-title: 'Topic 1 - The basics of R'
+title: 'Module 1 - Basics of R'
 subtitle: ''
 summary: An introduce to R, RStudio & Packages
 date: "2020-01-25"
@@ -34,9 +34,11 @@ projects: []
 #  url: /slides/00-welcome.html
 ---
 
+<script src="{{< blogdown/postref >}}index_files/fitvids/fitvids.min.js"></script>
+
 Slides
 
-*coming soon !!*
-
-
-
+<div class="shareagain" style="min-width:300px;margin:1em auto;max-width:600px;">
+<iframe src="/slide/basics.html" width="400" height="300" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>

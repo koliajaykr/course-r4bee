@@ -1,0 +1,813 @@
+---
+title: "Basics of R"
+author: "Ajay Koli"
+date: "2020-07-02 (updated on `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css/my-theme.css", "css/my-fonts.css"]
+    seal: false
+    lib_dir: libs
+    nature:
+      highlightStyle: solarized-light
+      highlightLanguage: ["r", "css", "yaml"]
+      slideNumberFormat: "%current%/%total%" 
+      highlightLines: true
+      countIncrementalSlides: false
+     # ratio: "16:9"
+---
+
+class: hide-count, middle
+
+```{r setup, echo=FALSE, message=FALSE}
+# set code chunk global options
+knitr::opts_chunk$set(echo = F, fig.retina = 3, message = F, warning = F, fig.align='center')
+
+# packages used
+#library(here) # to navigate file path
+library(tidyverse)
+library(tinytex)
+library(emojifont)
+library(magick)
+
+library(xaringanExtra)
+xaringanExtra::use_xaringan_extra(c("tile_view",
+                                    "animate_css",
+                                    "tachyons",
+                                    "share_again",
+                                    "webcam",
+                                    "extra_styles"))
+```
+
+```{r xaringan-extra-styles}
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,         #<<
+  mute_unhighlighted_code = TRUE  #<<
+)
+```
+
+.pull-left[
+<br>
+<br>
+# Basics of R
+
+.orange[By : Ajay Koli]
+
+`r format(Sys.Date(), "%d %B %Y") `
+]
+
+.pull-right[
+
+```{r logo-r, out.width="100%"}
+knitr::include_graphics("images/heartyr.gif")
+```
+
+]
+
+---
+
+class: hide-count middle
+
+### `r emo::ji("rock-on")` thank you awesome #rstats people ... 
+
+.pull-left[
+- .purple.b[Yihui Xie] for xaringan package.
+[@xieyihui](https://twitter.com/xieyihui)
+
+- .gold.b[Hadley Wickham] for viz pkg ggplot and dplyr for data transformation. [@hadleywickham](https://twitter.com/hadleywickham)
+
+- .red.b[Allison Horst] for your beautiful artworks. [@allison_horst](https://twitter.com/allison_horst)
+
+- .green.b[Alison Hill] for teaching how to share our work using beautiful websites. [@apreshill](https://twitter.com/apreshill)
+
+]
+
+.pull-right[
+```{r fig.align='center', out.width="100%"}
+xie <- image_read("https://i.vimeocdn.com/video/474129126_1280x720.jpg")
+
+alison <- image_read("https://pbs.twimg.com/profile_images/1217599262671794176/SY9PeDa9_400x400.jpg")
+
+grk <- image_read("https://pbs.twimg.com/profile_images/378800000748807406/54701f6ab0ecd0b7420207dd54ea1056_400x400.jpeg")
+allison <- image_read("https://pbs.twimg.com/profile_images/1041703659984191489/qWBxildv_400x400.jpg")
+
+hadley <- image_read("https://pbs.twimg.com/profile_images/905186381995147264/7zKAG5sY_400x400.jpg")
+
+img <- c(hadley, alison, allison, grk, xie)
+img <- image_scale(img, "300x300")
+image_animate(image_scale(img, "200x200"), fps = 1, dispose = "previous")
+
+```
+]
+- .blue.b[Garrick Aden-Buie] for xaringanthemer & xaringanExtra pkgs.
+[@grrrck](https://twitter.com/grrrck)
+---
+
+class: center middle hide-count
+
+# Hi there !
+
+```{r instructor-img, echo=FALSE, out.width="40%"}
+magick::image_read("images/ajay.png") 
+```
+
+.f2[`r icon::fa("chalkboard-teacher")` [Assist. Professor <br>Vishwakarm University, Pune - India](https://www.vupune.ac.in/) <br>
+`r icon::fa("link")` [R for Beginners](https://r4b.netlify.app/) <br>
+`r icon::fa("twitter")` [@ajay_kolii](https://twitter.com/ajay_kolii)] 
+
+
+---
+
+background-image: url("images/logo-r.png")
+background-size: 10%
+background-position: 97% 3%
+
+# About R :
+
+- "R is a language and environment for statistical computing and graphics." ([R Project](https://www.r-project.org/about.html))
+
+--
+
+- August 1993 designed by:
+
+.pull-left[
+```{r founders-r1, out.width="80%", fig.show='hold', fig.cap="Ross Ihaka <br>(New Zealand statistician)"  }
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/f/f0/Ross_Ihaka_%285189180796%29.jpg")
+```
+
+]
+
+.pull-right[
+```{r founders-r2, out.width="100%", fig.show='hold', fig.cap="Robert Gentleman <br>(Canadian statistician) " }
+knitr::include_graphics("https://hms.harvard.edu/sites/default/files/media/Robert-Gentlemen-850x430-2.jpg")
+```
+
+]
+
+---
+class: center
+
+# Download R from [CRAN](https://cran.r-project.org/mirrors.html)
+
+```{r cran-img, out.width="100%"}
+library(magick)
+image_read("images/cran.png") %>% 
+  magick::image_border("#EEEEEE", "20x10")
+```
+
+---
+class: center middle
+
+.pull-left.left[
+# R console:
+
+##- R version
+
+##- R name
+
+##- Licence
+
+##- prompt `>`
+]
+
+.pull-right[
+
+```{r console-img, out.width="100%"}
+image_read("images/console.png") %>% 
+  magick::image_border("#EEEEEE", "20x10")
+
+```
+]
+
+---
+class: center middle
+
+.pull-left[
+
+# .red.left[Never save workspace image:]
+
+- "freshly minted R sessions"
+
+- "Put more trust in your script than in your memory"
+
+.footnote[
+Source: [R Bloggers](https://www.r-bloggers.com/2017/04/using-r-dont-save-your-workspace/)
+]
+
+]
+
+.pull-right.left[
+
+```{r quit-img, out.width="100%"}
+image_read("images/quit-r.png") %>% 
+  magick::image_border("#EEEEEE", "20x10")
+
+```
+]
+
+---
+
+class: center middle inverse hide-count
+
+.pull-left[
+```{r}
+image_read("images/code_hero.gif")
+```
+
+]
+
+.pull-right[
+# .big-text[R as calc]
+]
+---
+
+.pull-left[
+
+### .center[What you code]
+
+```{r calci1, eval=FALSE, echo=TRUE}
+1 #<<
+```
+
+]
+
+.pull-right[
+
+### .center[What you see]
+
+```{r ref.label="calci1", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+### .center[What you code]
+
+```{r calci2, eval=FALSE, echo=TRUE}
+1
+
+1 + 1 #<<
+```
+
+]
+
+.pull-right[
+
+### .center[What you see]
+
+```{r ref.label="calci2", echo=FALSE}
+
+```
+
+]
+
+
+---
+
+.pull-left[
+
+### .center[What you code]
+
+```{r calci3, eval=FALSE, echo=TRUE}
+1
+
+1 + 1
+
+34 / 40 #<<
+```
+
+]
+
+.pull-right[
+
+### .center[What you see]
+
+```{r ref.label="calci3", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+### .center[What you code]
+
+```{r calci4, eval=FALSE, echo=TRUE}
+1
+
+1 + 1
+
+34 / 40
+
+5 < 4 #<<
+```
+
+]
+
+.pull-right[
+
+### .center[What you see]
+
+```{r ref.label="calci4", echo=FALSE}
+
+```
+
+]
+
+---
+
+.pull-left[
+
+### .center[What you code]
+
+```{r calci5, eval=FALSE, echo=TRUE}
+1
+
+1 + 1
+
+34 / 40
+
+5 < 4
+
+16 == 16 #<<
+```
+
+]
+
+.pull-right[
+
+### .center[What you see]
+
+```{r ref.label="calci5", echo=FALSE}
+
+```
+
+]
+
+---
+
+# .center[Plot using R]
+
+.pull-left[
+
+### .center[What you code]
+
+```{r plot1, eval=FALSE, echo=TRUE}
+plot(1:100)
+```
+
+]
+
+.pull-right[
+
+### .center[What you see]
+
+```{r ref.label="plot1", echo=FALSE}
+
+```
+
+]
+
+---
+
+# `r emo::ji("smirk_cat")` *That's okay but ...*
+
+--
+
+- how to combine plot, text, tables and images in a single file.
+
+--
+
+- how to publish my work online or convert into a word, pdf or html file.
+
+--
+
+- how to work efficiently with my different projects and save, share and track them.
+
+--
+
+## .orange[we need a superhero ... ]
+
+---
+class: center, middle, hide-count, inverse
+
+### WELCOME TO `r emo::ji("heart_eyes_cat")`
+
+```{r logo-rstd, out.width="70%"}
+knitr::include_graphics("images/logo-rstd.png")
+```
+
+
+---
+
+background-image: url("https://res-5.cloudinary.com/crunchbase-production/image/upload/c_thumb,h_256,w_256,f_auto,g_faces,z_0.7,q_auto:eco/v1398402407/chvmdsmomg96uoz8g3ad.jpg")
+background-size: 20%
+background-position: 99% 1%
+
+# About RStudio:
+
+- 28 Feb 2011 founded by Joseph J. Allaire
+
+--
+
+- RStudio is an integrated development environment **(IDE)** for R.
+
+--
+
+- "RStudio provides **free and open source** tools for R and enterprise-ready professional software for data science teams to **develop and share** their work at scale."
+
+--
+
+- "RStudio’s mission is to create free and open-source software for **data science, scientific research, and technical communication**."
+
+.footnote[
+Source: [RStudio](https://rstudio.com/about/)
+]
+
+---
+
+class: center
+
+# RStudio IDE
+
+```{r ide}
+image_read("images/ide-rstd.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+
+---
+
+class: center
+
+### RStudio $\rightarrow$ Tools $\rightarrow$ Global Options
+
+```{r settings, out.width="70%"}
+image_read("images/rstd-options.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+
+class: center
+
+### RStudio $\rightarrow$ Tools $\rightarrow$ Global Options
+
+```{r settings2, out.width="70%"}
+image_read("images/rstd-options2.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+class: center
+
+# R $\rightleftharpoons$ RStudio
+
+--
+
+.pull-left[
+## Imagine RStudio as a stylish car ...
+
+# .big-text[`r emo::ji("car")`]
+]
+
+--
+
+.pull-right[
+## and R as its powerful engine.
+
+# .big-text[`r emo::ji("gear")`]
+]
+
+---
+
+class: inverse, center, middle hide-count
+
+.pull-left[
+```{r rainbow, out.width="100%"}
+image_read("images/rainbowr.gif")
+```
+
+]
+
+
+.pull-right[
+# .big-text[R eco]
+]
+
+---
+class: hide-count center middle
+
+background-color: #F5F4F2
+
+# R Ecosystem
+
+.footnote[
+Source: [RStudio Education](https://education.rstudio.com)
+]
+
+```{r ecosys, out.width="100%"}
+image_read("images/learn.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+class: center middle
+
+# R Program
+
+```{r ds1, out.width="100%"}
+knitr::include_graphics("images/data-science.png")
+```
+
+
+.footnote[
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+class: center middle
+
+# Data wrangling
+
+```{r ds-wrang, out.width="100%"}
+knitr::include_graphics("images/data-science-wrangle.png")
+```
+
+.footnote[
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+class: center middle
+
+# Exploratory data analysis
+
+```{r ds-expl, out.width="100%"}
+knitr::include_graphics("images/data-science-explore.png")
+```
+
+.footnote[
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+class: center middle
+
+# Modeling
+
+```{r ds-mdl, out.width="100%"}
+knitr::include_graphics("images/data-science-model.png")
+```
+
+.footnote[
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+class: center middle
+
+# Data visualisation
+
+```{r ds-comm, out.width="100%"}
+knitr::include_graphics("images/data-science-communicate.png")
+```
+
+.footnote[
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+class: center middle
+
+# R Program
+
+```{r ds-prog, out.width="100%"}
+knitr::include_graphics("images/data-science-program.png")
+```
+
+.footnote[
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+
+class: center, middle, hide-count inverse
+
+background-image: url("images/space-pkgs.png")
+background-position: 3%
+background-size: 50%
+
+.pull-right[
+# .big-text[R pkgs]
+]
+
+---
+
+background-image: url("images/space-pkgs.png")
+background-size: 13%
+background-position: 99% 1%
+
+# R packages:
+
+- Approx. 16 thousand R packages are available on [CRAN](https://cran.r-project.org/web/packages/available_packages_by_name.html)
+
+--
+
+- "An R package is a collection of functions, data, and documentation that extends the **capabilities** of base R. Using packages is key to the successful use of R."
+
+
+
+--
+
+- [Quick list of useful R packages](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages) by Garrett Grolemund on Aug 21, 2020
+
+.footnote[
+Source: [Book by Garrett & Hadley](https://r4ds.had.co.nz/introduction.html)
+]
+
+---
+class: center
+
+# To download pkgs
+
+```{r echo=FALSE, out.width="85%"}
+image_read("images/pkg-download1.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+class: center
+
+# Name of the R package(s)
+
+```{r echo=FALSE, out.width="90%"}
+image_read("images/pkg-download2.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+class: center
+
+# Installed R package(s)
+
+```{r echo=FALSE, out.width="65%"}
+image_read("images/pkg-download3.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+
+# How to download R package(s) from console?
+
+```{r pkg-install, echo=T, eval=FALSE}
+install.packages("tidyverse", "xaringan")
+```
+
+---
+
+# How to use R package(s)?
+
+```{r pkg-use, echo=T, eval=FALSE}
+library(tidyverse)
+library(xaringan)
+```
+
+---
+
+# `r emo::ji("rotating_light")` about packages:
+
+--
+
+- If you un-install R or RStudio, you will lose all installed packages .
+
+--
+
+- You need to install package only once but ...
+
+--
+
+- in every R document you need to `call once` the package using `library()` function, for example library(ggplot2).
+
+--
+
+- Once in a while, you need to update the installed packages as well.
+
+---
+class: center
+
+## Tools $\rightarrow$ Check package updates
+
+```{r echo=FALSE, out.width="60%"}
+image_read("images/update-pkg1.png")%>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+class: center
+
+# Select package(s) to update
+
+```{r echo=FALSE, out.width="80%"}
+image_read("images/update-pkg2.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+class: center
+
+# click Install Updates
+
+```{r echo=FALSE, out.width="80%"}
+image_read("images/update-pkg3.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+class: center
+
+# To remove package(s)
+
+```{r echo=FALSE, out.width="60%"}
+image_read("images/remove-pkg.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+class: center, middle, hide-count inverse
+
+background-image: url("images/breakr.gif")
+background-size: 50%
+background-position: 5%
+
+.pull-right[
+# .big-text[Need Help.green[!]]
+]
+
+---
+class: center
+
+# RStudio: Console 
+
+## in console type `?your query` <br>for example `?ggplot`
+
+---
+class: center
+
+# RStudio: pkg help docs
+
+```{r echo=FALSE, out.width="70%"}
+image_read("images/help-cran.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+class: center
+
+# [RStudio Community](https://community.rstudio.com/)
+
+```{r echo=FALSE, out.width="100%"}
+image_read("images/help-rstd.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+class: center
+
+# [stackoverflow](https://stackoverflow.com/)
+
+```{r echo=FALSE, out.width="100%"}
+image_read("images/help-stack.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+class: center
+
+# [GitHub Issues](https://github.com/)
+
+```{r echo=FALSE, out.width="100%"}
+image_read("images/help-git.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+class: center
+
+# [Twitter](https://twitter.com/home) #rstats
+
+```{r echo=FALSE, out.width="60%"}
+image_read("images/help-tweet.png") %>% 
+  image_border("#EEEEEE", "20x10")
+```
+
+---
+
+class: center middle hide-count
+
+# Thank you `r emo::ji("smiley")`
