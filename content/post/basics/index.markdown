@@ -1,8 +1,8 @@
 ---
-title: 'Module 1 - Basics of R'
+title: 'Module 1 - R & RStudio'
 subtitle: ''
-summary: An introduce to R, RStudio & Packages
-date: "2020-01-25"
+summary: The Basics of R & RStudio
+date: "2022-01-29"
 featured: false
 draft: false
 
@@ -34,11 +34,4 @@ projects: []
 #  url: /slides/00-welcome.html
 ---
 
-<script src="{{< blogdown/postref >}}index_files/fitvids/fitvids.min.js"></script>
-
-Slides
-
-<div class="shareagain" style="min-width:300px;margin:1em auto;max-width:600px;">
-<iframe src="/slide/basics.html" width="400" height="300" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
-<script>fitvids('.shareagain', {players: 'iframe'});</script>
-</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/K9WeFAEPo6I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

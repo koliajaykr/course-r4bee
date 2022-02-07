@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
 title = "Logistics"
-subtitle = "We meet five days in a week from Monday to Friday for two hours."
+subtitle = "We will meet five days in a week from Monday to Saturday for two hours (except 26 Jan)."
 
 # Showcase personal skills or business features.
 # 
@@ -18,13 +18,13 @@ subtitle = "We meet five days in a week from Monday to Friday for two hours."
   icon = "cloud"
   icon_pack = "fa"
   name = "Location"
-  description = "Online, all sessions"
+  description = "Online (Google Meet)"
   
 [[feature]]
   icon = "desktop"
   icon_pack = "fa"
   name = "Lecture"
-  description = "Mon to Fri, 18:00-20:00 IST"  
+  description = "Indian Standard Time"  
   
 [[feature]]
   icon = "code"

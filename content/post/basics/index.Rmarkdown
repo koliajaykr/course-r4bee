@@ -1,8 +1,8 @@
 ---
-title: 'Module 1 - Basics of R'
+title: 'Module 1 - R & RStudio'
 subtitle: ''
-summary: An introduce to R, RStudio & Packages
-date: "2020-01-25"
+summary: The Basics of R & RStudio
+date: "2022-01-29"
 featured: false
 draft: false
 
@@ -34,10 +34,4 @@ projects: []
 #  url: /slides/00-welcome.html
 ---
 
-Slides
-
-```{r echo=FALSE}
-library(xaringanExtra)
-xaringanExtra::embed_xaringan(url = "/slide/basics.html", ratio = "4:3", max_width = 600)
-```
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/K9WeFAEPo6I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

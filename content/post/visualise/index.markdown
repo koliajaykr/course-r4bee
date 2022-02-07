@@ -1,8 +1,8 @@
 ---
-title: 'Topic 4 - Data visualisation'
+title: 'Module 3 - Data Visualisation'
 subtitle: ''
-summary: Using ggplot2 package
-date: "2020-01-24"
+summary: "Data Visualisation using ggplot2"
+date: "2022-01-27"
 featured: false
 draft: false
 
@@ -34,8 +34,4 @@ projects: []
 #  url: /slides/00-slides.html
 ---
 
-<!-- Data visualisation using mainly R package `ggplot2`. -->
-
-***Coming soon !***
-
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Jp_Ep1RiAtk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

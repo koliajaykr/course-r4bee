@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Dr. Ajay Koli
+title: Dr Ajay Koli
 
 # Is this the primary user of the site?
 superuser: true
@@ -43,13 +43,13 @@ social:
   link: 'mailto:koliajaykumar@gmail.com\'  # For a direct email link, use
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/koliajaykr
+  link: https://twitter.com/ajay_kolii
 - icon: github
   icon_pack: fab
   link: https://github.com/koliajaykr
-#- icon: google-scholar
-#  icon_pack: ai
-#  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+- icon: google-scholar
+  icon_pack: ai
+  link: https://scholar.google.com/citations?user=LrRxk5oAAAAJ&hl=en 
 #- icon: github
 #  icon_pack: fab
 #  link: https://github.com/gcushen
@@ -94,5 +94,3 @@ P.S.
 - Thank you so much Vineeta for zillion invaluable inputs and Neha for contributing awesome bee artworks.
 
 - *Why bee?* Bee sounds cool with beginners. Also, the shape of R packages is similar to honeycomb. And moreover, to support the cause "save the bees".
-
-

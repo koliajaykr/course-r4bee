@@ -1,7 +1,7 @@
 ---
-title: "Topic 5 - Slidecrafting"
+title: "Module 5 - Slide-crafting"
 subtitle: ''
-summary: Using xaringan, xaringanthemer & xaringanExtra
+summary: Slide Crafting using xaringan
 date: "2020-01-24"
 
 image:
@@ -11,11 +11,4 @@ image:
   preview_only: yes
 ---
 
-***Coming soon !***
-
-```{r slides-top6, echo=FALSE, fig.align='center', eval=FALSE}
-library(xaringanExtra)
-xaringanExtra::embed_xaringan(url = "/slides/06-slides.html", ratio = "4:3",
-                              max_width = 600)
-```
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qmoZnf_3mIk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

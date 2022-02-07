@@ -73,5 +73,13 @@ date_format = "Jan 2006"
   date_end = "2021-02-20"
   description = """35 people registered but only 4 participants attended"""   
 
+[[experience]]
+  title = "Batch - 7 (R for Beginners)"
+  company = "Free | 21 students | 10 hours"
+  company_url = ""
+  location = "Online"
+  date_start = "2022-01-24"
+  date_end = "2022-01-29"
+  description = """39 people registered, 21 participants successfully completed, Vishwakarma University - Pune"""
 
 +++

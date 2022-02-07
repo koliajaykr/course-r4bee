@@ -1,8 +1,8 @@
 ---
-title: "Topic 2 - An introduction to R Markdown"
+title: "Module 2 - Dynamic Document"
 subtitle: ""
-summary: 'YAML, Code chunk, Dynamic documents'
-date: "2020-01-24"
+summary: 'Dynamic Documents using R Markdown'
+date: "2022-01-28"
 featured: false
 draft: false
 
@@ -34,22 +34,4 @@ links:
 #  url: /slides/01-r-basics.html
 ---
 
-Slides
-
-*Coming soon !!*
-
-
-<!-- ## Readings -->
-
-
-<!-- + [R4DS `ggplot2` chapter](http://r4ds.had.co.nz/data-visualisation.html) -->
-
-<!-- + [ModernDive `ggplot2` chapter](http://moderndive.com/3-viz.html) -->
-
-<!-- + [RStudio `ggplot2` Cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf) -->
-
-<!-- + [R4DS `dplyr` chapter](http://r4ds.had.co.nz/transform.html) -->
-
-<!-- + [ModernDive `dplyr` chapter](http://moderndive.com/5-wrangling.html) -->
-
-<!-- + [RStudio `dplyr` Cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf) -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6Ro9K2mV5Co" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

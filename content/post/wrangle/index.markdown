@@ -1,8 +1,8 @@
 ---
-title: "Topic 3 - Data wrangling"
+title: "Module 4 - Data Wrangling"
 subtitle: ""
-summary: Using dplyr package
-date: "2020-01-24"
+summary: Data Wrangling using dplyr
+date: "2020-01-25"
 
 image:
   placement: 2
@@ -11,6 +11,4 @@ image:
   preview_only: yes
 ---
 
-***Coming soon !***
-
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QGj8hEcDW0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

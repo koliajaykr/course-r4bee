@@ -35,8 +35,18 @@ height = "450px"
 #  cta_icon = "graduation-cap"
 
 [[item]]
+  title = "Batch - 7"
+  content = "\"...It has helped [me] to perform and reproduce [the codes] at the same time... our mentor has made dedicated efforts to make sure we grasp the nitty-gritty of R, R Markdown, and many interrelated research packages, and made... R easy for us to understand...(Jan 2022)\""
+  align = "center"
+
+  overlay_color = "#555"  # An HTML color value.
+  overlay_img = "img/b7.jpg"  # Image path relative to your `static/media/` folder.
+  overlay_filter = 0.5  # Darken the image. Value in range 0-1.
+
+
+[[item]]
   title = "Batch - 6"
-  content = "\"These have been fantastic and helped make learning R less daunting. I feel like I can start using other tutorials and learn as I go and continue growing.\""
+  content = "\"These have been fantastic and helped make learning R less daunting. I feel like I can start using other tutorials and learn as I go and continue growing.(Feb 2021)\""
   align = "center"
 
   overlay_color = "#555"  # An HTML color value.
@@ -45,7 +55,7 @@ height = "450px"
 
 [[item]]
   title = "Babu George"
-  content = "\"It has been a very comprehensive yet accessible overview of R. Ajay understands students' minds and modulate his style accordingly. He is excellent in relating numbers with real world problems and offering visualizations that decompose complex realities into intuitive visualizations.\" <br>*Dean and Professor - Christian Brothers University, USA*"
+  content = "\"It has been a very comprehensive yet accessible overview of R. Ajay understands students' minds and modulate his style accordingly. He is excellent in relating numbers with real world problems and offering visualizations that decompose complex realities into intuitive visualizations.(Nov 2020)\" <br>*Dean and Professor - Christian Brothers University, USA*"
   align = "center"
 
   overlay_color = "#555"  # An HTML color value.
@@ -54,7 +64,7 @@ height = "450px"
   
 [[item]]
   title = "Batch - 4"
-  content = "\"Great classes, great teacher. He is friendly, knowledgeable, and fun to talk with ... He teaches you right from 'you know nothing' to make your own presentations in just 20 hours of learning ... My lessons with him were quite productive and useful.\""
+  content = "\"Great classes, great teacher. He is friendly, knowledgeable, and fun to talk with ... He teaches you right from 'you know nothing' to make your own presentations in just 20 hours of learning ... My lessons with him were quite productive and useful.(Oct 2020)\""
   align = "center"
 
   overlay_color = "#555"  # An HTML color value.
@@ -63,7 +73,7 @@ height = "450px"
   
 [[item]]
   title = "Batch - 3"
-  content = "\"Enjoyed learning a lot it was a really enriching and fun experience.\""
+  content = "\"Enjoyed learning a lot it was a really enriching and fun experience.(Sep 2020)\""
   align = "center"
 
   overlay_color = "#333"  # An HTML color value.
@@ -72,7 +82,7 @@ height = "450px"
 
 [[item]]
   title = "Batch - 2"
-  content = "\"Good course content and every point explained very patiently, with clarity and in detail. A good learning experience.\""
+  content = "\"Good course content and every point explained very patiently, with clarity and in detail. A good learning experience.(Aug 2020)\""
   align = "center"
 
   overlay_color = "#333"  # An HTML color value.
@@ -81,7 +91,7 @@ height = "450px"
 
 [[item]]
   title = "Batch - 1"
-  content = "\"Thanks a lot, it was an excellent course with a lot of useful information. I would like to follow other R lessons. Let me know please when you open other sessions. Good luck.\""
+  content = "\"Thanks a lot, it was an excellent course with a lot of useful information. I would like to follow other R lessons. Let me know please when you open other sessions. Good luck.(July 2020)\""
   align = "center"
 
   overlay_color = "#333"  # An HTML color value.

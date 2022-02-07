@@ -1,0 +1,100 @@
+---
+title: "Basics of R <br>& RStudio"
+subtitle: "session 1"
+author: Dr Ajay Koli
+date: "`r format(Sys.Date(), '%B %e, %Y')`"
+output:
+  xaringan::moon_reader:
+    includes:
+      after_body: insert-logo.html
+    css: ["default", "assets/css/my-theme.css", "assets/css/my-fonts.css"]
+    seal: false
+    lib_dir: libs
+    nature:
+      # autoplay: 5000
+      highlightStyle: solarized-light
+      highlightLanguage: ["r", "css", "yaml"]
+      slideNumberFormat: "%current%/%total%" 
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(collapse = TRUE,
+                      fig.retina = 3,
+                      echo = FALSE)
+library(ymlthis)
+library(tidyverse)
+library(magick)
+library(icon)
+library(xaringanExtra)
+xaringanExtra::use_tachyons()
+xaringanExtra::use_tile_view()
+xaringanExtra::use_webcam()
+xaringanExtra::use_fit_screen()
+xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = TRUE)
+xaringanExtra::use_share_again()
+
+```
+
+layout: true
+
+---
+
+class: title-slide, left, middle, hide-count
+background-image: url("https://images.unsplash.com/photo-1453834190665-46ff0a1fbd5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80")
+background-size: cover
+
+# `r rmarkdown::metadata$title`
+
+## .orange[`r rmarkdown::metadata$subtitle`]
+
+### `r rmarkdown::metadata$author`
+
+---
+
+class: center, middle, hide-logo
+
+```{r meta, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "Welcome",
+    generator = "xaringan and remark.js"
+  ) %>% 
+  meta_name("github-repo" = "koliajaykr/course-r4bee") %>% 
+  meta_social(
+    title = "Introduce Yourself to R, Rstudio & Packages",
+    url = "https://r4b.netlify.app/slides/00-welcome.html#1",
+    image = "https://r4b.netlify.app/slides/images/00-welcome/00-cover.jpg",
+    og_type = "website",
+    og_author = "Ajay Koli",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@koliajaykr"
+  ) %>%
+  include_meta()
+```
+
+.pull-left[
+```{r instructor-img, echo=FALSE, out.width="100%"}
+magick::image_read("images/01-intro/ajay.png") 
+```
+
+`r icon::fa("twitter")`[@koliajaykr](https://twitter.com/koliajaykr) <br> 
+`r icon::fa("envelope")`   [koliajaykumar@gmail.com](koliajaykumar@gmail.com)
+
+]
+
+.pull-right[
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+# Hello !! <br> Ajay here.
+]
+
+---
