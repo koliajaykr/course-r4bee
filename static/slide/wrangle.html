@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>wrangle.knit</title>
+    <meta charset="utf-8" />
+    <meta name="date" content="2022-04-26" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <script src="libs/xaringanExtra-webcam/webcam.js"></script>
+    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
+    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <meta name="description" content="Ajay Koli - Aspiring Data Scientist"/>
+    <meta name="generator" content="xaringan and remark.js"/>
+    <meta name="github-repo" content="koliajaykr/r-training-vupune"/>
+    <meta name="twitter:title" content="R FOR BEGINNERS"/>
+    <meta name="twitter:description" content="Ajay Koli - Aspiring Data Scientist"/>
+    <meta name="twitter:url" content="https://r4b-vu.netlify.app/"/>
+    <meta name="twitter:image" content="https://r4b-vu.netlify.app/images/social-card.png"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@ajay_kolii"/>
+    <meta name="twitter:site" content="@ajay_kolii"/>
+    <meta property="og:title" content="R FOR BEGINNERS"/>
+    <meta property="og:description" content="Ajay Koli - Aspiring Data Scientist"/>
+    <meta property="og:url" content="https://r4b-vu.netlify.app/"/>
+    <meta property="og:image" content="https://r4b-vu.netlify.app/images/social-card.png"/>
+    <meta property="og:type" content="talk"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="article:author" content="Ajay Koli"/>
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
+    <link rel="stylesheet" href="css/my-theme.css" type="text/css" />
+    <link rel="stylesheet" href="css/my-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+name: module4
+
+class: title-slide, right, middle, hide-count, hide-logo
+
+background-image: url("https://images.unsplash.com/photo-1591903934817-c02acbfd4665?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1932&amp;q=80")
+background-size: cover
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+# .black.big-text[Data&lt;br&gt;Wrangling]
+## .black[Session - 4]
+
+.footnote[
+.white[Image credits:][Karina L](https://unsplash.com/photos/zJRQ5nngdPA)
+]
+
+---
+
+class: center
+
+# Course Progress
+
+&lt;img src="images/data-science-wrangle.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# What is Data wrangling?
+
+--
+
+- "data exploration and data manipulation" [(Jesse Mostipak)](https://www.kaggle.com/jessemostipak/dive-into-dplyr-tutorial-1)
+
+--
+
+- "tidying and transforming" [(Hadley &amp; Garrett)](https://r4ds.had.co.nz/index.html)
+
+--
+
+&lt;img src="images/tidy-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# "Transforming" data means:
+
+- "narrowing in on observations of interest ... 
+
+--
+
+- creating new variables that are functions of existing variables ... and
+
+--
+
+- calculating a set of summary statistics." 
+
+.footnote[[Source](https://r4ds.had.co.nz/index.html)]
+
+---
+
+class: hide-count, middle, hide-logo
+background-image: url(images/dplyr.svg)
+background-size: contain
+background-position: right
+
+# .big-text[R&lt;br&gt;Package]
+
+---
+
+# `dplyr` package
+
+- "dplyr is a grammar of data manipulation"
+
+--
+
+- "providing a consistent set of verbs that help you solve the most common data manipulation challenges:"
+
+--
+
+- Few important functions:
+  - `filter()` 
+  - `select()` 
+  - `mutate()` 
+  - `arrange()` 
+  - `summarise()`
+
+.footnote[
+[Source](https://dplyr.tidyverse.org/)
+]
+
+---
+
+# `filter()` function: 
+
+- Picks cases based on their values.
+
+&lt;img src="images/01-filter.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: center, middle 
+
+# How to have a data of only Gentoo penguins?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+# there are three species: Chinstrap, Gentoo, Adelie
+penguins %&gt;% 
+* filter(species == "Gentoo")
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 124 × 8
+##    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+##  1 Gentoo  Biscoe           46.1          13.2               211        4500
+##  2 Gentoo  Biscoe           50            16.3               230        5700
+##  3 Gentoo  Biscoe           48.7          14.1               210        4450
+##  4 Gentoo  Biscoe           50            15.2               218        5700
+##  5 Gentoo  Biscoe           47.6          14.5               215        5400
+##  6 Gentoo  Biscoe           46.5          13.5               210        4550
+##  7 Gentoo  Biscoe           45.4          14.6               211        4800
+##  8 Gentoo  Biscoe           46.7          15.3               219        5200
+##  9 Gentoo  Biscoe           43.3          13.4               209        4400
+## 10 Gentoo  Biscoe           46.8          15.4               215        5150
+## # … with 114 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+```
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+# there are three species: Chinstrap, Gentoo, Adelie
+
+praw &lt;- read_csv("data/gentoo-penguins1.csv")
+
+praw %&gt;% 
+  filter(species == "Gentoo") %&gt;% 
+  summary() %&gt;% 
+  kableExtra::kable()
+```
+]
+
+.panel[.panel-name[Output]
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;   species &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;    island &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; bill_length_mm &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; bill_depth_mm &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; flipper_length_mm &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;  body_mass_g &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;     sex &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;      year &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Length:124 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Length:124 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Min.   :40.90 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Min.   :13.10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Min.   :203.0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Min.   :3950 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Length:124 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Min.   :2007 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Class :character &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Class :character &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1st Qu.:45.30 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1st Qu.:14.20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1st Qu.:212.0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1st Qu.:4500 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Class :character &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1st Qu.:2007 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mode  :character &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mode  :character &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Median :47.30 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Median :15.00 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Median :216.0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Median :4925 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mode  :character &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Median :2008 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mean   :47.50 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mean   :14.98 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mean   :217.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mean   :4985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mean   :2008 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3rd Qu.:49.55 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3rd Qu.:15.70 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3rd Qu.:221.0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3rd Qu.:5400 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3rd Qu.:2009 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Max.   :59.60 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Max.   :17.30 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Max.   :231.0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Max.   :6050 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Max.   :2009 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA's   :1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA's   :1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA's   :1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA's   :1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to export data file to your computer?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+# three species are Chinstrap, Gentoo, Adelie
+penguins %&gt;% 
+  filter(species == "Gentoo") %&gt;% 
+* write_csv("data/gentoo-penguins.csv")
+
+```
+]
+
+.panel[.panel-name[Output]
+
+
+
+]
+]
+
+---
+
+# ✋ WAIT! What is `%&gt;% `
+
+--
+
+- this is called **pipe** ( `%&gt;%` = control + shift + m)
+
+--
+
+- "a powerful tool for clearly expressing a sequence of **multiple operations**"
+
+--
+
+- interpret/read it as **then**.
+
+
+```r
+penguins %&gt;% 
+  filter(species == "Gentoo") %&gt;% 
+  summary() %&gt;% 
+  kableExtra::kable()
+```
+
+---
+
+# Comparison: Relational Operators
+
+`x &lt; y`
+
+--
+
+`x &gt; y`
+
+--
+
+`x &lt;= y`
+
+--
+
+`x &gt;= y`
+
+--
+
+`x == y` (equal)
+
+--
+
+`x != y` (not equal)
+
+---
+class: center, middle 
+
+# How to have a data of penguins with bill length more than 43 mm?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  filter(bill_length_mm &gt; 43) 
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 188 × 8
+##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+##  1 Adelie  Torgersen           46            21.5               194        4200
+##  2 Adelie  Dream               44.1          19.7               196        4400
+##  3 Adelie  Torgersen           45.8          18.9               197        4150
+##  4 Adelie  Dream               43.2          18.5               192        4100
+##  5 Adelie  Biscoe              43.2          19                 197        4775
+##  6 Adelie  Biscoe              45.6          20.3               191        4600
+##  7 Adelie  Torgersen           44.1          18                 210        4000
+##  8 Adelie  Torgersen           43.1          19.2               197        3500
+##  9 Gentoo  Biscoe              46.1          13.2               211        4500
+## 10 Gentoo  Biscoe              50            16.3               230        5700
+## # … with 178 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+```
+
+]
+]
+
+---
+class: center, middle 
+
+# How to have a data of Gentoo penguins with bill length more than 50 mm?
+
+---
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  filter(species == "Gentoo",
+         bill_length_mm &gt; 55)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 3 × 8
+##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+## 1 Gentoo  Biscoe           59.6            17              230        6050 male 
+## 2 Gentoo  Biscoe           55.9            17              228        5600 male 
+## 3 Gentoo  Biscoe           55.1            16              230        5850 male 
+## # … with 1 more variable: year &lt;int&gt;
+```
+
+]
+]
+
+---
+class: center, middle 
+
+# How to have data of non-Gentoo penguins with bill length more than 45 mm and weight more than 4 kg?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  filter(species != "Gentoo",
+         bill_length_mm &gt; 45,
+         body_mass_g &gt; 4000)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 18 × 8
+##    species   island    bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+##    &lt;fct&gt;     &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
+##  1 Adelie    Torgersen           46            21.5              194        4200
+##  2 Adelie    Torgersen           45.8          18.9              197        4150
+##  3 Adelie    Biscoe              45.6          20.3              191        4600
+##  4 Chinstrap Dream               46            18.9              195        4150
+##  5 Chinstrap Dream               52            18.1              201        4050
+##  6 Chinstrap Dream               50.5          19.6              201        4050
+##  7 Chinstrap Dream               49.2          18.2              195        4400
+##  8 Chinstrap Dream               52            19                197        4150
+##  9 Chinstrap Dream               52.8          20                205        4550
+## 10 Chinstrap Dream               54.2          20.8              201        4300
+## 11 Chinstrap Dream               51            18.8              203        4100
+## 12 Chinstrap Dream               52            20.7              210        4800
+## 13 Chinstrap Dream               53.5          19.9              205        4500
+## 14 Chinstrap Dream               50.8          18.5              201        4450
+## 15 Chinstrap Dream               49            19.6              212        4300
+## 16 Chinstrap Dream               50.7          19.7              203        4050
+## 17 Chinstrap Dream               49.3          19.9              203        4050
+## 18 Chinstrap Dream               50.8          19                210        4100
+## # … with 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+```
+
+]
+]
+
+---
+class: center, middle
+
+# How to have only top or bottom rows from data?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  filter(species != "Gentoo",
+         bill_length_mm &gt; 45,
+         body_mass_g &gt; 4000) %&gt;% 
+* head()
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 6 × 8
+##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+## 1 Adelie  Torge…           46            21.5              194        4200 male 
+## 2 Adelie  Torge…           45.8          18.9              197        4150 male 
+## 3 Adelie  Biscoe           45.6          20.3              191        4600 male 
+## 4 Chinst… Dream            46            18.9              195        4150 fema…
+## 5 Chinst… Dream            52            18.1              201        4050 male 
+## 6 Chinst… Dream            50.5          19.6              201        4050 male 
+## # … with 1 more variable: year &lt;int&gt;
+```
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  filter(species != "Gentoo",
+         bill_length_mm &gt; 45,
+         body_mass_g &gt; 4000) %&gt;% 
+* tail(3)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 3 × 8
+##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+## 1 Chinst… Dream            50.7          19.7              203        4050 male 
+## 2 Chinst… Dream            49.3          19.9              203        4050 male 
+## 3 Chinst… Dream            50.8          19                210        4100 male 
+## # … with 1 more variable: year &lt;int&gt;
+```
+
+]
+]
+
+---
+
+class: your-turn, hide-logo
+
+# 🧠 YOUR TURN
+
+
+<div class="countdown" id="timer_6267e2af" style="top:0;right:0;font-size:3em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+.panelset[
+
+.panel[.panel-name[Task]
+
+How many Chinstrap penguins are with bill length more than 45 mm and weight more than 4 kg?
+]
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  filter(species == "Chinstrap",
+         bill_length_mm &gt; 45,
+         body_mass_g &gt; 4000) %&gt;% 
+  head()
+```
+
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 6 × 8
+##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+## 1 Chinst… Dream            46            18.9              195        4150 fema…
+## 2 Chinst… Dream            52            18.1              201        4050 male 
+## 3 Chinst… Dream            50.5          19.6              201        4050 male 
+## 4 Chinst… Dream            49.2          18.2              195        4400 male 
+## 5 Chinst… Dream            52            19                197        4150 male 
+## 6 Chinst… Dream            52.8          20                205        4550 male 
+## # … with 1 more variable: year &lt;int&gt;
+```
+
+]
+]
+
+---
+
+# `select()` function: Chooses rows based on column values.
+
+&lt;img src="images/03-select.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center, middle
+
+# How to have only `species` variable in data?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+* select(species)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 344 × 1
+##    species
+##    &lt;fct&gt;  
+##  1 Adelie 
+##  2 Adelie 
+##  3 Adelie 
+##  4 Adelie 
+##  5 Adelie 
+##  6 Adelie 
+##  7 Adelie 
+##  8 Adelie 
+##  9 Adelie 
+## 10 Adelie 
+## # … with 334 more rows
+```
+
+]
+]
+
+---
+class: center, middle
+
+# How to have a specific range of variables in data?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  select(species : bill_depth_mm)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 344 × 4
+##    species island    bill_length_mm bill_depth_mm
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;
+##  1 Adelie  Torgersen           39.1          18.7
+##  2 Adelie  Torgersen           39.5          17.4
+##  3 Adelie  Torgersen           40.3          18  
+##  4 Adelie  Torgersen           NA            NA  
+##  5 Adelie  Torgersen           36.7          19.3
+##  6 Adelie  Torgersen           39.3          20.6
+##  7 Adelie  Torgersen           38.9          17.8
+##  8 Adelie  Torgersen           39.2          19.6
+##  9 Adelie  Torgersen           34.1          18.1
+## 10 Adelie  Torgersen           42            20.2
+## # … with 334 more rows
+```
+
+]
+]
+
+---
+class: center, middle
+
+# How to have variables based upon their location in data?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  select(4:8)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 344 × 5
+##    bill_depth_mm flipper_length_mm body_mass_g sex     year
+##            &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt;  &lt;int&gt;
+##  1          18.7               181        3750 male    2007
+##  2          17.4               186        3800 female  2007
+##  3          18                 195        3250 female  2007
+##  4          NA                  NA          NA &lt;NA&gt;    2007
+##  5          19.3               193        3450 female  2007
+##  6          20.6               190        3650 male    2007
+##  7          17.8               181        3625 female  2007
+##  8          19.6               195        4675 male    2007
+##  9          18.1               193        3475 &lt;NA&gt;    2007
+## 10          20.2               190        4250 &lt;NA&gt;    2007
+## # … with 334 more rows
+```
+
+]
+]
+
+---
+class: center, middle
+
+# How to have specific variables in data?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  select(species, body_mass_g, year)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 344 × 3
+##    species body_mass_g  year
+##    &lt;fct&gt;         &lt;int&gt; &lt;int&gt;
+##  1 Adelie         3750  2007
+##  2 Adelie         3800  2007
+##  3 Adelie         3250  2007
+##  4 Adelie           NA  2007
+##  5 Adelie         3450  2007
+##  6 Adelie         3650  2007
+##  7 Adelie         3625  2007
+##  8 Adelie         4675  2007
+##  9 Adelie         3475  2007
+## 10 Adelie         4250  2007
+## # … with 334 more rows
+```
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  select(-c(species, body_mass_g, year))
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 344 × 5
+##    island    bill_length_mm bill_depth_mm flipper_length_mm sex   
+##    &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt; &lt;fct&gt; 
+##  1 Torgersen           39.1          18.7               181 male  
+##  2 Torgersen           39.5          17.4               186 female
+##  3 Torgersen           40.3          18                 195 female
+##  4 Torgersen           NA            NA                  NA &lt;NA&gt;  
+##  5 Torgersen           36.7          19.3               193 female
+##  6 Torgersen           39.3          20.6               190 male  
+##  7 Torgersen           38.9          17.8               181 female
+##  8 Torgersen           39.2          19.6               195 male  
+##  9 Torgersen           34.1          18.1               193 &lt;NA&gt;  
+## 10 Torgersen           42            20.2               190 &lt;NA&gt;  
+## # … with 334 more rows
+```
+
+]
+]
+
+---
+
+# `mutate()` function: Adds new variables that are functions of existing variables
+
+&lt;img src="images/04-mutate.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: center, middle
+
+# How to convert penguin body mass from grams to kilograms?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+* mutate(body_mass_kg = body_mass_g / 1000)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 344 × 9
+##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+##  1 Adelie  Torgersen           39.1          18.7               181        3750
+##  2 Adelie  Torgersen           39.5          17.4               186        3800
+##  3 Adelie  Torgersen           40.3          18                 195        3250
+##  4 Adelie  Torgersen           NA            NA                  NA          NA
+##  5 Adelie  Torgersen           36.7          19.3               193        3450
+##  6 Adelie  Torgersen           39.3          20.6               190        3650
+##  7 Adelie  Torgersen           38.9          17.8               181        3625
+##  8 Adelie  Torgersen           39.2          19.6               195        4675
+##  9 Adelie  Torgersen           34.1          18.1               193        3475
+## 10 Adelie  Torgersen           42            20.2               190        4250
+## # … with 334 more rows, and 3 more variables: sex &lt;fct&gt;, year &lt;int&gt;,
+## #   body_mass_kg &lt;dbl&gt;
+```
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  select(body_mass_g) %&gt;%
+  mutate(body_mass_kg = body_mass_g / 1000)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 344 × 2
+##    body_mass_g body_mass_kg
+##          &lt;int&gt;        &lt;dbl&gt;
+##  1        3750         3.75
+##  2        3800         3.8 
+##  3        3250         3.25
+##  4          NA        NA   
+##  5        3450         3.45
+##  6        3650         3.65
+##  7        3625         3.62
+##  8        4675         4.68
+##  9        3475         3.48
+## 10        4250         4.25
+## # … with 334 more rows
+```
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  mutate(body_mass_kg = body_mass_g / 1000, 
+         bill = bill_length_mm * bill_depth_mm)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 344 × 10
+##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+##  1 Adelie  Torgersen           39.1          18.7               181        3750
+##  2 Adelie  Torgersen           39.5          17.4               186        3800
+##  3 Adelie  Torgersen           40.3          18                 195        3250
+##  4 Adelie  Torgersen           NA            NA                  NA          NA
+##  5 Adelie  Torgersen           36.7          19.3               193        3450
+##  6 Adelie  Torgersen           39.3          20.6               190        3650
+##  7 Adelie  Torgersen           38.9          17.8               181        3625
+##  8 Adelie  Torgersen           39.2          19.6               195        4675
+##  9 Adelie  Torgersen           34.1          18.1               193        3475
+## 10 Adelie  Torgersen           42            20.2               190        4250
+## # … with 334 more rows, and 4 more variables: sex &lt;fct&gt;, year &lt;int&gt;,
+## #   body_mass_kg &lt;dbl&gt;, bill &lt;dbl&gt;
+```
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  mutate(body_mass_kg = body_mass_g / 1000,
+         bill = bill_length_mm * bill_depth_mm) %&gt;% 
+  select(body_mass_kg,
+         bill)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 344 × 2
+##    body_mass_kg  bill
+##           &lt;dbl&gt; &lt;dbl&gt;
+##  1         3.75  731.
+##  2         3.8   687.
+##  3         3.25  725.
+##  4        NA      NA 
+##  5         3.45  708.
+##  6         3.65  810.
+##  7         3.62  692.
+##  8         4.68  768.
+##  9         3.48  617.
+## 10         4.25  848.
+## # … with 334 more rows
+```
+
+]
+]
+
+---
+
+# `arrange()` function: Changes the order of the rows.
+
+&lt;img src="images/02-arrange.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: center, middle
+
+# How to have data arranged by the ascending order of bill length of penguins?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+* arrange(bill_length_mm)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 344 × 8
+##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+##  1 Adelie  Dream               32.1          15.5               188        3050
+##  2 Adelie  Dream               33.1          16.1               178        2900
+##  3 Adelie  Torgersen           33.5          19                 190        3600
+##  4 Adelie  Dream               34            17.1               185        3400
+##  5 Adelie  Torgersen           34.1          18.1               193        3475
+##  6 Adelie  Torgersen           34.4          18.4               184        3325
+##  7 Adelie  Biscoe              34.5          18.1               187        2900
+##  8 Adelie  Torgersen           34.6          21.1               198        4400
+##  9 Adelie  Torgersen           34.6          17.2               189        3200
+## 10 Adelie  Biscoe              35            17.9               190        3450
+## # … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+```
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+* arrange(desc(bill_length_mm))
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 344 × 8
+##    species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+##  1 Gentoo    Biscoe           59.6          17                 230        6050
+##  2 Chinstrap Dream            58            17.8               181        3700
+##  3 Gentoo    Biscoe           55.9          17                 228        5600
+##  4 Chinstrap Dream            55.8          19.8               207        4000
+##  5 Gentoo    Biscoe           55.1          16                 230        5850
+##  6 Gentoo    Biscoe           54.3          15.7               231        5650
+##  7 Chinstrap Dream            54.2          20.8               201        4300
+##  8 Chinstrap Dream            53.5          19.9               205        4500
+##  9 Gentoo    Biscoe           53.4          15.8               219        5500
+## 10 Chinstrap Dream            52.8          20                 205        4550
+## # … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+```
+
+]
+]
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  arrange(species)
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 344 × 8
+##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+##  1 Adelie  Torgersen           39.1          18.7               181        3750
+##  2 Adelie  Torgersen           39.5          17.4               186        3800
+##  3 Adelie  Torgersen           40.3          18                 195        3250
+##  4 Adelie  Torgersen           NA            NA                  NA          NA
+##  5 Adelie  Torgersen           36.7          19.3               193        3450
+##  6 Adelie  Torgersen           39.3          20.6               190        3650
+##  7 Adelie  Torgersen           38.9          17.8               181        3625
+##  8 Adelie  Torgersen           39.2          19.6               195        4675
+##  9 Adelie  Torgersen           34.1          18.1               193        3475
+## 10 Adelie  Torgersen           42            20.2               190        4250
+## # … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+```
+
+]
+]
+
+---
+
+class: center, middle, inverse
+
+# `summarise()` function
+
+---
+
+# `summarise()` function: Chooses rows based on column values.
+
+&lt;img src="images/05-summarise.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: center, middle
+
+# How to find mean bill length of all penguins?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+* drop_na() %&gt;%
+* summarise(mean_bill_length_mm = mean(bill_length_mm))
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 1 × 1
+##   mean_bill_length_mm
+##                 &lt;dbl&gt;
+## 1                44.0
+```
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to find species-wise mean bill length of penguins?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+* drop_na() %&gt;%
+* group_by(species) %&gt;%
+  summarise(mean_bill_length_mm = mean(bill_length_mm))
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 3 × 2
+##   species   mean_bill_length_mm
+##   &lt;fct&gt;                   &lt;dbl&gt;
+## 1 Adelie                   38.8
+## 2 Chinstrap                48.8
+## 3 Gentoo                   47.6
+```
+
+]
+]
+
+---
+
+class: center, middle
+
+# How to find species-wise mean bill length of penguins and total number of penguins in each species?
+
+---
+
+.panelset[
+
+.panel[.panel-name[Codes]
+
+
+```r
+penguins %&gt;% 
+  drop_na() %&gt;% 
+  group_by(species) %&gt;% 
+* summarise(mean_bill_length_mm = mean(bill_length_mm), n = n())
+```
+]
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 3 × 3
+##   species   mean_bill_length_mm     n
+##   &lt;fct&gt;                   &lt;dbl&gt; &lt;int&gt;
+## 1 Adelie                   38.8   146
+## 2 Chinstrap                48.8    68
+## 3 Gentoo                   47.6   119
+```
+
+]
+]
+
+---
+
+class: center middle hide-count
+
+#  🙋🏽‍♀️🙋‍♂️&lt;br&gt;.big-text[Q&amp;A]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "solarized-light",
+"highlightLanguage": ["r", "css", "yaml"],
+"slideNumberFormat": "%current%/%total%",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+.logo {
+  background-image: url(logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

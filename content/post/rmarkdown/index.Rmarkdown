@@ -34,4 +34,12 @@ links:
 #  url: /slides/01-r-basics.html
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6Ro9K2mV5Co" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+### Slides
+
+```{r echo=FALSE}
+library(xaringanExtra)
+
+xaringanExtra::embed_xaringan(url = "/slide/rmarkdown.html",
+                              ratio = "6:4.5")
+
+```

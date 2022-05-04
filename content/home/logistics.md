@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
 title = "Logistics"
-subtitle = "We will meet five days in a week from Monday to Saturday for two hours (except 26 Jan)."
+subtitle = "We will meet five days in a week from Monday to Friday for two hours."
 
 # Showcase personal skills or business features.
 # 
@@ -18,19 +18,19 @@ subtitle = "We will meet five days in a week from Monday to Saturday for two hou
   icon = "cloud"
   icon_pack = "fa"
   name = "Location"
-  description = "Online (Google Meet)"
+  description = "Nalanda Academy / Zoom"
   
 [[feature]]
   icon = "desktop"
   icon_pack = "fa"
   name = "Lecture"
-  description = "Indian Standard Time"  
+  description = "Indian Standard Time (IST)"  
   
 [[feature]]
   icon = "code"
   icon_pack = "fa"
   name = "Practice Session"
-  description = "During the lectures"
+  description = "During the Lectures"
 
 # Uncomment to use emoji icons.
 # [[feature]]

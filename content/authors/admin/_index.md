@@ -1,20 +1,19 @@
 ---
 # Display name
-title: Dr Ajay Koli
+title: Dr Ajay Kumar Koli
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position
-role: Instructor
+role: Head of School of Data Science
 
 # Organizations/Affiliations
-#organizations:
-#- name: Stanford University
-#  url: ""
+organizations: 
+  - name: Nalanda Academy - Wardha
 
 # Short bio (displayed in user profile at end of posts)
-bio: I like to teach research methods and data science using R. My research interests include crafts, waste livelihoods & sustainability.
+bio: I teach data science & research methods using R. My research interests include crafts, waste livelihoods & sustainability.
 
 #interests:
 #- Artificial Intelligence
@@ -77,15 +76,11 @@ user_groups:
 
 Hi there :) 
 
-My name is [Ajay](https://ajaykoli.netlify.app/). I teach this course. 
+I teach data science using R statistical language to underprivileged students in India without any tuition fee. Thank you for visiting my website. I'm a PhD survivor & an MBA Gold Medallist in tourism studies. I love to teach data science using R statistical language. 
 
-I'm a PhD survivor with MBA in tourism studies. I love to teach data science using R statistical language. 
+If you are taking your first step toward data science and feeling scared then this course is for you. No recorded videos. There will be live interactive sessions at the [Nalanda Academy](https://nalanda-academy.org/) - Wardha.  
 
-If you are taking your first step towards data science and feeling really scared then this course is for you.
-
-No recorded videos. There will be live interactive sessions using Google Meet. 
-
-To join this course kindly fill this [Google Form](https://forms.gle/CN4guCNgnzLGACgW9). Please contact me if you have any queries. I'll be happy to reply to your emails and Twitter DMs. 
+To join this course kindly fill out this [Google Form](https://forms.gle/CN4guCNgnzLGACgW9). Please contact me if you have any queries. I'll be happy to reply to your emails and Twitter DMs. 
 
 ----
 

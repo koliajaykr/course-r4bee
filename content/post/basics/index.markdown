@@ -2,7 +2,7 @@
 title: 'Module 1 - R & RStudio'
 subtitle: ''
 summary: The Basics of R & RStudio
-date: "2022-01-29"
+date: "2022-04-21"
 featured: false
 draft: false
 
@@ -23,15 +23,22 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 
-#links:
-# - icon: flask
+links:
+#  - icon: flask
+#    icon_pack: fas
+#    name: lab
+#   url: /labs/00-install_name_plot.html
+# - icon: magic
 #   icon_pack: fas
-#   name: lab
-#  url: /labs/00-install_name_plot.html
-#- icon: magic
-#  icon_pack: fas
-#  name: slides
-#  url: /slides/00-welcome.html
+#   name: slides
+#   url: /slides/00-welcome.html
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/K9WeFAEPo6I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<script src="{{< blogdown/postref >}}index_files/fitvids/fitvids.min.js"></script>
+
+### Slides
+
+<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<iframe src="/slide/rstudio.html" width="600" height="450" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>

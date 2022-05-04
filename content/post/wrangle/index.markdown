@@ -11,4 +11,11 @@ image:
   preview_only: yes
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QGj8hEcDW0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<script src="{{< blogdown/postref >}}index_files/fitvids/fitvids.min.js"></script>
+
+### Slides
+
+<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<iframe src="/slide/wrangle.html" width="600" height="450" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>

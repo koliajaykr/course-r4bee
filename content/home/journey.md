@@ -53,7 +53,7 @@ date_format = "Jan 2006"
   location = "Online"
   date_start = "2020-10-10"
   date_end = "2020-11-04"
-  description = """all students with fee, started this website, received 4k INR donations.""" 
+  description = """All students with fee, started this website, received 4k INR donations.""" 
   
 [[experience]]
   title = "Batch - 5 (R for Beginners)"
@@ -62,7 +62,7 @@ date_format = "Jan 2006"
   location = "Online"
   date_start = "2020-11-11"
   date_end = "2020-11-21"
-  description = """recevied important critical feedback for improvement"""   
+  description = """I received important critical feedback for improvement."""   
 
 [[experience]]
   title = "Batch - 6 (R for Beginners)"
@@ -71,7 +71,7 @@ date_format = "Jan 2006"
   location = "Online"
   date_start = "2021-02-01"
   date_end = "2021-02-20"
-  description = """35 people registered but only 4 participants attended"""   
+  description = """35 people registered but only 4 participants attended."""   
 
 [[experience]]
   title = "Batch - 7 (R for Beginners)"
@@ -80,6 +80,15 @@ date_format = "Jan 2006"
   location = "Online"
   date_start = "2022-01-24"
   date_end = "2022-01-29"
-  description = """39 people registered, 21 participants successfully completed, Vishwakarma University - Pune"""
+  description = """39 people registered, 21 participants successfully completed, Vishwakarma University - Pune."""
+  
+[[experience]]
+  title = "Batch - 8 (R for Beginners)"
+  company = "Free | 27 students | 22 hours"
+  company_url = ""
+  location = "Nalanda Academy"
+  date_start = "2022-04-11"
+  date_end = "2022-04-23"
+  description = """It was my first data science course at the Nalanda Academy."""  
 
 +++

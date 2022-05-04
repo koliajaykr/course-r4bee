@@ -11,4 +11,13 @@ image:
   preview_only: yes
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qmoZnf_3mIk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+### Slides
+
+```{r echo=FALSE}
+library(xaringanExtra)
+
+xaringanExtra::embed_xaringan(url = "/slide/xaringan.html",
+                              ratio = "6:4.5")
+
+```
+
