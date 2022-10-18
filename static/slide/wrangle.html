@@ -3,7 +3,8 @@
   <head>
     <title>wrangle.knit</title>
     <meta charset="utf-8" />
-    <meta name="date" content="2022-04-26" />
+    <meta name="author" content="" />
+    <meta name="date" content="2022-10-18" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
@@ -174,19 +175,20 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 124 × 8
-##    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-##    &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
-##  1 Gentoo  Biscoe           46.1          13.2               211        4500
-##  2 Gentoo  Biscoe           50            16.3               230        5700
-##  3 Gentoo  Biscoe           48.7          14.1               210        4450
-##  4 Gentoo  Biscoe           50            15.2               218        5700
-##  5 Gentoo  Biscoe           47.6          14.5               215        5400
-##  6 Gentoo  Biscoe           46.5          13.5               210        4550
-##  7 Gentoo  Biscoe           45.4          14.6               211        4800
-##  8 Gentoo  Biscoe           46.7          15.3               219        5200
-##  9 Gentoo  Biscoe           43.3          13.4               209        4400
-## 10 Gentoo  Biscoe           46.8          15.4               215        5150
-## # … with 114 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+##    species island bill_length_mm bill_depth_mm flipper_len…¹ body_…² sex    year
+##    &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;         &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+##  1 Gentoo  Biscoe           46.1          13.2           211    4500 fema…  2007
+##  2 Gentoo  Biscoe           50            16.3           230    5700 male   2007
+##  3 Gentoo  Biscoe           48.7          14.1           210    4450 fema…  2007
+##  4 Gentoo  Biscoe           50            15.2           218    5700 male   2007
+##  5 Gentoo  Biscoe           47.6          14.5           215    5400 male   2007
+##  6 Gentoo  Biscoe           46.5          13.5           210    4550 fema…  2007
+##  7 Gentoo  Biscoe           45.4          14.6           211    4800 fema…  2007
+##  8 Gentoo  Biscoe           46.7          15.3           219    5200 male   2007
+##  9 Gentoo  Biscoe           43.3          13.4           209    4400 fema…  2007
+## 10 Gentoo  Biscoe           46.8          15.4           215    5150 male   2007
+## # … with 114 more rows, and abbreviated variable names ¹​flipper_length_mm,
+## #   ²​body_mass_g
 ```
 
 ]
@@ -413,19 +415,20 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 188 × 8
-##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
-##  1 Adelie  Torgersen           46            21.5               194        4200
-##  2 Adelie  Dream               44.1          19.7               196        4400
-##  3 Adelie  Torgersen           45.8          18.9               197        4150
-##  4 Adelie  Dream               43.2          18.5               192        4100
-##  5 Adelie  Biscoe              43.2          19                 197        4775
-##  6 Adelie  Biscoe              45.6          20.3               191        4600
-##  7 Adelie  Torgersen           44.1          18                 210        4000
-##  8 Adelie  Torgersen           43.1          19.2               197        3500
-##  9 Gentoo  Biscoe              46.1          13.2               211        4500
-## 10 Gentoo  Biscoe              50            16.3               230        5700
-## # … with 178 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+##    species island    bill_length_mm bill_depth_mm flipper_…¹ body_…² sex    year
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;      &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+##  1 Adelie  Torgersen           46            21.5        194    4200 male   2007
+##  2 Adelie  Dream               44.1          19.7        196    4400 male   2007
+##  3 Adelie  Torgersen           45.8          18.9        197    4150 male   2008
+##  4 Adelie  Dream               43.2          18.5        192    4100 male   2008
+##  5 Adelie  Biscoe              43.2          19          197    4775 male   2009
+##  6 Adelie  Biscoe              45.6          20.3        191    4600 male   2009
+##  7 Adelie  Torgersen           44.1          18          210    4000 male   2009
+##  8 Adelie  Torgersen           43.1          19.2        197    3500 male   2009
+##  9 Gentoo  Biscoe              46.1          13.2        211    4500 fema…  2007
+## 10 Gentoo  Biscoe              50            16.3        230    5700 male   2007
+## # … with 178 more rows, and abbreviated variable names ¹​flipper_length_mm,
+## #   ²​body_mass_g
 ```
 
 ]
@@ -434,7 +437,7 @@ penguins %&gt;%
 ---
 class: center, middle 
 
-# How to have a data of Gentoo penguins with bill length more than 50 mm?
+# How to have a data of Gentoo penguins with bill length more than 55 mm?
 
 ---
 .panelset[
@@ -454,12 +457,12 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 3 × 8
-##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
-##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
-## 1 Gentoo  Biscoe           59.6            17              230        6050 male 
-## 2 Gentoo  Biscoe           55.9            17              228        5600 male 
-## 3 Gentoo  Biscoe           55.1            16              230        5850 male 
-## # … with 1 more variable: year &lt;int&gt;
+##   species island bill_length_mm bill_depth_mm flipper_leng…¹ body_…² sex    year
+##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;          &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+## 1 Gentoo  Biscoe           59.6            17            230    6050 male   2007
+## 2 Gentoo  Biscoe           55.9            17            228    5600 male   2009
+## 3 Gentoo  Biscoe           55.1            16            230    5850 male   2009
+## # … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g
 ```
 
 ]
@@ -490,27 +493,27 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 18 × 8
-##    species   island    bill_length_mm bill_depth_mm flipper_length_… body_mass_g
-##    &lt;fct&gt;     &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
-##  1 Adelie    Torgersen           46            21.5              194        4200
-##  2 Adelie    Torgersen           45.8          18.9              197        4150
-##  3 Adelie    Biscoe              45.6          20.3              191        4600
-##  4 Chinstrap Dream               46            18.9              195        4150
-##  5 Chinstrap Dream               52            18.1              201        4050
-##  6 Chinstrap Dream               50.5          19.6              201        4050
-##  7 Chinstrap Dream               49.2          18.2              195        4400
-##  8 Chinstrap Dream               52            19                197        4150
-##  9 Chinstrap Dream               52.8          20                205        4550
-## 10 Chinstrap Dream               54.2          20.8              201        4300
-## 11 Chinstrap Dream               51            18.8              203        4100
-## 12 Chinstrap Dream               52            20.7              210        4800
-## 13 Chinstrap Dream               53.5          19.9              205        4500
-## 14 Chinstrap Dream               50.8          18.5              201        4450
-## 15 Chinstrap Dream               49            19.6              212        4300
-## 16 Chinstrap Dream               50.7          19.7              203        4050
-## 17 Chinstrap Dream               49.3          19.9              203        4050
-## 18 Chinstrap Dream               50.8          19                210        4100
-## # … with 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+##    species   island    bill_length_mm bill_depth_mm flippe…¹ body_…² sex    year
+##    &lt;fct&gt;     &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;    &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+##  1 Adelie    Torgersen           46            21.5      194    4200 male   2007
+##  2 Adelie    Torgersen           45.8          18.9      197    4150 male   2008
+##  3 Adelie    Biscoe              45.6          20.3      191    4600 male   2009
+##  4 Chinstrap Dream               46            18.9      195    4150 fema…  2007
+##  5 Chinstrap Dream               52            18.1      201    4050 male   2007
+##  6 Chinstrap Dream               50.5          19.6      201    4050 male   2007
+##  7 Chinstrap Dream               49.2          18.2      195    4400 male   2007
+##  8 Chinstrap Dream               52            19        197    4150 male   2007
+##  9 Chinstrap Dream               52.8          20        205    4550 male   2008
+## 10 Chinstrap Dream               54.2          20.8      201    4300 male   2008
+## 11 Chinstrap Dream               51            18.8      203    4100 male   2008
+## 12 Chinstrap Dream               52            20.7      210    4800 male   2008
+## 13 Chinstrap Dream               53.5          19.9      205    4500 male   2008
+## 14 Chinstrap Dream               50.8          18.5      201    4450 male   2009
+## 15 Chinstrap Dream               49            19.6      212    4300 male   2009
+## 16 Chinstrap Dream               50.7          19.7      203    4050 male   2009
+## 17 Chinstrap Dream               49.3          19.9      203    4050 male   2009
+## 18 Chinstrap Dream               50.8          19        210    4100 male   2009
+## # … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g
 ```
 
 ]
@@ -542,15 +545,15 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 6 × 8
-##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
-##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
-## 1 Adelie  Torge…           46            21.5              194        4200 male 
-## 2 Adelie  Torge…           45.8          18.9              197        4150 male 
-## 3 Adelie  Biscoe           45.6          20.3              191        4600 male 
-## 4 Chinst… Dream            46            18.9              195        4150 fema…
-## 5 Chinst… Dream            52            18.1              201        4050 male 
-## 6 Chinst… Dream            50.5          19.6              201        4050 male 
-## # … with 1 more variable: year &lt;int&gt;
+##   species   island    bill_length_mm bill_depth_mm flipper…¹ body_…² sex    year
+##   &lt;fct&gt;     &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;     &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+## 1 Adelie    Torgersen           46            21.5       194    4200 male   2007
+## 2 Adelie    Torgersen           45.8          18.9       197    4150 male   2008
+## 3 Adelie    Biscoe              45.6          20.3       191    4600 male   2009
+## 4 Chinstrap Dream               46            18.9       195    4150 fema…  2007
+## 5 Chinstrap Dream               52            18.1       201    4050 male   2007
+## 6 Chinstrap Dream               50.5          19.6       201    4050 male   2007
+## # … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g
 ```
 
 ]
@@ -577,12 +580,12 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 3 × 8
-##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
-##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
-## 1 Chinst… Dream            50.7          19.7              203        4050 male 
-## 2 Chinst… Dream            49.3          19.9              203        4050 male 
-## 3 Chinst… Dream            50.8          19                210        4100 male 
-## # … with 1 more variable: year &lt;int&gt;
+##   species   island bill_length_mm bill_depth_mm flipper_le…¹ body_…² sex    year
+##   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;        &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+## 1 Chinstrap Dream            50.7          19.7          203    4050 male   2009
+## 2 Chinstrap Dream            49.3          19.9          203    4050 male   2009
+## 3 Chinstrap Dream            50.8          19            210    4100 male   2009
+## # … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g
 ```
 
 ]
@@ -595,7 +598,8 @@ class: your-turn, hide-logo
 # 🧠 YOUR TURN
 
 
-<div class="countdown" id="timer_6267e2af" style="top:0;right:0;font-size:3em;" data-warnwhen="0">
+<div class="countdown" id="timer_581d4dc0" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:3em;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -624,15 +628,15 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 6 × 8
-##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
-##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
-## 1 Chinst… Dream            46            18.9              195        4150 fema…
-## 2 Chinst… Dream            52            18.1              201        4050 male 
-## 3 Chinst… Dream            50.5          19.6              201        4050 male 
-## 4 Chinst… Dream            49.2          18.2              195        4400 male 
-## 5 Chinst… Dream            52            19                197        4150 male 
-## 6 Chinst… Dream            52.8          20                205        4550 male 
-## # … with 1 more variable: year &lt;int&gt;
+##   species   island bill_length_mm bill_depth_mm flipper_le…¹ body_…² sex    year
+##   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;        &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+## 1 Chinstrap Dream            46            18.9          195    4150 fema…  2007
+## 2 Chinstrap Dream            52            18.1          201    4050 male   2007
+## 3 Chinstrap Dream            50.5          19.6          201    4050 male   2007
+## 4 Chinstrap Dream            49.2          18.2          195    4400 male   2007
+## 5 Chinstrap Dream            52            19            197    4150 male   2007
+## 6 Chinstrap Dream            52.8          20            205    4550 male   2008
+## # … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g
 ```
 
 ]
@@ -874,20 +878,20 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 344 × 9
-##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
-##  1 Adelie  Torgersen           39.1          18.7               181        3750
-##  2 Adelie  Torgersen           39.5          17.4               186        3800
-##  3 Adelie  Torgersen           40.3          18                 195        3250
-##  4 Adelie  Torgersen           NA            NA                  NA          NA
-##  5 Adelie  Torgersen           36.7          19.3               193        3450
-##  6 Adelie  Torgersen           39.3          20.6               190        3650
-##  7 Adelie  Torgersen           38.9          17.8               181        3625
-##  8 Adelie  Torgersen           39.2          19.6               195        4675
-##  9 Adelie  Torgersen           34.1          18.1               193        3475
-## 10 Adelie  Torgersen           42            20.2               190        4250
-## # … with 334 more rows, and 3 more variables: sex &lt;fct&gt;, year &lt;int&gt;,
-## #   body_mass_kg &lt;dbl&gt;
+##    species island    bill_length_mm bill_d…¹ flipp…² body_…³ sex    year body_…⁴
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;    &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;   &lt;dbl&gt;
+##  1 Adelie  Torgersen           39.1     18.7     181    3750 male   2007    3.75
+##  2 Adelie  Torgersen           39.5     17.4     186    3800 fema…  2007    3.8 
+##  3 Adelie  Torgersen           40.3     18       195    3250 fema…  2007    3.25
+##  4 Adelie  Torgersen           NA       NA        NA      NA &lt;NA&gt;   2007   NA   
+##  5 Adelie  Torgersen           36.7     19.3     193    3450 fema…  2007    3.45
+##  6 Adelie  Torgersen           39.3     20.6     190    3650 male   2007    3.65
+##  7 Adelie  Torgersen           38.9     17.8     181    3625 fema…  2007    3.62
+##  8 Adelie  Torgersen           39.2     19.6     195    4675 male   2007    4.68
+##  9 Adelie  Torgersen           34.1     18.1     193    3475 &lt;NA&gt;   2007    3.48
+## 10 Adelie  Torgersen           42       20.2     190    4250 &lt;NA&gt;   2007    4.25
+## # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
+## #   ²​flipper_length_mm, ³​body_mass_g, ⁴​body_mass_kg
 ```
 
 ]
@@ -949,20 +953,20 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 344 × 10
-##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
-##  1 Adelie  Torgersen           39.1          18.7               181        3750
-##  2 Adelie  Torgersen           39.5          17.4               186        3800
-##  3 Adelie  Torgersen           40.3          18                 195        3250
-##  4 Adelie  Torgersen           NA            NA                  NA          NA
-##  5 Adelie  Torgersen           36.7          19.3               193        3450
-##  6 Adelie  Torgersen           39.3          20.6               190        3650
-##  7 Adelie  Torgersen           38.9          17.8               181        3625
-##  8 Adelie  Torgersen           39.2          19.6               195        4675
-##  9 Adelie  Torgersen           34.1          18.1               193        3475
-## 10 Adelie  Torgersen           42            20.2               190        4250
-## # … with 334 more rows, and 4 more variables: sex &lt;fct&gt;, year &lt;int&gt;,
-## #   body_mass_kg &lt;dbl&gt;, bill &lt;dbl&gt;
+##    species island    bill_le…¹ bill_…² flipp…³ body_…⁴ sex    year body_…⁵  bill
+##    &lt;fct&gt;   &lt;fct&gt;         &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;   &lt;dbl&gt; &lt;dbl&gt;
+##  1 Adelie  Torgersen      39.1    18.7     181    3750 male   2007    3.75  731.
+##  2 Adelie  Torgersen      39.5    17.4     186    3800 fema…  2007    3.8   687.
+##  3 Adelie  Torgersen      40.3    18       195    3250 fema…  2007    3.25  725.
+##  4 Adelie  Torgersen      NA      NA        NA      NA &lt;NA&gt;   2007   NA      NA 
+##  5 Adelie  Torgersen      36.7    19.3     193    3450 fema…  2007    3.45  708.
+##  6 Adelie  Torgersen      39.3    20.6     190    3650 male   2007    3.65  810.
+##  7 Adelie  Torgersen      38.9    17.8     181    3625 fema…  2007    3.62  692.
+##  8 Adelie  Torgersen      39.2    19.6     195    4675 male   2007    4.68  768.
+##  9 Adelie  Torgersen      34.1    18.1     193    3475 &lt;NA&gt;   2007    3.48  617.
+## 10 Adelie  Torgersen      42      20.2     190    4250 &lt;NA&gt;   2007    4.25  848.
+## # … with 334 more rows, and abbreviated variable names ¹​bill_length_mm,
+## #   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​body_mass_kg
 ```
 
 ]
@@ -1037,19 +1041,20 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 344 × 8
-##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
-##  1 Adelie  Dream               32.1          15.5               188        3050
-##  2 Adelie  Dream               33.1          16.1               178        2900
-##  3 Adelie  Torgersen           33.5          19                 190        3600
-##  4 Adelie  Dream               34            17.1               185        3400
-##  5 Adelie  Torgersen           34.1          18.1               193        3475
-##  6 Adelie  Torgersen           34.4          18.4               184        3325
-##  7 Adelie  Biscoe              34.5          18.1               187        2900
-##  8 Adelie  Torgersen           34.6          21.1               198        4400
-##  9 Adelie  Torgersen           34.6          17.2               189        3200
-## 10 Adelie  Biscoe              35            17.9               190        3450
-## # … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+##    species island    bill_length_mm bill_depth_mm flipper_…¹ body_…² sex    year
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;      &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+##  1 Adelie  Dream               32.1          15.5        188    3050 fema…  2009
+##  2 Adelie  Dream               33.1          16.1        178    2900 fema…  2008
+##  3 Adelie  Torgersen           33.5          19          190    3600 fema…  2008
+##  4 Adelie  Dream               34            17.1        185    3400 fema…  2008
+##  5 Adelie  Torgersen           34.1          18.1        193    3475 &lt;NA&gt;   2007
+##  6 Adelie  Torgersen           34.4          18.4        184    3325 fema…  2007
+##  7 Adelie  Biscoe              34.5          18.1        187    2900 fema…  2008
+##  8 Adelie  Torgersen           34.6          21.1        198    4400 male   2007
+##  9 Adelie  Torgersen           34.6          17.2        189    3200 fema…  2008
+## 10 Adelie  Biscoe              35            17.9        190    3450 fema…  2008
+## # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+## #   ²​body_mass_g
 ```
 
 ]
@@ -1073,19 +1078,20 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 344 × 8
-##    species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-##    &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
-##  1 Gentoo    Biscoe           59.6          17                 230        6050
-##  2 Chinstrap Dream            58            17.8               181        3700
-##  3 Gentoo    Biscoe           55.9          17                 228        5600
-##  4 Chinstrap Dream            55.8          19.8               207        4000
-##  5 Gentoo    Biscoe           55.1          16                 230        5850
-##  6 Gentoo    Biscoe           54.3          15.7               231        5650
-##  7 Chinstrap Dream            54.2          20.8               201        4300
-##  8 Chinstrap Dream            53.5          19.9               205        4500
-##  9 Gentoo    Biscoe           53.4          15.8               219        5500
-## 10 Chinstrap Dream            52.8          20                 205        4550
-## # … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+##    species   island bill_length_mm bill_depth_mm flipper_l…¹ body_…² sex    year
+##    &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;       &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+##  1 Gentoo    Biscoe           59.6          17           230    6050 male   2007
+##  2 Chinstrap Dream            58            17.8         181    3700 fema…  2007
+##  3 Gentoo    Biscoe           55.9          17           228    5600 male   2009
+##  4 Chinstrap Dream            55.8          19.8         207    4000 male   2009
+##  5 Gentoo    Biscoe           55.1          16           230    5850 male   2009
+##  6 Gentoo    Biscoe           54.3          15.7         231    5650 male   2008
+##  7 Chinstrap Dream            54.2          20.8         201    4300 male   2008
+##  8 Chinstrap Dream            53.5          19.9         205    4500 male   2008
+##  9 Gentoo    Biscoe           53.4          15.8         219    5500 male   2009
+## 10 Chinstrap Dream            52.8          20           205    4550 male   2008
+## # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+## #   ²​body_mass_g
 ```
 
 ]
@@ -1109,19 +1115,20 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 344 × 8
-##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
-##  1 Adelie  Torgersen           39.1          18.7               181        3750
-##  2 Adelie  Torgersen           39.5          17.4               186        3800
-##  3 Adelie  Torgersen           40.3          18                 195        3250
-##  4 Adelie  Torgersen           NA            NA                  NA          NA
-##  5 Adelie  Torgersen           36.7          19.3               193        3450
-##  6 Adelie  Torgersen           39.3          20.6               190        3650
-##  7 Adelie  Torgersen           38.9          17.8               181        3625
-##  8 Adelie  Torgersen           39.2          19.6               195        4675
-##  9 Adelie  Torgersen           34.1          18.1               193        3475
-## 10 Adelie  Torgersen           42            20.2               190        4250
-## # … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+##    species island    bill_length_mm bill_depth_mm flipper_…¹ body_…² sex    year
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;      &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+##  1 Adelie  Torgersen           39.1          18.7        181    3750 male   2007
+##  2 Adelie  Torgersen           39.5          17.4        186    3800 fema…  2007
+##  3 Adelie  Torgersen           40.3          18          195    3250 fema…  2007
+##  4 Adelie  Torgersen           NA            NA           NA      NA &lt;NA&gt;   2007
+##  5 Adelie  Torgersen           36.7          19.3        193    3450 fema…  2007
+##  6 Adelie  Torgersen           39.3          20.6        190    3650 male   2007
+##  7 Adelie  Torgersen           38.9          17.8        181    3625 fema…  2007
+##  8 Adelie  Torgersen           39.2          19.6        195    4675 male   2007
+##  9 Adelie  Torgersen           34.1          18.1        193    3475 &lt;NA&gt;   2007
+## 10 Adelie  Torgersen           42            20.2        190    4250 &lt;NA&gt;   2007
+## # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+## #   ²​body_mass_g
 ```
 
 ]
@@ -1299,6 +1306,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

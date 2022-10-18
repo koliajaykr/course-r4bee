@@ -119,7 +119,7 @@ Dr Ajay Kumar Koli<br>Head of School of Data Science<br>`r icons::fontawesome("b
 
 ---
 
-background-image: url("https://github.com/allisonhorst/stats-illustrations/raw/master/rstats-artwork/r_first_then.png")
+background-image: url("images/r_first_then.png")
 background-size: contain
 
 .footnote[

@@ -89,6 +89,15 @@ date_format = "Jan 2006"
   location = "Nalanda Academy"
   date_start = "2022-04-11"
   date_end = "2022-04-23"
-  description = """It was my first data science course at the Nalanda Academy."""  
+  description = """It was my first data science course at the Nalanda Academy."""
+  
+[[experience]]
+  title = "Batch - 9 (R for Beginners)"
+  company = "Free | 27 students | 40 hours"
+  company_url = ""
+  location = "Nalanda Academy"
+  date_start = "2022-09-19"
+  date_end = "2022-10-14"
+  description = """Number of students is increasing. Need to set-up a computer laboratory as soon as possible."""  
 
 +++

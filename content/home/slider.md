@@ -35,10 +35,19 @@ height = "450px"
 #  cta_icon = "graduation-cap"
 
 [[item]]
+  title = "Batch - 9"
+  content = "\"One of the best R tutorial class. Helpful class and  teacher's teaching is one of best teaching.\" (Oct 2022)"
+  align = "center"
+  
+  overlay_color = "#555"  # An HTML color value.
+  overlay_img = "img/b99.jpg"  # Image path relative to your `static/media/` folder.
+  overlay_filter = 0.5  # Darken the image. Value in range 0-1.
+
+[[item]]
   title = "Batch - 8"
   content = "\"It was a very fantastic course. The method of teaching you used is unique. Got confidence that nothing is impossible to do. Don't know much about coding but now want to join Data Science.\" (April 2022)"
   align = "center"
-
+  
   overlay_color = "#555"  # An HTML color value.
   overlay_img = "img/b8.png"  # Image path relative to your `static/media/` folder.
   overlay_filter = 0.5  # Darken the image. Value in range 0-1.

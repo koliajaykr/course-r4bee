@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
 title = "Logistics"
-subtitle = "We will meet five days in a week from Monday to Friday for two hours."
+subtitle = "We meet for two hours everyday from Monday to Friday"
 
 # Showcase personal skills or business features.
 # 
@@ -18,7 +18,7 @@ subtitle = "We will meet five days in a week from Monday to Friday for two hours
   icon = "cloud"
   icon_pack = "fa"
   name = "Location"
-  description = "Nalanda Academy / Zoom"
+  description = "Nalanda Academy - Wardha, India"
   
 [[feature]]
   icon = "desktop"

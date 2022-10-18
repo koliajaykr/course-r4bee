@@ -332,7 +332,7 @@ penguins %>%
 ---
 class: center, middle 
 
-# How to have a data of Gentoo penguins with bill length more than 50 mm?
+# How to have a data of Gentoo penguins with bill length more than 55 mm?
 
 ---
 .panelset[

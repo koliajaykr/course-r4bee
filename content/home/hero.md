@@ -5,7 +5,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 1  # Order that this section will appear.
 
-title = "R FOR BEEGINNERS"
+title = "R FOR <br>BEGINNERS"
 
 # Hero image (optional). Enter filename of an image in the `static/media/` folder.
 hero_media = "img/logo.png"
@@ -37,10 +37,10 @@ hero_media = "img/logo.png"
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.
 #   Remove a link/note by deleting a cta/note block.
 [cta]
-#  url = "https://forms.gle/99b4BG2PDo2kVjrV9"
-#  label = "Register Now | Last Date 20 Jan 2022"
-#  icon_pack = "fas"
-#  icon = "pencil-alt"
+  url = "https://forms.gle/3btwsubCk1JbWkXo8"
+  label = "Register Now"
+  icon_pack = "fas"
+  icon = "pencil-alt"
   
 [cta_alt]
   #url = "https://wowchemy.com"
@@ -49,7 +49,7 @@ hero_media = "img/logo.png"
 # using {{< icon name="r-project" pack="fab" >}}
 +++
 
-## Data Science Course using <i class="fab fa-r-project"></i>
+## Free Data Science Course using <i class="fab fa-r-project"></i>
 
 <span style="text-shadow: none;"><a class="github-button" href="https://github.com/koliajaykr/course-r4bee" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span>
 

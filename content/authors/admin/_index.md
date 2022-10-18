@@ -1,16 +1,16 @@
 ---
 # Display name
-title: Dr Ajay Kumar Koli
+title: Dr Ajay Koli
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position
-role: Head of School of Data Science
+role: Head, School of Data Science
 
 # Organizations/Affiliations
 organizations: 
-  - name: Nalanda Academy - Wardha
+  - name: Nalanda Academy - Wardha, IND
 
 # Short bio (displayed in user profile at end of posts)
 bio: I teach data science & research methods using R. My research interests include crafts, waste livelihoods & sustainability.
@@ -76,11 +76,11 @@ user_groups:
 
 Hi there :) 
 
-I teach data science using R statistical language to underprivileged students in India without any tuition fee. Thank you for visiting my website. I'm a PhD survivor & an MBA Gold Medallist in tourism studies. I love to teach data science using R statistical language. 
+If you are taking your first step toward data science and feeling scared then this course is for you. No recorded videos. There will be live interactive teaching sessions at the [Nalanda Academy](https://nalanda-academy.org/) - Wardha.
 
-If you are taking your first step toward data science and feeling scared then this course is for you. No recorded videos. There will be live interactive sessions at the [Nalanda Academy](https://nalanda-academy.org/) - Wardha.  
+The complete course is absolutely free.
 
-To join this course kindly fill out this [Google Form](https://forms.gle/CN4guCNgnzLGACgW9). Please contact me if you have any queries. I'll be happy to reply to your emails and Twitter DMs. 
+To join this course kindly fill out this [Google Form](https://forms.gle/CN4guCNgnzLGACgW9). Please contact me if you have any queries. I'll be happy to reply to your emails and Twitter DM. 
 
 ----
 
