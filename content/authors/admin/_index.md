@@ -6,14 +6,14 @@ title: Dr Ajay Koli
 superuser: true
 
 # Role/position
-role: Head, School of Data Science
+role: Head, School of Data Science.
 
 # Organizations/Affiliations
 organizations: 
   - name: Nalanda Academy - Wardha, IND
 
 # Short bio (displayed in user profile at end of posts)
-bio: I teach data science & research methods using R. My research interests include crafts, waste livelihoods & sustainability.
+bio: I am a data science educator at the Nalanda Academy - Wardha. I use R and RStudio to teach data science, statistics, and research methods.
 
 #interests:
 #- Artificial Intelligence

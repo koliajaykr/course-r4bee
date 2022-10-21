@@ -36,7 +36,7 @@ height = "450px"
 
 [[item]]
   title = "Batch - 9"
-  content = "\"One of the best R tutorial class. Helpful class and  teacher's teaching is one of best teaching.\"   <br>\"Great Course! Would recommend to all those would like to start from scratch of rstudio.The tools discussed are very effective and easy to implement and practice. Offcourse with great teacher.\" (Oct 2022)"
+  content = "\"Great Course! Would recommend to all those would like to start from scratch of R & Rstudio.The tools discussed are very effective and easy to implement and practice. Of course with great teacher.\" (Oct 2022)"
   align = "center"
   
   overlay_color = "#555"  # An HTML color value.
