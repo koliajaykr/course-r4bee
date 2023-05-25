@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
 title = "Logistics"
-subtitle = "We meet for two hours everyday from Monday to Friday"
+subtitle = "ALL CLASSES ARE OFFLINE"
 
 # Showcase personal skills or business features.
 # 
@@ -18,13 +18,13 @@ subtitle = "We meet for two hours everyday from Monday to Friday"
   icon = "cloud"
   icon_pack = "fa"
   name = "Location"
-  description = "Nalanda Academy - Wardha, India"
+  description = "[SARA Institute of Data Science](https://saraedu.netlify.app/)"
   
 [[feature]]
   icon = "desktop"
   icon_pack = "fa"
   name = "Lecture"
-  description = "Indian Standard Time (IST)"  
+  description = "Monday to Friday, 9 - 5 IST"  
   
 [[feature]]
   icon = "code"

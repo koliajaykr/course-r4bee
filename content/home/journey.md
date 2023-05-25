@@ -100,4 +100,13 @@ date_format = "Jan 2006"
   date_end = "2022-10-14"
   description = """Number of students is increasing. Need to set-up a computer laboratory as soon as possible."""  
 
+[[experience]]
+  title = "Batch - 10 (R for Beginners)"
+  company = "Free | 10 students | 40 hours"
+  company_url = ""
+  location = "SARA Institute of Data Science"
+  date_start = "2023-04-02"
+  date_end = "2023-07-14"
+  description = """I founded [SARA Institute](https://saraedu.netlify.app/). This is its first batch of students. Received grant from R Consortium"""
+  
 +++

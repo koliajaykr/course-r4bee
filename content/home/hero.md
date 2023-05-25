@@ -37,8 +37,8 @@ hero_media = "img/logo.png"
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.
 #   Remove a link/note by deleting a cta/note block.
 [cta]
-  url = "https://forms.gle/3btwsubCk1JbWkXo8"
-  label = "Register Now for Jan 2023 Batch"
+  url = "https://forms.gle/CjozygthJrMPyxsdA"
+  label = "Register Now for 2023 Batch"
   icon_pack = "fas"
   icon = "pencil-alt"
   
@@ -49,7 +49,7 @@ hero_media = "img/logo.png"
 # using {{< icon name="r-project" pack="fab" >}}
 +++
 
-## Free Data Science Course using <i class="fab fa-r-project"></i><br>[Nalanda Academy - Wardha](https://nalanda-academy.org/)
+## Free Data Science Course using <i class="fab fa-r-project"></i><br>[SARA Institute of Data Science](https://saraedu.netlify.app/)
 
 <span style="text-shadow: none;"><a class="github-button" href="https://github.com/koliajaykr/course-r4bee" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span>
 

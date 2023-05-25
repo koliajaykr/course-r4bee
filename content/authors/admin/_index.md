@@ -6,14 +6,14 @@ title: Dr Ajay Koli
 superuser: true
 
 # Role/position
-role: Head, School of Data Science.
+role: Executive Director, SARA Institute of Data Science.
 
 # Organizations/Affiliations
 organizations: 
-  - name: Nalanda Academy - Wardha, IND
+  - name: SARA Institute - Delhi NCR, IND
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am a data science educator at the Nalanda Academy - Wardha. I use R and RStudio to teach data science, statistics, and research methods.
+bio: I am a data science educator and founder of [SARA Institute of Data Science](https://saraedu.netlify.app/). I use R and RStudio to teach data science, statistics, and research methods.
 
 #interests:
 #- Artificial Intelligence
@@ -76,11 +76,11 @@ user_groups:
 
 Hi there :) 
 
-If you are taking your first step toward data science and feeling scared then this course is for you. No recorded videos. There will be live interactive teaching sessions at the [Nalanda Academy](https://nalanda-academy.org/) - Wardha.
+If you are taking your first step toward data science and feeling scared then this course is for you. No recorded videos. There will be live interactive teaching sessions at the [SARA Institute of Data Science](https://saraedu.netlify.app/) - Delhi NCR.
 
 The complete course is absolutely free.
 
-To join this course kindly fill out this [Google Form](https://forms.gle/CN4guCNgnzLGACgW9). Please contact me if you have any queries. I'll be happy to reply to your emails and Twitter DM. 
+To join this course kindly fill out this [Google Form](https://forms.gle/CjozygthJrMPyxsdA). Please contact me if you have any queries. I'll be happy to reply to your emails and Twitter DM. 
 
 ----
 
